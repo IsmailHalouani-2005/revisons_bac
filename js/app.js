@@ -1,3 +1,114 @@
+
+// ===== FILTER & SORT =====
+let activeFilters = { matiere: 'all', hot: false };
+let searchQuery = '';
+
+function setFilter(type, value, btn) {
+  if (type === 'matiere') {
+    activeFilters.matiere = value;
+    document.querySelectorAll('.filter-btn.f-all, .filter-btn.f-phys, .filter-btn.f-chem')
+      .forEach(b => b.classList.remove('active'));
+  } else if (type === 'hot') {
+    activeFilters.hot = !activeFilters.hot;
+  }
+  btn.classList.toggle('active', type === 'matiere' ? true : activeFilters.hot);
+  if (type === 'matiere') btn.classList.add('active');
+  applyFilters();
+}
+
+function setSearch(val) {
+  searchQuery = val.toLowerCase().trim();
+  applyFilters();
+}
+
+function setSort(val) {
+  const grid1 = document.getElementById('grid-phys');
+  const grid2 = document.getElementById('grid-chem');
+  [grid1, grid2].forEach(grid => {
+    if (!grid) return;
+    const cards = [...grid.querySelectorAll('.chapter-card')];
+    cards.sort((a, b) => {
+      if (val === 'hot') {
+        const aHot = a.querySelector('.tag.hot') ? 0 : 1;
+        const bHot = b.querySelector('.tag.hot') ? 0 : 1;
+        return aHot - bHot;
+      }
+      if (val === 'alpha') {
+        return a.querySelector('.card-title').textContent.localeCompare(
+          b.querySelector('.card-title').textContent, 'fr');
+      }
+      return 0; // default order
+    });
+    cards.forEach(c => grid.appendChild(c));
+  });
+}
+
+function applyFilters() {
+  const cards = document.querySelectorAll('.chapter-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const isPhys = card.classList.contains('phys');
+    const isChem = card.classList.contains('chem');
+    const isHot = !!card.querySelector('.tag.hot');
+    const title = card.querySelector('.card-title').textContent.toLowerCase();
+    const desc = card.querySelector('.card-desc').textContent.toLowerCase();
+
+    let show = true;
+    if (activeFilters.matiere === 'phys' && !isPhys) show = false;
+    if (activeFilters.matiere === 'chem' && !isChem) show = false;
+    if (activeFilters.hot && !isHot) show = false;
+    if (searchQuery && !title.includes(searchQuery) && !desc.includes(searchQuery)) show = false;
+
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  // Show/hide section headers
+  const physCards = [...document.querySelectorAll('.chapter-card.phys')].filter(c => !c.classList.contains('hidden'));
+  const chemCards = [...document.querySelectorAll('.chapter-card.chem')].filter(c => !c.classList.contains('hidden'));
+  const physHeader = document.getElementById('section-phys');
+  const chemHeader = document.getElementById('section-chem');
+  if (physHeader) physHeader.style.display = physCards.length ? '' : 'none';
+  if (chemHeader) chemHeader.style.display = chemCards.length ? '' : 'none';
+
+  const counter = document.getElementById('filter-count');
+  if (counter) counter.textContent = visible + ' chapitre' + (visible > 1 ? 's' : '');
+}
+
+// ===== TABS =====
+function switchTab(chapterId, tabName) {
+  const page = document.getElementById('ch-' + chapterId);
+  if (!page) return;
+  page.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
+  page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tabName));
+}
+
+// ===== THEME TOGGLE =====
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.getElementById('themeBtn');
+  const isLight = html.getAttribute('data-theme') === 'light';
+  
+  if (isLight) {
+    html.removeAttribute('data-theme');
+    btn.textContent = '🌙';
+    localStorage.setItem('bac_theme', 'dark');
+  } else {
+    html.setAttribute('data-theme', 'light');
+    btn.textContent = '☀️';
+    localStorage.setItem('bac_theme', 'light');
+  }
+}
+
+function loadTheme() {
+  const saved = localStorage.getItem('bac_theme');
+  const btn = document.getElementById('themeBtn');
+  if (saved === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    if (btn) btn.textContent = '☀️';
+  }
+}
+
 // ===== NAVIGATION =====
 const pages = {
   home: document.getElementById('home'),
@@ -9,6 +120,7 @@ function showHome() {
   document.querySelectorAll('.chapter-page').forEach(p => p.classList.remove('active'));
   document.getElementById('home').style.display = 'block';
   document.querySelector('.progress-bar-wrap').style.display = 'none';
+  document.getElementById('filterBar').style.display = 'flex';
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });
   // reset active nav pill
@@ -22,6 +134,7 @@ function showChapter(id, type) {
   if (page) {
     page.classList.add('active');
     document.querySelector('.progress-bar-wrap').style.display = 'block';
+  document.getElementById('filterBar').style.display = 'none';
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
   // active nav pill
@@ -124,6 +237,8 @@ document.head.appendChild(style);
 
 // ===== INIT =====
 window.addEventListener('DOMContentLoaded', () => {
+  loadTheme();
+  document.getElementById('filterBar').style.display = 'flex';
   updateProgress();
   updateCards();
   // restore check buttons

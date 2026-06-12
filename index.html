@@ -55,7 +55,33 @@
     <button class="nav-pill" data-id="piles" onclick="showChapter('piles','chem')">🔋 Piles</button>
     <button class="nav-pill" data-id="nucleaire" onclick="showChapter('nucleaire','chem')">☢️ Nucléaire</button>
   </div>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Changer le thème">🌙</button>
 </nav>
+
+
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filterBar" style="display:none">
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input class="search-input" type="text" placeholder="Rechercher un chapitre..." oninput="setSearch(this.value)"/>
+  </div>
+  <div class="filter-group">
+    <button class="filter-btn f-all active" onclick="setFilter('matiere','all',this)">Tous</button>
+    <button class="filter-btn f-phys" onclick="setFilter('matiere','phys',this)">⚙️ Physique</button>
+    <button class="filter-btn f-chem" onclick="setFilter('matiere','chem',this)">⚗️ Chimie</button>
+  </div>
+  <div class="filter-sep"></div>
+  <div class="filter-group">
+    <button class="filter-btn f-hot" onclick="setFilter('hot',null,this)">🔥 Très fréquent BAC</button>
+  </div>
+  <div class="filter-sep"></div>
+  <select class="sort-select" onchange="setSort(this.value)">
+    <option value="default">Ordre par défaut</option>
+    <option value="hot">🔥 Par importance BAC</option>
+    <option value="alpha">🔤 Alphabétique</option>
+  </select>
+  <span class="filter-count" id="filter-count">29 chapitres</span>
+</div>
 
 <!-- =================== HOME PAGE =================== -->
 <div id="home">
@@ -73,13 +99,13 @@
   </section>
 
   <!-- PHYSIQUE -->
-  <div class="section-header">
+  <div class="section-header" id="section-phys">
     <span class="section-badge badge-phys">⚙️ PHYSIQUE</span>
     <span class="section-title">Mécanique, Ondes & Énergie</span>
     <span class="section-sub">13 chapitres</span>
   </div>
 
-  <div class="chapters-grid">
+  <div class="chapters-grid" id="grid-phys">
     <a class="chapter-card phys" data-id="thermodynamique" onclick="showChapter('thermodynamique','phys')">
       <div class="card-icon">🌡️</div>
       <div class="card-num">PHYSIQUE • 01</div>
@@ -187,13 +213,13 @@
   </div>
 
   <!-- CHIMIE -->
-  <div class="section-header">
+  <div class="section-header" id="section-chem">
     <span class="section-badge badge-chem">⚗️ CHIMIE</span>
     <span class="section-title">Solutions, Réactions & Molécules</span>
     <span class="section-sub">16 chapitres</span>
   </div>
 
-  <div class="chapters-grid">
+  <div class="chapters-grid" id="grid-chem">
     <a class="chapter-card chem" data-id="acidebase" onclick="showChapter('acidebase','chem')">
       <div class="card-icon">🍋</div>
       <div class="card-num">CHIMIE • 01</div>
@@ -337,6 +363,97 @@
       <button class="check-btn" data-chapter="thermodynamique" onclick="toggleComplete(this,'thermodynamique')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('thermodynamique','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('thermodynamique','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-thermodynamique">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔬 Définitions fondamentales</div>
+        <div class="definition-box">
+          <div class="def-title">Système thermodynamique</div>
+          Portion de l'univers qu'on décide d'étudier. Tout ce qui est autour = <strong>milieu extérieur</strong>.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Énergie interne U</div>
+          Somme de toutes les énergies microscopiques du système (agitation thermique, liaisons chimiques...). On ne peut pas la mesurer directement, seulement sa <strong>variation ΔU</strong>.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Travail W</div>
+          Échange d'énergie entre le système et l'extérieur via des <strong>forces mécaniques</strong> (piston, moteur...). W > 0 = le système <em>reçoit</em> du travail.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Chaleur Q</div>
+          Échange d'énergie entre le système et l'extérieur via un <strong>gradient de température</strong>. Q > 0 = le système <em>reçoit</em> de la chaleur.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Le 1er principe — Bilan d'énergie</div>
+        <div class="cours-text">
+          <p>Le 1er principe de la thermodynamique est un <strong>bilan énergétique</strong> : l'énergie ne se crée ni ne se détruit, elle se transforme.</p>
+          <p>Pour un système quelconque :</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Forme générale</span>ΔE_totale = ΔE_c + ΔE_p + ΔU = W + Q</div>
+        <div class="cours-text">
+          <p>Dans la plupart des cas au BAC, le système est <strong>au repos</strong> (ΔEc = 0) et à <strong>altitude constante</strong> (ΔEp = 0), donc :</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Cas BAC le plus fréquent</span>ΔU = W + Q</div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Convention de signe OBLIGATOIRE :</strong> W et Q sont comptés <em>algébriquement du point de vue du système</em>. Le système reçoit → positif. Le système cède → négatif. Toujours se demander "qui donne à qui ?"</div>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌡️ Capacité thermique & Chaleur sensible</div>
+        <div class="cours-text"><p>Pour un solide ou liquide <strong>incompressible</strong> sans travail mécanique (W = 0) :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Chaleur sensible</span>Q = m · c · ΔT &nbsp;&nbsp; (J)</div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>m</strong> : masse en kg</li>
+            <li><strong>c</strong> : capacité thermique massique en J·kg⁻¹·K⁻¹ (eau : 4180, acier : 460, aluminium : 900)</li>
+            <li><strong>ΔT = T_f − T_i</strong> en Kelvin ou °C (la différence est identique)</li>
+          </ul>
+          <p>La <strong>capacité thermique</strong> du système entier : C = m·c (en J·K⁻¹)</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">💨 Gaz parfait</div>
+        <div class="formula-box phys"><span class="formula-label">Loi des gaz parfaits</span>p · V = n · R · T &nbsp;&nbsp; R = 8,314 J·mol⁻¹·K⁻¹</div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>T en KELVIN obligatoire !</strong> T(K) = θ(°C) + 273,15. Ne jamais mettre des Celsius dans pV = nRT.</div>
+        </div>
+        <div class="cours-text">
+          <p>Pour un gaz parfait, l'énergie interne <strong>ne dépend que de T</strong>. Si T est constante → ΔU = 0 → W = −Q.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔄 Cas particuliers importants</div>
+        <table class="data-table">
+          <tr><th>Transformation</th><th>Condition</th><th>Conséquence</th></tr>
+          <tr><td>Isotherme (gaz parf.)</td><td>T = cst → ΔU = 0</td><td>W = −Q</td></tr>
+          <tr><td>Isochore</td><td>V = cst → W = 0</td><td>ΔU = Q</td></tr>
+          <tr><td>Adiabatique</td><td>Q = 0</td><td>ΔU = W</td></tr>
+          <tr><td>Cycle complet</td><td>Retour état initial → ΔU = 0</td><td>W + Q = 0</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode de résolution BAC</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Identifier le système</strong> et ce qui est W vs Q dans l'énoncé.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Appliquer ΔU = W + Q</strong> en respectant les signes (reçu = +, cédé = −).</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Si solide/liquide sans travail : <strong>ΔU = Q = mcΔT</strong>. Convertir si besoin.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Si gaz : vérifier si on peut utiliser <strong>pV = nRT</strong> pour trouver une inconnue.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text"><strong>Vérifier les unités et le signe</strong> du résultat (cohérent avec la physique ?).</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
 
     <!-- ANALOGIE -->
@@ -539,6 +656,68 @@
       <button class="check-btn" data-chapter="newton" onclick="toggleComplete(this,'newton')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('newton','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('newton','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-newton">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⚙️ Les 3 lois de Newton</div>
+        <div class="definition-box">
+          <div class="def-title">1ère loi — Principe d'inertie</div>
+          Dans un référentiel galiléen, si ΣF = 0, alors le corps reste en <strong>mouvement rectiligne uniforme</strong> (ou au repos). Le mouvement ne nécessite pas de force : c'est le <em>changement</em> de mouvement qui en nécessite.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">2ème loi — Principe fondamental de la dynamique</div>
+          La résultante des forces extérieures est égale à <strong>m·a</strong>. C'est le cœur du chapitre.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">2ème loi de Newton (vectorielle)</span>ΣF⃗_ext = m · a⃗</div>
+        <div class="definition-box">
+          <div class="def-title">3ème loi — Actions réciproques</div>
+          Si A exerce une force sur B, alors B exerce sur A une force <strong>égale, opposée, sur la même droite d'action</strong>. F_A→B = −F_B→A.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📊 Passage de a(t) à v(t) à x(t)</div>
+        <div class="cours-text"><p>On intègre successivement. La constante d'intégration = <strong>condition initiale</strong>.</p></div>
+        <div class="formula-box phys"><span class="formula-label">Intégration successive</span>a(t) →(intégrer)→ v(t) = ∫a dt + v₀ →(intégrer)→ x(t) = ∫v dt + x₀</div>
+        <table class="data-table">
+          <tr><th>Type de mouvement</th><th>Condition</th><th>v(t)</th><th>x(t)</th></tr>
+          <tr><td>Rectiligne uniforme (MRU)</td><td>a = 0</td><td>v₀ = cst</td><td>v₀t + x₀</td></tr>
+          <tr><td>Rectiligne uniformément varié (MRUV)</td><td>a = cst</td><td>at + v₀</td><td>½at² + v₀t + x₀</td></tr>
+          <tr><td>Circulaire uniforme (MCU)</td><td>|v| = cst</td><td>tangentielle nulle</td><td>arc s = Rθ</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🎯 Repère de Frenet (MCU)</div>
+        <div class="cours-text"><p>Pour un mouvement circulaire, on utilise 2 axes :</p></div>
+        <div class="definition-box">
+          <div class="def-title">Vecteur tangentiel T⃗</div>
+          Dans le sens du mouvement. Accélération tangentielle a_T = dv/dt. Si MCU : a_T = 0.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Vecteur normal N⃗ (centripète)</div>
+          Vers le centre de la trajectoire. Accélération centripète a_N = v²/R. Toujours présente si le mouvement est courbe.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Force centripète</span>F_centripète = m · v²/R &nbsp;&nbsp; (dirigée vers le centre)</div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode BAC — Appliquer Newton</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Choisir le système</strong> (l'objet qu'on étudie) et le <strong>référentiel</strong> (terrestre = galiléen pour le BAC).</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Faire le bilan des forces</strong> : poids P = mg↓, réaction normale N, frottement f, tension T... Tout ce qui s'applique au système.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Projeter sur les axes</strong> : écrire ΣFx = max et ΣFy = may séparément.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Résoudre</strong> les équations pour trouver a, v ou x selon ce qu'on cherche.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text"><strong>Intégrer</strong> si besoin (a → v → x) en utilisant les conditions initiales.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
 
     <div class="info-card">
@@ -651,6 +830,62 @@
       <button class="check-btn" data-chapter="pesanteur" onclick="toggleComplete(this,'pesanteur')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('pesanteur','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('pesanteur','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-pesanteur">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌍 Pourquoi une parabole ?</div>
+        <div class="cours-text">
+          <p>Dans le champ de pesanteur, la <strong>seule force</strong> est le poids P = mg vers le bas. Pas de frottement (approximation).</p>
+          <p>Résultat de Newton : <strong>ax = 0</strong> (horizontalement, rien ne pousse) et <strong>ay = −g</strong> (verticalement, la pesanteur tire vers le bas).</p>
+          <p>Ces deux mouvements sont <strong>indépendants</strong> et superposés. Le résultat est une parabole.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Horizontalement = MRU (vitesse constante). Verticalement = MRUV (accélération g vers le bas). Ces deux mouvements se déroulent <em>en même temps</em>.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Équations complètes du tir parabolique</div>
+        <div class="cours-text"><p>Lancer depuis l'origine (x₀=0, y₀=0) avec vitesse initiale v₀ à l'angle α :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Décomposition de v₀</span>v₀x = v₀·cos α &nbsp;&nbsp;&nbsp; v₀y = v₀·sin α</div>
+        <div class="formula-box phys"><span class="formula-label">Accélérations</span>ax = 0 &nbsp;&nbsp;&nbsp; ay = −g = −9,81 m·s⁻²</div>
+        <div class="formula-box phys"><span class="formula-label">Vitesses</span>vx(t) = v₀·cos α &nbsp;&nbsp;&nbsp; vy(t) = v₀·sin α − g·t</div>
+        <div class="formula-box phys"><span class="formula-label">Positions</span>x(t) = v₀·cos α · t &nbsp;&nbsp;&nbsp; y(t) = −½g·t² + v₀·sin α · t</div>
+        <div class="formula-box phys"><span class="formula-label">Équation de la trajectoire (éliminer t)</span>y = x·tan α − g·x² / (2v₀²cos²α)</div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🎯 Cas particulier : lancer horizontal (α = 0)</div>
+        <div class="cours-text"><p>Si on lance <strong>horizontalement</strong> depuis une hauteur h (sin 0=0, cos 0=1) :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Cas α = 0</span>x(t) = v₀·t &nbsp;&nbsp;&nbsp; y(t) = −½g·t² + h</div>
+        <div class="cours-text"><p>Pour trouver quand l'objet touche le sol : y(t) = 0 → t = √(2h/g). Puis portée = x(t).</p></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📊 Grandeurs importantes</div>
+        <table class="data-table">
+          <tr><th>Grandeur</th><th>Formule</th><th>Condition</th></tr>
+          <tr><td>Hauteur maximale (flèche)</td><td>y_max = v₀²sin²α / (2g)</td><td>vy = 0</td></tr>
+          <tr><td>Temps à la flèche</td><td>t_flèche = v₀sinα / g</td><td>vy(t) = 0</td></tr>
+          <tr><td>Temps de vol total</td><td>t_vol = 2·v₀sinα / g</td><td>y(t) = 0</td></tr>
+          <tr><td>Portée</td><td>R = v₀²sin(2α) / g</td><td>Lancer depuis sol</td></tr>
+          <tr><td>Portée maximale</td><td>R_max à α = 45°</td><td>sin(90°) = 1</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode BAC</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Décomposer v₀</strong> en composantes x et y selon l'angle α.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Écrire x(t) et y(t)</strong> selon les formules ci-dessus (ou les retrouver en intégrant a).</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Pour trouver un temps particulier : <strong>poser la condition</strong> (y = 0 pour sol, vy = 0 pour flèche...).</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Injecter t</strong> dans l'autre équation pour trouver x ou y.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
 
     <div class="info-card">
@@ -794,6 +1029,24 @@
       <button class="check-btn" data-chapter="electrique" onclick="toggleComplete(this,'electrique')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('electrique','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('electrique','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-electrique">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">🧠 L'analogie</div>
@@ -869,6 +1122,49 @@
       <button class="check-btn" data-chapter="kepler" onclick="toggleComplete(this,'kepler')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('kepler','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('kepler','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-kepler">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🪐 Les 3 lois de Kepler</div>
+        <div class="definition-box">
+          <div class="def-title">1ère loi — Loi des orbites</div>
+          Chaque planète décrit une <strong>ellipse</strong> dont l'astre attracteur (Soleil) occupe l'un des deux foyers. Le cercle est un cas particulier d'ellipse (les 2 foyers sont confondus).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">2ème loi — Loi des aires</div>
+          Le segment joignant l'astre attracteur à la planète balaie des <strong>aires égales en des temps égaux</strong>. Conséquence : la planète va <em>plus vite au périhélie</em> (point le plus proche) et <em>plus lentement à l'aphélie</em> (point le plus éloigné).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">3ème loi — Loi des périodes (BAC +++)</div>
+          Pour toutes les planètes du même système, le rapport T²/a³ est une <strong>constante</strong> qui ne dépend que de l'astre attracteur.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">3ème loi de Kepler</span>T² / a³ = 4π² / (G·M) = constante</div>
+        <div class="cours-text"><p>G = 6,674×10⁻¹¹ N·m²·kg⁻² (constante gravitationnelle). M = masse de l'astre attracteur.</p></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🛸 Satellite en orbite circulaire</div>
+        <div class="cours-text"><p>Pour une orbite <strong>circulaire</strong> de rayon R, on applique Newton : la gravitation fournit l'accélération centripète.</p></div>
+        <div class="formula-box phys"><span class="formula-label">Équilibre gravitationnel / centripète</span>G·M·m/R² = m·v²/R &nbsp;→&nbsp; v = √(G·M/R)</div>
+        <div class="formula-box phys"><span class="formula-label">Période (v = 2πR/T)</span>T = 2πR / v = 2π√(R³/GM)</div>
+        <table class="data-table">
+          <tr><th>Grandeur</th><th>Formule</th></tr>
+          <tr><td>Vitesse orbitale</td><td>v = √(GM/R)</td></tr>
+          <tr><td>Période</td><td>T = 2π√(R³/GM)</td></tr>
+          <tr><td>Altitude h</td><td>R = R_Terre + h</td></tr>
+          <tr><td>Satellite géostationnaire</td><td>T = 24h, orbite équatoriale</td></tr>
+        </table>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>R est la distance au <strong>centre</strong> de la Terre, pas à sa surface ! R = R_Terre + altitude. R_Terre = 6 370 km.</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">📐 Les 3 lois de Kepler</div>
@@ -959,6 +1255,24 @@
       <button class="check-btn" data-chapter="son" onclick="toggleComplete(this,'son')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('son','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('son','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-son">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
@@ -1026,6 +1340,24 @@
       <button class="check-btn" data-chapter="fluides" onclick="toggleComplete(this,'fluides')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('fluides','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('fluides','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-fluides">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
@@ -1088,6 +1420,24 @@
       <button class="check-btn" data-chapter="diffraction" onclick="toggleComplete(this,'diffraction')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('diffraction','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('diffraction','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-diffraction">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
@@ -1159,6 +1509,24 @@
       <button class="check-btn" data-chapter="interferences" onclick="toggleComplete(this,'interferences')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('interferences','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('interferences','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-interferences">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
@@ -1233,6 +1601,24 @@
       <button class="check-btn" data-chapter="doppler" onclick="toggleComplete(this,'doppler')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('doppler','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('doppler','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-doppler">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
@@ -1305,6 +1691,24 @@
       <button class="check-btn" data-chapter="photon" onclick="toggleComplete(this,'photon')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('photon','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('photon','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-photon">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
@@ -1372,6 +1776,57 @@
       <button class="check-btn" data-chapter="rc" onclick="toggleComplete(this,'rc')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('rc','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('rc','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-rc">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔌 Le condensateur — rappel</div>
+        <div class="definition-box">
+          <div class="def-title">Condensateur</div>
+          Composant qui stocke de l'énergie électrique sous forme de charge. Constitué de 2 armatures conductrices séparées par un isolant. Sa capacité C (en Farads) caractérise sa capacité de stockage. Relation : q = C·u_C.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Intensité dans le condensateur</span>i = C · du_C/dt</div>
+        <div class="cours-text"><p>Cette relation est fondamentale : elle dit que l'intensité est <strong>proportionnelle à la dérivée de la tension</strong> aux bornes du condensateur.</p></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Équation différentielle du circuit RC</div>
+        <div class="cours-text"><p>Circuit RC série avec générateur E. Loi des mailles :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Loi des mailles</span>E = u_R + u_C = R·i + u_C = RC·(du_C/dt) + u_C</div>
+        <div class="formula-box phys"><span class="formula-label">Équation différentielle (charge)</span>du_C/dt + u_C/(RC) = E/(RC)</div>
+        <div class="cours-text"><p>La solution de cette équation différentielle est une <strong>exponentielle</strong>.</p></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⏱️ Constante de temps τ = RC</div>
+        <div class="formula-box phys"><span class="formula-label">Constante de temps</span>τ = R · C &nbsp;&nbsp; (en secondes si R en Ω et C en F)</div>
+        <div class="cours-text"><p>τ représente le temps caractéristique du circuit. Plus τ est grand, plus la charge/décharge est lente.</p></div>
+        <table class="data-table">
+          <tr><th>Instant</th><th>Charge : u_C</th><th>Décharge : u_C</th></tr>
+          <tr><td>t = 0</td><td>0</td><td>E</td></tr>
+          <tr><td>t = τ</td><td>0,63 E</td><td>0,37 E</td></tr>
+          <tr><td>t = 2τ</td><td>0,86 E</td><td>0,14 E</td></tr>
+          <tr><td>t = 5τ</td><td>≈ E (99%)</td><td>≈ 0 (1%)</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📈 Solutions complètes</div>
+        <div class="formula-box phys"><span class="formula-label">CHARGE (condensateur initialement vide)</span>u_C(t) = E · (1 − e^(−t/τ))</div>
+        <div class="formula-box phys"><span class="formula-label">DÉCHARGE (condensateur initialement chargé à E)</span>u_C(t) = E · e^(−t/τ)</div>
+        <div class="formula-box phys"><span class="formula-label">Intensité pendant la charge</span>i(t) = (E/R) · e^(−t/τ)</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Tangente à l'origine :</strong> La tangente à la courbe en t = 0 coupe l'asymptote en t = τ. C'est la méthode graphique pour déterminer τ expérimentalement.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⚡ Énergie stockée</div>
+        <div class="formula-box phys"><span class="formula-label">Énergie dans le condensateur</span>E_c = ½ · C · u_C²</div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
@@ -1487,6 +1942,24 @@
       <button class="check-btn" data-chapter="transferts" onclick="toggleComplete(this,'transferts')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('transferts','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('transferts','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-transferts">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--phys)">📐 Les 3 modes + formules</div>
@@ -1556,6 +2029,58 @@
       <button class="check-btn" data-chapter="acidebase" onclick="toggleComplete(this,'acidebase')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('acidebase','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('acidebase','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-acidebase">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🍋 Définitions — Modèle de Brønsted</div>
+        <div class="definition-box">
+          <div class="def-title">Acide de Brønsted</div>
+          Espèce chimique capable de <strong>céder un proton H⁺</strong> à une autre espèce. Exemple : CH₃COOH → CH₃COO⁻ + H⁺.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Base de Brønsted</div>
+          Espèce chimique capable de <strong>capter un proton H⁺</strong>. Exemple : NH₃ + H⁺ → NH₄⁺.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Couple acide/base conjugués</div>
+          Acide HA et sa base conjuguée A⁻ liés par : HA ⇌ A⁻ + H⁺. Exemples : CH₃COOH/CH₃COO⁻, NH₄⁺/NH₃, H₂O/HO⁻, H₃O⁺/H₂O.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 pH et concentration</div>
+        <div class="formula-box chem"><span class="formula-label">Définition du pH</span>pH = −log([H₃O⁺]/C°) ≈ −log[H₃O⁺] &nbsp;&nbsp; (C° = 1 mol/L)</div>
+        <div class="formula-box chem"><span class="formula-label">Retrouver [H₃O⁺]</span>[H₃O⁺] = 10^(−pH)</div>
+        <div class="formula-box chem"><span class="formula-label">Produit ionique de l'eau (25°C)</span>Ke = [H₃O⁺] · [HO⁻] = 10⁻¹⁴ &nbsp;&nbsp; pKe = 14</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>Le pKe dépend de la température ! À 25°C → pKe = 14. À 37°C (corps humain) → pKe ≈ 13,6. Utiliser la valeur donnée dans l'énoncé.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚗️ Réaction acide-base</div>
+        <div class="cours-text"><p>Une réaction acide-base est un <strong>transfert de proton H⁺</strong> de l'acide vers la base. On combine 2 couples :</p></div>
+        <div class="formula-box chem"><span class="formula-label">Méthode des couples</span>Couple 1 : HA₁ / A₁⁻ &nbsp;&nbsp; Couple 2 : HA₂ / A₂⁻<br/>Réaction : HA₁ + A₂⁻ ⇌ A₁⁻ + HA₂</div>
+        <div class="cours-text">
+          <p><strong>Sens de la réaction :</strong> L'acide le plus fort réagit avec la base la plus forte. L'acide de pKa le plus faible est le plus fort.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🧮 Calcul de pH selon le type d'acide</div>
+        <table class="data-table">
+          <tr><th>Type</th><th>Formule pH</th><th>Condition</th></tr>
+          <tr><td>Acide fort (HCl, HNO₃...)</td><td>pH = −log C</td><td>Dissociation totale</td></tr>
+          <tr><td>Base forte (NaOH...)</td><td>pH = 14 + log C</td><td>Dissociation totale</td></tr>
+          <tr><td>Acide faible</td><td>pH = ½(pKa − log C)</td><td>Dissociation partielle</td></tr>
+          <tr><td>Base faible</td><td>pH = 14 − ½(pKe − pKa − log C)</td><td>Dissociation partielle</td></tr>
+        </table>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 L'essentiel en 3 phrases</div>
@@ -1660,6 +2185,24 @@
       <button class="check-btn" data-chapter="forceacide" onclick="toggleComplete(this,'forceacide')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('forceacide','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('forceacide','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-forceacide">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 La règle simple</div>
@@ -1739,6 +2282,24 @@
       <button class="check-btn" data-chapter="titragecolor" onclick="toggleComplete(this,'titragecolor')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('titragecolor','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('titragecolor','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-titragecolor">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 Le principe en 1 image</div>
@@ -1834,6 +2395,24 @@
       <button class="check-btn" data-chapter="titrageconduct" onclick="toggleComplete(this,'titrageconduct')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('titrageconduct','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('titrageconduct','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-titrageconduct">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 Le principe</div>
@@ -1903,6 +2482,24 @@
       <button class="check-btn" data-chapter="titragepm" onclick="toggleComplete(this,'titragepm')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('titragepm','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('titragepm','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-titragepm">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">📐 Formules + méthodes</div>
@@ -1962,6 +2559,24 @@
       <button class="check-btn" data-chapter="spectro" onclick="toggleComplete(this,'spectro')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('spectro','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('spectro','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-spectro">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 Les 2 types de spectroscopie</div>
@@ -2069,6 +2684,24 @@
       <button class="check-btn" data-chapter="beerlam" onclick="toggleComplete(this,'beerlam')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('beerlam','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('beerlam','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-beerlam">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 Le principe</div>
@@ -2141,6 +2774,24 @@
       <button class="check-btn" data-chapter="conduct" onclick="toggleComplete(this,'conduct')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('conduct','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('conduct','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-conduct">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
@@ -2198,6 +2849,50 @@
       <button class="check-btn" data-chapter="cinetique" onclick="toggleComplete(this,'cinetique')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('cinetique','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('cinetique','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-cinetique">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⏱️ Vitesse de réaction</div>
+        <div class="definition-box">
+          <div class="def-title">Vitesse volumique de réaction</div>
+          Mesure la rapidité d'évolution d'une réaction. Elle est toujours <strong>positive</strong> et diminue au cours du temps (les réactifs se consomment).
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Vitesse de disparition d'un réactif A</span>v_disp(A) = −d[A]/dt = −Δ[A]/Δt &nbsp;&nbsp; (mol·L⁻¹·s⁻¹)</div>
+        <div class="formula-box chem"><span class="formula-label">Vitesse d'apparition d'un produit P</span>v_app(P) = d[P]/dt = Δ[P]/Δt</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Graphiquement, la vitesse = <strong>pente de la tangente</strong> à la courbe [A] = f(t) (en valeur absolue pour la disparition).</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔢 Loi de vitesse et ordre</div>
+        <div class="definition-box">
+          <div class="def-title">Loi de vitesse (ordre 1 — BAC)</div>
+          v = k·[A] → la vitesse est proportionnelle à la concentration du réactif. k = constante de vitesse (s⁻¹).
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Concentration ordre 1</span>[A](t) = [A]₀ · e^(−k·t)</div>
+        <div class="formula-box chem"><span class="formula-label">Forme linéarisée (BAC graphique)</span>ln[A](t) = ln[A]₀ − k·t &nbsp;&nbsp; (droite de pente −k)</div>
+        <div class="formula-box chem"><span class="formula-label">Temps de demi-réaction</span>t₁/₂ = ln 2 / k ≈ 0,693 / k</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Propriété clé ordre 1 :</strong> t₁/₂ est <em>indépendant</em> de [A]₀. Si t₁/₂ est constant quelle que soit la concentration initiale → ordre 1 confirmé.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🌡️ Facteurs cinétiques</div>
+        <table class="data-table">
+          <tr><th>Facteur</th><th>Effet sur la vitesse</th><th>Explication</th></tr>
+          <tr><td>↑ Température</td><td>Accélère</td><td>Plus de chocs efficaces (loi d'Arrhénius)</td></tr>
+          <tr><td>↑ Concentration</td><td>Accélère</td><td>Plus de chocs entre réactifs</td></tr>
+          <tr><td>Catalyseur</td><td>Accélère (sans être consommé)</td><td>Abaisse l'énergie d'activation</td></tr>
+          <tr><td>Lumière (photochimie)</td><td>Peut initier/accélérer</td><td>Apporte l'énergie d'activation</td></tr>
+          <tr><td>État de division (solides)</td><td>Accélère si finement divisé</td><td>↑ surface de contact</td></tr>
+        </table>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
@@ -2265,6 +2960,24 @@
       <button class="check-btn" data-chapter="equilibre" onclick="toggleComplete(this,'equilibre')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('equilibre','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('equilibre','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-equilibre">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
@@ -2332,6 +3045,24 @@
       <button class="check-btn" data-chapter="organique" onclick="toggleComplete(this,'organique')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('organique','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('organique','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-organique">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">📐 Tableau des groupes fonctionnels (à mémoriser)</div>
@@ -2407,6 +3138,24 @@
       <button class="check-btn" data-chapter="synthese" onclick="toggleComplete(this,'synthese')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('synthese','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('synthese','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-synthese">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
@@ -2470,6 +3219,24 @@
       <button class="check-btn" data-chapter="mecanismes" onclick="toggleComplete(this,'mecanismes')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('mecanismes','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('mecanismes','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-mecanismes">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 Les règles d'or</div>
@@ -2525,6 +3292,24 @@
       <button class="check-btn" data-chapter="electrolyse" onclick="toggleComplete(this,'electrolyse')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('electrolyse','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('electrolyse','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-electrolyse">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 Anode vs Cathode — le moyen mnémotechnique</div>
@@ -2595,6 +3380,24 @@
       <button class="check-btn" data-chapter="piles" onclick="toggleComplete(this,'piles')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('piles','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('piles','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-piles">
+      <div class="cours-section">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">📖</span>
+          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">🧠 Pile vs Électrolyse</div>
@@ -2663,6 +3466,70 @@
       <button class="check-btn" data-chapter="nucleaire" onclick="toggleComplete(this,'nucleaire')">☐ Marquer comme appris</button>
     </div>
   </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('nucleaire','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('nucleaire','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-nucleaire">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">☢️ Structure du noyau atomique</div>
+        <div class="definition-box">
+          <div class="def-title">Notation du noyau</div>
+          ᴬ_Z X où A = nombre de masse (protons + neutrons) et Z = numéro atomique (protons). Le nombre de neutrons N = A − Z.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Isotopes</div>
+          Noyaux d'un même élément (même Z) mais avec un nombre de neutrons différent. Exemple : ¹²C, ¹³C, ¹⁴C sont tous des isotopes du carbone.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Les 4 types de désintégration</div>
+        <div class="definition-box">
+          <div class="def-title">Désintégration α</div>
+          Émission d'un noyau d'hélium ⁴₂He. Le noyau perd 4 nucléons (A−4) et 2 protons (Z−2). Pouvoir pénétrant faible (stoppé par une feuille de papier).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Désintégration β⁻</div>
+          Émission d'un électron ⁰₋₁e (et un antineutrino). Un neutron se transforme en proton : Z+1, A inchangé. Pouvoir pénétrant moyen.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Désintégration β⁺</div>
+          Émission d'un positron ⁰₊₁e (et un neutrino). Un proton se transforme en neutron : Z−1, A inchangé.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Émission γ</div>
+          Émission d'un photon γ très énergétique. Ni A ni Z ne changent. Accompagne souvent α ou β. Pouvoir pénétrant très élevé (nécessite du plomb pour s'en protéger).
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Loi de conservation de Soddy :</strong> La somme des A est conservée ET la somme des Z est conservée des deux côtés de l'équation. C'est la méthode pour trouver le noyau fils.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📉 Loi de désintégration radioactive</div>
+        <div class="cours-text"><p>La désintégration est un phénomène <strong>aléatoire et statistique</strong>. La loi est une décroissance exponentielle :</p></div>
+        <div class="formula-box chem"><span class="formula-label">Nombre de noyaux restants</span>N(t) = N₀ · e^(−λ·t)</div>
+        <div class="formula-box chem"><span class="formula-label">Activité (désintégrations/seconde)</span>A(t) = λ · N(t) = A₀ · e^(−λ·t) &nbsp;&nbsp; (Becquerels)</div>
+        <div class="formula-box chem"><span class="formula-label">Constante radioactive λ</span>λ = ln 2 / t₁/₂ &nbsp;&nbsp; (s⁻¹)</div>
+        <div class="formula-box chem"><span class="formula-label">Demi-vie t₁/₂</span>t₁/₂ = ln 2 / λ ≈ 0,693 / λ</div>
+        <table class="data-table">
+          <tr><th>Isotope</th><th>t₁/₂</th><th>Application</th></tr>
+          <tr><td>Carbone-14</td><td>5 730 ans</td><td>Datation archéologique</td></tr>
+          <tr><td>Uranium-238</td><td>4,5 milliards d'ans</td><td>Datation géologique</td></tr>
+          <tr><td>Iode-131</td><td>8 jours</td><td>Médecine nucléaire</td></tr>
+          <tr><td>Technétium-99m</td><td>6 heures</td><td>Imagerie médicale</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Énergie nucléaire</div>
+        <div class="formula-box chem"><span class="formula-label">Défaut de masse</span>Δm = Z·m_p + N·m_n − m_noyau</div>
+        <div class="formula-box chem"><span class="formula-label">Énergie de liaison (Einstein)</span>E_liais = Δm · c² &nbsp;&nbsp; c = 3×10⁸ m/s</div>
+        <div class="cours-text"><p>La fission (uranium → fragments) et la fusion (deutérium + tritium → hélium) libèrent de l'énergie car les produits ont une masse totale plus faible que les réactifs.</p></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
   <div class="content-layout">
     <div class="info-card">
       <div class="info-card-header" style="color:var(--chem)">📐 Les 4 types de désintégration</div>
