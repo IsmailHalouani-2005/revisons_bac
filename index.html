@@ -1,0 +1,2756 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Physique-Chimie — Révisions</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+<!-- PROGRESS BAR (reading) -->
+<div class="progress-bar-wrap" style="display:none">
+  <div class="progress-bar-fill" id="readProgress"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a class="nav-logo" onclick="showHome()" style="cursor:pointer">
+    <span>⚗️</span> BAC Phys-Chimie
+  </a>
+  <div class="nav-links">
+    <!-- PHYSIQUE -->
+    <button class="nav-pill" data-id="thermodynamique" onclick="showChapter('thermodynamique','phys')">🌡️ Thermo</button>
+    <button class="nav-pill" data-id="newton" onclick="showChapter('newton','phys')">⚙️ Newton</button>
+    <button class="nav-pill" data-id="pesanteur" onclick="showChapter('pesanteur','phys')">🪂 Pesanteur</button>
+    <button class="nav-pill" data-id="electrique" onclick="showChapter('electrique','phys')">⚡ Champ élec.</button>
+    <button class="nav-pill" data-id="kepler" onclick="showChapter('kepler','phys')">🪐 Kepler</button>
+    <button class="nav-pill" data-id="son" onclick="showChapter('son','phys')">🔊 Son</button>
+    <button class="nav-pill" data-id="fluides" onclick="showChapter('fluides','phys')">💧 Fluides</button>
+    <button class="nav-pill" data-id="diffraction" onclick="showChapter('diffraction','phys')">🔦 Diffraction</button>
+    <button class="nav-pill" data-id="interferences" onclick="showChapter('interferences','phys')">🌈 Interfér.</button>
+    <button class="nav-pill" data-id="doppler" onclick="showChapter('doppler','phys')">🚑 Doppler</button>
+    <button class="nav-pill" data-id="photon" onclick="showChapter('photon','phys')">💡 Photon</button>
+    <button class="nav-pill" data-id="rc" onclick="showChapter('rc','phys')">🔋 Circuit RC</button>
+    <button class="nav-pill" data-id="transferts" onclick="showChapter('transferts','phys')">🌡 Transferts</button>
+    <!-- CHIMIE -->
+    <button class="nav-pill" data-id="acidebase" onclick="showChapter('acidebase','chem')">🍋 Acide-Base</button>
+    <button class="nav-pill" data-id="forceacide" onclick="showChapter('forceacide','chem')">⚖️ Force acides</button>
+    <button class="nav-pill" data-id="titragecolor" onclick="showChapter('titragecolor','chem')">🎨 Titrage color.</button>
+    <button class="nav-pill" data-id="titrageconduct" onclick="showChapter('titrageconduct','chem')">📊 Titrage conduct.</button>
+    <button class="nav-pill" data-id="titragepm" onclick="showChapter('titragepm','chem')">📈 Titrage pH</button>
+    <button class="nav-pill" data-id="spectro" onclick="showChapter('spectro','chem')">🔬 Spectro</button>
+    <button class="nav-pill" data-id="beerlam" onclick="showChapter('beerlam','chem')">📉 Beer-Lambert</button>
+    <button class="nav-pill" data-id="conduct" onclick="showChapter('conduct','chem')">⚡ Conductimétrie</button>
+    <button class="nav-pill" data-id="cinetique" onclick="showChapter('cinetique','chem')">⏱️ Cinétique</button>
+    <button class="nav-pill" data-id="equilibre" onclick="showChapter('equilibre','chem')">⚖️ Équilibre</button>
+    <button class="nav-pill" data-id="organique" onclick="showChapter('organique','chem')">🌿 Molécules org.</button>
+    <button class="nav-pill" data-id="synthese" onclick="showChapter('synthese','chem')">🧪 Synthèse org.</button>
+    <button class="nav-pill" data-id="mecanismes" onclick="showChapter('mecanismes','chem')">🔧 Mécanismes</button>
+    <button class="nav-pill" data-id="electrolyse" onclick="showChapter('electrolyse','chem')">⚡ Électrolyse</button>
+    <button class="nav-pill" data-id="piles" onclick="showChapter('piles','chem')">🔋 Piles</button>
+    <button class="nav-pill" data-id="nucleaire" onclick="showChapter('nucleaire','chem')">☢️ Nucléaire</button>
+  </div>
+</nav>
+
+<!-- =================== HOME PAGE =================== -->
+<div id="home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">🎯 Révisions BAC — Terminale</div>
+    <h1>Physique-Chimie<br/>en 2 jours chrono</h1>
+    <p>Toutes les fiches, formules, schémas et exercices type BAC pour décrocher la moyenne. Simple. Clair. Efficace.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">29</div><div class="lbl">Chapitres</div></div>
+      <div class="hero-stat"><div class="num stat-progress">0%</div><div class="lbl">Maîtrisés</div></div>
+      <div class="hero-stat"><div class="num">🔥</div><div class="lbl">Mode Urgence</div></div>
+    </div>
+  </section>
+
+  <!-- PHYSIQUE -->
+  <div class="section-header">
+    <span class="section-badge badge-phys">⚙️ PHYSIQUE</span>
+    <span class="section-title">Mécanique, Ondes & Énergie</span>
+    <span class="section-sub">13 chapitres</span>
+  </div>
+
+  <div class="chapters-grid">
+    <a class="chapter-card phys" data-id="thermodynamique" onclick="showChapter('thermodynamique','phys')">
+      <div class="card-icon">🌡️</div>
+      <div class="card-num">PHYSIQUE • 01</div>
+      <div class="card-title">1er Principe de la Thermodynamique</div>
+      <div class="card-desc">ΔU = W + Q, gaz parfait, capacité thermique. Les bases de l'énergie interne.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Formules</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="newton" onclick="showChapter('newton','phys')">
+      <div class="card-icon">⚙️</div>
+      <div class="card-num">PHYSIQUE • 02</div>
+      <div class="card-title">2ème Loi de Newton & Mouvement</div>
+      <div class="card-desc">ΣF = ma, trajectoires, repère de Frenet. Comprendre le mouvement en 1 fiche.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Calcul</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="pesanteur" onclick="showChapter('pesanteur','phys')">
+      <div class="card-icon">🪂</div>
+      <div class="card-num">PHYSIQUE • 03</div>
+      <div class="card-title">Mouvement dans le Champ de Pesanteur</div>
+      <div class="card-desc">Chute libre, tir parabolique, équations du mouvement. Trajectoire en parabole.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Schéma</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="electrique" onclick="showChapter('electrique','phys')">
+      <div class="card-icon">⚡</div>
+      <div class="card-num">PHYSIQUE • 04</div>
+      <div class="card-title">Mouvement dans un Champ Électrique</div>
+      <div class="card-desc">Condensateur plan, force de Coulomb, mouvement parabolique chargé.</div>
+      <div class="card-tags"><span class="tag">Moyen BAC</span><span class="tag">Formules</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="kepler" onclick="showChapter('kepler','phys')">
+      <div class="card-icon">🪐</div>
+      <div class="card-num">PHYSIQUE • 05</div>
+      <div class="card-title">Satellites & Lois de Kepler</div>
+      <div class="card-desc">Les 3 lois de Kepler, orbite circulaire, vitesse satellite. T²/a³ = k.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Calcul</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="son" onclick="showChapter('son','phys')">
+      <div class="card-icon">🔊</div>
+      <div class="card-num">PHYSIQUE • 06</div>
+      <div class="card-title">Intensité Sonore</div>
+      <div class="card-desc">L = 10·log(I/I₀), décibels, atténuation. Tout sur le son en quelques formules.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Logarithme</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="fluides" onclick="showChapter('fluides','phys')">
+      <div class="card-icon">💧</div>
+      <div class="card-num">PHYSIQUE • 07</div>
+      <div class="card-title">Dynamique des Fluides</div>
+      <div class="card-desc">Bernoulli, débit volumique, poussée d'Archimède. Écoulement des liquides.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Schéma</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="diffraction" onclick="showChapter('diffraction','phys')">
+      <div class="card-icon">🔦</div>
+      <div class="card-num">PHYSIQUE • 08</div>
+      <div class="card-title">Diffraction</div>
+      <div class="card-desc">θ = λ/a, tache centrale, fente de Young. Déviation de la lumière.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Schéma</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="interferences" onclick="showChapter('interferences','phys')">
+      <div class="card-icon">🌈</div>
+      <div class="card-num">PHYSIQUE • 09</div>
+      <div class="card-title">Interférences</div>
+      <div class="card-desc">Fentes de Young, interfrange i = λD/a, différence de marche.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Schéma</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="doppler" onclick="showChapter('doppler','phys')">
+      <div class="card-icon">🚑</div>
+      <div class="card-num">PHYSIQUE • 10</div>
+      <div class="card-title">Effet Doppler</div>
+      <div class="card-desc">Décalage fréquence, redshift / blueshift. Ambulance, radar, astronomie.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Formules</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="photon" onclick="showChapter('photon','phys')">
+      <div class="card-icon">💡</div>
+      <div class="card-num">PHYSIQUE • 11</div>
+      <div class="card-title">Lumière & Effet Photoélectrique</div>
+      <div class="card-desc">E = hν = hc/λ, éjection d'électrons, diagrammes d'énergie.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Quantique</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="rc" onclick="showChapter('rc','phys')">
+      <div class="card-icon">🔌</div>
+      <div class="card-num">PHYSIQUE • 12</div>
+      <div class="card-title">Circuit RC</div>
+      <div class="card-desc">Charge/décharge condensateur, τ = RC, équation différentielle.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Graphe</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card phys" data-id="transferts" onclick="showChapter('transferts','phys')">
+      <div class="card-icon">🌡</div>
+      <div class="card-num">PHYSIQUE • 13</div>
+      <div class="card-title">Transferts Thermiques</div>
+      <div class="card-desc">Conduction, convection, rayonnement. Loi de Newton, Stefan-Boltzmann.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Équa. diff.</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+  </div>
+
+  <!-- CHIMIE -->
+  <div class="section-header">
+    <span class="section-badge badge-chem">⚗️ CHIMIE</span>
+    <span class="section-title">Solutions, Réactions & Molécules</span>
+    <span class="section-sub">16 chapitres</span>
+  </div>
+
+  <div class="chapters-grid">
+    <a class="chapter-card chem" data-id="acidebase" onclick="showChapter('acidebase','chem')">
+      <div class="card-icon">🍋</div>
+      <div class="card-num">CHIMIE • 01</div>
+      <div class="card-title">Transformation Acide-Base</div>
+      <div class="card-desc">pH, couples acide/base, réaction de transfert de proton H⁺. Les bases du chapitre.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">pH</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="forceacide" onclick="showChapter('forceacide','chem')">
+      <div class="card-icon">⚖️</div>
+      <div class="card-num">CHIMIE • 02</div>
+      <div class="card-title">Force des Acides et des Bases</div>
+      <div class="card-desc">Ka, pKa, acides forts vs faibles, solution tampon. Classer les acides.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Ka pKa</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="titragecolor" onclick="showChapter('titragecolor','chem')">
+      <div class="card-icon">🎨</div>
+      <div class="card-num">CHIMIE • 03</div>
+      <div class="card-title">Titrage Coloriмétrique</div>
+      <div class="card-desc">Changement de couleur à l'équivalence, indicateurs colorés. Méthode de titrage.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">TP</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="titrageconduct" onclick="showChapter('titrageconduct','chem')">
+      <div class="card-icon">📊</div>
+      <div class="card-num">CHIMIE • 04</div>
+      <div class="card-title">Titrage Conductimétrique</div>
+      <div class="card-desc">Courbe de conductivité, équivalence = rupture de pente. Ions en jeu.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Graphe</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="titragepm" onclick="showChapter('titragepm','chem')">
+      <div class="card-icon">📈</div>
+      <div class="card-num">CHIMIE • 05</div>
+      <div class="card-title">Titrage pH-métrique</div>
+      <div class="card-desc">Courbe pH = f(V), saut de pH, méthode des tangentes parallèles.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Graphe</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="spectro" onclick="showChapter('spectro','chem')">
+      <div class="card-icon">🔬</div>
+      <div class="card-num">CHIMIE • 06</div>
+      <div class="card-title">Spectroscopie UV-Vis & IR</div>
+      <div class="card-desc">Identifier des molécules par spectre. Cercle chromatique, bandes IR.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Tableaux</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="beerlam" onclick="showChapter('beerlam','chem')">
+      <div class="card-icon">📉</div>
+      <div class="card-num">CHIMIE • 07</div>
+      <div class="card-title">Loi de Beer-Lambert</div>
+      <div class="card-desc">A = k·[X], courbe d'étalonnage. Trouver une concentration par absorbance.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Graphe</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="conduct" onclick="showChapter('conduct','chem')">
+      <div class="card-icon">⚡</div>
+      <div class="card-num">CHIMIE • 08</div>
+      <div class="card-title">Conductimétrie</div>
+      <div class="card-desc">σ = k·C, conductivité molaire ionique. Loi de Kohlrausch.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Graphe</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="cinetique" onclick="showChapter('cinetique','chem')">
+      <div class="card-icon">⏱️</div>
+      <div class="card-num">CHIMIE • 09</div>
+      <div class="card-title">Cinétique Chimique</div>
+      <div class="card-desc">Vitesse de réaction, ordre 1, t₁/₂, facteurs cinétiques. Réaction rapide ou lente.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Graphe</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="equilibre" onclick="showChapter('equilibre','chem')">
+      <div class="card-icon">⚖️</div>
+      <div class="card-num">CHIMIE • 10</div>
+      <div class="card-title">Constante d'Équilibre</div>
+      <div class="card-desc">K, Qr, sens d'évolution, taux d'avancement τ. Total vs équilibré.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Tableau</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="organique" onclick="showChapter('organique','chem')">
+      <div class="card-icon">🌿</div>
+      <div class="card-num">CHIMIE • 11</div>
+      <div class="card-title">Structure des Molécules Organiques</div>
+      <div class="card-desc">Groupes fonctionnels, nomenclature, isomérie. Identifier et nommer les familles.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Tableau</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="synthese" onclick="showChapter('synthese','chem')">
+      <div class="card-icon">🧪</div>
+      <div class="card-num">CHIMIE • 12</div>
+      <div class="card-title">Synthèse Organique</div>
+      <div class="card-desc">Rendement, types de réactions (addition, élimination, substitution), chimie verte.</div>
+      <div class="card-tags"><span class="tag">Fréquent BAC</span><span class="tag">Calcul</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="mecanismes" onclick="showChapter('mecanismes','chem')">
+      <div class="card-icon">🔧</div>
+      <div class="card-num">CHIMIE • 13</div>
+      <div class="card-title">Mécanismes Réactionnels</div>
+      <div class="card-desc">Sites donneurs/accepteurs, flèches courbes, intermédiaires. Chimie organique avancée.</div>
+      <div class="card-tags"><span class="tag">Difficile BAC</span><span class="tag">Flèches</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="electrolyse" onclick="showChapter('electrolyse','chem')">
+      <div class="card-icon">⚡</div>
+      <div class="card-num">CHIMIE • 14</div>
+      <div class="card-title">Électrolyse</div>
+      <div class="card-desc">Transformation forcée, anode/cathode, Q = n(e⁻)·F. Electrodépôt.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Calcul</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="piles" onclick="showChapter('piles','chem')">
+      <div class="card-icon">🔋</div>
+      <div class="card-num">CHIMIE • 15</div>
+      <div class="card-title">Piles Électrochimiques</div>
+      <div class="card-desc">Transfert spontané d'électrons, oxydoréduction, durée de vie pile.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Schéma</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+    <a class="chapter-card chem" data-id="nucleaire" onclick="showChapter('nucleaire','chem')">
+      <div class="card-icon">☢️</div>
+      <div class="card-num">CHIMIE • 16</div>
+      <div class="card-title">Transformations Nucléaires</div>
+      <div class="card-desc">Radioactivité α β γ, loi de désintégration, demi-vie t₁/₂. Loi de Soddy.</div>
+      <div class="card-tags"><span class="tag hot">🔥 Très fréquent BAC</span><span class="tag">Exponentielle</span></div>
+      <span class="card-arrow">→</span>
+    </a>
+  </div>
+
+  <footer>Fait avec ❤️ pour ton BAC · Bonne chance 🍀 · Tous les chapitres sont basés sur le programme officiel Terminale</footer>
+</div>
+
+<!-- =================== CHAPITRE: THERMODYNAMIQUE =================== -->
+<div id="ch-thermodynamique" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🌡️ 1er Principe de la Thermodynamique</h1>
+    <p>Le bilan d'énergie d'un système. Comprendre W, Q et ΔU en 10 minutes.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;flex-wrap:wrap;">
+      <button class="check-btn" data-chapter="thermodynamique" onclick="toggleComplete(this,'thermodynamique')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+
+    <!-- ANALOGIE -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'analogie pour tout comprendre</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Imagine un frigo :</strong> L'énergie interne U c'est le "stock d'énergie" du système. W c'est le travail (le moteur du frigo travaille). Q c'est la chaleur échangée (le frigo refroidit à l'intérieur = perd de la chaleur).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULES CLÉS -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Les formules à retenir ABSOLUMENT</div>
+      <div class="info-card-body">
+
+        <div class="formula-box phys">
+          <span class="formula-label">1er principe général</span>
+          ΔE = ΔEc + ΔEp + ΔU = W + Q
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Système au repos (BAC +++)</span>
+          ΔU = W + Q
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Système incompressible sans travail</span>
+          ΔU = Q = m·c·ΔT
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Gaz parfait</span>
+          p·V = n·R·T
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Capacité thermique</span>
+          C = m·c &nbsp;(en J·K⁻¹)
+        </div>
+
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Pièges BAC :</strong> W > 0 si le milieu extérieur donne du travail au système. Q > 0 si le système reçoit de l'énergie. T en KELVIN pour les gaz (T = θ°C + 273,15)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHÉMA -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Schéma bilan énergétique</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 500 200" width="100%" style="max-width:500px">
+            <defs>
+              <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#4f8ef7"/>
+              </marker>
+              <marker id="arr-red" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#f76f6f"/>
+              </marker>
+              <marker id="arr-green" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#3ecf8e"/>
+              </marker>
+            </defs>
+            <!-- System box -->
+            <rect x="175" y="60" width="150" height="80" rx="12" fill="#1e2535" stroke="#4f8ef7" stroke-width="2"/>
+            <text x="250" y="96" text-anchor="middle" fill="#e8eaf6" font-size="13" font-weight="bold" font-family="Space Grotesk">Système</text>
+            <text x="250" y="114" text-anchor="middle" fill="#8892b0" font-size="11">Énergie interne U</text>
+            <!-- W arrow in -->
+            <line x1="60" y1="100" x2="170" y2="100" stroke="#4f8ef7" stroke-width="2.5" marker-end="url(#arr)"/>
+            <text x="105" y="88" text-anchor="middle" fill="#4f8ef7" font-size="13" font-weight="bold" font-family="Space Grotesk">W &gt; 0</text>
+            <text x="105" y="120" text-anchor="middle" fill="#8892b0" font-size="10">travail reçu</text>
+            <!-- Q arrow in -->
+            <line x1="335" y1="100" x2="440" y2="100" stroke="#f76f6f" stroke-width="2.5" marker-end="url(#arr-red)"/>
+            <text x="388" y="88" text-anchor="middle" fill="#f76f6f" font-size="13" font-weight="bold" font-family="Space Grotesk">Q &gt; 0</text>
+            <text x="388" y="120" text-anchor="middle" fill="#8892b0" font-size="10">chaleur reçue</text>
+            <!-- Delta U -->
+            <text x="250" y="170" text-anchor="middle" fill="#3ecf8e" font-size="14" font-weight="bold" font-family="Space Grotesk">ΔU = W + Q</text>
+          </svg>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">➡️</span>
+          <div class="key-text">W et Q <strong>positifs → le système REÇOIT</strong> de l'énergie → U augmente</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">⬅️</span>
+          <div class="key-text">W et Q <strong>négatifs → le système CÈDE</strong> de l'énergie → U diminue</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE RÉSUMÉ -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📋 Tableau récapitulatif</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Situation</th><th>Formule</th><th>Condition</th></tr>
+          <tr><td>Cas général</td><td>ΔE = W + Q</td><td>Toujours valable</td></tr>
+          <tr><td>Au repos (BAC)</td><td>ΔU = W + Q</td><td>ΔEc = ΔEp = 0</td></tr>
+          <tr><td>Sans travail</td><td>ΔU = Q = mcΔT</td><td>W = 0 J</td></tr>
+          <tr><td>Gaz parfait</td><td>pV = nRT</td><td>R = 8,314 J·mol⁻¹·K⁻¹</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- EXERCICES -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Chauffage d'un café</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              On chauffe 200 g de café (eau, c = 4180 J·kg⁻¹·K⁻¹) de 20°C à 80°C dans un four à micro-ondes (W = 0 J).<br/>
+              1. Calculer ΔT en Kelvin.<br/>
+              2. Calculer la variation d'énergie interne ΔU.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1. ΔT :</strong><br/>
+              ΔT = T_finale − T_initiale = (80+273) − (20+273) = 353 − 293 = <strong>60 K</strong><br/><br/>
+              <strong>2. ΔU :</strong><br/>
+              W = 0 donc ΔU = Q = m·c·ΔT<br/>
+              ΔU = 0,200 × 4180 × 60 = <strong>50 160 J ≈ 50,2 kJ</strong><br/><br/>
+              ✅ ΔU > 0 : le café reçoit de l'énergie, sa température augmente. Logique !
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Gaz parfait dans un piston</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un gaz parfait occupe un volume V = 2,0 L à T = 300 K et p = 1,0×10⁵ Pa.<br/>
+              1. Calculer la quantité de matière n. (R = 8,314 J·mol⁻¹·K⁻¹)<br/>
+              2. Le gaz reçoit W = −500 J et Q = +800 J. Calculer ΔU.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1. n = pV/RT</strong><br/>
+              n = (1,0×10⁵ × 2,0×10⁻³) / (8,314 × 300)<br/>
+              n = 200 / 2494 = <strong>0,080 mol</strong><br/><br/>
+              <strong>2. ΔU = W + Q</strong><br/>
+              ΔU = −500 + 800 = <strong>+300 J</strong><br/><br/>
+              ✅ Le système gagne 300 J d'énergie interne malgré le travail fourni par le gaz (W négatif), car la chaleur reçue est plus grande.
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">3</div>
+            <div class="exercise-title">Sujet BAC type — Bilan frigo</div>
+            <span class="exercise-diff diff-hard">Difficile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un réfrigérateur maintient ses aliments à T₁ = 5°C. Il échange avec l'extérieur à T₂ = 25°C. Son moteur fournit W = −120 J par cycle. Le frigo cède Q₂ = +200 J à la pièce.<br/>
+              1. Quel est le signe de Q₁ (chaleur échangée avec les aliments) ?<br/>
+              2. Calculer Q₁ (1er principe, ΔU = 0 sur un cycle complet).<br/>
+              3. Interpréter le résultat.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1. Signe de Q₁ :</strong> Le frigo prélève de la chaleur aux aliments → les aliments cèdent de la chaleur au frigo → <strong>Q₁ > 0 pour le frigo</strong> (il reçoit).<br/><br/>
+              <strong>2. Sur un cycle ΔU = 0 :</strong><br/>
+              ΔU = W + Q₁ + Q₂ = 0<br/>
+              0 = −120 + Q₁ + (−200) &nbsp; [le frigo cède 200 J à la pièce donc Q₂ = −200 J pour le frigo]<br/>
+              Q₁ = 120 + 200 = <strong>+80 J</strong><br/><br/>
+              <strong>3. Interprétation :</strong> Le frigo prélève 80 J aux aliments, le moteur fournit 120 J de travail, et la somme (200 J) est rejetée dans la pièce. C'est le principe du cycle frigorifique ! ✅
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: NEWTON =================== -->
+<div id="ch-newton" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>⚙️ 2ème Loi de Newton & Mouvement</h1>
+    <p>Comprendre et appliquer ΣF = ma dans tous les types de mouvement.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="newton" onclick="toggleComplete(this,'newton')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'analogie simple</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>C'est simple :</strong> Plus tu pousses fort (F grande) et plus l'objet est léger (m petite), plus ça accélère vite. F = ma, c'est tout.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">2ème loi de Newton</span>
+          ΣF_ext = m·a
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Mouvement rectiligne uniforme (a = 0)</span>
+          v(t) = v₀ &nbsp;|&nbsp; x(t) = v₀·t + x₀
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Mouvement uniformément accéléré</span>
+          a = cst &nbsp;|&nbsp; v(t) = a·t + v₀ &nbsp;|&nbsp; x(t) = ½·a·t² + v₀·t + x₀
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Mouvement circulaire uniforme</span>
+          a = v²/R · N̂ &nbsp;(centripète, vers le centre)
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Règle d'or BAC :</strong> Pour passer de l'accélération a(t) à la vitesse v(t), on <strong>intègre</strong> (primitive). Pour passer de v(t) à x(t), on intègre encore. La constante d'intégration = condition initiale (v₀ ou x₀).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Les types de mouvement en un coup d'œil</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Type</th><th>a(t)</th><th>v(t)</th><th>x(t)</th></tr>
+          <tr><td>Rectiligne uniforme</td><td>0</td><td>v₀</td><td>v₀·t + x₀</td></tr>
+          <tr><td>Rectiligne accéléré</td><td>a₀ = cst</td><td>a₀·t + v₀</td><td>½a₀t² + v₀t + x₀</td></tr>
+          <tr><td>Circulaire uniforme</td><td>v²/R (centripète)</td><td>v₀ (cst)</td><td>arc</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Voiture freinant</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une voiture de masse m = 1200 kg roule à v₀ = 20 m/s. Elle freine avec une force F = −6000 N.<br/>
+              1. Calculer l'accélération a.<br/>
+              2. Donner l'équation de v(t).<br/>
+              3. Quand s'arrête-t-elle ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> ΣF = ma → a = F/m = −6000/1200 = <strong>−5 m·s⁻²</strong><br/><br/>
+              <strong>2.</strong> v(t) = a·t + v₀ = <strong>−5t + 20</strong><br/><br/>
+              <strong>3.</strong> v(t) = 0 → −5t + 20 = 0 → t = 20/5 = <strong>4 s</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Satellite en orbite circulaire</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un satellite de masse m = 500 kg orbite à R = 7000 km du centre de la Terre. g = 8,2 m·s⁻².<br/>
+              1. Identifier la seule force appliquée.<br/>
+              2. Appliquer Newton pour trouver v (vitesse orbitale).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> Seule force : poids P = mg (attraction gravitationnelle vers la Terre).<br/><br/>
+              <strong>2.</strong> Newton : P = m·a_centripète<br/>
+              mg = m·v²/R<br/>
+              v² = g·R = 8,2 × 7×10⁶ = 5,74×10⁷<br/>
+              v = √(5,74×10⁷) ≈ <strong>7 577 m·s⁻¹ ≈ 7,6 km/s</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: PESANTEUR =================== -->
+<div id="ch-pesanteur" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🪂 Mouvement dans le Champ de Pesanteur</h1>
+    <p>Chute libre, tir parabolique, portée et flèche. Le chapitre le plus demandé au BAC.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="pesanteur" onclick="toggleComplete(this,'pesanteur')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Lance un ballon en diagonal :</strong> horizontalement, il va à vitesse constante (pas de friction). Verticalement, la gravité le tire vers le bas. Ces deux mouvements sont INDÉPENDANTS. La trajectoire résultante est une parabole.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Équations du mouvement (à connaître par cœur)</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Accélération (seule force = poids)</span>
+          aₓ = 0 &nbsp;&nbsp;&nbsp; aᵧ = −g
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Vitesse (primitive de a)</span>
+          vₓ(t) = v₀·cos α &nbsp;&nbsp;&nbsp; vᵧ(t) = −g·t + v₀·sin α
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Position (primitive de v)</span>
+          x(t) = v₀·cos α · t + x₀ &nbsp;&nbsp;&nbsp; y(t) = −½g·t² + v₀·sin α · t + y₀
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Équation de la trajectoire (y en fonction de x)</span>
+          y(x) = −g·x² / (2·(v₀·cos α)²) + x·tan α
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Si lancé horizontalement (α = 0) :</strong> sin 0 = 0 et cos 0 = 1, donc vₓ = v₀, vᵧ = −gt, x = v₀t, y = −½gt²</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Schéma du tir parabolique</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 500 220" width="100%" style="max-width:500px">
+            <!-- Axes -->
+            <line x1="40" y1="180" x2="470" y2="180" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="40" y1="180" x2="40" y2="20" stroke="#2a3350" stroke-width="1.5"/>
+            <text x="475" y="184" fill="#4a5580" font-size="11">x</text>
+            <text x="35" y="16" fill="#4a5580" font-size="11">y</text>
+            <!-- Trajectory parabola -->
+            <path d="M 40,180 Q 250,30 460,180" stroke="#4f8ef7" stroke-width="2.5" fill="none" stroke-dasharray="0"/>
+            <!-- Launch point -->
+            <circle cx="40" cy="180" r="5" fill="#4f8ef7"/>
+            <!-- v0 vector -->
+            <line x1="40" y1="180" x2="100" y2="140" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arr-green)"/>
+            <text x="65" y="152" fill="#3ecf8e" font-size="11" font-weight="bold">v₀</text>
+            <!-- angle alpha -->
+            <path d="M 80,180 A 40,40 0 0,1 70,157" stroke="#f7c948" stroke-width="1.5" fill="none"/>
+            <text x="88" y="172" fill="#f7c948" font-size="11">α</text>
+            <!-- Peak point -->
+            <circle cx="250" cy="30" r="4" fill="#f7c948"/>
+            <text x="257" y="26" fill="#f7c948" font-size="10">Flèche (alt. max)</text>
+            <line x1="250" y1="30" x2="250" y2="180" stroke="#f7c948" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Portée -->
+            <line x1="40" y1="195" x2="460" y2="195" stroke="#a259f7" stroke-width="1.5"/>
+            <text x="230" y="210" fill="#a259f7" font-size="11" text-anchor="middle">Portée</text>
+            <!-- Labels vx vy -->
+            <text x="160" y="90" fill="#8892b0" font-size="10">vₓ = cst</text>
+            <text x="350" y="90" fill="#8892b0" font-size="10">vᵧ ↓ gravité</text>
+          </svg>
+        </div>
+        <table class="data-table">
+          <tr><th>Quantité</th><th>Formule</th></tr>
+          <tr><td>Flèche (alt. max)</td><td>y_max = v₀²·sin²α / (2g)</td></tr>
+          <tr><td>Temps à la flèche</td><td>t_flèche = v₀·sin α / g</td></tr>
+          <tr><td>Portée</td><td>Chercher t tel que y(t) = 0, puis x(t)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Bille lancée horizontalement</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une bille est lancée horizontalement depuis une table (hauteur h = 1,25 m) avec v₀ = 3 m/s. g = 10 m/s².<br/>
+              1. Écrire x(t) et y(t) (origine = bord de la table).<br/>
+              2. Quand touche-t-elle le sol ?<br/>
+              3. Quelle est la portée horizontale ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> α = 0 → x(t) = 3t &nbsp;|&nbsp; y(t) = −½×10×t² + 0 = −5t²<br/>
+              (y₀ = 0 car on prend le bord de la table comme origine, le sol est à y = −1,25 m)<br/><br/>
+              <strong>2.</strong> y(t) = −1,25 m → −5t² = −1,25 → t² = 0,25 → <strong>t = 0,5 s</strong><br/><br/>
+              <strong>3.</strong> x = 3 × 0,5 = <strong>1,5 m</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Tir oblique (BAC classique)</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un ballon est lancé avec v₀ = 15 m/s à α = 30° depuis le sol. g = 10 m/s².<br/>
+              1. Exprimer x(t) et y(t). (cos 30° ≈ 0,866 ; sin 30° = 0,5)<br/>
+              2. Calculer la hauteur maximale.<br/>
+              3. Calculer la portée (quand y revient à 0).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> x(t) = 15×0,866×t = 13t &nbsp;|&nbsp; y(t) = −5t² + 15×0,5×t = −5t² + 7,5t<br/><br/>
+              <strong>2. Hauteur max :</strong> vᵧ = 0 → −10t + 7,5 = 0 → t = 0,75 s<br/>
+              y_max = −5×(0,75)² + 7,5×0,75 = −2,81 + 5,63 = <strong>2,81 m</strong><br/><br/>
+              <strong>3. Portée :</strong> y = 0 → t(−5t + 7,5) = 0 → t = 1,5 s<br/>
+              x = 13 × 1,5 = <strong>19,5 m</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: CHAMP ELECTRIQUE =================== -->
+<div id="ch-electrique" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>⚡ Mouvement dans un Champ Électrique Uniforme</h1>
+    <p>Condensateur plan, déviation de particule chargée. Analogue du tir parabolique.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="electrique" onclick="toggleComplete(this,'electrique')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'analogie</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>C'est exactement pareil que la pesanteur !</strong> Sauf que la "gravité" est remplacée par la force électrique. La particule fait aussi une parabole. La seule différence : a = qE/m (pas g).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Champ électrique dans un condensateur</span>
+          E = U_AB / d &nbsp;&nbsp; (V·m⁻¹)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Force sur une charge q</span>
+          F_e = q·E = m·a &nbsp;→&nbsp; a = qE/m
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Équations du mouvement (entrée horizontale)</span>
+          aₓ=0, aᵧ=qE/m &nbsp;|&nbsp; vₓ=v₀, vᵧ=aᵧ·t &nbsp;|&nbsp; x=v₀t, y=½aᵧt²
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Conservation énergie mécanique (accélérateur)</span>
+          ½mv²_B = q·U_AB &nbsp;→&nbsp; v_B = √(2qU_AB/m)
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Attention au signe !</strong> Si q est négatif (électron), la force est dans le sens opposé à E. Le champ E est toujours orienté du + vers le −.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Déviation d'un électron dans un condensateur</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un électron (q = −1,6×10⁻¹⁹ C, m = 9,1×10⁻³¹ kg) entre horizontalement avec v₀ = 5×10⁷ m/s dans un condensateur. U_AB = 200 V, d = 4 cm.<br/>
+              1. Calculer E.<br/>
+              2. Calculer |a| de l'électron.<br/>
+              3. Pour une longueur de condensateur L = 5 cm, calculer la déviation verticale.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> E = U/d = 200 / 0,04 = <strong>5000 V·m⁻¹</strong><br/><br/>
+              <strong>2.</strong> a = |q|E/m = (1,6×10⁻¹⁹ × 5000) / (9,1×10⁻³¹) = 8×10⁻¹⁶ / 9,1×10⁻³¹ ≈ <strong>8,8×10¹⁴ m·s⁻²</strong><br/><br/>
+              <strong>3.</strong> Temps dans le condo : t = L/v₀ = 0,05 / (5×10⁷) = 10⁻⁹ s<br/>
+              y = ½at² = ½ × 8,8×10¹⁴ × (10⁻⁹)² = <strong>4,4×10⁻⁴ m = 0,44 mm</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: KEPLER =================== -->
+<div id="ch-kepler" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🪐 Satellites & Lois de Kepler</h1>
+    <p>Les 3 lois qui régissent le mouvement de toutes les planètes et satellites.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="kepler" onclick="toggleComplete(this,'kepler')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Les 3 lois de Kepler</div>
+      <div class="info-card-body">
+        <div class="key-point">
+          <span class="key-icon">1️⃣</span>
+          <div class="key-text"><strong>Loi des orbites :</strong> Chaque planète décrit une ellipse dont le Soleil est un foyer. (Cercle = cas particulier)</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">2️⃣</span>
+          <div class="key-text"><strong>Loi des aires :</strong> Le satellite balaie des aires égales en des temps égaux → il va <strong>plus vite au périhélie</strong> (plus près) et plus lentement à l'aphélie.</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">3️⃣</span>
+          <div class="key-text"><strong>Loi des périodes :</strong> T²/a³ = k (constante dépendant uniquement de l'astre attracteur)</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">3ème loi de Kepler</span>
+          T² / R³ = 4π² / (G·M_T)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Vitesse satellite orbite circulaire</span>
+          v = √(G·M_T / R) &nbsp;&nbsp; ou &nbsp;&nbsp; v = 2πR/T
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>G = 6,67×10⁻¹¹ N·m²·kg⁻² | M_Terre = 5,97×10²⁴ kg | R en mètres, T en secondes !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Satellite géostationnaire</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un satellite géostationnaire tourne avec la Terre (T = 24h). G·M_T = 4,0×10¹⁴ m³·s⁻².<br/>
+              1. Convertir T en secondes.<br/>
+              2. Utiliser la 3ème loi de Kepler pour trouver R.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> T = 24×3600 = <strong>86 400 s</strong><br/><br/>
+              <strong>2.</strong> T²/R³ = 4π²/(G·M_T)<br/>
+              R³ = G·M_T·T²/(4π²) = 4×10¹⁴ × (86400)² / (4π²)<br/>
+              R³ = 4×10¹⁴ × 7,46×10⁹ / 39,5 = 7,55×10²²<br/>
+              R = (7,55×10²²)^(1/3) ≈ <strong>4,22×10⁷ m = 42 200 km</strong>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Comparaison de deux planètes</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              La Terre a T_T = 1 an et a_T = 1 UA. Mars a a_M = 1,52 UA.<br/>
+              Calculer la période de révolution de Mars.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              T²/a³ = cst (même astre attracteur = Soleil)<br/>
+              T_M²/a_M³ = T_T²/a_T³<br/>
+              T_M² = T_T² × (a_M/a_T)³ = 1² × (1,52)³ = 3,51<br/>
+              T_M = √3,51 ≈ <strong>1,87 ans</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: SON =================== -->
+<div id="ch-son" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🔊 Intensité Sonore</h1>
+    <p>Décibels, niveau d'intensité sonore, atténuation. La physique du son.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="son" onclick="toggleComplete(this,'son')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Intensité sonore (W/m²)</span>
+          I = P / S
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Niveau d'intensité sonore (dB)</span>
+          L = 10·log(I / I₀) &nbsp;&nbsp; I₀ = 10⁻¹² W·m⁻²
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Si I est doublée : L augmente de +3 dB</span>
+          L' = L + 3 dB &nbsp; (car 10·log(2) ≈ 3)
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>PIÈGE BAC :</strong> Les niveaux sonores NE s'additionnent PAS. Deux sources à 60 dB = 63 dB (pas 120 dB). Les INTENSITÉS s'additionnent : I_tot = ΣI.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Situation</th><th>Niveau (dB)</th></tr>
+          <tr><td>Seuil d'audibilité</td><td>0 dB</td></tr>
+          <tr><td>Conversation</td><td>60–70 dB</td></tr>
+          <tr><td>Seuil de risque</td><td>85 dB</td></tr>
+          <tr><td>Seuil de douleur</td><td>120 dB</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Addition de sources sonores</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Deux haut-parleurs identiques émettent chacun un niveau L = 70 dB. I₀ = 10⁻¹² W·m⁻².<br/>
+              1. Retrouver l'intensité I d'un haut-parleur.<br/>
+              2. Calculer le niveau total L_tot quand les deux sont allumés.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> L = 10·log(I/I₀) → I = I₀ × 10^(L/10) = 10⁻¹² × 10^7 = <strong>10⁻⁵ W·m⁻²</strong><br/><br/>
+              <strong>2.</strong> I_tot = 2I = 2×10⁻⁵ W·m⁻²<br/>
+              L_tot = 10·log(2×10⁻⁵ / 10⁻¹²) = 10·log(2×10⁷) = 10·(log 2 + 7) = 10·(0,301+7) = <strong>73 dB</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: FLUIDES =================== -->
+<div id="ch-fluides" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>💧 Dynamique des Fluides</h1>
+    <p>Bernoulli, débit, Archimède. La physique des liquides en mouvement.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="fluides" onclick="toggleComplete(this,'fluides')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Poussée d'Archimède</span>
+          Π = ρ_fluide · V_immergé · g
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Débit volumique (conservation)</span>
+          D_V = S·v = constante &nbsp;→&nbsp; S₁·v₁ = S₂·v₂
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Théorème de Bernoulli</span>
+          p + ½ρv² + ρgh = constante
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Bernoulli en simple :</strong> Si le tuyau se rétrécit (S diminue), v augmente et p diminue. C'est l'effet Venturi (aspirateur, carburateur).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Tuyau avec étranglement</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un fluide (ρ = 1000 kg/m³) coule dans un tuyau horizontal. En A : S_A = 4 cm², v_A = 2 m/s, p_A = 1,5×10⁵ Pa. En B : S_B = 1 cm².<br/>
+              1. Calculer v_B (conservation du débit).<br/>
+              2. Calculer p_B (Bernoulli, même hauteur h_A = h_B).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> S_A·v_A = S_B·v_B → v_B = (S_A/S_B)·v_A = (4/1)×2 = <strong>8 m·s⁻¹</strong><br/><br/>
+              <strong>2.</strong> p_A + ½ρv_A² = p_B + ½ρv_B² (h cst)<br/>
+              p_B = p_A + ½ρ(v_A² − v_B²) = 1,5×10⁵ + ½×1000×(4−64)<br/>
+              p_B = 1,5×10⁵ − 30 000 = <strong>1,2×10⁵ Pa</strong><br/>
+              ✅ p diminue quand v augmente (effet Venturi).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: DIFFRACTION =================== -->
+<div id="ch-diffraction" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🔦 Diffraction</h1>
+    <p>Déviation de la lumière par une fente. Formule θ = λ/a et tache centrale.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="diffraction" onclick="toggleComplete(this,'diffraction')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Imagine une vague qui passe par une ouverture :</strong> si l'ouverture est petite par rapport à la longueur d'onde, elle s'étale après (comme une vague de mer passant par un port). C'est la diffraction !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Écart angulaire</span>
+          θ = λ / a &nbsp;&nbsp; (rad)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Largeur tache centrale (approximation petits angles)</span>
+          θ ≈ L/(2D) &nbsp;→&nbsp; L = 2·λ·D/a
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Relation inversée</span>
+          λ = a·L/(2D) &nbsp;&nbsp; ou &nbsp;&nbsp; a = 2·λ·D/L
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Unités :</strong> λ en mètres (1 nm = 10⁻⁹ m, 1 μm = 10⁻⁶ m). a = taille de la fente, L = largeur tache centrale, D = distance fente-écran.</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Règle intuitive :</strong> Plus la fente est petite, plus la tache est large. Plus la longueur d'onde est grande (rouge), plus la tache est large.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Mesure de la taille d'une fente</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un laser (λ = 633 nm) éclaire une fente. L'écran est à D = 1,5 m. On mesure une tache centrale de largeur L = 3,8 cm.<br/>
+              Calculer la taille de la fente a.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              a = 2·λ·D / L = (2 × 633×10⁻⁹ × 1,5) / (3,8×10⁻²)<br/>
+              a = 1,9×10⁻⁶ / 3,8×10⁻² = <strong>5,0×10⁻⁵ m = 50 μm</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: INTERFÉRENCES =================== -->
+<div id="ch-interferences" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🌈 Interférences</h1>
+    <p>Fentes de Young, interfrange, franges brillantes et sombres.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="interferences" onclick="toggleComplete(this,'interferences')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Deux cailloux dans l'eau :</strong> les cercles se croisent. Là où les crêtes se rencontrent = interférence constructive (frange brillante). Là où crête + creux = interférence destructive (frange sombre).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Interfrange (distance entre 2 franges brillantes)</span>
+          i = λ·D / a
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Différence de marche</span>
+          δ = S₂M − S₁M = a·x / D
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Frange brillante (constructive)</span>
+          δ = k·λ &nbsp; (k entier)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Frange sombre (destructive)</span>
+          δ = (k + ½)·λ
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>i vs a :</strong> i = interfrange (ce qu'on mesure sur l'écran), a = distance entre les 2 fentes (petite), D = distance fentes-écran (grande). λ en mètres !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Fentes de Young classique</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Deux fentes séparées de a = 0,4 mm sont éclairées par λ = 589 nm. L'écran est à D = 1,2 m.<br/>
+              1. Calculer l'interfrange i.<br/>
+              2. On mesure 11 franges sur 4,3 cm. Vérifier i.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> i = λD/a = (589×10⁻⁹ × 1,2) / (0,4×10⁻³) = 7,07×10⁻⁷ / 4×10⁻⁴ = <strong>1,77×10⁻³ m ≈ 1,8 mm</strong><br/><br/>
+              <strong>2.</strong> Pour 11 franges, on a 10 interfranges :<br/>
+              i = 4,3 cm / 10 = <strong>4,3 mm</strong>... <br/>
+              Recalcul : i = 43 mm / 10 = 4,3 mm → cohérent si D = 3 m (vérifier l'énoncé). La méthode est : i = mesure totale / nombre d'espaces.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: DOPPLER =================== -->
+<div id="ch-doppler" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🚑 Effet Doppler</h1>
+    <p>Décalage de fréquence quand émetteur et récepteur se déplacent l'un vers l'autre.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="doppler" onclick="toggleComplete(this,'doppler')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>L'ambulance :</strong> Quand elle s'approche → son plus aigu (f plus grande). Quand elle s'éloigne → son plus grave (f plus petite). Pour la lumière : s'approche = blueshift (décalage vers le bleu), s'éloigne = redshift (décalage vers le rouge).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Rappel : vitesse d'onde</span>
+          v_onde = λ · f
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Émetteur se rapproche (f reçue > f émise)</span>
+          f_A = f_émetteur × c / (c − v_émetteur)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Émetteur s'éloigne (f reçue < f émise)</span>
+          f_B = f_émetteur × c / (c + v_émetteur)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Décalage Doppler</span>
+          Δf = f_reçue − f_émise
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>c = vitesse du son (340 m/s dans l'air) ou vitesse de la lumière (3×10⁸ m/s) selon le contexte.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Radar de vitesse (Doppler)</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un radar émet une onde à f₀ = 24 GHz (c = 3×10⁸ m/s). Une voiture s'approche à 50 m/s. Calculer la fréquence reçue par le radar.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              f_A = f₀ × c/(c − v) = 24×10⁹ × 3×10⁸/(3×10⁸ − 50)<br/>
+              f_A = 24×10⁹ × 3×10⁸/2,9999995×10⁸<br/>
+              f_A ≈ 24×10⁹ × 1,0000000167 ≈ <strong>24 000 000 004 Hz</strong><br/>
+              Δf = 4 Hz (décalage très faible car v << c, c'est normal pour la lumière/radio)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: PHOTON =================== -->
+<div id="ch-photon" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>💡 Lumière & Effet Photoélectrique</h1>
+    <p>Le photon, E = hν, éjection d'électrons, diagrammes d'énergie.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="photon" onclick="toggleComplete(this,'photon')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Énergie d'un photon</span>
+          E = h·ν = h·c/λ &nbsp;&nbsp; h = 6,63×10⁻³⁴ J·s
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Effet photoélectrique</span>
+          E_photon = W_extraction + E_c &nbsp;&nbsp; Ec = ½mv²
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Rendement cellule photovoltaïque</span>
+          η = E_électrique / E_lumineuse = P_élec / P_lum
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Conversion eV :</strong> 1 eV = 1,6×10⁻¹⁹ J. Si W = 3,14 eV → W = 3,14 × 1,6×10⁻¹⁹ = 5,02×10⁻¹⁹ J.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Spectre EM</th><th>Longueur d'onde</th></tr>
+          <tr><td>UV</td><td>100–400 nm</td></tr>
+          <tr><td>Visible (violet→rouge)</td><td>400–800 nm</td></tr>
+          <tr><td>IR</td><td>&gt; 800 nm</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Éjection d'un électron</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un métal a un travail d'extraction W = 3,0 eV. On l'éclaire avec λ = 250 nm. h = 6,63×10⁻³⁴ J·s, c = 3×10⁸ m/s.<br/>
+              1. Calculer l'énergie du photon en J.<br/>
+              2. L'électron est-il éjecté ? Si oui, calculer son énergie cinétique.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> E = hc/λ = (6,63×10⁻³⁴ × 3×10⁸) / (250×10⁻⁹) = 7,96×10⁻¹⁹ J<br/>
+              En eV : E = 7,96×10⁻¹⁹ / 1,6×10⁻¹⁹ ≈ <strong>4,98 eV</strong><br/><br/>
+              <strong>2.</strong> E_photon = 4,98 eV > W = 3,0 eV → <strong>Oui, l'électron est éjecté</strong><br/>
+              Ec = E − W = 4,98 − 3,0 = <strong>1,98 eV = 3,17×10⁻¹⁹ J</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: CIRCUIT RC =================== -->
+<div id="ch-rc" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🔌 Circuit RC</h1>
+    <p>Charge et décharge d'un condensateur, constante de temps τ = RC, équation différentielle.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="rc" onclick="toggleComplete(this,'rc')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Le condensateur = une éponge électrique :</strong> Il se remplit (charge) puis se vide (décharge). Plus R est grand, plus ça prend du temps. τ = RC = le temps pour remplir 63% de l'éponge.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Constante de temps</span>
+          τ = R · C &nbsp;&nbsp; (secondes)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Tension charge (condensateur vide → E)</span>
+          u_C(t) = E · (1 − e^(−t/τ))
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Tension décharge (condensateur plein → 0)</span>
+          u_C(t) = E · e^(−t/τ)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Équation différentielle (charge)</span>
+          du_C/dt + u_C/(RC) = E/(RC)
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>À t = τ :</strong> charge → u_C = 0,63E | décharge → u_C = 0,37E. <strong>À t = 5τ :</strong> condensateur considéré plein ou vide (≈ 99%).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Graphes charge / décharge</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 460 200" width="100%" style="max-width:460px">
+            <!-- Charge curve -->
+            <text x="100" y="18" fill="#4f8ef7" font-size="12" font-weight="bold" font-family="Space Grotesk">CHARGE</text>
+            <line x1="30" y1="170" x2="210" y2="170" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="30" y1="170" x2="30" y2="20" stroke="#2a3350" stroke-width="1.5"/>
+            <!-- E level -->
+            <line x1="30" y1="30" x2="210" y2="30" stroke="#2a3350" stroke-width="1" stroke-dasharray="4"/>
+            <text x="212" y="34" fill="#8892b0" font-size="10">E</text>
+            <!-- 0.63E level -->
+            <line x1="30" y1="80" x2="210" y2="80" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="212" y="84" fill="#f7c948" font-size="9">0.63E</text>
+            <!-- charge curve approx -->
+            <path d="M30,170 C80,170 90,40 210,33" stroke="#4f8ef7" stroke-width="2.5" fill="none"/>
+            <!-- tau mark -->
+            <line x1="75" y1="80" x2="75" y2="170" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="68" y="185" fill="#f7c948" font-size="9">τ</text>
+
+            <!-- Discharge curve -->
+            <text x="330" y="18" fill="#f76f6f" font-size="12" font-weight="bold" font-family="Space Grotesk">DÉCHARGE</text>
+            <line x1="250" y1="170" x2="430" y2="170" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="250" y1="170" x2="250" y2="20" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="250" y1="30" x2="430" y2="30" stroke="#2a3350" stroke-width="1" stroke-dasharray="4"/>
+            <text x="432" y="34" fill="#8892b0" font-size="10">E</text>
+            <!-- 0.37E level -->
+            <line x1="250" y1="125" x2="430" y2="125" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="432" y="129" fill="#f7c948" font-size="9">0.37E</text>
+            <!-- discharge curve -->
+            <path d="M250,30 C280,30 310,160 430,168" stroke="#f76f6f" stroke-width="2.5" fill="none"/>
+            <!-- tau mark -->
+            <line x1="295" y1="125" x2="295" y2="170" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="288" y="185" fill="#f7c948" font-size="9">τ</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Charge d'un condensateur</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un circuit RC avec R = 10 kΩ, C = 100 μF, E = 12 V. Le condensateur est initialement déchargé.<br/>
+              1. Calculer τ.<br/>
+              2. Donner l'expression de u_C(t).<br/>
+              3. Quelle est la tension à t = τ ?<br/>
+              4. À partir de quand le condensateur est-il "chargé" ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> τ = RC = 10×10³ × 100×10⁻⁶ = <strong>1 s</strong><br/><br/>
+              <strong>2.</strong> u_C(t) = E(1 − e^(−t/τ)) = <strong>12(1 − e^(−t))</strong><br/><br/>
+              <strong>3.</strong> à t = τ = 1s : u_C = 12(1 − e⁻¹) = 12×0,63 = <strong>7,6 V ≈ 0,63E</strong><br/><br/>
+              <strong>4.</strong> "Chargé" à t = 5τ = <strong>5 s</strong> (u_C ≈ 99% de E)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHAPITRE: TRANSFERTS THERMIQUES =================== -->
+<div id="ch-transferts" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🌡 Transferts Thermiques</h1>
+    <p>Modes de transfert, loi de Newton, équation différentielle T(t).</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="transferts" onclick="toggleComplete(this,'transferts')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Les 3 modes + formules</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Mode</th><th>Mécanisme</th><th>Exemple</th></tr>
+          <tr><td>Conduction</td><td>Choc de proche en proche</td><td>Métal chauffé</td></tr>
+          <tr><td>Convection</td><td>Déplacement de matière</td><td>Eau qui bout</td></tr>
+          <tr><td>Rayonnement</td><td>Ondes EM</td><td>Soleil → Terre</td></tr>
+        </table>
+        <div class="formula-box phys">
+          <span class="formula-label">Loi de Newton (convection)</span>
+          φ = h·S·(T_ext − T) &nbsp;&nbsp; Q = φ·Δt
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Solution de l'équation diff.</span>
+          T(t) = (T_initiale − T_ext)·e^(−t/τ) + T_ext &nbsp;&nbsp; τ = mc/(hS)
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Stefan-Boltzmann (rayonnement)</span>
+          p_surface = σ·T⁴ &nbsp;&nbsp; σ = 5,67×10⁻⁸ W·m⁻²·K⁻⁴
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>La courbe T(t) :</strong> T part de T_initiale et converge exponentiellement vers T_ext. À t = τ, T a parcouru 63% de la différence de température.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Refroidissement d'un café</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un café à T₀ = 80°C refroidit dans une pièce à T_ext = 20°C. τ = 10 min.<br/>
+              1. Donner T(t).<br/>
+              2. Quelle est la température à t = 10 min ?<br/>
+              3. Quelle est la température à t = 30 min ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> T(t) = (80−20)·e^(−t/10) + 20 = <strong>60·e^(−t/10) + 20</strong> (t en min)<br/><br/>
+              <strong>2.</strong> t = τ = 10 min : T = 60·e⁻¹ + 20 = 60×0,37 + 20 = 22,2 + 20 = <strong>42,2°C</strong><br/><br/>
+              <strong>3.</strong> t = 3τ = 30 min : T = 60·e⁻³ + 20 = 60×0,05 + 20 = 3 + 20 = <strong>23°C</strong> (presque à T_ext)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CHIMIE CHAPTERS =================== -->
+
+<!-- =================== ACIDE BASE =================== -->
+<div id="ch-acidebase" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🍋 Transformation Acide-Base</h1>
+    <p>pH, couples acide/base, transfert de proton H⁺. Le chapitre fondamental de chimie.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="acidebase" onclick="toggleComplete(this,'acidebase')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 L'essentiel en 3 phrases</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div>
+            <strong>Acide = donneur de H⁺</strong> (perd un proton). <strong>Base = receveur de H⁺</strong> (capte un proton).<br/>
+            Exemple : HCl (acide) donne H⁺ à l'eau. CH₃COO⁻ (base) capte H⁺ de l'eau.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">pH d'une solution</span>
+          pH = −log[H₃O⁺] &nbsp;&nbsp; et &nbsp;&nbsp; [H₃O⁺] = 10^(−pH)
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Produit ionique de l'eau (25°C)</span>
+          Ke = [H₃O⁺]·[HO⁻] = 10⁻¹⁴ &nbsp;&nbsp; pKe = 14
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Réaction acide-base générale</span>
+          HA₁ + A₂⁻ ⇌ A₁⁻ + HA₂
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>
+            <strong>pH 7 = neutre ([H₃O⁺] = [HO⁻])</strong><br/>
+            pH &lt; 7 → acide ([H₃O⁺] &gt; [HO⁻])<br/>
+            pH &gt; 7 → basique ([H₃O⁺] &lt; [HO⁻])
+          </div>
+        </div>
+        <table class="data-table">
+          <tr><th>Solution</th><th>pH</th><th>[H₃O⁺]</th></tr>
+          <tr><td>Acide fort (HCl, 0,1 mol/L)</td><td>1</td><td>0,1 mol/L</td></tr>
+          <tr><td>Eau pure (25°C)</td><td>7</td><td>10⁻⁷ mol/L</td></tr>
+          <tr><td>Base forte (NaOH, 0,1 mol/L)</td><td>13</td><td>10⁻¹³ mol/L</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Calcul de pH et concentration</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              1. Une solution a pH = 3,5. Calculer [H₃O⁺].<br/>
+              2. Une solution d'acide fort HCl a C = 2×10⁻³ mol/L (totalement dissocié). Calculer son pH.<br/>
+              3. Pour la solution de la question 2, calculer [HO⁻].
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> [H₃O⁺] = 10^(−3,5) = <strong>3,16×10⁻⁴ mol·L⁻¹</strong><br/><br/>
+              <strong>2.</strong> HCl fort → [H₃O⁺] = C = 2×10⁻³ mol/L<br/>
+              pH = −log(2×10⁻³) = −(log2 + log10⁻³) = −(0,3 − 3) = <strong>2,7</strong><br/><br/>
+              <strong>3.</strong> Ke = [H₃O⁺][HO⁻] → [HO⁻] = 10⁻¹⁴ / 2×10⁻³ = <strong>5×10⁻¹² mol·L⁻¹</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Écrire la réaction acide-base</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Écrire la réaction entre l'acide éthanoïque CH₃COOH et l'ammoniaque NH₃.<br/>
+              Couples : CH₃COOH/CH₃COO⁻ et NH₄⁺/NH₃
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>Méthode :</strong> l'acide du couple 1 réagit avec la base du couple 2.<br/>
+              Acide 1 : CH₃COOH → CH₃COO⁻ + H⁺<br/>
+              Base 2 : NH₃ + H⁺ → NH₄⁺<br/><br/>
+              <strong>Bilan :</strong> CH₃COOH + NH₃ ⇌ CH₃COO⁻ + NH₄⁺ ✅
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== FORCE ACIDES =================== -->
+<div id="ch-forceacide" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>⚖️ Force des Acides et des Bases</h1>
+    <p>Ka, pKa, acides forts vs faibles, classement. Solution tampon.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="forceacide" onclick="toggleComplete(this,'forceacide')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 La règle simple</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>pKa petit = acide FORT</strong> (il donne facilement H⁺). <strong>pKa grand = acide faible</strong> (il garde son H⁺). HCl a pKa = −7 (très fort). L'acide acétique a pKa = 4,8 (faible).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Constante d'acidité</span>
+          Ka = [A⁻]·[H₃O⁺] / [HA] &nbsp;&nbsp; pKa = −log Ka
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Relation pKa et pH (Henderson-Hasselbalch)</span>
+          pH = pKa + log([A⁻]/[HA])
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">À pH = pKa</span>
+          [HA] = [A⁻] &nbsp; (moitié dissocié)
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Diagramme de prédominance :</strong> Si pH &lt; pKa → HA prédomine. Si pH &gt; pKa → A⁻ prédomine.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Acide</th><th>pKa</th><th>Force</th></tr>
+          <tr><td>H₃O⁺</td><td>0</td><td>Acide fort</td></tr>
+          <tr><td>CH₃COOH (acétique)</td><td>4,8</td><td>Faible</td></tr>
+          <tr><td>NH₄⁺</td><td>9,2</td><td>Très faible</td></tr>
+          <tr><td>H₂O</td><td>14</td><td>Extrêmement faible</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Diagramme de prédominance</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              pKa(CH₃COOH/CH₃COO⁻) = 4,8. Pour une solution de pH = 6 :<br/>
+              1. Quelle espèce prédomine ?<br/>
+              2. Calculer [CH₃COO⁻]/[CH₃COOH].
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> pH = 6 &gt; pKa = 4,8 → la <strong>base CH₃COO⁻ prédomine</strong>.<br/><br/>
+              <strong>2.</strong> pH = pKa + log([A⁻]/[HA])<br/>
+              6 = 4,8 + log([A⁻]/[HA])<br/>
+              log([A⁻]/[HA]) = 1,2<br/>
+              [CH₃COO⁻]/[CH₃COOH] = 10^1,2 ≈ <strong>15,8</strong><br/>
+              ✅ Il y a environ 16× plus de base que d'acide.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== TITRAGE COLORIMETRIQUE =================== -->
+<div id="ch-titragecolor" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🎨 Titrage Coloriмétrique</h1>
+    <p>Trouver la concentration d'une solution par changement de couleur à l'équivalence.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="titragecolor" onclick="toggleComplete(this,'titragecolor')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Le principe en 1 image</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>On verse goutte à goutte</strong> la solution titrante (connue) dans la solution titrée (inconnue). Quand la solution change de couleur → on a ajouté exactement la bonne quantité → c'est l'équivalence. On lit V_E sur la burette.</div>
+        </div>
+        <div class="schema-box">
+          <svg viewBox="0 0 300 200" width="100%" style="max-width:300px">
+            <!-- Burette -->
+            <rect x="130" y="10" width="20" height="100" rx="3" fill="none" stroke="#a259f7" stroke-width="2"/>
+            <rect x="135" y="110" width="10" height="15" rx="2" fill="#a259f7" opacity=".4"/>
+            <!-- Drop -->
+            <ellipse cx="140" cy="135" rx="4" ry="6" fill="#a259f7" opacity=".8"/>
+            <!-- Beaker -->
+            <path d="M90,145 L90,195 L210,195 L210,145" stroke="#e8eaf6" stroke-width="2" fill="none"/>
+            <line x1="85" y1="145" x2="215" y2="145" stroke="#e8eaf6" stroke-width="2"/>
+            <!-- Solution in beaker -->
+            <rect x="91" y="165" width="118" height="29" fill="#3ecf8e" opacity=".3" rx="0"/>
+            <!-- Labels -->
+            <text x="140" y="8" text-anchor="middle" fill="#a259f7" font-size="10" font-weight="bold">Burette</text>
+            <text x="140" y="8" text-anchor="middle" fill="#a259f7" font-size="10" font-weight="bold">Burette</text>
+            <text x="58" y="60" fill="#a259f7" font-size="9">Solution</text>
+            <text x="55" y="72" fill="#a259f7" font-size="9">titrante B</text>
+            <text x="55" y="84" fill="#a259f7" font-size="9">CB connu</text>
+            <text x="140" y="180" text-anchor="middle" fill="#3ecf8e" font-size="9">Solution titrée A</text>
+            <text x="140" y="192" text-anchor="middle" fill="#8892b0" font-size="9">CA = ? V_A connu</text>
+            <!-- arrow -->
+            <line x1="140" y1="140" x2="140" y2="162" stroke="#a259f7" stroke-width="1" stroke-dasharray="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">À l'équivalence (proportions stœchiométriques)</span>
+          n_A / a = n_B / b &nbsp;→&nbsp; C_A·V_A/a = C_B·V_E/b
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Concentration de la solution titrée</span>
+          C_A = (a × C_B × V_E) / (b × V_A)
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>a et b = coefficients stœchiométriques de l'équation. V_E = volume équivalent (lu sur la burette). V_A et V_E en même unité (mL ou L) !</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Indicateur</th><th>Zone de virage (pH)</th><th>Acide→Base</th></tr>
+          <tr><td>Rouge de crésol</td><td>7,4–9,0</td><td>Jaune → Violet</td></tr>
+          <tr><td>Bleu de bromothymol</td><td>6,0–7,6</td><td>Jaune → Bleu</td></tr>
+          <tr><td>Phénolphtaléine</td><td>8,0–9,6</td><td>Incolore → Rose</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Titrage HCl par NaOH</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              V_A = 20,0 mL de HCl de concentration inconnue. On titre avec NaOH à C_B = 0,050 mol/L. L'indicateur change de couleur pour V_E = 12,5 mL.<br/>
+              Équation : HCl + NaOH → NaCl + H₂O (a = b = 1)<br/>
+              Calculer C_A(HCl).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              C_A = (a × C_B × V_E) / (b × V_A)<br/>
+              C_A = (1 × 0,050 × 12,5) / (1 × 20,0)<br/>
+              C_A = 0,625 / 20,0 = <strong>0,031 mol·L⁻¹</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== TITRAGE CONDUCTIMETRIQUE =================== -->
+<div id="ch-titrageconduct" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>📊 Titrage Conductimétrique</h1>
+    <p>L'équivalence est repérée par un changement de pente sur la courbe de conductivité.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="titrageconduct" onclick="toggleComplete(this,'titrageconduct')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Le principe</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>On mesure la conductivité σ de la solution</strong> au fur et à mesure qu'on ajoute le titrant. Avant l'équivalence et après, les ions présents changent → la conductivité varie différemment → rupture de pente = équivalence !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">À l'équivalence (même formule)</span>
+          C_A = (a × C_B × V_E) / (b × V_A)
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Comment trouver V_E sur la courbe ?</strong> Tracer les 2 droites (avant et après rupture). L'intersection = V_E.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Ion</th><th>λ (mS·m²·mol⁻¹)</th></tr>
+          <tr><td>H₃O⁺</td><td>35,01 (très conducteur)</td></tr>
+          <tr><td>HO⁻</td><td>19,9</td></tr>
+          <tr><td>Na⁺</td><td>5,01</td></tr>
+          <tr><td>Cl⁻</td><td>7,63</td></tr>
+        </table>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Explication de la rupture :</strong> Titrage HCl par NaOH. Avant V_E : on enlève H₃O⁺ (très conducteur) et on ajoute Na⁺ (peu conducteur) → σ baisse. Après V_E : on ajoute Na⁺ + HO⁻ → σ monte.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Lecture graphique V_E</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Sur une courbe conductimétrique, les deux droites se croisent à V_E = 11 mL. C_B(NaOH) = 0,050 mol/L, V_A = 20 mL.<br/>
+              Calculer C_A(HCl). (a = b = 1)
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              C_A = C_B × V_E / V_A = 0,050 × 11 / 20 = <strong>0,0275 mol·L⁻¹</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== TITRAGE pH-METRIQUE =================== -->
+<div id="ch-titragepm" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>📈 Titrage pH-métrique</h1>
+    <p>Courbe pH = f(V), saut de pH à l'équivalence. Méthode des tangentes parallèles.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="titragepm" onclick="toggleComplete(this,'titragepm')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules + méthodes</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">À l'équivalence (toujours)</span>
+          C_A = (a × C_B × V_E) / (b × V_A)
+        </div>
+        <div class="key-point">
+          <span class="key-icon">📏</span>
+          <div class="key-text"><strong>Méthode des tangentes parallèles :</strong> Tracer 2 tangentes parallèles à la courbe de part et d'autre du saut de pH. Tracer une droite parallèle à mi-chemin entre les deux. Son intersection avec la courbe = V_E.</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">📏</span>
+          <div class="key-text"><strong>Méthode de la dérivée :</strong> dpH/dV = maximum au point d'équivalence. V_E correspond au pic de la dérivée.</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>À la demi-équivalence (V = V_E/2) :</strong> pH = pKa. C'est une méthode pour déterminer le pKa de l'acide titré !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Titrage pH-métrique complet</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Titrage de V_A = 20 mL d'acide faible HA par NaOH (C_B = 0,10 mol/L). Sur la courbe : V_E = 9,3 mL, pH à V_E/2 = 4,65 mL → pH = 4,8.<br/>
+              1. Calculer C_A.<br/>
+              2. Donner le pKa du couple HA/A⁻.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> C_A = C_B × V_E / V_A = 0,10 × 9,3 / 20 = <strong>0,0465 mol·L⁻¹</strong><br/><br/>
+              <strong>2.</strong> À la demi-équivalence, pH = pKa → <strong>pKa = 4,8</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== SPECTROSCOPIE =================== -->
+<div id="ch-spectro" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🔬 Spectroscopie UV-Vis & IR</h1>
+    <p>Identifier des molécules par leur spectre d'absorption. Cercle chromatique, bandes IR.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="spectro" onclick="toggleComplete(this,'spectro')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Les 2 types de spectroscopie</div>
+      <div class="info-card-body">
+        <div class="key-point">
+          <span class="key-icon">☀️</span>
+          <div class="key-text"><strong>UV-Visible :</strong> On mesure l'absorbance A en fonction de λ (nm). La couleur absorbée est complémentaire de la couleur vue. Cercle chromatique = outil clé.</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">🌡️</span>
+          <div class="key-text"><strong>Infrarouge (IR) :</strong> On mesure la transmittance T en fonction du nombre d'onde (cm⁻¹). Les "creux" (bandes d'absorption) identifient des liaisons chimiques.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Tableau des bandes IR à connaître</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Liaison</th><th>Nombre d'onde (cm⁻¹)</th><th>Intensité</th></tr>
+          <tr><td>O-H libre (alcools)</td><td>3580–3650</td><td>Fine et forte</td></tr>
+          <tr><td>O-H lié (H-bond)</td><td>3200–3400</td><td>Large et forte</td></tr>
+          <tr><td>N-H</td><td>3100–3500</td><td>Moyenne</td></tr>
+          <tr><td>C-H</td><td>2800–3000</td><td>Forte</td></tr>
+          <tr><td>C=O (cétones, esters)</td><td>1700–1750</td><td>Très forte</td></tr>
+          <tr><td>O-H acides carboxyliques</td><td>2500–3300</td><td>Très large</td></tr>
+          <tr><td>C-O (alcools, esters)</td><td>1000–1300</td><td>Forte</td></tr>
+        </table>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Méthode à l'examen :</strong> 1) Y a-t-il une bande large et forte vers 3200-3400 ? → OH (alcool ou acide). 2) Y a-t-il une bande forte vers 1700-1750 ? → C=O présent. 3) Si les deux → acide carboxylique !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🌈 Cercle chromatique</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 300 200" width="100%" style="max-width:300px">
+            <!-- Circle -->
+            <circle cx="150" cy="100" r="75" fill="none" stroke="#2a3350" stroke-width="2"/>
+            <!-- Color sectors -->
+            <path d="M150,100 L150,25 A75,75 0 0,1 215,137 Z" fill="#f7c948" opacity=".7"/>
+            <path d="M150,100 L215,137 A75,75 0 0,1 85,137 Z" fill="#f7956f" opacity=".7"/>
+            <path d="M150,100 L85,137 A75,75 0 0,1 85,63 Z" fill="#f76f6f" opacity=".7"/>
+            <path d="M150,100 L85,63 A75,75 0 0,1 150,25 Z" fill="#a259f7" opacity=".7"/>
+            <!-- Labels -->
+            <text x="178" y="65" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">JAUNE</text>
+            <text x="178" y="77" fill="#fff" font-size="9" text-anchor="middle">570nm</text>
+            <text x="210" y="120" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">ROUGE</text>
+            <text x="210" y="132" fill="#fff" font-size="9" text-anchor="middle">700nm</text>
+            <text x="90" y="120" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">VERT</text>
+            <text x="90" y="132" fill="#fff" font-size="9" text-anchor="middle">530nm</text>
+            <text x="90" y="70" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">BLEU</text>
+            <text x="90" y="82" fill="#fff" font-size="9" text-anchor="middle">450nm</text>
+            <!-- Center -->
+            <text x="150" y="96" fill="#e8eaf6" font-size="9" text-anchor="middle">Couleur</text>
+            <text x="150" y="108" fill="#e8eaf6" font-size="9" text-anchor="middle">absorbée</text>
+            <text x="150" y="120" fill="#e8eaf6" font-size="9" text-anchor="middle">↔ vue</text>
+          </svg>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Règle :</strong> Si une solution absorbe le bleu (λ_max ≈ 450 nm), elle apparaît de la couleur complémentaire = JAUNE/ORANGE. Les couleurs opposées sur le cercle sont complémentaires.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Identification par spectre IR</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un spectre IR présente :<br/>
+              - Une bande large et forte entre 2500 et 3300 cm⁻¹<br/>
+              - Une bande très forte à 1720 cm⁻¹<br/>
+              - Des bandes C-H entre 2800 et 3000 cm⁻¹<br/><br/>
+              De quelle famille de molécules s'agit-il ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              • Bande 2500-3300 cm⁻¹ large → O-H d'acide carboxylique<br/>
+              • Bande à 1720 cm⁻¹ → C=O présent<br/>
+              • O-H + C=O ensemble = <strong>groupe carboxyle -COOH</strong><br/>
+              ✅ C'est un <strong>acide carboxylique</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== BEER LAMBERT =================== -->
+<div id="ch-beerlam" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>📉 Loi de Beer-Lambert</h1>
+    <p>A = k·[X], courbe d'étalonnage, trouver une concentration inconnue par absorbance.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="beerlam" onclick="toggleComplete(this,'beerlam')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Le principe</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Plus une solution est concentrée, plus elle absorbe la lumière.</strong> Beer-Lambert dit que c'est une relation linéaire : A = k·[X]. On fait une courbe d'étalonnage (A en fonction de C connues), puis on lit la concentration inconnue sur la courbe.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Loi de Beer-Lambert (1 espèce)</span>
+          A = k · [X] &nbsp;&nbsp; avec k = ε·l (coefficient × épaisseur)
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Absorbance</span>
+          A = log(I₀/I) &nbsp;&nbsp; (sans unité)
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Domaine de validité :</strong> Beer-Lambert n'est valable que pour des concentrations faibles (généralement [X] ≤ 5×10⁻³ mol·L⁻¹). Au-delà, la courbe n'est plus linéaire (lire sur le graphe !)</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">📊</span>
+          <div class="key-text"><strong>Comment utiliser la courbe d'étalonnage :</strong>
+            <br/>1) Mesurer A de la solution inconnue avec le spectrophotomètre
+            <br/>2) Lire C sur la courbe à partir de cette valeur de A
+            <br/>Ou calculer k = pente de la droite, puis C = A/k</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Courbe d'étalonnage</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une courbe A = f(C) est linéaire et passe par (0 ; 0) et (3,5×10⁻³ mol/L ; 1,4).<br/>
+              Une solution inconnue a A = 0,60.<br/>
+              1. Calculer k (pente).<br/>
+              2. Trouver C_inconnue.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> k = ΔA/ΔC = (1,4 − 0) / (3,5×10⁻³ − 0) = 1,4 / 3,5×10⁻³ = <strong>400 L·mol⁻¹</strong><br/><br/>
+              <strong>2.</strong> C = A/k = 0,60 / 400 = <strong>1,5×10⁻³ mol·L⁻¹</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CONDUCTIMETRIE =================== -->
+<div id="ch-conduct" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>⚡ Conductimétrie</h1>
+    <p>σ = k·C, loi de Kohlrausch. Mesurer une concentration par la conductivité.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="conduct" onclick="toggleComplete(this,'conduct')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Loi de Kohlrausch (solution diluée)</span>
+          σ = Σ λ_i · [X_i] &nbsp;&nbsp; (S·m⁻¹)
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Avec un seul soluté ionique</span>
+          σ = k · C &nbsp;&nbsp; (linéaire !)
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Même principe que Beer-Lambert :</strong> σ est proportionnel à C. On fait une courbe d'étalonnage σ = f(C), et on lit C pour une valeur de σ inconnue.</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>Conversion : 1 mol·m⁻³ = 10⁻³ mol·L⁻¹. Attention aux unités des conductivités molaires (S·m²·mol⁻¹ ou mS·cm⁻¹ selon le contexte) !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Lecture courbe conductimétrique</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une courbe σ = f(C) est une droite de pente k = 8,5 mS·cm⁻¹/(10⁻³ mol·L⁻¹). Une solution inconnue a σ = 0,022 mS·cm⁻¹.<br/>
+              Calculer C.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              σ = k·C → C = σ/k = 0,022 / 8,5 = <strong>2,6×10⁻³ mol·L⁻¹</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CINÉTIQUE =================== -->
+<div id="ch-cinetique" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>⏱️ Cinétique Chimique</h1>
+    <p>Vitesse de réaction, ordre 1, temps de demi-réaction t₁/₂. Lent ou rapide ?</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="cinetique" onclick="toggleComplete(this,'cinetique')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Vitesse volumique de disparition du réactif</span>
+          v_disp(R) = −d[R]/dt
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Loi vitesse ordre 1</span>
+          v(A) = k · [A] &nbsp;&nbsp; (k = constante de vitesse en s⁻¹)
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Concentration loi ordre 1</span>
+          [A]_t = [A]₀ · e^(−k·t)
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Temps de demi-réaction</span>
+          t₁/₂ = ln2 / k ≈ 0,693 / k
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Reconnaître l'ordre 1 au BAC :</strong> Si ln[A] = f(t) est une droite → ordre 1. Si t₁/₂ est indépendant de [A]₀ → ordre 1.</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Facteurs cinétiques :</strong> ↑ T → réaction plus rapide. ↑ concentration → réaction plus rapide. Catalyseur → accélère sans être consommé.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Ordre 1 — calcul de t₁/₂</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une réaction suit une loi d'ordre 1 avec k = 2,3×10⁻² s⁻¹. [A]₀ = 0,10 mol/L.<br/>
+              1. Calculer t₁/₂.<br/>
+              2. Calculer [A] à t = 60 s.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> t₁/₂ = ln2/k = 0,693 / 2,3×10⁻² = <strong>30 s</strong><br/><br/>
+              <strong>2.</strong> [A] = [A]₀·e^(−kt) = 0,10 × e^(−2,3×10⁻² × 60) = 0,10 × e^(−1,38) = 0,10 × 0,25 = <strong>0,025 mol·L⁻¹</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CONSTANTE D'ÉQUILIBRE =================== -->
+<div id="ch-equilibre" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>⚖️ Constante d'Équilibre</h1>
+    <p>K, Qr, sens d'évolution, taux d'avancement τ. Réaction totale ou équilibrée ?</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="equilibre" onclick="toggleComplete(this,'equilibre')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Quotient de réaction (aA + bB ⇌ cC + dD)</span>
+          Q_r = ([C]/C°)^c · ([D]/C°)^d / (([A]/C°)^a · ([B]/C°)^b) &nbsp; C° = 1 mol/L
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">À l'équilibre</span>
+          Q_r,éq = K
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Sens d'évolution</span>
+          Q_r &lt; K → sens direct | Q_r &gt; K → sens indirect
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Taux d'avancement</span>
+          τ = x_f / x_max &nbsp;&nbsp; τ = 1 → totale | τ &lt; 1 → équilibrée
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>L'eau et les solides n'apparaissent PAS dans Q_r !</strong> (activité = 1)</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Tableau d'avancement + taux τ</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              CH₃COOH + H₂O ⇌ CH₃COO⁻ + H₃O⁺<br/>
+              n₀(CH₃COOH) = 0,10 mol, n₀(H₂O) = solvant.<br/>
+              À l'équilibre, x_f = 1,3×10⁻³ mol.<br/>
+              1. Calculer x_max.<br/>
+              2. Calculer τ et conclure.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> x_max = min(n₀/coeff) = min(0,10/1) = <strong>0,10 mol</strong><br/>
+              (L'eau est en solvant = excès, donc le réactif limitant est CH₃COOH)<br/><br/>
+              <strong>2.</strong> τ = x_f/x_max = 1,3×10⁻³ / 0,10 = <strong>0,013 = 1,3%</strong><br/>
+              τ << 1 → la réaction est très <strong>peu avancée</strong> → acide faible (peu dissocié). ✅
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== MOLÉCULES ORGANIQUES =================== -->
+<div id="ch-organique" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🌿 Structure des Molécules Organiques</h1>
+    <p>Groupes fonctionnels, nomenclature, isomérie. Identifier et nommer les familles.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="organique" onclick="toggleComplete(this,'organique')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Tableau des groupes fonctionnels (à mémoriser)</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Famille</th><th>Groupe caractéristique</th><th>Suffixe</th><th>Exemple</th></tr>
+          <tr><td>Alcool</td><td>-OH</td><td>-ol</td><td>éthanol</td></tr>
+          <tr><td>Aldéhyde</td><td>-CHO</td><td>-al</td><td>méthanal</td></tr>
+          <tr><td>Cétone</td><td>-C(=O)-</td><td>-one</td><td>propan-2-one</td></tr>
+          <tr><td>Acide carboxylique</td><td>-COOH</td><td>-oïque</td><td>acide éthanoïque</td></tr>
+          <tr><td>Ester</td><td>-COO-</td><td>-oate de -yle</td><td>éthanoate de méthyle</td></tr>
+          <tr><td>Amine</td><td>-NH₂</td><td>-amine</td><td>éthanamine</td></tr>
+          <tr><td>Amide</td><td>-CONH₂</td><td>-amide</td><td>éthanamide</td></tr>
+        </table>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Nomenclature :</strong> Préfixe (groupes alkyles) + Racine (nb de C dans chaîne principale : méth-1, éth-2, prop-3, but-4, pent-5, hex-6) + Suffixe (famille fonctionnelle)</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Identifier et nommer</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Donner la famille fonctionnelle et le nom de : CH₃-CH₂-CH₂-OH
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              Groupe -OH → <strong>Alcool</strong><br/>
+              Chaîne principale : 3 carbones → prop-<br/>
+              OH sur C1 → propan-1-ol<br/>
+              Nom : <strong>propan-1-ol</strong> ✅
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Isomérie</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              CH₃COOCH₃ et CH₃CH₂COOH ont la même formule brute C₃H₆O₂. Sont-ils isomères ? Identifier leurs familles.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              Oui, même formule brute → <strong>isomères de constitution</strong>.<br/>
+              CH₃COOCH₃ : groupe -COO- → <strong>Ester</strong> (éthanoate de méthyle)<br/>
+              CH₃CH₂COOH : groupe -COOH → <strong>Acide carboxylique</strong> (acide propanoïque) ✅
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== SYNTHÈSE ORGANIQUE =================== -->
+<div id="ch-synthese" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🧪 Synthèse Organique</h1>
+    <p>Rendement, types de réactions (addition, élimination, substitution), chimie verte.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="synthese" onclick="toggleComplete(this,'synthese')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Rendement</span>
+          r = n_expérimental / n_théorique × 100 &nbsp;&nbsp; (%)
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">ou en masse</span>
+          r = m_expérimental / m_théorique × 100
+        </div>
+        <table class="data-table">
+          <tr><th>Type réaction</th><th>Schéma</th><th>Exemple</th></tr>
+          <tr><td>Addition</td><td>C=C + XY → C(X)-C(Y)</td><td>Alcène + HBr</td></tr>
+          <tr><td>Élimination</td><td>C(X)-C(Y) → C=C + XY</td><td>Déshydratation alcool</td></tr>
+          <tr><td>Substitution</td><td>R-X + Y → R-Y + X</td><td>Halogénation</td></tr>
+        </table>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Pour augmenter le rendement :</strong> utiliser un réactif en excès, chauffer (reflux), utiliser un catalyseur, éliminer un produit au fur et à mesure.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Calcul de rendement estérification</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Synthèse d'un ester (M = 102 g/mol) à partir de 0,10 mol d'alcool (réactif limitant).<br/>
+              On obtient 8,2 g d'ester.<br/>
+              1. Calculer m_théorique.<br/>
+              2. Calculer le rendement r.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> n_théorique = n_alcool = 0,10 mol (coefficient = 1)<br/>
+              m_théorique = n × M = 0,10 × 102 = <strong>10,2 g</strong><br/><br/>
+              <strong>2.</strong> r = m_exp/m_théo × 100 = 8,2/10,2 × 100 = <strong>80,4%</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== MÉCANISMES =================== -->
+<div id="ch-mecanismes" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🔧 Mécanismes Réactionnels</h1>
+    <p>Sites donneurs/accepteurs d'électrons, flèches courbes. La chimie au niveau microscopique.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="mecanismes" onclick="toggleComplete(this,'mecanismes')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Les règles d'or</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Flèche courbe = déplacement de doublet d'électrons :</strong> La flèche va du doublet (donneur) vers l'atome qui l'accepte. Jamais l'inverse !</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Sites DONNEURS (nucléophiles)</th><th>Sites ACCEPTEURS (électrophiles)</th></tr>
+          <tr><td>Doublet non liant (N, O, ...)</td><td>Lacune électronique (H⁺, Li⁺, ...)</td></tr>
+          <tr><td>Liaison multiple C=C, C=O</td><td>Liaison polarisée C^δ⁺-Cl^δ⁻ (côté δ⁺)</td></tr>
+          <tr><td>Liaison polarisée côté δ⁻</td><td>Atome chargé positivement</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Identifier les sites</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Dans la réaction : HO⁻ + CH₃-Cl → CH₃-OH + Cl⁻<br/>
+              1. Identifier HO⁻ : site donneur ou accepteur ?<br/>
+              2. Identifier le carbone dans CH₃-Cl : donneur ou accepteur ?<br/>
+              3. Dessiner la flèche courbe de l'attaque.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              <strong>1.</strong> HO⁻ a des doublets non liants → <strong>donneur (nucléophile)</strong><br/><br/>
+              <strong>2.</strong> C-Cl est polarisée (Cl est très électronégatif) → C est δ⁺ → <strong>accepteur (électrophile)</strong><br/><br/>
+              <strong>3.</strong> La flèche va de HO⁻ (doublet O) vers le C^δ⁺ de CH₃Cl. Une 2ème flèche part de la liaison C-Cl vers Cl (Cl repart avec les 2 électrons). ✅
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== ÉLECTROLYSE =================== -->
+<div id="ch-electrolyse" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>⚡ Électrolyse</h1>
+    <p>Transformation forcée d'énergie électrique en chimique. Calcul de masse déposée.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="electrolyse" onclick="toggleComplete(this,'electrolyse')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Anode vs Cathode — le moyen mnémotechnique</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>OA CA = "Oh! A Ca !"</strong> → Oxydation à l'Anode, Réduction à la Cathode. Pareil pour les piles !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Charge électrique totale</span>
+          Q = I · Δt &nbsp;&nbsp; Q = n(e⁻) · F
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Nombre de moles d'électrons</span>
+          n(e⁻) = I · Δt / F &nbsp;&nbsp; F = 96 500 C·mol⁻¹
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Masse déposée (électrodépôt)</span>
+          m = n · M = (I · Δt · M) / (z · F) &nbsp;&nbsp; z = nb d'e⁻ échangés
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>z = nombre d'électrons échangés dans la demi-équation. Ex: Cu²⁺ + 2e⁻ → Cu : z = 2. Ag⁺ + e⁻ → Ag : z = 1.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Électrodépôt de cuivre</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Électrolyse d'une solution de CuSO₄. I = 2,0 A, Δt = 30 min. M(Cu) = 63,5 g/mol, F = 96 500 C/mol.<br/>
+              Demi-équation cathode : Cu²⁺ + 2e⁻ → Cu (z = 2)<br/>
+              Calculer la masse de cuivre déposée.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              Q = I·Δt = 2,0 × (30×60) = 2,0 × 1800 = 3600 C<br/>
+              n(e⁻) = Q/F = 3600/96500 = 0,0373 mol<br/>
+              n(Cu) = n(e⁻)/z = 0,0373/2 = 0,0187 mol<br/>
+              m(Cu) = n × M = 0,0187 × 63,5 = <strong>1,19 g</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== PILES =================== -->
+<div id="ch-piles" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>🔋 Piles Électrochimiques</h1>
+    <p>Transfert spontané d'électrons, oxydoréduction, calcul de durée de vie.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="piles" onclick="toggleComplete(this,'piles')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Pile vs Électrolyse</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th></th><th>PILE</th><th>ÉLECTROLYSE</th></tr>
+          <tr><td>Réaction</td><td>Spontanée</td><td>Forcée</td></tr>
+          <tr><td>Énergie</td><td>Chimique → Électrique</td><td>Électrique → Chimique</td></tr>
+          <tr><td>Anode</td><td>Pôle − (oxydation)</td><td>Pôle + (oxydation)</td></tr>
+          <tr><td>Cathode</td><td>Pôle + (réduction)</td><td>Pôle − (réduction)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Capacité maximale</span>
+          Q_max = n(e⁻) · F
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Durée de fonctionnement</span>
+          Δt = Q_max / I = n(e⁻) · F / I
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Méthode :</strong> 1) Écrire les 2 demi-équations. 2) Trouver n(réactif limitant). 3) Déduire n(e⁻) via stœchiométrie. 4) Q = n(e⁻)·F. 5) Δt = Q/I.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Pile Zn/Cu — durée de vie</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Pile Zn/Cu. Anode : Zn → Zn²⁺ + 2e⁻. Cathode : Cu²⁺ + 2e⁻ → Cu.<br/>
+              n(Zn) = 0,050 mol est le réactif limitant. I = 0,50 A. F = 96 500 C/mol.<br/>
+              Calculer la durée de fonctionnement.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              n(e⁻) = 2 × n(Zn) = 2 × 0,050 = 0,10 mol<br/>
+              Q = n(e⁻)·F = 0,10 × 96500 = 9650 C<br/>
+              Δt = Q/I = 9650/0,50 = <strong>19 300 s ≈ 5,4 h</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== NUCLÉAIRE =================== -->
+<div id="ch-nucleaire" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="showHome()">← Retour à l'accueil</button>
+    <h1>☢️ Transformations Nucléaires</h1>
+    <p>Radioactivité α β γ, loi de désintégration, demi-vie t₁/₂. Loi de Soddy.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="nucleaire" onclick="toggleComplete(this,'nucleaire')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Les 4 types de désintégration</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Type</th><th>Particule émise</th><th>Variation A</th><th>Variation Z</th></tr>
+          <tr><td>Émission α</td><td>⁴₂He</td><td>−4</td><td>−2</td></tr>
+          <tr><td>Émission β⁻</td><td>⁰₋₁e (électron)</td><td>0</td><td>+1</td></tr>
+          <tr><td>Émission β⁺</td><td>⁰₊₁e (positron)</td><td>0</td><td>−1</td></tr>
+          <tr><td>Émission γ</td><td>photon γ</td><td>0</td><td>0</td></tr>
+        </table>
+        <div class="formula-box chem">
+          <span class="formula-label">Loi de désintégration</span>
+          N(t) = N₀ · e^(−λt) &nbsp;&nbsp; A(t) = A₀ · e^(−λt)
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Demi-vie</span>
+          t₁/₂ = ln2 / λ ≈ 0,693 / λ
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Loi de Soddy :</strong> Conservation de A (nombre de masse) et Z (numéro atomique) dans chaque désintégration. Écrire l'équation avec ΣA et ΣZ conservés des deux côtés !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Équation de désintégration α</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Le Radium 226 (²²⁶₈₈Ra) émet une particule α. Écrire l'équation de désintégration et identifier le noyau fils.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              ²²⁶₈₈Ra → ᴬ_Z X + ⁴₂He<br/>
+              Conservation A : 226 = A + 4 → A = <strong>222</strong><br/>
+              Conservation Z : 88 = Z + 2 → Z = <strong>86</strong><br/>
+              Z = 86 = Radon (Rn)<br/>
+              ✅ ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Calcul avec la demi-vie</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un isotope a t₁/₂ = 5730 ans (carbone 14). N₀ = 1,0×10¹² noyaux. Calculer N après 11 460 ans.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+              11 460 = 2 × 5730 = 2 × t₁/₂ → 2 demi-vies écoulées<br/>
+              Après 1 demi-vie : N = N₀/2 = 5,0×10¹¹<br/>
+              Après 2 demi-vies : N = N₀/4 = <strong>2,5×10¹¹ noyaux</strong><br/><br/>
+              Vérification : N = N₀·e^(−λt) avec λ = ln2/5730<br/>
+              N = 10¹² × e^(−ln2 × 2) = 10¹² × (1/4) = 2,5×10¹¹ ✅
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+<script src="js/app.js"></script>
+<script>
+  // KaTeX auto-render
+  document.addEventListener("DOMContentLoaded", function() {
+    if (typeof renderMathInElement !== 'undefined') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
+      });
+    }
+  });
+</script>
+</body>
+</html>
