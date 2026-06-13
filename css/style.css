@@ -762,3 +762,16 @@ footer {
 .katex-display > .katex {
   white-space: normal;
 }
+
+/* ===== SUBSCRIPTS ===== */
+sub {
+  font-size: .72em;
+  vertical-align: baseline;
+  position: relative;
+  bottom: -.25em;
+  line-height: 0;
+}
+.formula-box sub {
+  font-size: .68em;
+  bottom: -.3em;
+}

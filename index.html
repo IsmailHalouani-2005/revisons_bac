@@ -396,7 +396,7 @@
           <p>Le 1er principe de la thermodynamique est un <strong>bilan énergétique</strong> : l'énergie ne se crée ni ne se détruit, elle se transforme.</p>
           <p>Pour un système quelconque :</p>
         </div>
-        <div class="formula-box phys"><span class="formula-label">Forme générale</span>ΔE_totale = ΔE_c + ΔE_p + $\Delta U = W + Q$</div>
+        <div class="formula-box phys"><span class="formula-label">Forme générale</span>ΔE<sub>totale</sub> = ΔE<sub>c</sub> + ΔE<sub>p</sub> + $\Delta U = W + Q$</div>
         <div class="cours-text">
           <p>Dans la plupart des cas au BAC, le système est <strong>au repos</strong> (ΔEc = 0) et à <strong>altitude constante</strong> (ΔEp = 0), donc :</p>
         </div>
@@ -414,7 +414,7 @@
           <ul>
             <li><strong>m</strong> : masse en kg</li>
             <li><strong>c</strong> : capacité thermique massique en J·kg⁻¹·K⁻¹ (eau : 4180, acier : 460, aluminium : 900)</li>
-            <li><strong>ΔT = T_f − T_i</strong> en Kelvin ou °C (la différence est identique)</li>
+            <li><strong>ΔT = T<sub>f</sub> − T<sub>i</sub></strong> en Kelvin ou °C (la différence est identique)</li>
           </ul>
           <p>La <strong>capacité thermique</strong> du système entier : C = m·c (en J·K⁻¹)</p>
         </div>
@@ -582,7 +582,7 @@
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
               <strong>1. ΔT :</strong><br/>
-              ΔT = T_finale − T_initiale = (80+273) − (20+273) = 353 − 293 = <strong>60 K</strong><br/><br/>
+              ΔT = T<sub>finale</sub> − T<sub>initiale</sub> = (80+273) − (20+273) = 353 − 293 = <strong>60 K</strong><br/><br/>
               <strong>2. ΔU :</strong><br/>
               W = 0 donc ΔU = Q = m·c·ΔT<br/>
               ΔU = 0,200 × 4180 × 60 = <strong>50 160 J ≈ 50,2 kJ</strong><br/><br/>
@@ -675,16 +675,16 @@
           <div class="def-title">2ème loi — Principe fondamental de la dynamique</div>
           La résultante des forces extérieures est égale à <strong>m·a</strong>. C'est le cœur du chapitre.
         </div>
-        <div class="formula-box phys"><span class="formula-label">2ème loi de Newton (vectorielle)</span>ΣF⃗_ext = m · a⃗</div>
+        <div class="formula-box phys"><span class="formula-label">2ème loi de Newton (vectorielle)</span>$\sum \vec{F}_{\text{ext}} = m\,\vec{a}$</div>
         <div class="definition-box">
           <div class="def-title">3ème loi — Actions réciproques</div>
-          Si A exerce une force sur B, alors B exerce sur A une force <strong>égale, opposée, sur la même droite d'action</strong>. F_A→B = −F_B→A.
+          Si A exerce une force sur B, alors B exerce sur A une force <strong>égale, opposée, sur la même droite d'action</strong>. F<sub>A</sub>→B = −F<sub>B</sub>→A.
         </div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">📊 Passage de a(t) à v(t) à x(t)</div>
         <div class="cours-text"><p>On intègre successivement. La constante d'intégration = <strong>condition initiale</strong>.</p></div>
-        <div class="formula-box phys"><span class="formula-label">Intégration successive</span>a(t) →(intégrer)→ v(t) = ∫a dt + v₀ →(intégrer)→ x(t) = ∫v dt + x₀</div>
+        <div class="formula-box phys"><span class="formula-label">Intégration successive</span>$a(t) \xrightarrow{\int} v(t) = \int a\,dt + v_0 \xrightarrow{\int} x(t) = \int v\,dt + x_0$</div>
         <table class="data-table">
           <tr><th>Type de mouvement</th><th>Condition</th><th>v(t)</th><th>x(t)</th></tr>
           <tr><td>Rectiligne uniforme (MRU)</td><td>a = 0</td><td>v₀ = cst</td><td>v₀t + x₀</td></tr>
@@ -697,13 +697,13 @@
         <div class="cours-text"><p>Pour un mouvement circulaire, on utilise 2 axes :</p></div>
         <div class="definition-box">
           <div class="def-title">Vecteur tangentiel T⃗</div>
-          Dans le sens du mouvement. Accélération tangentielle a_T = dv/dt. Si MCU : a_T = 0.
+          Dans le sens du mouvement. Accélération tangentielle $a_T = dv/dt$. Si MCU : $a_T = 0$.
         </div>
         <div class="definition-box">
           <div class="def-title">Vecteur normal N⃗ (centripète)</div>
-          Vers le centre de la trajectoire. Accélération centripète a_N = v²/R. Toujours présente si le mouvement est courbe.
+          Vers le centre de la trajectoire. Accélération centripète $a_N = v^2/R$. Toujours présente si le mouvement est courbe.
         </div>
-        <div class="formula-box phys"><span class="formula-label">Force centripète</span>F_centripète = m · v²/R &nbsp;&nbsp; (dirigée vers le centre)</div>
+        <div class="formula-box phys"><span class="formula-label">Force centripète</span>$F_{\text{centripète}} = m\,\dfrac{v^2}{R}$ (vers le centre)</div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode BAC — Appliquer Newton</div>
@@ -809,7 +809,7 @@
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
               <strong>1.</strong> Seule force : poids P = mg (attraction gravitationnelle vers la Terre).<br/><br/>
-              <strong>2.</strong> Newton : P = m·a_centripète<br/>
+              <strong>2.</strong> Newton : P = m·a<sub>centripète</sub><br/>
               mg = m·v²/R<br/>
               v² = g·R = 8,2 × 7×10⁶ = 5,74×10⁷<br/>
               v = √(5,74×10⁷) ≈ <strong>7 577 m·s⁻¹ ≈ 7,6 km/s</strong>
@@ -868,11 +868,11 @@
         <div class="cours-section-title" style="color:var(--phys)">📊 Grandeurs importantes</div>
         <table class="data-table">
           <tr><th>Grandeur</th><th>Formule</th><th>Condition</th></tr>
-          <tr><td>Hauteur maximale (flèche)</td><td>y_max = v₀²sin²α / (2g)</td><td>vy = 0</td></tr>
-          <tr><td>Temps à la flèche</td><td>t_flèche = v₀sinα / g</td><td>vy(t) = 0</td></tr>
-          <tr><td>Temps de vol total</td><td>t_vol = 2·v₀sinα / g</td><td>y(t) = 0</td></tr>
+          <tr><td>Hauteur maximale (flèche)</td><td>y<sub>max</sub> = v₀²sin²α / (2g)</td><td>vy = 0</td></tr>
+          <tr><td>Temps à la flèche</td><td>t<sub>flèche</sub> = v₀sinα / g</td><td>vy(t) = 0</td></tr>
+          <tr><td>Temps de vol total</td><td>t<sub>vol</sub> = 2·v₀sinα / g</td><td>y(t) = 0</td></tr>
           <tr><td>Portée</td><td>R = v₀²sin(2α) / g</td><td>Lancer depuis sol</td></tr>
-          <tr><td>Portée maximale</td><td>R_max à α = 45°</td><td>sin(90°) = 1</td></tr>
+          <tr><td>Portée maximale</td><td>R<sub>max</sub> à α = 45°</td><td>sin(90°) = 1</td></tr>
         </table>
       </div>
       <div class="cours-section">
@@ -960,8 +960,8 @@
         </div>
         <table class="data-table">
           <tr><th>Quantité</th><th>Formule</th></tr>
-          <tr><td>Flèche (alt. max)</td><td>y_max = v₀²·sin²α / (2g)</td></tr>
-          <tr><td>Temps à la flèche</td><td>t_flèche = v₀·sin α / g</td></tr>
+          <tr><td>Flèche (alt. max)</td><td>y<sub>max</sub> = v₀²·sin²α / (2g)</td></tr>
+          <tr><td>Temps à la flèche</td><td>t<sub>flèche</sub> = v₀·sin α / g</td></tr>
           <tr><td>Portée</td><td>Chercher t tel que y(t) = 0, puis x(t)</td></tr>
         </table>
       </div>
@@ -1010,7 +1010,7 @@
             <div class="solution-box">
               <strong>1.</strong> x(t) = 15×0,866×t = 13t &nbsp;|&nbsp; y(t) = −5t² + 15×0,5×t = −5t² + 7,5t<br/><br/>
               <strong>2. Hauteur max :</strong> vᵧ = 0 → −10t + 7,5 = 0 → t = 0,75 s<br/>
-              y_max = −5×(0,75)² + 7,5×0,75 = −2,81 + 5,63 = <strong>2,81 m</strong><br/><br/>
+              y<sub>max</sub> = −5×(0,75)² + 7,5×0,75 = −2,81 + 5,63 = <strong>2,81 m</strong><br/><br/>
               <strong>3. Portée :</strong> y = 0 → t(−5t + 7,5) = 0 → t = 1,5 s<br/>
               x = 13 × 1,5 = <strong>19,5 m</strong>
             </div>
@@ -1046,20 +1046,20 @@
           <div class="def-title">Champ électrique uniforme</div>
           Entre les deux armatures d'un condensateur plan, le champ électrique E est <strong>uniforme</strong> (même valeur partout), perpendiculaire aux armatures, orienté de la plaque + vers la plaque −.
         </div>
-        <div class="formula-box phys"><span class="formula-label">Champ électrique dans le condensateur</span>E = U_AB / d &nbsp;&nbsp; (V·m⁻¹, d = distance entre armatures)</div>
-        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>U_AB = V_A − V_B. Si A est la plaque + et B la plaque −, alors U_AB > 0 et E est bien orienté de A vers B.</div></div>
+        <div class="formula-box phys"><span class="formula-label">Champ électrique dans le condensateur</span>$E = \dfrac{U_{AB}}{d} \quad (\text{V·m}^{-1})$</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>U<sub>AB</sub> = V<sub>A</sub> − V<sub>B</sub>. Si A est la plaque + et B la plaque −, alors U<sub>AB</sub> > 0 et E est bien orienté de A vers B.</div></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🚀 Mouvement d'une particule chargée</div>
         <div class="cours-text"><p>Une particule de charge q et masse m soumise au champ E subit une force F = qE. C'est <strong>exactement analogue à la pesanteur</strong> (remplacer g par qE/m).</p></div>
-        <div class="formula-box phys"><span class="formula-label">Accélération de la particule</span>a = qE/m = qU_AB/(md) &nbsp;&nbsp; (dirigée selon E si q > 0)</div>
+        <div class="formula-box phys"><span class="formula-label">Accélération de la particule</span>$a = \dfrac{qE}{m} = \dfrac{qU_{AB}}{md}$</div>
         <div class="formula-box phys"><span class="formula-label">Équations du mouvement (entrée horizontale)</span>x(t) = v₀·t &nbsp;&nbsp;&nbsp; y(t) = ½·(qE/m)·t²</div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pour un électron :</strong> q = −e = −1,6×10⁻¹⁹ C. La force est dans le sens <em>opposé</em> au champ E (l'électron va vers la plaque +).</div></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">⚡ Accélération par une tension (canon à électrons)</div>
-        <div class="cours-text"><p>Un électron accéléré par une tension U_acc gagne de l'énergie cinétique. Par conservation de l'énergie :</p></div>
-        <div class="formula-box phys"><span class="formula-label">Vitesse après accélération</span>½mv² = |q|·U_acc &nbsp;→&nbsp; v = √(2|q|U_acc/m)</div>
+        <div class="cours-text"><p>Un électron accéléré par une tension U<sub>acc</sub> gagne de l'énergie cinétique. Par conservation de l'énergie :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Vitesse après accélération</span>$\tfrac{1}{2}mv^2 = |q|\,U_{acc} \;\Rightarrow\; v = \sqrt{\dfrac{2|q|U_{acc}}{m}}$</div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode BAC</div>
@@ -1120,7 +1120,7 @@
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              Un électron (q = −1,6×10⁻¹⁹ C, m = 9,1×10⁻³¹ kg) entre horizontalement avec v₀ = 5×10⁷ m/s dans un condensateur. U_AB = 200 V, d = 4 cm.<br/>
+              Un électron (q = −1,6×10⁻¹⁹ C, m = 9,1×10⁻³¹ kg) entre horizontalement avec v₀ = 5×10⁷ m/s dans un condensateur. U<sub>AB</sub> = 200 V, d = 4 cm.<br/>
               1. Calculer E.<br/>
               2. Calculer |a| de l'électron.<br/>
               3. Pour une longueur de condensateur L = 5 cm, calculer la déviation verticale.
@@ -1178,16 +1178,16 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🛸 Satellite en orbite circulaire</div>
         <div class="cours-text"><p>Pour une orbite <strong>circulaire</strong> de rayon R, on applique Newton : la gravitation fournit l'accélération centripète.</p></div>
-        <div class="formula-box phys"><span class="formula-label">Équilibre gravitationnel / centripète</span>G·M·m/R² = m·v²/R &nbsp;→&nbsp; v = √(G·M/R)</div>
+        <div class="formula-box phys"><span class="formula-label">Équilibre gravitationnel / centripète</span>$\dfrac{GMm}{R^2} = \dfrac{mv^2}{R} \;\Rightarrow\; v = \sqrt{\dfrac{GM}{R}}$</div>
         <div class="formula-box phys"><span class="formula-label">Période (v = 2πR/T)</span>T = 2πR / v = 2π√(R³/GM)</div>
         <table class="data-table">
           <tr><th>Grandeur</th><th>Formule</th></tr>
           <tr><td>Vitesse orbitale</td><td>v = √(GM/R)</td></tr>
           <tr><td>Période</td><td>T = 2π√(R³/GM)</td></tr>
-          <tr><td>Altitude h</td><td>R = R_Terre + h</td></tr>
+          <tr><td>Altitude h</td><td>R = R<sub>Terre</sub> + h</td></tr>
           <tr><td>Satellite géostationnaire</td><td>T = 24h, orbite équatoriale</td></tr>
         </table>
-        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>R est la distance au <strong>centre</strong> de la Terre, pas à sa surface ! R = R_Terre + altitude. R_Terre = 6 370 km.</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>R est la distance au <strong>centre</strong> de la Terre, pas à sa surface ! R = R<sub>Terre</sub> + altitude. R<sub>Terre</sub> = 6 370 km.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -1219,7 +1219,7 @@
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
-          <div>G = 6,67×10⁻¹¹ N·m²·kg⁻² | M_Terre = 5,97×10²⁴ kg | R en mètres, T en secondes !</div>
+          <div>G = 6,67×10⁻¹¹ N·m²·kg⁻² | M<sub>Terre</sub> = 5,97×10²⁴ kg | R en mètres, T en secondes !</div>
         </div>
       </div>
     </div>
@@ -1234,15 +1234,15 @@
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              Un satellite géostationnaire tourne avec la Terre (T = 24h). G·M_T = 4,0×10¹⁴ m³·s⁻².<br/>
+              Un satellite géostationnaire tourne avec la Terre (T = 24h). G·M<sub>T</sub> = 4,0×10¹⁴ m³·s⁻².<br/>
               1. Convertir T en secondes.<br/>
               2. Utiliser la 3ème loi de Kepler pour trouver R.
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
               <strong>1.</strong> T = 24×3600 = <strong>86 400 s</strong><br/><br/>
-              <strong>2.</strong> T²/R³ = 4π²/(G·M_T)<br/>
-              R³ = G·M_T·T²/(4π²) = 4×10¹⁴ × (86400)² / (4π²)<br/>
+              <strong>2.</strong> T²/R³ = 4π²/(G·M<sub>T</sub>)<br/>
+              R³ = G·M<sub>T</sub>·T²/(4π²) = 4×10¹⁴ × (86400)² / (4π²)<br/>
               R³ = 4×10¹⁴ × 7,46×10⁹ / 39,5 = 7,55×10²²<br/>
               R = (7,55×10²²)^(1/3) ≈ <strong>4,22×10⁷ m = 42 200 km</strong>
             </div>
@@ -1256,15 +1256,15 @@
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              La Terre a T_T = 1 an et a_T = 1 UA. Mars a a_M = 1,52 UA.<br/>
+              La Terre a T<sub>T</sub> = 1 an et a<sub>T</sub> = 1 UA. Mars a a<sub>M</sub> = 1,52 UA.<br/>
               Calculer la période de révolution de Mars.
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
               T²/a³ = cst (même astre attracteur = Soleil)<br/>
-              T_M²/a_M³ = T_T²/a_T³<br/>
-              T_M² = T_T² × (a_M/a_T)³ = 1² × (1,52)³ = 3,51<br/>
-              T_M = √3,51 ≈ <strong>1,87 ans</strong>
+              T<sub>M²/a_M³</sub> = T<sub>T²/a_T³</sub><br/>
+              T<sub>M²</sub> = T<sub>T²</sub> × (a<sub>M/a_T</sub>)³ = 1² × (1,52)³ = 3,51<br/>
+              T<sub>M</sub> = √3,51 ≈ <strong>1,87 ans</strong>
             </div>
           </div>
         </div>
@@ -1306,9 +1306,9 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">📊 Niveau d'intensité sonore L (décibels)</div>
         <div class="cours-text"><p>L'oreille humaine perçoit les sons de façon <strong>logarithmique</strong> (pas linéaire). D'où l'échelle en décibels :</p></div>
-        <div class="formula-box phys"><span class="formula-label">Niveau sonore</span>L = 10 · log(I / I₀) &nbsp;&nbsp; (dB) &nbsp;&nbsp; I₀ = 10⁻¹² W·m⁻²</div>
+        <div class="formula-box phys"><span class="formula-label">Niveau sonore</span>$L = 10\log\!\left(\dfrac{I}{I_0}\right)\ \text{(dB)} \qquad I_0 = 10^{-12}\ \text{W·m}^{-2}$</div>
         <div class="formula-box phys"><span class="formula-label">Retrouver I</span>$I = I_0 \cdot 10^{L/10}$</div>
-        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Les niveaux sonores NE s'additionnent PAS !</strong> Pour 2 sources identiques à L dB : L_total = L + 10·log(2) = L + 3 dB. Il faut toujours repasser par les intensités (I_total = ΣI), puis recalculer L.</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Les niveaux sonores NE s'additionnent PAS !</strong> Pour 2 sources identiques à L dB : L<sub>total</sub> = L + 10·log(2) = L + 3 dB. Il faut toujours repasser par les intensités (I<sub>total</sub> = ΣI), puis recalculer L.</div></div>
         <table class="data-table">
           <tr><th>Source</th><th>L (dB)</th><th>I (W/m²)</th></tr>
           <tr><td>Seuil d'audibilité</td><td>0</td><td>10⁻¹²</td></tr>
@@ -1347,7 +1347,7 @@
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
-          <div><strong>PIÈGE BAC :</strong> Les niveaux sonores NE s'additionnent PAS. Deux sources à 60 dB = 63 dB (pas 120 dB). Les INTENSITÉS s'additionnent : I_tot = ΣI.</div>
+          <div><strong>PIÈGE BAC :</strong> Les niveaux sonores NE s'additionnent PAS. Deux sources à 60 dB = 63 dB (pas 120 dB). Les INTENSITÉS s'additionnent : I<sub>tot</sub> = ΣI.</div>
         </div>
         <table class="data-table">
           <tr><th>Situation</th><th>Niveau (dB)</th></tr>
@@ -1371,13 +1371,13 @@
             <div class="exercise-question">
               Deux haut-parleurs identiques émettent chacun un niveau L = 70 dB. I₀ = 10⁻¹² W·m⁻².<br/>
               1. Retrouver l'intensité I d'un haut-parleur.<br/>
-              2. Calculer le niveau total L_tot quand les deux sont allumés.
+              2. Calculer le niveau total L<sub>tot</sub> quand les deux sont allumés.
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
               <strong>1.</strong> L = 10·log(I/I₀) → I = I₀ × 10^(L/10) = 10⁻¹² × 10^7 = <strong>10⁻⁵ W·m⁻²</strong><br/><br/>
-              <strong>2.</strong> I_tot = 2I = 2×10⁻⁵ W·m⁻²<br/>
-              L_tot = 10·log(2×10⁻⁵ / 10⁻¹²) = 10·log(2×10⁷) = 10·(log 2 + 7) = 10·(0,301+7) = <strong>73 dB</strong>
+              <strong>2.</strong> I<sub>tot</sub> = 2I = 2×10⁻⁵ W·m⁻²<br/>
+              L<sub>tot</sub> = 10·log(2×10⁻⁵ / 10⁻¹²) = 10·log(2×10⁷) = 10·(log 2 + 7) = 10·(0,301+7) = <strong>73 dB</strong>
             </div>
           </div>
         </div>
@@ -1423,10 +1423,10 @@
           <p>On suppose un fluide <strong>incompressible</strong> (ρ = cst), en <strong>écoulement laminaire</strong> (pas de turbulences) et <strong>sans viscosité</strong>.</p>
         </div>
         <div class="definition-box">
-          <div class="def-title">Débit volumique D_V</div>
+          <div class="def-title">Débit volumique D<sub>V</sub></div>
           Volume de fluide qui traverse une section S par unité de temps. Se conserve le long d'un tube de courant (équation de continuité).
         </div>
-        <div class="formula-box phys"><span class="formula-label">Conservation du débit</span>D_V = S · v = constante &nbsp;→&nbsp; S₁·v₁ = S₂·v₂</div>
+        <div class="formula-box phys"><span class="formula-label">Conservation du débit</span>$D_V = Sv = \text{cst} \;\Rightarrow\; S_1 v_1 = S_2 v_2$</div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Tuyau qui se rétrécit → section S diminue → vitesse v augmente. C'est intuitif : l'eau sort plus vite d'un tuyau fin.</div></div>
       </div>
       <div class="cours-section">
@@ -1481,16 +1481,16 @@
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              Un fluide (ρ = 1000 kg/m³) coule dans un tuyau horizontal. En A : S_A = 4 cm², v_A = 2 m/s, p_A = 1,5×10⁵ Pa. En B : S_B = 1 cm².<br/>
-              1. Calculer v_B (conservation du débit).<br/>
-              2. Calculer p_B (Bernoulli, même hauteur h_A = h_B).
+              Un fluide (ρ = 1000 kg/m³) coule dans un tuyau horizontal. En A : S<sub>A</sub> = 4 cm², v<sub>A</sub> = 2 m/s, p<sub>A</sub> = 1,5×10⁵ Pa. En B : S<sub>B</sub> = 1 cm².<br/>
+              1. Calculer v<sub>B</sub> (conservation du débit).<br/>
+              2. Calculer p<sub>B</sub> (Bernoulli, même hauteur h<sub>A</sub> = h<sub>B</sub>).
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> S_A·v_A = S_B·v_B → v_B = (S_A/S_B)·v_A = (4/1)×2 = <strong>8 m·s⁻¹</strong><br/><br/>
-              <strong>2.</strong> p_A + ½ρv_A² = p_B + ½ρv_B² (h cst)<br/>
-              p_B = p_A + ½ρ(v_A² − v_B²) = 1,5×10⁵ + ½×1000×(4−64)<br/>
-              p_B = 1,5×10⁵ − 30 000 = <strong>1,2×10⁵ Pa</strong><br/>
+              <strong>1.</strong> S<sub>A</sub>·v<sub>A</sub> = S<sub>B</sub>·v<sub>B</sub> → v<sub>B</sub> = (S<sub>A/S_B</sub>)·v<sub>A</sub> = (4/1)×2 = <strong>8 m·s⁻¹</strong><br/><br/>
+              <strong>2.</strong> p<sub>A</sub> + ½ρv_A² = p<sub>B</sub> + ½ρv_B² (h cst)<br/>
+              p<sub>B</sub> = p<sub>A</sub> + ½ρ(v<sub>A²</sub> − v<sub>B²</sub>) = 1,5×10⁵ + ½×1000×(4−64)<br/>
+              p<sub>B</sub> = 1,5×10⁵ − 30 000 = <strong>1,2×10⁵ Pa</strong><br/>
               ✅ p diminue quand v augmente (effet Venturi).
             </div>
           </div>
@@ -1759,8 +1759,8 @@
         <div class="cours-text">
           <ul>
             <li><strong>c</strong> = vitesse de l'onde dans le milieu (340 m/s pour le son, 3×10⁸ m/s pour la lumière)</li>
-            <li><strong>v_S</strong> = vitesse de la source</li>
-            <li><strong>f_S</strong> = fréquence émise par la source</li>
+            <li><strong>v<sub>S</sub></strong> = vitesse de la source</li>
+            <li><strong>f<sub>S</sub></strong> = fréquence émise par la source</li>
           </ul>
         </div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Applications réelles :</strong> Radar de vitesse (police), échographie Doppler (médecine), mesure de vitesse des étoiles (redshift astronomique), prévisions météo (radar Doppler).</div></div>
@@ -1819,9 +1819,9 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              f_A = f₀ × c/(c − v) = 24×10⁹ × 3×10⁸/(3×10⁸ − 50)<br/>
-              f_A = 24×10⁹ × 3×10⁸/2,9999995×10⁸<br/>
-              f_A ≈ 24×10⁹ × 1,0000000167 ≈ <strong>24 000 000 004 Hz</strong><br/>
+              f<sub>A</sub> = f₀ × c/(c − v) = 24×10⁹ × 3×10⁸/(3×10⁸ − 50)<br/>
+              f<sub>A</sub> = 24×10⁹ × 3×10⁸/2,9999995×10⁸<br/>
+              f<sub>A</sub> ≈ 24×10⁹ × 1,0000000167 ≈ <strong>24 000 000 004 Hz</strong><br/>
               Δf = 4 Hz (décalage très faible car v << c, c'est normal pour la lumière/radio)
             </div>
           </div>
@@ -1929,7 +1929,7 @@
             <div class="solution-box">
               <strong>1.</strong> E = hc/λ = (6,63×10⁻³⁴ × 3×10⁸) / (250×10⁻⁹) = 7,96×10⁻¹⁹ J<br/>
               En eV : E = 7,96×10⁻¹⁹ / 1,6×10⁻¹⁹ ≈ <strong>4,98 eV</strong><br/><br/>
-              <strong>2.</strong> E_photon = 4,98 eV > W = 3,0 eV → <strong>Oui, l'électron est éjecté</strong><br/>
+              <strong>2.</strong> E<sub>photon</sub> = 4,98 eV > W = 3,0 eV → <strong>Oui, l'électron est éjecté</strong><br/>
               Ec = E − W = 4,98 − 3,0 = <strong>1,98 eV = 3,17×10⁻¹⁹ J</strong>
             </div>
           </div>
@@ -1962,7 +1962,7 @@
         <div class="cours-section-title" style="color:var(--phys)">🔌 Le condensateur — rappel</div>
         <div class="definition-box">
           <div class="def-title">Condensateur</div>
-          Composant qui stocke de l'énergie électrique sous forme de charge. Constitué de 2 armatures conductrices séparées par un isolant. Sa capacité C (en Farads) caractérise sa capacité de stockage. Relation : q = C·u_C.
+          Composant qui stocke de l'énergie électrique sous forme de charge. Constitué de 2 armatures conductrices séparées par un isolant. Sa capacité C (en Farads) caractérise sa capacité de stockage. Relation : q = C·u<sub>C</sub>.
         </div>
         <div class="formula-box phys"><span class="formula-label">Intensité dans le condensateur</span>$i = C\,\dfrac{du_C}{dt}$</div>
         <div class="cours-text"><p>Cette relation est fondamentale : elle dit que l'intensité est <strong>proportionnelle à la dérivée de la tension</strong> aux bornes du condensateur.</p></div>
@@ -1979,7 +1979,7 @@
         <div class="formula-box phys"><span class="formula-label">Constante de temps</span>τ = R · C &nbsp;&nbsp; (en secondes si R en Ω et C en F)</div>
         <div class="cours-text"><p>τ représente le temps caractéristique du circuit. Plus τ est grand, plus la charge/décharge est lente.</p></div>
         <table class="data-table">
-          <tr><th>Instant</th><th>Charge : u_C</th><th>Décharge : u_C</th></tr>
+          <tr><th>Instant</th><th>Charge : u<sub>C</sub></th><th>Décharge : u<sub>C</sub></th></tr>
           <tr><td>t = 0</td><td>0</td><td>E</td></tr>
           <tr><td>t = τ</td><td>0,63 E</td><td>0,37 E</td></tr>
           <tr><td>t = 2τ</td><td>0,86 E</td><td>0,14 E</td></tr>
@@ -2032,7 +2032,7 @@
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
-          <div><strong>À t = τ :</strong> charge → u_C = 0,63E | décharge → u_C = 0,37E. <strong>À t = 5τ :</strong> condensateur considéré plein ou vide (≈ 99%).</div>
+          <div><strong>À t = τ :</strong> charge → u<sub>C</sub> = 0,63E | décharge → u<sub>C</sub> = 0,37E. <strong>À t = 5τ :</strong> condensateur considéré plein ou vide (≈ 99%).</div>
         </div>
       </div>
     </div>
@@ -2088,16 +2088,16 @@
             <div class="exercise-question">
               Un circuit RC avec R = 10 kΩ, C = 100 μF, E = 12 V. Le condensateur est initialement déchargé.<br/>
               1. Calculer τ.<br/>
-              2. Donner l'expression de u_C(t).<br/>
+              2. Donner l'expression de u<sub>C</sub>(t).<br/>
               3. Quelle est la tension à t = τ ?<br/>
               4. À partir de quand le condensateur est-il "chargé" ?
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
               <strong>1.</strong> τ = RC = 10×10³ × 100×10⁻⁶ = <strong>1 s</strong><br/><br/>
-              <strong>2.</strong> u_C(t) = E(1 − e^(−t/τ)) = <strong>12(1 − e^(−t))</strong><br/><br/>
-              <strong>3.</strong> à t = τ = 1s : u_C = 12(1 − e⁻¹) = 12×0,63 = <strong>7,6 V ≈ 0,63E</strong><br/><br/>
-              <strong>4.</strong> "Chargé" à t = 5τ = <strong>5 s</strong> (u_C ≈ 99% de E)
+              <strong>2.</strong> u<sub>C</sub>(t) = E(1 − e^(−t/τ)) = <strong>12(1 − e^(−t))</strong><br/><br/>
+              <strong>3.</strong> à t = τ = 1s : u<sub>C</sub> = 12(1 − e⁻¹) = 12×0,63 = <strong>7,6 V ≈ 0,63E</strong><br/><br/>
+              <strong>4.</strong> "Chargé" à t = 5τ = <strong>5 s</strong> (u<sub>C</sub> ≈ 99% de E)
             </div>
           </div>
         </div>
@@ -2142,8 +2142,8 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">📐 Loi de Newton (refroidissement/convection)</div>
-        <div class="formula-box phys"><span class="formula-label">Flux thermique reçu par le système</span>φ = h · S · (T_ext − T) &nbsp;&nbsp; (W)</div>
-        <div class="cours-text"><ul><li><strong>h</strong> : coefficient de convection (W·m⁻²·K⁻¹)</li><li><strong>S</strong> : surface d'échange (m²)</li><li><strong>T_ext − T</strong> : écart de température</li></ul></div>
+        <div class="formula-box phys"><span class="formula-label">Flux thermique reçu par le système</span>$\varphi = hS\,(T_{\text{ext}} - T) \quad (\text{W})$</div>
+        <div class="cours-text"><ul><li><strong>h</strong> : coefficient de convection (W·m⁻²·K⁻¹)</li><li><strong>S</strong> : surface d'échange (m²)</li><li><strong>T<sub>ext</sub> − T</strong> : écart de température</li></ul></div>
         <div class="formula-box phys"><span class="formula-label">Équation différentielle (1er principe + loi Newton)</span>$mc\,\dfrac{dT}{dt} = hS(T_{\text{ext}} - T)$</div>
         <div class="formula-box phys"><span class="formula-label">Solution</span>$T(t) = T_{\text{ext}} + (T_0 - T_{\text{ext}})e^{-t/\tau} \qquad \tau = \dfrac{mc}{hS}$</div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Même forme que le circuit RC ! τ = constante de temps thermique. À t = τ, l'écart de température a diminué de 63%.</div></div>
@@ -2173,7 +2173,7 @@
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Solution de l'équation diff.</span>
-          T(t) = (T_initiale − T_ext)·e^(−t/τ) + T_ext &nbsp;&nbsp; τ = mc/(hS)
+          $T(t) = T_{\text{ext}} + (T_0 - T_{\text{ext}})\,e^{-t/\tau} \qquad \tau = \dfrac{mc}{hS}$
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Stefan-Boltzmann (rayonnement)</span>
@@ -2181,7 +2181,7 @@
         </div>
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
-          <div><strong>La courbe T(t) :</strong> T part de T_initiale et converge exponentiellement vers T_ext. À t = τ, T a parcouru 63% de la différence de température.</div>
+          <div><strong>La courbe T(t) :</strong> T part de T<sub>initiale</sub> et converge exponentiellement vers T<sub>ext</sub>. À t = τ, T a parcouru 63% de la différence de température.</div>
         </div>
       </div>
     </div>
@@ -2196,7 +2196,7 @@
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              Un café à T₀ = 80°C refroidit dans une pièce à T_ext = 20°C. τ = 10 min.<br/>
+              Un café à T₀ = 80°C refroidit dans une pièce à T<sub>ext</sub> = 20°C. τ = 10 min.<br/>
               1. Donner T(t).<br/>
               2. Quelle est la température à t = 10 min ?<br/>
               3. Quelle est la température à t = 30 min ?
@@ -2205,7 +2205,7 @@
             <div class="solution-box">
               <strong>1.</strong> T(t) = (80−20)·e^(−t/10) + 20 = <strong>60·e^(−t/10) + 20</strong> (t en min)<br/><br/>
               <strong>2.</strong> t = τ = 10 min : T = 60·e⁻¹ + 20 = 60×0,37 + 20 = 22,2 + 20 = <strong>42,2°C</strong><br/><br/>
-              <strong>3.</strong> t = 3τ = 30 min : T = 60·e⁻³ + 20 = 60×0,05 + 20 = 3 + 20 = <strong>23°C</strong> (presque à T_ext)
+              <strong>3.</strong> t = 3τ = 30 min : T = 60·e⁻³ + 20 = 60×0,05 + 20 = 3 + 20 = <strong>23°C</strong> (presque à T<sub>ext</sub>)
             </div>
           </div>
         </div>
@@ -2252,9 +2252,9 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📊 pH et concentration</div>
-        <div class="formula-box chem"><span class="formula-label">Définition du pH</span>pH = −log([H₃O⁺]/C°) ≈ −log[H₃O⁺] &nbsp;&nbsp; (C° = 1 mol/L)</div>
-        <div class="formula-box chem"><span class="formula-label">Retrouver [H₃O⁺]</span>[H₃O⁺] = 10^(−pH)</div>
-        <div class="formula-box chem"><span class="formula-label">Produit ionique de l'eau (25°C)</span>Ke = [H₃O⁺] · [HO⁻] = 10⁻¹⁴ &nbsp;&nbsp; pKe = 14</div>
+        <div class="formula-box chem"><span class="formula-label">Définition du pH</span>$\text{pH} = -\log[\text{H}_3\text{O}^+] \qquad (C° = 1\ \text{mol·L}^{-1})$</div>
+        <div class="formula-box chem"><span class="formula-label">Retrouver [H₃O⁺]</span>$[\text{H}_3\text{O}^+] = 10^{-\text{pH}}$</div>
+        <div class="formula-box chem"><span class="formula-label">Produit ionique de l'eau (25°C)</span>$K_e = [\text{H}_3\text{O}^+][\text{HO}^-] = 10^{-14} \qquad pK_e = 14$</div>
         <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>Le pKe dépend de la température ! À 25°C → pKe = 14. À 37°C (corps humain) → pKe ≈ 13,6. Utiliser la valeur donnée dans l'énoncé.</div></div>
       </div>
       <div class="cours-section">
@@ -2404,7 +2404,7 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📊 Relation pH–pKa (Henderson-Hasselbalch)</div>
-        <div class="formula-box chem"><span class="formula-label">Henderson-Hasselbalch</span>pH = pKa + log([A⁻] / [HA])</div>
+        <div class="formula-box chem"><span class="formula-label">Henderson-Hasselbalch</span>$\text{pH} = pK_a + \log\dfrac{[\text{A}^-]}{[\text{HA}]}$</div>
         <div class="cours-text">
           <p>Cas particuliers importants :</p>
           <ul>
@@ -2450,7 +2450,7 @@
         </div>
         <div class="formula-box chem">
           <span class="formula-label">À pH = pKa</span>
-          [HA] = [A⁻] &nbsp; (moitié dissocié)
+          $[\text{HA}] = [\text{A}^-]$ (moitié dissocié)
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
@@ -2529,12 +2529,12 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📐 Formule de l'équivalence</div>
-        <div class="formula-box chem"><span class="formula-label">À l'équivalence (stœchiométrie)</span>n_A / a = n_B / b &nbsp;→&nbsp; C_A · V_A / a = C_B · V_E / b</div>
-        <div class="formula-box chem"><span class="formula-label">Concentration inconnue C_A</span>$C_A = \dfrac{a\cdot C_B\cdot V_E}{b\cdot V_A}$</div>
+        <div class="formula-box chem"><span class="formula-label">À l'équivalence (stœchiométrie)</span>$\dfrac{n_A}{a} = \dfrac{n_B}{b} \;\Rightarrow\; \dfrac{C_A V_A}{a} = \dfrac{C_B V_E}{b}$</div>
+        <div class="formula-box chem"><span class="formula-label">Concentration inconnue C<sub>A</sub></span>$C_A = \dfrac{a\cdot C_B\cdot V_E}{b\cdot V_A}$</div>
         <div class="step-list">
           <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire l'équation de la réaction de titrage et relever a et b.</div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-text">Repérer V_E (volume équivalent) au changement de couleur.</div></div>
-          <div class="step-item"><div class="step-num">3</div><div class="step-text">Appliquer C_A = a·C_B·V_E / (b·V_A).</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Repérer V<sub>E</sub> (volume équivalent) au changement de couleur.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Appliquer C<sub>A</sub> = a·C<sub>B</sub>·V<sub>E</sub> / (b·V<sub>A</sub>).</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -2547,7 +2547,7 @@
       <div class="info-card-body">
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
-          <div><strong>On verse goutte à goutte</strong> la solution titrante (connue) dans la solution titrée (inconnue). Quand la solution change de couleur → on a ajouté exactement la bonne quantité → c'est l'équivalence. On lit V_E sur la burette.</div>
+          <div><strong>On verse goutte à goutte</strong> la solution titrante (connue) dans la solution titrée (inconnue). Quand la solution change de couleur → on a ajouté exactement la bonne quantité → c'est l'équivalence. On lit V<sub>E</sub> sur la burette.</div>
         </div>
         <div class="schema-box">
           <svg viewBox="0 0 300 200" width="100%" style="max-width:300px">
@@ -2568,7 +2568,7 @@
             <text x="55" y="72" fill="#a259f7" font-size="9">titrante B</text>
             <text x="55" y="84" fill="#a259f7" font-size="9">CB connu</text>
             <text x="140" y="180" text-anchor="middle" fill="#3ecf8e" font-size="9">Solution titrée A</text>
-            <text x="140" y="192" text-anchor="middle" fill="#8892b0" font-size="9">CA = ? V_A connu</text>
+            <text x="140" y="192" text-anchor="middle" fill="#8892b0" font-size="9">CA = ? V<sub>A</sub> connu</text>
             <!-- arrow -->
             <line x1="140" y1="140" x2="140" y2="162" stroke="#a259f7" stroke-width="1" stroke-dasharray="3"/>
           </svg>
@@ -2580,7 +2580,7 @@
       <div class="info-card-body">
         <div class="formula-box chem">
           <span class="formula-label">À l'équivalence (proportions stœchiométriques)</span>
-          n_A / a = n_B / b &nbsp;→&nbsp; C_A·V_A/a = C_B·V_E/b
+          $\dfrac{n_A}{a} = \dfrac{n_B}{b} \;\Rightarrow\; \dfrac{C_A V_A}{a} = \dfrac{C_B V_E}{b}$
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Concentration de la solution titrée</span>
@@ -2588,7 +2588,7 @@
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
-          <div>a et b = coefficients stœchiométriques de l'équation. V_E = volume équivalent (lu sur la burette). V_A et V_E en même unité (mL ou L) !</div>
+          <div>a et b = coefficients stœchiométriques de l'équation. V<sub>E</sub> = volume équivalent (lu sur la burette). V<sub>A</sub> et V<sub>E</sub> en même unité (mL ou L) !</div>
         </div>
         <table class="data-table">
           <tr><th>Indicateur</th><th>Zone de virage (pH)</th><th>Acide→Base</th></tr>
@@ -2609,15 +2609,15 @@
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              V_A = 20,0 mL de HCl de concentration inconnue. On titre avec NaOH à C_B = 0,050 mol/L. L'indicateur change de couleur pour V_E = 12,5 mL.<br/>
+              V<sub>A</sub> = 20,0 mL de HCl de concentration inconnue. On titre avec NaOH à C<sub>B</sub> = 0,050 mol/L. L'indicateur change de couleur pour V<sub>E</sub> = 12,5 mL.<br/>
               Équation : HCl + NaOH → NaCl + H₂O (a = b = 1)<br/>
-              Calculer C_A(HCl).
+              Calculer C<sub>A</sub>(HCl).
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              C_A = (a × C_B × V_E) / (b × V_A)<br/>
-              C_A = (1 × 0,050 × 12,5) / (1 × 20,0)<br/>
-              C_A = 0,625 / 20,0 = <strong>0,031 mol·L⁻¹</strong>
+              C<sub>A</sub> = (a × C<sub>B</sub> × V<sub>E</sub>) / (b × V<sub>A</sub>)<br/>
+              C<sub>A</sub> = (1 × 0,050 × 12,5) / (1 × 20,0)<br/>
+              C<sub>A</sub> = 0,625 / 20,0 = <strong>0,031 mol·L⁻¹</strong>
             </div>
           </div>
         </div>
@@ -2649,13 +2649,13 @@
         <div class="cours-section-title" style="color:var(--chem)">📊 Principe du titrage conductimétrique</div>
         <div class="cours-text">
           <p>On mesure la <strong>conductivité σ</strong> de la solution au fur et à mesure qu'on ajoute le titrant. La conductivité dépend de la <strong>nature et concentration des ions</strong> présents.</p>
-          <p>La courbe σ = f(V_titrant) est formée de <strong>deux droites qui se croisent</strong> à l'équivalence. On trouve V_E en traçant les deux droites et en trouvant leur intersection.</p>
+          <p>La courbe σ = f(V<sub>titrant</sub>) est formée de <strong>deux droites qui se croisent</strong> à l'équivalence. On trouve V<sub>E</sub> en traçant les deux droites et en trouvant leur intersection.</p>
         </div>
-        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pourquoi la pente change ?</strong> Les ions échangés avant et après l'équivalence n'ont pas la même conductivité molaire. H₃O⁺ (très conducteur) remplacé par Na⁺ (peu conducteur) → σ baisse. Après V_E, on ajoute Na⁺ + HO⁻ → σ remonte.</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pourquoi la pente change ?</strong> Les ions échangés avant et après l'équivalence n'ont pas la même conductivité molaire. H₃O⁺ (très conducteur) remplacé par Na⁺ (peu conducteur) → σ baisse. Après V<sub>E</sub>, on ajoute Na⁺ + HO⁻ → σ remonte.</div></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">🔢 Conductivité molaire ionique λ</div>
-        <div class="formula-box chem"><span class="formula-label">Loi de Kohlrausch</span>σ = Σ λ_i · [ion_i]</div>
+        <div class="formula-box chem"><span class="formula-label">Loi de Kohlrausch</span>$\sigma = \sum_i \lambda_i\,[\text{ion}_i]$</div>
         <table class="data-table">
           <tr><th>Ion</th><th>λ (mS·m²·mol⁻¹)</th></tr>
           <tr><td>H₃O⁺</td><td>35,0 (très élevée !)</td></tr>
@@ -2664,7 +2664,7 @@
           <tr><td>K⁺</td><td>7,35</td></tr>
           <tr><td>Cl⁻</td><td>7,63</td></tr>
         </table>
-        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>H₃O⁺ est 7× plus conducteur que Na⁺. C'est pourquoi remplacer H₃O⁺ par Na⁺ fait <em>baisser</em> la conductivité (avant V_E dans le titrage HCl/NaOH).</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>H₃O⁺ est 7× plus conducteur que Na⁺. C'est pourquoi remplacer H₃O⁺ par Na⁺ fait <em>baisser</em> la conductivité (avant V<sub>E</sub> dans le titrage HCl/NaOH).</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -2689,7 +2689,7 @@
         </div>
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
-          <div><strong>Comment trouver V_E sur la courbe ?</strong> Tracer les 2 droites (avant et après rupture). L'intersection = V_E.</div>
+          <div><strong>Comment trouver V<sub>E</sub> sur la courbe ?</strong> Tracer les 2 droites (avant et après rupture). L'intersection = V<sub>E</sub>.</div>
         </div>
         <table class="data-table">
           <tr><th>Ion</th><th>λ (mS·m²·mol⁻¹)</th></tr>
@@ -2700,7 +2700,7 @@
         </table>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
-          <div><strong>Explication de la rupture :</strong> Titrage HCl par NaOH. Avant V_E : on enlève H₃O⁺ (très conducteur) et on ajoute Na⁺ (peu conducteur) → σ baisse. Après V_E : on ajoute Na⁺ + HO⁻ → σ monte.</div>
+          <div><strong>Explication de la rupture :</strong> Titrage HCl par NaOH. Avant V<sub>E</sub> : on enlève H₃O⁺ (très conducteur) et on ajoute Na⁺ (peu conducteur) → σ baisse. Après V<sub>E</sub> : on ajoute Na⁺ + HO⁻ → σ monte.</div>
         </div>
       </div>
     </div>
@@ -2710,17 +2710,17 @@
         <div class="exercise">
           <div class="exercise-header">
             <div class="exercise-num">1</div>
-            <div class="exercise-title">Lecture graphique V_E</div>
+            <div class="exercise-title">Lecture graphique V<sub>E</sub></div>
             <span class="exercise-diff diff-easy">Facile</span>
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              Sur une courbe conductimétrique, les deux droites se croisent à V_E = 11 mL. C_B(NaOH) = 0,050 mol/L, V_A = 20 mL.<br/>
-              Calculer C_A(HCl). (a = b = 1)
+              Sur une courbe conductimétrique, les deux droites se croisent à V<sub>E</sub> = 11 mL. C<sub>B</sub>(NaOH) = 0,050 mol/L, V<sub>A</sub> = 20 mL.<br/>
+              Calculer C<sub>A</sub>(HCl). (a = b = 1)
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              C_A = C_B × V_E / V_A = 0,050 × 11 / 20 = <strong>0,0275 mol·L⁻¹</strong>
+              C<sub>A</sub> = C<sub>B</sub> × V<sub>E</sub> / V<sub>A</sub> = 0,050 × 11 / 20 = <strong>0,0275 mol·L⁻¹</strong>
             </div>
           </div>
         </div>
@@ -2761,10 +2761,10 @@
         </div>
       </div>
       <div class="cours-section">
-        <div class="cours-section-title" style="color:var(--chem)">📐 Méthodes pour trouver V_E</div>
+        <div class="cours-section-title" style="color:var(--chem)">📐 Méthodes pour trouver V<sub>E</sub></div>
         <div class="definition-box">
           <div class="def-title">Méthode des tangentes parallèles</div>
-          Tracer deux tangentes parallèles à la courbe, de part et d'autre du saut de pH. Tracer une droite parallèle à mi-chemin entre elles. Son intersection avec la courbe = V_E.
+          Tracer deux tangentes parallèles à la courbe, de part et d'autre du saut de pH. Tracer une droite parallèle à mi-chemin entre elles. Son intersection avec la courbe = V<sub>E</sub>.
         </div>
         <div class="definition-box">
           <div class="def-title">Méthode de la dérivée (dpH/dV)</div>
@@ -2787,15 +2787,15 @@
         </div>
         <div class="key-point">
           <span class="key-icon">📏</span>
-          <div class="key-text"><strong>Méthode des tangentes parallèles :</strong> Tracer 2 tangentes parallèles à la courbe de part et d'autre du saut de pH. Tracer une droite parallèle à mi-chemin entre les deux. Son intersection avec la courbe = V_E.</div>
+          <div class="key-text"><strong>Méthode des tangentes parallèles :</strong> Tracer 2 tangentes parallèles à la courbe de part et d'autre du saut de pH. Tracer une droite parallèle à mi-chemin entre les deux. Son intersection avec la courbe = V<sub>E</sub>.</div>
         </div>
         <div class="key-point">
           <span class="key-icon">📏</span>
-          <div class="key-text"><strong>Méthode de la dérivée :</strong> dpH/dV = maximum au point d'équivalence. V_E correspond au pic de la dérivée.</div>
+          <div class="key-text"><strong>Méthode de la dérivée :</strong> dpH/dV = maximum au point d'équivalence. V<sub>E</sub> correspond au pic de la dérivée.</div>
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
-          <div><strong>À la demi-équivalence (V = V_E/2) :</strong> pH = pKa. C'est une méthode pour déterminer le pKa de l'acide titré !</div>
+          <div><strong>À la demi-équivalence (V = V<sub>E/2</sub>) :</strong> pH = pKa. C'est une méthode pour déterminer le pKa de l'acide titré !</div>
         </div>
       </div>
     </div>
@@ -2810,13 +2810,13 @@
           </div>
           <div class="exercise-body">
             <div class="exercise-question">
-              Titrage de V_A = 20 mL d'acide faible HA par NaOH (C_B = 0,10 mol/L). Sur la courbe : V_E = 9,3 mL, pH à V_E/2 = 4,65 mL → pH = 4,8.<br/>
-              1. Calculer C_A.<br/>
+              Titrage de V<sub>A</sub> = 20 mL d'acide faible HA par NaOH (C<sub>B</sub> = 0,10 mol/L). Sur la courbe : V<sub>E</sub> = 9,3 mL, pH à V<sub>E/2</sub> = 4,65 mL → pH = 4,8.<br/>
+              1. Calculer C<sub>A</sub>.<br/>
               2. Donner le pKa du couple HA/A⁻.
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> C_A = C_B × V_E / V_A = 0,10 × 9,3 / 20 = <strong>0,0465 mol·L⁻¹</strong><br/><br/>
+              <strong>1.</strong> C<sub>A</sub> = C<sub>B</sub> × V<sub>E</sub> / V<sub>A</sub> = 0,10 × 9,3 / 20 = <strong>0,0465 mol·L⁻¹</strong><br/><br/>
               <strong>2.</strong> À la demi-équivalence, pH = pKa → <strong>pKa = 4,8</strong>
             </div>
           </div>
@@ -2854,7 +2854,7 @@
           <div class="def-title">Absorbance A</div>
           A = log(I₀/I) où I₀ = intensité incidente, I = intensité transmise. A est sans unité.
         </div>
-        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Règle du cercle chromatique :</strong> Une solution absorbe à λ_max → elle apparaît de la couleur <em>complémentaire</em>. Bleu absorbé → solution jaune/orange. Rouge absorbé → solution verte/bleue.</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Règle du cercle chromatique :</strong> Une solution absorbe à λ<sub>max</sub> → elle apparaît de la couleur <em>complémentaire</em>. Bleu absorbé → solution jaune/orange. Rouge absorbé → solution verte/bleue.</div></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">🌡️ Spectroscopie Infrarouge (IR)</div>
@@ -2945,7 +2945,7 @@
         </div>
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
-          <div><strong>Règle :</strong> Si une solution absorbe le bleu (λ_max ≈ 450 nm), elle apparaît de la couleur complémentaire = JAUNE/ORANGE. Les couleurs opposées sur le cercle sont complémentaires.</div>
+          <div><strong>Règle :</strong> Si une solution absorbe le bleu (λ<sub>max</sub> ≈ 450 nm), elle apparaît de la couleur complémentaire = JAUNE/ORANGE. Les couleurs opposées sur le cercle sont complémentaires.</div>
         </div>
       </div>
     </div>
@@ -3007,13 +3007,13 @@
         </div>
         <div class="formula-box chem"><span class="formula-label">Loi de Beer-Lambert</span>$A = \varepsilon l C \quad (\varepsilon \text{ en L·mol}^{-1}\text{·cm}^{-1})$</div>
         <div class="formula-box chem"><span class="formula-label">Forme simplifiée (BAC)</span>$A = kC \quad (k = \varepsilon l = \text{cst})$</div>
-        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Conditions de validité :</strong> Solution diluée (C ≤ 5×10⁻³ mol/L environ), longueur d'onde fixée à λ_max (absorbance maximale), solution homogène.</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Conditions de validité :</strong> Solution diluée (C ≤ 5×10⁻³ mol/L environ), longueur d'onde fixée à λ<sub>max</sub> (absorbance maximale), solution homogène.</div></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📊 Méthode de la courbe d'étalonnage</div>
         <div class="step-list">
           <div class="step-item"><div class="step-num">1</div><div class="step-text">Préparer des solutions étalons de <strong>concentrations connues</strong>.</div></div>
-          <div class="step-item"><div class="step-num">2</div><div class="step-text">Mesurer l'absorbance A de chaque étalon au <strong>spectrophotomètre à λ_max</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Mesurer l'absorbance A de chaque étalon au <strong>spectrophotomètre à λ<sub>max</sub></strong>.</div></div>
           <div class="step-item"><div class="step-num">3</div><div class="step-text">Tracer A = f(C) → droite passant par l'origine si Beer-Lambert vérifié. La <strong>pente = k</strong>.</div></div>
           <div class="step-item"><div class="step-num">4</div><div class="step-text">Mesurer A de la solution inconnue → lire C sur la courbe ou calculer C = A/k.</div></div>
         </div>
@@ -3071,7 +3071,7 @@
               Une courbe A = f(C) est linéaire et passe par (0 ; 0) et (3,5×10⁻³ mol/L ; 1,4).<br/>
               Une solution inconnue a A = 0,60.<br/>
               1. Calculer k (pente).<br/>
-              2. Trouver C_inconnue.
+              2. Trouver C<sub>inconnue</sub>.
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
@@ -3119,7 +3119,7 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📊 Courbe d'étalonnage conductimétrique</div>
         <div class="cours-text">
-          <p>Comme Beer-Lambert mais avec la conductivité : σ = k·C (linéaire pour solutions diluées). On trace σ = f(C) avec des étalons, puis on lit C_inconnue à partir de σ_mesurée.</p>
+          <p>Comme Beer-Lambert mais avec la conductivité : σ = k·C (linéaire pour solutions diluées). On trace σ = f(C) avec des étalons, puis on lit C<sub>inconnue</sub> à partir de σ<sub>mesurée</sub>.</p>
         </div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>La conductimétrie est utile pour les solutions <strong>incolores</strong> (où Beer-Lambert ne s'applique pas). Par exemple: NaCl, HCl dilué, eaux minérales.</div></div>
       </div>
@@ -3306,18 +3306,18 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-equilibre">
       <div class="cours-section">
-        <div class="cours-section-title" style="color:var(--chem)">⚖️ Quotient de réaction Q_r</div>
+        <div class="cours-section-title" style="color:var(--chem)">⚖️ Quotient de réaction Q<sub>r</sub></div>
         <div class="cours-text"><p>Pour la réaction aA + bB ⇌ cC + dD :</p></div>
-        <div class="formula-box chem"><span class="formula-label">Quotient de réaction</span>Q_r = ([C]/C°)^c · ([D]/C°)^d / (([A]/C°)^a · ([B]/C°)^b)</div>
-        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>C° = 1 mol·L⁻¹ (concentration standard). En pratique on écrit souvent Q_r = [C]^c[D]^d / ([A]^a[B]^b) avec les concentrations en mol/L directement. Les solvants (eau) et solides purs n'apparaissent PAS.</div></div>
+        <div class="formula-box chem"><span class="formula-label">Quotient de réaction</span>$Q_r = \dfrac{([\text{C}]/C°)^c\,([\text{D}]/C°)^d}{([\text{A}]/C°)^a\,([\text{B}]/C°)^b}$</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>C° = 1 mol·L⁻¹ (concentration standard). En pratique on écrit souvent Q<sub>r</sub> = [C]^c[D]^d / ([A]^a[B]^b) avec les concentrations en mol/L directement. Les solvants (eau) et solides purs n'apparaissent PAS.</div></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📊 Constante d'équilibre K</div>
         <div class="definition-box">
           <div class="def-title">État d'équilibre</div>
-          À l'équilibre, Q_r = K (constante d'équilibre). K ne dépend que de la température, pas des concentrations initiales.
+          À l'équilibre, Q<sub>r</sub> = K (constante d'équilibre). K ne dépend que de la température, pas des concentrations initiales.
         </div>
-        <div class="formula-box chem"><span class="formula-label">Sens d'évolution spontané</span>Q_r &lt; K → sens direct (→) &nbsp;|&nbsp; Q_r &gt; K → sens indirect (←) &nbsp;|&nbsp; Q_r = K → équilibre</div>
+        <div class="formula-box chem"><span class="formula-label">Sens d'évolution spontané</span>$Q_r < K$ → sens direct &nbsp;|&nbsp; $Q_r > K$ → sens indirect &nbsp;|&nbsp; $Q_r = K$ → équilibre → équilibre</div>
         <div class="formula-box chem"><span class="formula-label">Taux d'avancement</span>$\tau = \dfrac{x_{\text{éq}}}{x_{\max}}$</div>
         <div class="cours-text">
           <ul>
@@ -3333,8 +3333,8 @@
           <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire l'équation équilibrée avec les coefficients stœchiométriques.</div></div>
           <div class="step-item"><div class="step-num">2</div><div class="step-text">Ligne "état initial" : quantités n₀ des espèces.</div></div>
           <div class="step-item"><div class="step-num">3</div><div class="step-text">Ligne "état à x" : n₀ ± coeff·x pour chaque espèce.</div></div>
-          <div class="step-item"><div class="step-num">4</div><div class="step-text">x_max = min(n₀/coeff) pour les réactifs.</div></div>
-          <div class="step-item"><div class="step-num">5</div><div class="step-text">Trouver x_éq (via K ou données) → τ = x_éq/x_max.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">x<sub>max</sub> = min(n₀/coeff) pour les réactifs.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text">Trouver x<sub>éq</sub> (via K ou données) → τ = x<sub>éq/x_max</sub>.</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -3351,11 +3351,11 @@
         </div>
         <div class="formula-box chem">
           <span class="formula-label">À l'équilibre</span>
-          Q_r,éq = K
+          $Q_{r,\text{éq}} = K$
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Sens d'évolution</span>
-          Q_r &lt; K → sens direct | Q_r &gt; K → sens indirect
+          $Q_r < K$ → sens direct &nbsp;|&nbsp; $Q_r > K$ → sens indirect
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Taux d'avancement</span>
@@ -3363,7 +3363,7 @@
         </div>
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
-          <div><strong>L'eau et les solides n'apparaissent PAS dans Q_r !</strong> (activité = 1)</div>
+          <div><strong>L'eau et les solides n'apparaissent PAS dans Q<sub>r</sub> !</strong> (activité = 1)</div>
         </div>
       </div>
     </div>
@@ -3380,15 +3380,15 @@
             <div class="exercise-question">
               CH₃COOH + H₂O ⇌ CH₃COO⁻ + H₃O⁺<br/>
               n₀(CH₃COOH) = 0,10 mol, n₀(H₂O) = solvant.<br/>
-              À l'équilibre, x_f = 1,3×10⁻³ mol.<br/>
-              1. Calculer x_max.<br/>
+              À l'équilibre, x<sub>f</sub> = 1,3×10⁻³ mol.<br/>
+              1. Calculer x<sub>max</sub>.<br/>
               2. Calculer τ et conclure.
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> x_max = min(n₀/coeff) = min(0,10/1) = <strong>0,10 mol</strong><br/>
+              <strong>1.</strong> x<sub>max</sub> = min(n₀/coeff) = min(0,10/1) = <strong>0,10 mol</strong><br/>
               (L'eau est en solvant = excès, donc le réactif limitant est CH₃COOH)<br/><br/>
-              <strong>2.</strong> τ = x_f/x_max = 1,3×10⁻³ / 0,10 = <strong>0,013 = 1,3%</strong><br/>
+              <strong>2.</strong> τ = x<sub>f/x_max</sub> = 1,3×10⁻³ / 0,10 = <strong>0,013 = 1,3%</strong><br/>
               τ << 1 → la réaction est très <strong>peu avancée</strong> → acide faible (peu dissocié). ✅
             </div>
           </div>
@@ -3546,9 +3546,9 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📐 Calcul du rendement</div>
-        <div class="formula-box chem"><span class="formula-label">Rendement</span>r = (n_expérimental / n_théorique) × 100 = (m_exp / m_théo) × 100 &nbsp;&nbsp; (%)</div>
+        <div class="formula-box chem"><span class="formula-label">Rendement</span>$r = \dfrac{n_{\text{exp}}}{n_{\text{théo}}} \times 100 = \dfrac{m_{\text{exp}}}{m_{\text{théo}}} \times 100 \quad (\%)$</div>
         <div class="cours-text">
-          <p>n_théorique = quantité de produit obtenu si la réaction était totale et sans perte, calculée à partir du réactif limitant.</p>
+          <p>n<sub>théorique</sub> = quantité de produit obtenu si la réaction était totale et sans perte, calculée à partir du réactif limitant.</p>
         </div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pourquoi r < 100% ?</strong> Réaction équilibrée (pas totale), pertes lors de la purification (filtration, distillation), réactions parasites.</div></div>
         <div class="definition-box">
@@ -3566,11 +3566,11 @@
       <div class="info-card-body">
         <div class="formula-box chem">
           <span class="formula-label">Rendement</span>
-          r = n_expérimental / n_théorique × 100 &nbsp;&nbsp; (%)
+          $r = \dfrac{n_{\text{exp}}}{n_{\text{théo}}} \times 100 \quad (\%)$
         </div>
         <div class="formula-box chem">
           <span class="formula-label">ou en masse</span>
-          r = m_expérimental / m_théorique × 100
+          $r = \dfrac{m_{\text{exp}}}{m_{\text{théo}}} \times 100$
         </div>
         <table class="data-table">
           <tr><th>Type réaction</th><th>Schéma</th><th>Exemple</th></tr>
@@ -3597,14 +3597,14 @@
             <div class="exercise-question">
               Synthèse d'un ester (M = 102 g/mol) à partir de 0,10 mol d'alcool (réactif limitant).<br/>
               On obtient 8,2 g d'ester.<br/>
-              1. Calculer m_théorique.<br/>
+              1. Calculer m<sub>théorique</sub>.<br/>
               2. Calculer le rendement r.
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> n_théorique = n_alcool = 0,10 mol (coefficient = 1)<br/>
-              m_théorique = n × M = 0,10 × 102 = <strong>10,2 g</strong><br/><br/>
-              <strong>2.</strong> r = m_exp/m_théo × 100 = 8,2/10,2 × 100 = <strong>80,4%</strong>
+              <strong>1.</strong> n<sub>théorique</sub> = n<sub>alcool</sub> = 0,10 mol (coefficient = 1)<br/>
+              m<sub>théorique</sub> = n × M = 0,10 × 102 = <strong>10,2 g</strong><br/><br/>
+              <strong>2.</strong> r = m<sub>exp/m_théo</sub> × 100 = 8,2/10,2 × 100 = <strong>80,4%</strong>
             </div>
           </div>
         </div>
@@ -3654,7 +3654,7 @@
         </div>
       </div>
       <div class="cours-section">
-        <div class="cours-section-title" style="color:var(--chem)">🔄 Mécanisme de substitution nucléophile (S_N)</div>
+        <div class="cours-section-title" style="color:var(--chem)">🔄 Mécanisme de substitution nucléophile (S<sub>N</sub>)</div>
         <div class="step-list">
           <div class="step-item"><div class="step-num">1</div><div class="step-text">Identifier le <strong>nucléophile</strong> (donneur, ex: HO⁻, NH₃) et l'<strong>électrophile</strong> (accepteur, ex: C−Cl).</div></div>
           <div class="step-item"><div class="step-num">2</div><div class="step-text">Flèche du doublet du nucléophile vers le C^δ+.</div></div>
@@ -3890,11 +3890,11 @@
       <div class="info-card-body">
         <div class="formula-box chem">
           <span class="formula-label">Capacité maximale</span>
-          Q_max = n(e⁻) · F
+          $Q_{\max} = n(e^-)\cdot F$
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Durée de fonctionnement</span>
-          Δt = Q_max / I = n(e⁻) · F / I
+          $\Delta t = \dfrac{Q_{\max}}{I} = \dfrac{n(e^-)\cdot F}{I}$
         </div>
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
