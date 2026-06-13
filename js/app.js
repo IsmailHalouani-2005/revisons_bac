@@ -93,6 +93,19 @@ function switchTab(chapterId, tabName) {
   if (!page) return;
   page.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
   page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tabName));
+  // Re-render KaTeX on newly visible panel (was display:none when page loaded)
+  if (typeof renderMathInElement !== 'undefined') {
+    const panel = page.querySelector(`.tab-panel[data-panel="${tabName}"]`);
+    if (panel) renderMathInElement(panel, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ],
+      ignoredTags: ['script','noscript','style','textarea','pre','code'],
+      throwOnError: false,
+      strict: false
+    });
+  }
 }
 
 // ===== THEME TOGGLE =====
