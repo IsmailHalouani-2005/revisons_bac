@@ -4082,21 +4082,23 @@
 <!-- JS -->
 <script src="js/app.js"></script>
 <script>
-  // KaTeX auto-render — runs after everything is loaded
-  document.addEventListener("DOMContentLoaded", function() {
-    if (typeof renderMathInElement !== 'undefined') {
-      renderMathInElement(document.body, {
-        delimiters: [
-          {left: "$$", right: "$$", display: true},
-          {left: "\(", right: "\)", display: false},
-          {left: "$", right: "$", display: false}
-        ],
-        ignoredTags: ["script","noscript","style","textarea","pre","code"],
-        throwOnError: false,
-        strict: false
-      });
-    }
-  });
+  // KaTeX: render ALL elements including hidden tab panels
+  function katexRenderAll() {
+    if (typeof renderMathInElement === 'undefined') return;
+    const hiddenPanels = document.querySelectorAll('.tab-panel:not(.active)');
+    hiddenPanels.forEach(p => { p.style.visibility = 'hidden'; p.style.display = 'block'; });
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      ignoredTags: ["script","noscript","style","textarea","pre","code"],
+      throwOnError: false,
+      strict: false
+    });
+    hiddenPanels.forEach(p => { p.style.visibility = ''; p.style.display = ''; });
+  }
+  document.addEventListener("DOMContentLoaded", katexRenderAll);
 </script>
 </body>
 </html>

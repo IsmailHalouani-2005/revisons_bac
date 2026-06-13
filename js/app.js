@@ -93,19 +93,21 @@ function switchTab(chapterId, tabName) {
   if (!page) return;
   page.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
   page.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tabName));
-  // Re-render KaTeX on newly visible panel (was display:none when page loaded)
-  if (typeof renderMathInElement !== 'undefined') {
-    const panel = page.querySelector(`.tab-panel[data-panel="${tabName}"]`);
-    if (panel) renderMathInElement(panel, {
-      delimiters: [
-        {left: '$$', right: '$$', display: true},
-        {left: '$', right: '$', display: false}
-      ],
-      ignoredTags: ['script','noscript','style','textarea','pre','code'],
-      throwOnError: false,
-      strict: false
-    });
-  }
+  // Re-render KaTeX on the newly visible panel
+  renderAllKatex(page.querySelector(`.tab-panel[data-panel="${tabName}"]`));
+}
+
+function renderAllKatex(container) {
+  if (!container || typeof renderMathInElement === 'undefined') return;
+  renderMathInElement(container, {
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false}
+    ],
+    ignoredTags: ['script','noscript','style','textarea','pre','code'],
+    throwOnError: false,
+    strict: false
+  });
 }
 
 // ===== THEME TOGGLE =====
@@ -264,6 +266,20 @@ document.head.appendChild(style);
 window.addEventListener('DOMContentLoaded', () => {
   loadTheme();
   document.getElementById('filterBar').style.display = 'flex';
+  // Render KaTeX on ALL panels including hidden ones
+  setTimeout(() => {
+    if (typeof renderMathInElement !== 'undefined') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        ignoredTags: ['script','noscript','style','textarea','pre','code'],
+        throwOnError: false,
+        strict: false
+      });
+    }
+  }, 100);
   updateProgress();
   updateCards();
   // restore check buttons
