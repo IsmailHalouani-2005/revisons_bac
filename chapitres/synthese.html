@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-synthese" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🧪 Synthèse Organique</h1>
+    <p>Rendement, types de réactions (addition, élimination, substitution), chimie verte.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="synthese" onclick="toggleComplete(this,'synthese')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('synthese','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('synthese','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-synthese">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🧪 Types de réactions organiques</div>
+        <table class="data-table">
+          <tr><th>Type</th><th>Définition</th><th>Exemple</th></tr>
+          <tr><td>Addition</td><td>Ajout sur une liaison multiple C=C → liaison simple</td><td>Alcène + HBr → haloalcane</td></tr>
+          <tr><td>Élimination</td><td>Perte d'atomes → formation d'une liaison multiple</td><td>Alcool → alcène + H₂O (déshydratation)</td></tr>
+          <tr><td>Substitution</td><td>Un atome/groupe remplace un autre</td><td>R−Cl + HO⁻ → R−OH + Cl⁻</td></tr>
+          <tr><td>Oxydation</td><td>Perte d'hydrogène ou gain d'oxygène</td><td>Alcool primaire → aldéhyde → acide</td></tr>
+          <tr><td>Estérification</td><td>Acide + alcool → ester + eau</td><td>CH₃COOH + C₂H₅OH → ester</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Calcul du rendement</div>
+        <div class="formula-box chem"><span class="formula-label">Rendement</span><div class="formula-content">$r = \dfrac{n_{\text{exp}}}{n_{\text{théo}}} \times 100 = \dfrac{m_{\text{exp}}}{m_{\text{théo}}} \times 100 \quad (\%)$</div></div>
+        <div class="cours-text">
+          <p>n<sub>théorique</sub> = quantité de produit obtenu si la réaction était totale et sans perte, calculée à partir du réactif limitant.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pourquoi r < 100% ?</strong> Réaction équilibrée (pas totale), pertes lors de la purification (filtration, distillation), réactions parasites.</div></div>
+        <div class="definition-box">
+          <div class="def-title">Chimie verte — 12 principes (à connaître pour le BAC)</div>
+          Prévenir les déchets, utiliser des catalyseurs, des solvants écologiques, économiser l'énergie (T ambiante si possible), utiliser des matières premières renouvelables, éviter les dérivés auxiliaires inutiles.
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Rendement</span>
+          <div class="formula-content">$r = \dfrac{n_{\text{exp}}}{n_{\text{théo}}} \times 100 \quad (\%)$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">ou en masse</span>
+          <div class="formula-content">$r = \dfrac{m_{\text{exp}}}{m_{\text{théo}}} \times 100$</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Type réaction</th><th>Schéma</th><th>Exemple</th></tr>
+          <tr><td>Addition</td><td>C=C + XY → C(X)-C(Y)</td><td>Alcène + HBr</td></tr>
+          <tr><td>Élimination</td><td>C(X)-C(Y) → C=C + XY</td><td>Déshydratation alcool</td></tr>
+          <tr><td>Substitution</td><td>R-X + Y → R-Y + X</td><td>Halogénation</td></tr>
+        </table>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Pour augmenter le rendement :</strong> utiliser un réactif en excès, chauffer (reflux), utiliser un catalyseur, éliminer un produit au fur et à mesure.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Calcul de rendement estérification</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Synthèse d'un ester (M = 102 g/mol) à partir de 0,10 mol d'alcool (réactif limitant).<br/>
+              On obtient 8,2 g d'ester.<br/>
+              1. Calculer m<sub>théorique</sub>.<br/>
+              2. Calculer le rendement r.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  M<sub>ester</sub> = 102 g·mol⁻¹ · n<sub>alcool</sub> = 0,10 mol (réactif limitant) · m<sub>exp</sub> = 8,2 g<br/>
+  Équation : alcool + acide → ester + eau (coefficients 1:1)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Masse théorique (rendement = 100%)</strong><br/>
+  n<sub>théorique</sub> = n<sub>alcool</sub> = 0,10 mol (coeff. stœchio = 1)<br/>
+  m<sub>théorique</sub> = n × M = 0,10 × 102 = <strong>10,2 g</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Rendement r</strong><br/>
+  r = m<sub>exp</sub>/m<sub>théo</sub> × 100 = 8,2/10,2 × 100 = <strong>80,4%</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Pourquoi r &lt; 100% ?</strong><br/>
+  L'estérification est une réaction <em>équilibrée</em> (⇌) → jamais totale. De plus, il y a des pertes lors de la purification (lavages, distillation).</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Un rendement de 80% est très bon pour une estérification directe. On peut l'améliorer en éliminant l'eau formée.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

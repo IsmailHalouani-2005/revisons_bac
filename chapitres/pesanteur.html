@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-pesanteur" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🪂 Mouvement dans le Champ de Pesanteur</h1>
+    <p>Chute libre, tir parabolique, portée et flèche. Le chapitre le plus demandé au BAC.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="pesanteur" onclick="toggleComplete(this,'pesanteur')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('pesanteur','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('pesanteur','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-pesanteur">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌍 Pourquoi une parabole ?</div>
+        <div class="cours-text">
+          <p>Dans le champ de pesanteur, la <strong>seule force</strong> est le poids P = mg vers le bas. Pas de frottement (approximation).</p>
+          <p>Résultat de Newton : <strong>ax = 0</strong> (horizontalement, rien ne pousse) et <strong>ay = −g</strong> (verticalement, la pesanteur tire vers le bas).</p>
+          <p>Ces deux mouvements sont <strong>indépendants</strong> et superposés. Le résultat est une parabole.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Horizontalement = MRU (vitesse constante). Verticalement = MRUV (accélération g vers le bas). Ces deux mouvements se déroulent <em>en même temps</em>.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Équations complètes du tir parabolique</div>
+        <div class="cours-text"><p>Lancer depuis l'origine (x₀=0, y₀=0) avec vitesse initiale v₀ à l'angle α :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Décomposition de v₀</span><div class="formula-content">$v_{0x} = v_0\cos\alpha \qquad v_{0y} = v_0\sin\alpha$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Accélérations</span><div class="formula-content">$a_x = 0 \qquad a_y = -g = -9{,}81\,\text{m·s}^{-2}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Vitesses</span><div class="formula-content">$v_x(t) = v_0\cos\alpha \qquad v_y(t) = v_0\sin\alpha - gt$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Positions</span><div class="formula-content">$x(t) = v_0\cos\alpha·t \qquad y(t) = -\tfrac{1}{2}gt^2 + v_0\sin\alpha·t$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Équation de la trajectoire (éliminer t)</span><div class="formula-content">$y = x\tan\alpha - \dfrac{gx^2}{2v_0^2\cos^2\alpha}$</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🎯 Cas particulier : lancer horizontal (α = 0)</div>
+        <div class="cours-text"><p>Si on lance <strong>horizontalement</strong> depuis une hauteur h (sin 0=0, cos 0=1) :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Cas α = 0</span><div class="formula-content">$x(t) = v_0 t \qquad y(t) = -\tfrac{1}{2}gt^2 + h$</div></div>
+        <div class="cours-text"><p>Pour trouver quand l'objet touche le sol : y(t) = 0 → t = √(2h/g). Puis portée = x(t).</p></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📊 Grandeurs importantes</div>
+        <table class="data-table">
+          <tr><th>Grandeur</th><th>Formule</th><th>Condition</th></tr>
+          <tr><td>Hauteur maximale (flèche)</td><td>y<sub>max</sub> = v₀²sin²α / (2g)</td><td>vy = 0</td></tr>
+          <tr><td>Temps à la flèche</td><td>t<sub>flèche</sub> = v₀sinα / g</td><td>vy(t) = 0</td></tr>
+          <tr><td>Temps de vol total</td><td>t<sub>vol</sub> = 2·v₀sinα / g</td><td>y(t) = 0</td></tr>
+          <tr><td>Portée</td><td>R = v₀²sin(2α) / g</td><td>Lancer depuis sol</td></tr>
+          <tr><td>Portée maximale</td><td>R<sub>max</sub> à α = 45°</td><td>sin(90°) = 1</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode BAC</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Décomposer v₀</strong> en composantes x et y selon l'angle α.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Écrire x(t) et y(t)</strong> selon les formules ci-dessus (ou les retrouver en intégrant a).</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Pour trouver un temps particulier : <strong>poser la condition</strong> (y = 0 pour sol, vy = 0 pour flèche...).</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Injecter t</strong> dans l'autre équation pour trouver x ou y.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Lance un ballon en diagonal :</strong> horizontalement, il va à vitesse constante (pas de friction). Verticalement, la gravité le tire vers le bas. Ces deux mouvements sont INDÉPENDANTS. La trajectoire résultante est une parabole.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Équations du mouvement (à connaître par cœur)</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Accélération (seule force = poids)</span>
+          <div class="formula-content">$a_x = 0 \qquad a_y = -g$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Vitesse (primitive de a)</span>
+          <div class="formula-content">$v_x(t) = v_0\cos\alpha \qquad v_y(t) = v_0\sin\alpha - gt$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Position (primitive de v)</span>
+          <div class="formula-content">$x(t) = v_0\cos\alpha·t \qquad y(t) = -\tfrac{1}{2}gt^2 + v_0\sin\alpha·t$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Équation de la trajectoire (y en fonction de x)</span>
+          <div class="formula-content">$y(x) = -\dfrac{gx^2}{2v_0^2\cos^2\alpha} + x\tan\alpha$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Si lancé horizontalement (α = 0) :</strong> sin 0 = 0 et cos 0 = 1, donc vₓ = v₀, vᵧ = −gt, x = v₀t, y = −½gt²</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Schéma du tir parabolique</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 500 220" width="100%" style="max-width:500px">
+            <!-- Axes -->
+            <line x1="40" y1="180" x2="470" y2="180" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="40" y1="180" x2="40" y2="20" stroke="#2a3350" stroke-width="1.5"/>
+            <text x="475" y="184" fill="#4a5580" font-size="11">x</text>
+            <text x="35" y="16" fill="#4a5580" font-size="11">y</text>
+            <!-- Trajectory parabola -->
+            <path d="M 40,180 Q 250,30 460,180" stroke="#4f8ef7" stroke-width="2.5" fill="none" stroke-dasharray="0"/>
+            <!-- Launch point -->
+            <circle cx="40" cy="180" r="5" fill="#4f8ef7"/>
+            <!-- v0 vector -->
+            <line x1="40" y1="180" x2="100" y2="140" stroke="#3ecf8e" stroke-width="2" marker-end="url(#arr-green)"/>
+            <text x="65" y="152" fill="#3ecf8e" font-size="11" font-weight="bold">v₀</text>
+            <!-- angle alpha -->
+            <path d="M 80,180 A 40,40 0 0,1 70,157" stroke="#f7c948" stroke-width="1.5" fill="none"/>
+            <text x="88" y="172" fill="#f7c948" font-size="11">α</text>
+            <!-- Peak point -->
+            <circle cx="250" cy="30" r="4" fill="#f7c948"/>
+            <text x="257" y="26" fill="#f7c948" font-size="10">Flèche (alt. max)</text>
+            <line x1="250" y1="30" x2="250" y2="180" stroke="#f7c948" stroke-width="1" stroke-dasharray="4"/>
+            <!-- Portée -->
+            <line x1="40" y1="195" x2="460" y2="195" stroke="#a259f7" stroke-width="1.5"/>
+            <text x="230" y="210" fill="#a259f7" font-size="11" text-anchor="middle">Portée</text>
+            <!-- Labels vx vy -->
+            <text x="160" y="90" fill="#8892b0" font-size="10">vₓ = cst</text>
+            <text x="350" y="90" fill="#8892b0" font-size="10">vᵧ ↓ gravité</text>
+          </svg>
+        </div>
+        <table class="data-table">
+          <tr><th>Quantité</th><th>Formule</th></tr>
+          <tr><td>Flèche (alt. max)</td><td>y<sub>max</sub> = v₀²·sin²α / (2g)</td></tr>
+          <tr><td>Temps à la flèche</td><td>t<sub>flèche</sub> = v₀·sin α / g</td></tr>
+          <tr><td>Portée</td><td>Chercher t tel que y(t) = 0, puis x(t)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Bille lancée horizontalement</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une bille est lancée horizontalement depuis une table (hauteur h = 1,25 m) avec v₀ = 3 m/s. g = 10 m/s².<br/>
+              1. Écrire x(t) et y(t) (origine = bord de la table).<br/>
+              2. Quand touche-t-elle le sol ?<br/>
+              3. Quelle est la portée horizontale ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              h = 1,25 m · v₀ = 3 m·s⁻¹ · α = 0° · g = 10 m·s⁻²<br/>
+              Origine : bord de la table → sol à y = −1,25 m</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Équations du mouvement (α = 0 : sin = 0, cos = 1)</strong><br/>
+              x(t) = v₀t = 3t &nbsp;|&nbsp; y(t) = −½gt² = −5t²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Temps de chute : y(t) = −1,25</strong><br/>
+              −5t² = −1,25 → t² = 0,25 → <strong>t = 0,5 s</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ Portée</strong><br/>
+              x = 3 × 0,5 = <strong>1,5 m</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Tir oblique (BAC classique)</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un ballon est lancé avec v₀ = 15 m/s à α = 30° depuis le sol. g = 10 m/s².<br/>
+              1. Exprimer x(t) et y(t). (cos 30° ≈ 0,866 ; sin 30° = 0,5)<br/>
+              2. Calculer la hauteur maximale.<br/>
+              3. Calculer la portée (quand y revient à 0).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              v₀ = 15 m·s⁻¹ · α = 30° · cos 30° = 0,866 · sin 30° = 0,5 · g = 10 m·s⁻²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Décomposer v₀</strong><br/>
+              v<sub>0x</sub> = 15×0,866 = 13 m·s⁻¹ &nbsp;|&nbsp; v<sub>0y</sub> = 15×0,5 = 7,5 m·s⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Équations du mouvement</strong><br/>
+              x(t) = 13t &nbsp;|&nbsp; y(t) = −5t² + 7,5t</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ Hauteur max : v<sub>y</sub>(t) = 0</strong><br/>
+              −10t + 7,5 = 0 → t<sub>flèche</sub> = 0,75 s<br/>
+              y<sub>max</sub> = −5×(0,75)² + 7,5×0,75 = −2,81 + 5,625 = <strong>2,81 m</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">④ Portée : y(t) = 0</strong><br/>
+              t(−5t + 7,5) = 0 → t = 1,5 s (t = 0 = départ)<br/>
+              x = 13 × 1,5 = <strong>19,5 m</strong><br/>
+              <em style="color:var(--text3)">💡 t<sub>vol</sub> = 2 × t<sub>flèche</sub> = 1,5 s ✓ (toujours vrai pour lancer depuis le sol)</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

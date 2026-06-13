@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-diffraction" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🔦 Diffraction</h1>
+    <p>Déviation de la lumière par une fente. Formule θ = λ/a et tache centrale.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="diffraction" onclick="toggleComplete(this,'diffraction')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('diffraction','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('diffraction','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-diffraction">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌊 Qu'est-ce que la diffraction ?</div>
+        <div class="cours-text">
+          <p>La diffraction est le phénomène par lequel une onde <strong>contourne un obstacle ou s'étale après une ouverture</strong>. Elle est importante quand la taille de l'ouverture <em>a</em> est du même ordre de grandeur que la longueur d'onde <em>λ</em>.</p>
+          <p>Règle : si a >> λ → pas de diffraction visible. Si a ≈ λ → diffraction importante.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Le son se diffracte facilement (λ ≈ cm à m) → on entend derrière un mur. La lumière visible (λ ≈ 400–800 nm) se diffracte peu en conditions normales car les ouvertures sont grandes.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Formules et tache centrale</div>
+        <div class="formula-box phys"><span class="formula-label">Demi-angle de diffraction</span><div class="formula-content">$\sin\theta \approx \theta \approx \dfrac{\lambda}{a} \quad (\text{rad})$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Largeur de la tache centrale</span><div class="formula-content">$L = \dfrac{2\lambda D}{a} \quad (\text{m})$</div></div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>λ</strong> : longueur d'onde (m)</li>
+            <li><strong>a</strong> : largeur de la fente (m)</li>
+            <li><strong>D</strong> : distance fente–écran (m)</li>
+            <li><strong>L</strong> : largeur de la tache centrale (m)</li>
+          </ul>
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Tache centrale = 2× les taches secondaires.</strong> La tache centrale est plus large et plus brillante que les autres. Elle contient la majeure partie de l'énergie lumineuse.</div></div>
+        <table class="data-table">
+          <tr><th>Si...</th><th>Alors...</th></tr>
+          <tr><td>a diminue</td><td>L augmente (tache plus large)</td></tr>
+          <tr><td>λ augmente (rouge vs violet)</td><td>L augmente</td></tr>
+          <tr><td>D augmente</td><td>L augmente</td></tr>
+        </table>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Imagine une vague qui passe par une ouverture :</strong> si l'ouverture est petite par rapport à la longueur d'onde, elle s'étale après (comme une vague de mer passant par un port). C'est la diffraction !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Écart angulaire</span>
+          <div class="formula-content">$\theta = \dfrac{\lambda}{a} \quad (\text{rad})$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Largeur tache centrale (approximation petits angles)</span>
+          <div class="formula-content">$\theta \approx \dfrac{L}{2D} \;\Rightarrow\; L = \dfrac{2\lambda D}{a}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Relation inversée</span>
+          <div class="formula-content">$\lambda = \dfrac{aL}{2D} \qquad a = \dfrac{2\lambda D}{L}$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Unités :</strong> λ en mètres (1 nm = 10⁻⁹ m, 1 μm = 10⁻⁶ m). a = taille de la fente, L = largeur tache centrale, D = distance fente-écran.</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Règle intuitive :</strong> Plus la fente est petite, plus la tache est large. Plus la longueur d'onde est grande (rouge), plus la tache est large.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Mesure de la taille d'une fente</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un laser (λ = 633 nm) éclaire une fente. L'écran est à D = 1,5 m. On mesure une tache centrale de largeur L = 3,8 cm.<br/>
+              Calculer la taille de la fente a.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  λ = 633 nm = 633×10⁻⁹ m · D = 1,5 m · L = 3,8 cm = 3,8×10⁻² m</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Relation tache centrale</strong><br/>
+  L = 2λD/a → isoler a :<br/>
+  a = 2λD/L</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Calcul numérique</strong><br/>
+  a = (2 × 633×10⁻⁹ × 1,5) / (3,8×10⁻²)<br/>
+  a = (1,899×10⁻⁶) / (3,8×10⁻²)<br/>
+  a = <strong>5,0×10⁻⁵ m = 50 μm</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ La fente fait 50 μm. Vérif : L = 2×633×10⁻⁹×1,5/5×10⁻⁵ = 3,8×10⁻² m ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

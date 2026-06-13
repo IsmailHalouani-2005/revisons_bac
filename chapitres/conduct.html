@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-conduct" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>⚡ Conductimétrie</h1>
+    <p>σ = k·C, loi de Kohlrausch. Mesurer une concentration par la conductivité.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="conduct" onclick="toggleComplete(this,'conduct')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('conduct','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('conduct','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-conduct">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Conductivité d'une solution ionique</div>
+        <div class="definition-box">
+          <div class="def-title">Conductance G et conductivité σ</div>
+          G = σ · S/l (S = section, l = longueur, en siemens S). σ mesure la capacité d'une solution à conduire le courant électrique (S·m⁻¹).
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Loi de Kohlrausch (solutions diluées)</span><div class="formula-content">$\sigma = \sum_i \lambda_i [X_i]$</div></div>
+        <div class="cours-text">
+          <p>λᵢ = conductivité molaire ionique de l'ion i (caractéristique de chaque ion, trouvée en table).</p>
+          <p>Pour un électrolyte fort AxBy → [A^n+] = x·C et [B^m-] = y·C.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Courbe d'étalonnage conductimétrique</div>
+        <div class="cours-text">
+          <p>Comme Beer-Lambert mais avec la conductivité : σ = k·C (linéaire pour solutions diluées). On trace σ = f(C) avec des étalons, puis on lit C<sub>inconnue</sub> à partir de σ<sub>mesurée</sub>.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>La conductimétrie est utile pour les solutions <strong>incolores</strong> (où Beer-Lambert ne s'applique pas). Par exemple: NaCl, HCl dilué, eaux minérales.</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Loi de Kohlrausch (solution diluée)</span>
+          <div class="formula-content">$\sigma = \sum_i \lambda_i [X_i] \quad (\text{S·m}^{-1})$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Avec un seul soluté ionique</span>
+          <div class="formula-content">$\sigma = kC$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Même principe que Beer-Lambert :</strong> σ est proportionnel à C. On fait une courbe d'étalonnage σ = f(C), et on lit C pour une valeur de σ inconnue.</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>Conversion : 1 mol·m⁻³ = 10⁻³ mol·L⁻¹. Attention aux unités des conductivités molaires (S·m²·mol⁻¹ ou mS·cm⁻¹ selon le contexte) !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Lecture courbe conductimétrique</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une courbe σ = f(C) est une droite de pente k = 8,5 mS·cm⁻¹/(10⁻³ mol·L⁻¹). Une solution inconnue a σ = 0,022 mS·cm⁻¹.<br/>
+              Calculer C.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  k = 8,5 mS·cm⁻¹ par 10⁻³ mol·L⁻¹ · σ<sub>inconnue</sub> = 0,022 mS·cm⁻¹</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Loi de Kohlrausch σ = k·C → isoler C</strong><br/>
+  C = σ/k</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Attention aux unités !</strong><br/>
+  k = 8,5 mS·cm⁻¹ / (10⁻³ mol·L⁻¹) = 8500 mS·cm⁻¹ / (mol·L⁻¹)<br/>
+  <em style="color:var(--text3)" >💡 Convertir k en unités cohérentes avec σ avant de diviser !</em><br/>
+  C = 0,022 / 8,5 = <strong>2,6×10⁻³ mol·L⁻¹</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Même principe que Beer-Lambert mais pour la conductivité. Les deux méthodes donnent C directement depuis une courbe d'étalonnage.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

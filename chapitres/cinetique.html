@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-cinetique" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>⏱️ Cinétique Chimique</h1>
+    <p>Vitesse de réaction, ordre 1, temps de demi-réaction t₁/₂. Lent ou rapide ?</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="cinetique" onclick="toggleComplete(this,'cinetique')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('cinetique','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('cinetique','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-cinetique">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⏱️ Vitesse de réaction</div>
+        <div class="definition-box">
+          <div class="def-title">Vitesse volumique de réaction</div>
+          Mesure la rapidité d'évolution d'une réaction. Elle est toujours <strong>positive</strong> et diminue au cours du temps (les réactifs se consomment).
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Vitesse de disparition d'un réactif A</span><div class="formula-content">$v_{\text{disp}}(A) = -\dfrac{d[A]}{dt} \quad (\text{mol·L}^{-1}\text{·s}^{-1})$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Vitesse d'apparition d'un produit P</span><div class="formula-content">$v_{\text{app}}(P) = \dfrac{d[P]}{dt}$</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Graphiquement, la vitesse = <strong>pente de la tangente</strong> à la courbe [A] = f(t) (en valeur absolue pour la disparition).</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔢 Loi de vitesse et ordre</div>
+        <div class="definition-box">
+          <div class="def-title">Loi de vitesse (ordre 1 — BAC)</div>
+          v = k·[A] → la vitesse est proportionnelle à la concentration du réactif. k = constante de vitesse (s⁻¹).
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Concentration ordre 1</span><div class="formula-content">$[A](t) = [A]_0\,e^{-kt}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Forme linéarisée (BAC graphique)</span><div class="formula-content">$\ln[A](t) = \ln[A]_0 - kt \quad (\text{droite, pente} = -k)$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Temps de demi-réaction</span><div class="formula-content">$t_{1/2} = \dfrac{\ln 2}{k} \approx \dfrac{0{,}693}{k}$</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Propriété clé ordre 1 :</strong> t₁/₂ est <em>indépendant</em> de [A]₀. Si t₁/₂ est constant quelle que soit la concentration initiale → ordre 1 confirmé.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🌡️ Facteurs cinétiques</div>
+        <table class="data-table">
+          <tr><th>Facteur</th><th>Effet sur la vitesse</th><th>Explication</th></tr>
+          <tr><td>↑ Température</td><td>Accélère</td><td>Plus de chocs efficaces (loi d'Arrhénius)</td></tr>
+          <tr><td>↑ Concentration</td><td>Accélère</td><td>Plus de chocs entre réactifs</td></tr>
+          <tr><td>Catalyseur</td><td>Accélère (sans être consommé)</td><td>Abaisse l'énergie d'activation</td></tr>
+          <tr><td>Lumière (photochimie)</td><td>Peut initier/accélérer</td><td>Apporte l'énergie d'activation</td></tr>
+          <tr><td>État de division (solides)</td><td>Accélère si finement divisé</td><td>↑ surface de contact</td></tr>
+        </table>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Vitesse volumique de disparition du réactif</span>
+          <div class="formula-content">$v_{\text{disp}}(R) = -\dfrac{d[R]}{dt}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Loi vitesse ordre 1</span>
+          <div class="formula-content">$v = k[A] \quad (k \text{ en s}^{-1})$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Concentration loi ordre 1</span>
+          <div class="formula-content">$[A]_t = [A]_0\,e^{-kt}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Temps de demi-réaction</span>
+          <div class="formula-content">$t_{1/2} = \dfrac{\ln 2}{k} \approx \dfrac{0{,}693}{k}$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Reconnaître l'ordre 1 au BAC :</strong> Si ln[A] = f(t) est une droite → ordre 1. Si t₁/₂ est indépendant de [A]₀ → ordre 1.</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Facteurs cinétiques :</strong> ↑ T → réaction plus rapide. ↑ concentration → réaction plus rapide. Catalyseur → accélère sans être consommé.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Ordre 1 — calcul de t₁/₂</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une réaction suit une loi d'ordre 1 avec k = 2,3×10⁻² s⁻¹. [A]₀ = 0,10 mol/L.<br/>
+              1. Calculer t₁/₂.<br/>
+              2. Calculer [A] à t = 60 s.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              Ordre 1 · k = 2,3×10⁻² s⁻¹ · [A]₀ = 0,10 mol·L⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① t<sub>1/2</sub> = ln 2 / k</strong><br/>
+              t<sub>1/2</sub> = 0,693 / 2,3×10⁻² = <strong>30 s</strong><br/>
+              <em style="color:var(--text3)">💡 Indépendant de [A]₀ — propriété clé de l'ordre 1 !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② [A] à t = 60 s</strong><br/>
+              t = 60 s = 2 × t<sub>1/2</sub> → 2 demi-vies → [A] = [A]₀/4<br/>
+              [A] = 0,10/4 = <strong>0,025 mol·L⁻¹</strong><br/>
+              <em style="color:var(--text3)">Vérif : [A]₀·e<sup>−kt</sup> = 0,10 × e<sup>−1,38</sup> = 0,10 × 0,251 = 0,025 ✓</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

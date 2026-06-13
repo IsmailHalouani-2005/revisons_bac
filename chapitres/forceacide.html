@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-forceacide" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>⚖️ Force des Acides et des Bases</h1>
+    <p>Ka, pKa, acides forts vs faibles, classement. Solution tampon.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="forceacide" onclick="toggleComplete(this,'forceacide')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('forceacide','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('forceacide','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-forceacide">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚖️ Constante d'acidité Ka</div>
+        <div class="cours-text"><p>Pour un acide faible HA en solution aqueuse : HA + H₂O ⇌ A⁻ + H₃O⁺</p></div>
+        <div class="formula-box chem"><span class="formula-label">Constante d'acidité</span><div class="formula-content">$K_a = \dfrac{[\text{A}^-][\text{H}_3\text{O}^+]}{[\text{HA}]} \qquad pK_a = -\log K_a$</div></div>
+        <div class="cours-text">
+          <p><strong>Plus Ka est grand (pKa petit)</strong> → l'équilibre est déplacé vers la droite → l'acide se dissocie beaucoup → <strong>acide fort</strong>.</p>
+          <p><strong>Plus Ka est petit (pKa grand)</strong> → peu dissocié → <strong>acide faible</strong>.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Acide fort = pKa < 0 (dissociation totale). Acide faible = pKa entre 0 et 14.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Relation pH–pKa (Henderson-Hasselbalch)</div>
+        <div class="formula-box chem"><span class="formula-label">Henderson-Hasselbalch</span><div class="formula-content">$\text{pH} = pK_a + \log\dfrac{[\text{A}^-]}{[\text{HA}]}$</div></div>
+        <div class="cours-text">
+          <p>Cas particuliers importants :</p>
+          <ul>
+            <li>Si pH = pKa → log(1) = 0 → <strong>[HA] = [A⁻]</strong> (moitié dissocié)</li>
+            <li>Si pH < pKa → [HA] > [A⁻] → <strong>la forme acide prédomine</strong></li>
+            <li>Si pH > pKa → [A⁻] > [HA] → <strong>la forme basique prédomine</strong></li>
+          </ul>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Solution tampon</div>
+          Mélange de HA et A⁻ en proportions voisines (pH ≈ pKa). Résiste aux variations de pH lors d'ajout d'acide ou de base. Ex: sang (pH ≈ 7,4, tampon bicarbonate).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Calcul de pH d'un acide faible</div>
+        <div class="formula-box chem"><span class="formula-label">pH acide faible (approximation valable si Ka << C)</span><div class="formula-content">$\text{pH} \approx \dfrac{1}{2}(pK_a - \log C)$</div></div>
+        <div class="cours-text"><p>Taux d'avancement : τ = [A⁻]/C₀. Pour un acide faible τ << 1 (peu dissocié).</p></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 La règle simple</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>pKa petit = acide FORT</strong> (il donne facilement H⁺). <strong>pKa grand = acide faible</strong> (il garde son H⁺). HCl a pKa = −7 (très fort). L'acide acétique a pKa = 4,8 (faible).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Constante d'acidité</span>
+          <div class="formula-content">$K_a = \dfrac{[\text{A}^-][\text{H}_3\text{O}^+]}{[\text{HA}]} \qquad pK_a = -\log K_a$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Relation pKa et pH (Henderson-Hasselbalch)</span>
+          <div class="formula-content">$\text{pH} = pK_a + \log\dfrac{[\text{A}^-]}{[\text{HA}]}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">À pH = pKa</span>
+          <div class="formula-content">$[\text{HA}] = [\text{A}^-]$ (moitié dissocié)</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Diagramme de prédominance :</strong> Si pH &lt; pKa → HA prédomine. Si pH &gt; pKa → A⁻ prédomine.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Acide</th><th>pKa</th><th>Force</th></tr>
+          <tr><td>H₃O⁺</td><td>0</td><td>Acide fort</td></tr>
+          <tr><td>CH₃COOH (acétique)</td><td>4,8</td><td>Faible</td></tr>
+          <tr><td>NH₄⁺</td><td>9,2</td><td>Très faible</td></tr>
+          <tr><td>H₂O</td><td>14</td><td>Extrêmement faible</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Diagramme de prédominance</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              pKa(CH₃COOH/CH₃COO⁻) = 4,8. Pour une solution de pH = 6 :<br/>
+              1. Quelle espèce prédomine ?<br/>
+              2. Calculer [CH₃COO⁻]/[CH₃COOH].
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Rappel diagramme de prédominance</strong><br/>
+  pH &lt; pKa → forme acide HA prédomine<br/>
+  pH &gt; pKa → forme basique A⁻ prédomine<br/>
+  pH = pKa → [HA] = [A⁻]</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Espèce prédominante</strong><br/>
+  pH = 6 &gt; pKa = 4,8 → <strong>la base CH₃COO⁻ prédomine</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Rapport [A⁻]/[HA] via Henderson-Hasselbalch</strong><br/>
+  pH = pKa + log([A⁻]/[HA])<br/>
+  6 = 4,8 + log([A⁻]/[HA])<br/>
+  log([A⁻]/[HA]) = 6 − 4,8 = 1,2<br/>
+  [A⁻]/[HA] = 10<sup>1,2</sup> = <strong>15,8</strong><br/>
+  <em style="color:var(--text3)" >💡 Il y a ~16 fois plus de CH₃COO⁻ que de CH₃COOH dans cette solution.</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Vérif : si pH − pKa = 1,2 → ratio = 10^1,2 ≈ 16 → base très majoritaire ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

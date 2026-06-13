@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-beerlam" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>📉 Loi de Beer-Lambert</h1>
+    <p>A = k·[X], courbe d'étalonnage, trouver une concentration inconnue par absorbance.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="beerlam" onclick="toggleComplete(this,'beerlam')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('beerlam','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('beerlam','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-beerlam">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📉 Loi de Beer-Lambert</div>
+        <div class="definition-box">
+          <div class="def-title">Énoncé de la loi</div>
+          Pour une solution colorée diluée, l'absorbance A est <strong>proportionnelle</strong> à la concentration C de l'espèce absorbante et à l'épaisseur l traversée.
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Loi de Beer-Lambert</span><div class="formula-content">$A = \varepsilon l C \quad (\varepsilon \text{ en L·mol}^{-1}\text{·cm}^{-1})$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Forme simplifiée (BAC)</span><div class="formula-content">$A = kC \quad (k = \varepsilon l = \text{cst})$</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Conditions de validité :</strong> Solution diluée (C ≤ 5×10⁻³ mol/L environ), longueur d'onde fixée à λ<sub>max</sub> (absorbance maximale), solution homogène.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Méthode de la courbe d'étalonnage</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Préparer des solutions étalons de <strong>concentrations connues</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Mesurer l'absorbance A de chaque étalon au <strong>spectrophotomètre à λ<sub>max</sub></strong>.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Tracer A = f(C) → droite passant par l'origine si Beer-Lambert vérifié. La <strong>pente = k</strong>.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Mesurer A de la solution inconnue → lire C sur la courbe ou calculer C = A/k.</div></div>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Si la courbe n'est plus linéaire pour les fortes concentrations → Beer-Lambert n'est plus valable → il faut diluer la solution inconnue avant de mesurer.</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Le principe</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Plus une solution est concentrée, plus elle absorbe la lumière.</strong> Beer-Lambert dit que c'est une relation linéaire : A = k·[X]. On fait une courbe d'étalonnage (A en fonction de C connues), puis on lit la concentration inconnue sur la courbe.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Loi de Beer-Lambert (1 espèce)</span>
+          <div class="formula-content">$A = k[X] \quad (k = \varepsilon l)$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Absorbance</span>
+          <div class="formula-content">$A = \log\!\left(\dfrac{I_0}{I}\right)$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Domaine de validité :</strong> Beer-Lambert n'est valable que pour des concentrations faibles (généralement [X] ≤ 5×10⁻³ mol·L⁻¹). Au-delà, la courbe n'est plus linéaire (lire sur le graphe !)</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">📊</span>
+          <div class="key-text"><strong>Comment utiliser la courbe d'étalonnage :</strong>
+            <br/>1) Mesurer A de la solution inconnue avec le spectrophotomètre
+            <br/>2) Lire C sur la courbe à partir de cette valeur de A
+            <br/>Ou calculer k = pente de la droite, puis C = A/k</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Courbe d'étalonnage</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une courbe A = f(C) est linéaire et passe par (0 ; 0) et (3,5×10⁻³ mol/L ; 1,4).<br/>
+              Une solution inconnue a A = 0,60.<br/>
+              1. Calculer k (pente).<br/>
+              2. Trouver C<sub>inconnue</sub>.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              Points de la droite : (0 ; 0) et (3,5×10⁻³ mol·L⁻¹ ; 1,4) · A<sub>inconnue</sub> = 0,60</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Pente k = ΔA/ΔC</strong><br/>
+              k = (1,4 − 0) / (3,5×10⁻³ − 0) = 1,4 / 3,5×10⁻³ = <strong>400 L·mol⁻¹</strong><br/>
+              <em style="color:var(--text3)">💡 Droite passant par l'origine → Beer-Lambert vérifié A = kC</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② C = A/k</strong><br/>
+              C = 0,60 / 400 = <strong>1,5×10⁻³ mol·L⁻¹</strong><br/>
+              <em style="color:var(--text3)">Vérif : C &lt; 3,5×10⁻³ mol·L⁻¹ → zone linéaire → mesure valide ✓</em></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

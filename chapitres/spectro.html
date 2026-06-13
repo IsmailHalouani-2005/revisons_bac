@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-spectro" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🔬 Spectroscopie UV-Vis & IR</h1>
+    <p>Identifier des molécules par leur spectre d'absorption. Cercle chromatique, bandes IR.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="spectro" onclick="toggleComplete(this,'spectro')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('spectro','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('spectro','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-spectro">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔬 Spectroscopie UV-Visible</div>
+        <div class="cours-text">
+          <p>Un spectrophotomètre mesure l'<strong>absorbance A</strong> d'une solution en fonction de la longueur d'onde λ. Les molécules colorées absorbent certaines longueurs d'onde du visible.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Absorbance A</div>
+          A = log(I₀/I) où I₀ = intensité incidente, I = intensité transmise. A est sans unité.
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Règle du cercle chromatique :</strong> Une solution absorbe à λ<sub>max</sub> → elle apparaît de la couleur <em>complémentaire</em>. Bleu absorbé → solution jaune/orange. Rouge absorbé → solution verte/bleue.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🌡️ Spectroscopie Infrarouge (IR)</div>
+        <div class="cours-text">
+          <p>Le spectre IR mesure la <strong>transmittance T(%)</strong> en fonction du nombre d'onde σ (cm⁻¹). Les liaisons chimiques absorbent à des nombres d'onde caractéristiques → on identifie les groupes fonctionnels.</p>
+        </div>
+        <table class="data-table">
+          <tr><th>Liaison</th><th>σ (cm⁻¹)</th><th>Forme</th></tr>
+          <tr><td>O−H alcool libre</td><td>3580–3650</td><td>Fine et intense</td></tr>
+          <tr><td>O−H alcool lié (liaison H)</td><td>3200–3400</td><td>Large et intense</td></tr>
+          <tr><td>O−H acide carboxylique</td><td>2500–3300</td><td>Très large</td></tr>
+          <tr><td>N−H amine</td><td>3100–3500</td><td>Moyenne</td></tr>
+          <tr><td>C−H</td><td>2850–3000</td><td>Forte</td></tr>
+          <tr><td>C=O cétone/aldéhyde</td><td>1700–1730</td><td>Très intense</td></tr>
+          <tr><td>C=O ester</td><td>1730–1750</td><td>Très intense</td></tr>
+          <tr><td>C−O alcool/ester</td><td>1050–1300</td><td>Forte</td></tr>
+        </table>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Chercher une bande large vers 2500–3300 cm⁻¹ → acide carboxylique (−COOH)</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Chercher une bande fine vers 1700–1750 cm⁻¹ → C=O présent (cétone, acide, ester)</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Chercher O−H large 3200–3400 cm⁻¹ → alcool ou acide</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Absence de O−H + présence C=O → aldéhyde ou cétone</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Les 2 types de spectroscopie</div>
+      <div class="info-card-body">
+        <div class="key-point">
+          <span class="key-icon">☀️</span>
+          <div class="key-text"><strong>UV-Visible :</strong> On mesure l'absorbance A en fonction de λ (nm). La couleur absorbée est complémentaire de la couleur vue. Cercle chromatique = outil clé.</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">🌡️</span>
+          <div class="key-text"><strong>Infrarouge (IR) :</strong> On mesure la transmittance T en fonction du nombre d'onde (cm⁻¹). Les "creux" (bandes d'absorption) identifient des liaisons chimiques.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Tableau des bandes IR à connaître</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Liaison</th><th>Nombre d'onde (cm⁻¹)</th><th>Intensité</th></tr>
+          <tr><td>O-H libre (alcools)</td><td>3580–3650</td><td>Fine et forte</td></tr>
+          <tr><td>O-H lié (H-bond)</td><td>3200–3400</td><td>Large et forte</td></tr>
+          <tr><td>N-H</td><td>3100–3500</td><td>Moyenne</td></tr>
+          <tr><td>C-H</td><td>2800–3000</td><td>Forte</td></tr>
+          <tr><td>C=O (cétones, esters)</td><td>1700–1750</td><td>Très forte</td></tr>
+          <tr><td>O-H acides carboxyliques</td><td>2500–3300</td><td>Très large</td></tr>
+          <tr><td>C-O (alcools, esters)</td><td>1000–1300</td><td>Forte</td></tr>
+        </table>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Méthode à l'examen :</strong> 1) Y a-t-il une bande large et forte vers 3200-3400 ? → OH (alcool ou acide). 2) Y a-t-il une bande forte vers 1700-1750 ? → C=O présent. 3) Si les deux → acide carboxylique !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🌈 Cercle chromatique</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 300 200" width="100%" style="max-width:300px">
+            <!-- Circle -->
+            <circle cx="150" cy="100" r="75" fill="none" stroke="#2a3350" stroke-width="2"/>
+            <!-- Color sectors -->
+            <path d="M150,100 L150,25 A75,75 0 0,1 215,137 Z" fill="#f7c948" opacity=".7"/>
+            <path d="M150,100 L215,137 A75,75 0 0,1 85,137 Z" fill="#f7956f" opacity=".7"/>
+            <path d="M150,100 L85,137 A75,75 0 0,1 85,63 Z" fill="#f76f6f" opacity=".7"/>
+            <path d="M150,100 L85,63 A75,75 0 0,1 150,25 Z" fill="#a259f7" opacity=".7"/>
+            <!-- Labels -->
+            <text x="178" y="65" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">JAUNE</text>
+            <text x="178" y="77" fill="#fff" font-size="9" text-anchor="middle">570nm</text>
+            <text x="210" y="120" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">ROUGE</text>
+            <text x="210" y="132" fill="#fff" font-size="9" text-anchor="middle">700nm</text>
+            <text x="90" y="120" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">VERT</text>
+            <text x="90" y="132" fill="#fff" font-size="9" text-anchor="middle">530nm</text>
+            <text x="90" y="70" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">BLEU</text>
+            <text x="90" y="82" fill="#fff" font-size="9" text-anchor="middle">450nm</text>
+            <!-- Center -->
+            <text x="150" y="96" fill="#e8eaf6" font-size="9" text-anchor="middle">Couleur</text>
+            <text x="150" y="108" fill="#e8eaf6" font-size="9" text-anchor="middle">absorbée</text>
+            <text x="150" y="120" fill="#e8eaf6" font-size="9" text-anchor="middle">↔ vue</text>
+          </svg>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Règle :</strong> Si une solution absorbe le bleu (λ<sub>max</sub> ≈ 450 nm), elle apparaît de la couleur complémentaire = JAUNE/ORANGE. Les couleurs opposées sur le cercle sont complémentaires.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Identification par spectre IR</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un spectre IR présente :<br/>
+              - Une bande large et forte entre 2500 et 3300 cm⁻¹<br/>
+              - Une bande très forte à 1720 cm⁻¹<br/>
+              - Des bandes C-H entre 2800 et 3000 cm⁻¹<br/><br/>
+              De quelle famille de molécules s'agit-il ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Bandes observées</strong><br/>
+  • Bande large et forte entre 2500 et 3300 cm⁻¹<br/>
+  • Bande très forte à 1720 cm⁻¹<br/>
+  • Bandes C−H entre 2800 et 3000 cm⁻¹</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Identifier chaque bande</strong><br/>
+  2500–3300 cm⁻¹ (large) → <strong>O−H d'acide carboxylique</strong> (liaison H qui élargit la bande)<br/>
+  1720 cm⁻¹ (très forte) → <strong>C=O</strong> (carbonyle)<br/>
+  2800–3000 cm⁻¹ → <strong>C−H</strong> (présent dans presque toutes les molécules organiques)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Conclusion</strong><br/>
+  O−H (2500–3300) + C=O (1720) = groupe <strong>−COOH</strong><br/>
+  → La molécule est un <strong>acide carboxylique</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Méthode : d'abord chercher C=O (1700–1750), puis regarder si O−H est présent → si oui : acide carboxylique ; si non : cétone ou aldéhyde.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

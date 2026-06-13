@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-piles" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🔋 Piles Électrochimiques</h1>
+    <p>Transfert spontané d'électrons, oxydoréduction, calcul de durée de vie.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="piles" onclick="toggleComplete(this,'piles')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('piles','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('piles','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-piles">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔋 Principe d'une pile</div>
+        <div class="cours-text">
+          <p>Une pile convertit de l'énergie chimique en énergie électrique via une réaction <strong>spontanée</strong> d'oxydoréduction. Les deux demi-réactions ont lieu dans des compartiments séparés (demi-piles), reliés par un pont salin.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Pont salin</div>
+          Tube rempli d'électrolyte (KCl, KNO₃...) permettant le passage des ions pour assurer la neutralité électrique des deux compartiments, sans que les solutions se mélangent.
+        </div>
+        <table class="data-table">
+          <tr><th></th><th>ANODE (−)</th><th>CATHODE (+)</th></tr>
+          <tr><td>Réaction</td><td>Oxydation</td><td>Réduction</td></tr>
+          <tr><td>Électrode</td><td>Se dissout (ex: Zn → Zn²⁺)</td><td>Se dépose (ex: Cu²⁺ → Cu)</td></tr>
+          <tr><td>Électrons</td><td>Libérés → circuit ext.</td><td>Reçus du circuit ext.</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⏱️ Durée de fonctionnement et capacité</div>
+        <div class="formula-box chem"><span class="formula-label">Capacité totale de la pile</span><div class="formula-content">$Q_{\max} = n(e^-)_{\max}·F$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Durée de fonctionnement</span><div class="formula-content">$\Delta t = \dfrac{Q_{\max}}{I} = \dfrac{n(e^-)_{\max}·F}{I}$</div></div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire les demi-équations. Identifier le <strong>réactif limitant</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Calculer n(réactif limitant) depuis sa masse ou concentration.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Déduire n(e⁻) = coeff · n(réactif limitant).</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Q = n(e⁻)·F puis Δt = Q/I.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Pile vs Électrolyse</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th></th><th>PILE</th><th>ÉLECTROLYSE</th></tr>
+          <tr><td>Réaction</td><td>Spontanée</td><td>Forcée</td></tr>
+          <tr><td>Énergie</td><td>Chimique → Électrique</td><td>Électrique → Chimique</td></tr>
+          <tr><td>Anode</td><td>Pôle − (oxydation)</td><td>Pôle + (oxydation)</td></tr>
+          <tr><td>Cathode</td><td>Pôle + (réduction)</td><td>Pôle − (réduction)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Capacité maximale</span>
+          <div class="formula-content">$Q_{\max} = n(e^-)·F$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Durée de fonctionnement</span>
+          <div class="formula-content">$\Delta t = \dfrac{Q_{\max}}{I} = \dfrac{n(e^-)·F}{I}$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Méthode :</strong> 1) Écrire les 2 demi-équations. 2) Trouver n(réactif limitant). 3) Déduire n(e⁻) via stœchiométrie. 4) Q = n(e⁻)·F. 5) Δt = Q/I.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Pile Zn/Cu — durée de vie</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Pile Zn/Cu. Anode : Zn → Zn²⁺ + 2e⁻. Cathode : Cu²⁺ + 2e⁻ → Cu.<br/>
+              n(Zn) = 0,050 mol est le réactif limitant. I = 0,50 A. F = 96 500 C/mol.<br/>
+              Calculer la durée de fonctionnement.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  n(Zn) = 0,050 mol (réactif limitant) · I = 0,50 A · F = 96 500 C·mol⁻¹<br/>
+  Anode : Zn → Zn²⁺ + 2e⁻ → <strong>z = 2</strong> électrons par atome de Zn</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① n(e⁻) transférés</strong><br/>
+  D'après la demi-équation : 1 mol Zn → 2 mol e⁻<br/>
+  n(e⁻) = 2 × n(Zn) = 2 × 0,050 = <strong>0,10 mol</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Charge maximale Q = n(e⁻)·F</strong><br/>
+  Q = 0,10 × 96 500 = <strong>9 650 C</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Durée Δt = Q/I</strong><br/>
+  Δt = 9650 / 0,50 = 19 300 s<br/>
+  Δt = 19 300 / 3600 = <strong>5,36 h ≈ 5,4 h</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ La pile s'arrête quand tout le Zn est consommé. Plus I est grand, plus la pile se décharge vite (Δt ∝ 1/I).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

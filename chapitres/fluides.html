@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-fluides" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>💧 Dynamique des Fluides</h1>
+    <p>Bernoulli, débit, Archimède. La physique des liquides en mouvement.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="fluides" onclick="toggleComplete(this,'fluides')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('fluides','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('fluides','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-fluides">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">💧 Statique des fluides</div>
+        <div class="definition-box">
+          <div class="def-title">Poussée d'Archimède</div>
+          Tout corps immergé dans un fluide subit une poussée verticale ascendante égale au poids du fluide déplacé.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Poussée d'Archimède</span><div class="formula-content">$\Pi = \rho_{\text{fluide}}·V_{\text{immergé}}·g$ &nbsp;&nbsp; (N, vers le haut)</div></div>
+        <div class="cours-text">
+          <p><strong>Flotte si</strong> Π ≥ P, c'est-à-dire ρ_objet ≤ ρ_fluide.</p>
+          <p><strong>Coule si</strong> ρ_objet > ρ_fluide.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌊 Dynamique des fluides — hypothèses</div>
+        <div class="cours-text">
+          <p>On suppose un fluide <strong>incompressible</strong> (ρ = cst), en <strong>écoulement laminaire</strong> (pas de turbulences) et <strong>sans viscosité</strong>.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Débit volumique D<sub>V</sub></div>
+          Volume de fluide qui traverse une section S par unité de temps. Se conserve le long d'un tube de courant (équation de continuité).
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Conservation du débit</span><div class="formula-content">$D_V = Sv = \text{cst} \;\Rightarrow\; S_1 v_1 = S_2 v_2$</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Tuyau qui se rétrécit → section S diminue → vitesse v augmente. C'est intuitif : l'eau sort plus vite d'un tuyau fin.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔢 Théorème de Bernoulli</div>
+        <div class="cours-text"><p>Conservation de l'énergie pour un fluide parfait en écoulement permanent :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Bernoulli (le long d'une ligne de courant)</span><div class="formula-content">$p + \tfrac{1}{2}\rho v^2 + \rho g h = \text{cste}$</div></div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>p</strong> : pression (Pa)</li>
+            <li><strong>½ρv²</strong> : pression dynamique (liée à la vitesse)</li>
+            <li><strong>ρgh</strong> : pression hydrostatique (liée à la hauteur)</li>
+          </ul>
+          <p>Entre deux points A et B d'une même ligne de courant :</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Bernoulli entre A et B</span><div class="formula-content">$p_A + \tfrac{1}{2}\rho v_A^2 + \rho g h_A = p_B + \tfrac{1}{2}\rho v_B^2 + \rho g h_B$</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Effet Venturi :</strong> v augmente → ½ρv² augmente → p diminue (si même hauteur). C'est le principe de l'atomiseur, du carburateur, de l'aile d'avion.</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Poussée d'Archimède</span>
+          <div class="formula-content">$\Pi = \rho_{\text{fluide}}·V_{\text{immergé}}·g$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Débit volumique (conservation)</span>
+          <div class="formula-content">$D_V = Sv = \text{cst} \;\Rightarrow\; S_1 v_1 = S_2 v_2$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Théorème de Bernoulli</span>
+          <div class="formula-content">$p + \tfrac{1}{2}\rho v^2 + \rho g h = \text{cste}$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Bernoulli en simple :</strong> Si le tuyau se rétrécit (S diminue), v augmente et p diminue. C'est l'effet Venturi (aspirateur, carburateur).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Tuyau avec étranglement</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un fluide (ρ = 1000 kg/m³) coule dans un tuyau horizontal. En A : S<sub>A</sub> = 4 cm², v<sub>A</sub> = 2 m/s, p<sub>A</sub> = 1,5×10⁵ Pa. En B : S<sub>B</sub> = 1 cm².<br/>
+              1. Calculer v<sub>B</sub> (conservation du débit).<br/>
+              2. Calculer p<sub>B</sub> (Bernoulli, même hauteur h<sub>A</sub> = h<sub>B</sub>).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  ρ = 1000 kg·m⁻³ · S<sub>A</sub> = 4 cm² · v<sub>A</sub> = 2 m·s⁻¹ · p<sub>A</sub> = 1,5×10⁵ Pa · S<sub>B</sub> = 1 cm²<br/>
+  Tuyau horizontal → h<sub>A</sub> = h<sub>B</sub> → le terme ρgh se simplifie dans Bernoulli.</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Conservation du débit : S<sub>A</sub>v<sub>A</sub> = S<sub>B</sub>v<sub>B</sub></strong><br/>
+  v<sub>B</sub> = (S<sub>A</sub>/S<sub>B</sub>) × v<sub>A</sub> = (4/1) × 2 = <strong>8 m·s⁻¹</strong><br/>
+  <em style="color:var(--text3)" >💡 La section est 4× plus petite → la vitesse est 4× plus grande (conservation du débit).</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Bernoulli : p<sub>A</sub> + ½ρv<sub>A</sub>² = p<sub>B</sub> + ½ρv<sub>B</sub>²</strong><br/>
+  p<sub>B</sub> = p<sub>A</sub> + ½ρ(v<sub>A</sub>² − v<sub>B</sub>²)<br/>
+  p<sub>B</sub> = 1,5×10⁵ + ½ × 1000 × (2² − 8²)<br/>
+  p<sub>B</sub> = 1,5×10⁵ + 500 × (4 − 64)<br/>
+  p<sub>B</sub> = 1,5×10⁵ − 30 000 = <strong>1,2×10⁵ Pa</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Effet Venturi : vitesse augmente → pression diminue. p<sub>B</sub> &lt; p<sub>A</sub> ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

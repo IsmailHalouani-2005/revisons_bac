@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-titragecolor" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🎨 Titrage Coloriмétrique</h1>
+    <p>Trouver la concentration d'une solution par changement de couleur à l'équivalence.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="titragecolor" onclick="toggleComplete(this,'titragecolor')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('titragecolor','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('titragecolor','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-titragecolor">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🎨 Principe du titrage coloriмétrique</div>
+        <div class="cours-text">
+          <p>Le titrage est une méthode pour <strong>déterminer la concentration inconnue</strong> d'une solution (solution titrée) en la faisant réagir avec une solution de concentration connue (solution titrante).</p>
+          <p>On ajoute la solution titrante <strong>goutte à goutte</strong> depuis une burette. À l'<strong>équivalence</strong>, les réactifs ont été introduits en proportions stœchiométriques exactes.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Indicateur coloré</div>
+          Acide faible dont la forme acide et la forme basique ont des couleurs différentes. Il change de couleur quand pH atteint sa zone de virage, ce qui permet de repérer l'équivalence visuellement.
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Choix de l'indicateur :</strong> Sa zone de virage doit englober le pH à l'équivalence. Pour HCl/NaOH, l'équivalence est à pH = 7 → phénolphtaléine (8–9,6) ou bleu de bromothymol (6–7,6) conviennent.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Formule de l'équivalence</div>
+        <div class="formula-box chem"><span class="formula-label">À l'équivalence (stœchiométrie)</span><div class="formula-content">$\dfrac{n_A}{a} = \dfrac{n_B}{b} \;\Rightarrow\; \dfrac{C_A V_A}{a} = \dfrac{C_B V_E}{b}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Concentration inconnue C<sub>A</sub></span><div class="formula-content">$C_A = \dfrac{a·C_B·V_E}{b·V_A}$</div></div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire l'équation de la réaction de titrage et relever a et b.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Repérer V<sub>E</sub> (volume équivalent) au changement de couleur.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Appliquer C<sub>A</sub> = a·C<sub>B</sub>·V<sub>E</sub> / (b·V<sub>A</sub>).</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Le principe en 1 image</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>On verse goutte à goutte</strong> la solution titrante (connue) dans la solution titrée (inconnue). Quand la solution change de couleur → on a ajouté exactement la bonne quantité → c'est l'équivalence. On lit V<sub>E</sub> sur la burette.</div>
+        </div>
+        <div class="schema-box">
+          <svg viewBox="0 0 300 200" width="100%" style="max-width:300px">
+            <!-- Burette -->
+            <rect x="130" y="10" width="20" height="100" rx="3" fill="none" stroke="#a259f7" stroke-width="2"/>
+            <rect x="135" y="110" width="10" height="15" rx="2" fill="#a259f7" opacity=".4"/>
+            <!-- Drop -->
+            <ellipse cx="140" cy="135" rx="4" ry="6" fill="#a259f7" opacity=".8"/>
+            <!-- Beaker -->
+            <path d="M90,145 L90,195 L210,195 L210,145" stroke="#e8eaf6" stroke-width="2" fill="none"/>
+            <line x1="85" y1="145" x2="215" y2="145" stroke="#e8eaf6" stroke-width="2"/>
+            <!-- Solution in beaker -->
+            <rect x="91" y="165" width="118" height="29" fill="#3ecf8e" opacity=".3" rx="0"/>
+            <!-- Labels -->
+            <text x="140" y="8" text-anchor="middle" fill="#a259f7" font-size="10" font-weight="bold">Burette</text>
+            <text x="140" y="8" text-anchor="middle" fill="#a259f7" font-size="10" font-weight="bold">Burette</text>
+            <text x="58" y="60" fill="#a259f7" font-size="9">Solution</text>
+            <text x="55" y="72" fill="#a259f7" font-size="9">titrante B</text>
+            <text x="55" y="84" fill="#a259f7" font-size="9">CB connu</text>
+            <text x="140" y="180" text-anchor="middle" fill="#3ecf8e" font-size="9">Solution titrée A</text>
+            <text x="140" y="192" text-anchor="middle" fill="#8892b0" font-size="9">CA = ? V<sub>A</sub> connu</text>
+            <!-- arrow -->
+            <line x1="140" y1="140" x2="140" y2="162" stroke="#a259f7" stroke-width="1" stroke-dasharray="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">À l'équivalence (proportions stœchiométriques)</span>
+          <div class="formula-content">$\dfrac{n_A}{a} = \dfrac{n_B}{b} \;\Rightarrow\; \dfrac{C_A V_A}{a} = \dfrac{C_B V_E}{b}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Concentration de la solution titrée</span>
+          <div class="formula-content">$C_A = \dfrac{a·C_B·V_E}{b·V_A}$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>a et b = coefficients stœchiométriques de l'équation. V<sub>E</sub> = volume équivalent (lu sur la burette). V<sub>A</sub> et V<sub>E</sub> en même unité (mL ou L) !</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Indicateur</th><th>Zone de virage (pH)</th><th>Acide→Base</th></tr>
+          <tr><td>Rouge de crésol</td><td>7,4–9,0</td><td>Jaune → Violet</td></tr>
+          <tr><td>Bleu de bromothymol</td><td>6,0–7,6</td><td>Jaune → Bleu</td></tr>
+          <tr><td>Phénolphtaléine</td><td>8,0–9,6</td><td>Incolore → Rose</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Titrage HCl par NaOH</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              V<sub>A</sub> = 20,0 mL de HCl de concentration inconnue. On titre avec NaOH à C<sub>B</sub> = 0,050 mol/L. L'indicateur change de couleur pour V<sub>E</sub> = 12,5 mL.<br/>
+              Équation : HCl + NaOH → NaCl + H₂O (a = b = 1)<br/>
+              Calculer C<sub>A</sub>(HCl).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+  V<sub>A</sub> = 20,0 mL (HCl inconnu) · C<sub>B</sub> = 0,050 mol·L⁻¹ (NaOH) · V<sub>E</sub> = 12,5 mL<br/>
+  Équation : HCl + NaOH → NaCl + H₂O → coefficients a = b = 1</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① À l'équivalence : n(HCl) = n(NaOH versé)</strong><br/>
+  C<sub>A</sub>·V<sub>A</sub> = C<sub>B</sub>·V<sub>E</sub></div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Isoler C<sub>A</sub></strong><br/>
+  C<sub>A</sub> = (C<sub>B</sub> × V<sub>E</sub>) / V<sub>A</sub><br/>
+  C<sub>A</sub> = (0,050 × 12,5) / 20,0 = 0,625 / 20,0 = <strong>0,031 mol·L⁻¹</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ V en mL → ratio → résultat correct. pH à l'équivalence HCl/NaOH = 7 (sel neutre NaCl).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

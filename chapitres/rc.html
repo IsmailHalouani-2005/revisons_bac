@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-rc" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🔌 Circuit RC</h1>
+    <p>Charge et décharge d'un condensateur, constante de temps τ = RC, équation différentielle.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="rc" onclick="toggleComplete(this,'rc')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('rc','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('rc','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-rc">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔌 Le condensateur — rappel</div>
+        <div class="definition-box">
+          <div class="def-title">Condensateur</div>
+          Composant qui stocke de l'énergie électrique sous forme de charge. Constitué de 2 armatures conductrices séparées par un isolant. Sa capacité C (en Farads) caractérise sa capacité de stockage. Relation : q = C·u<sub>C</sub>.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Intensité dans le condensateur</span><div class="formula-content">$i = C\,\dfrac{du_C}{dt}$</div></div>
+        <div class="cours-text"><p>Cette relation est fondamentale : elle dit que l'intensité est <strong>proportionnelle à la dérivée de la tension</strong> aux bornes du condensateur.</p></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Équation différentielle du circuit RC</div>
+        <div class="cours-text"><p>Circuit RC série avec générateur E. Loi des mailles :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Loi des mailles</span><div class="formula-content">$E = u_R + u_C = Ri + u_C = RC\dfrac{du_C}{dt} + u_C$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Équation différentielle (charge)</span><div class="formula-content">$\dfrac{du_C}{dt} + \dfrac{u_C}{RC} = \dfrac{E}{RC}$</div></div>
+        <div class="cours-text"><p>La solution de cette équation différentielle est une <strong>exponentielle</strong>.</p></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⏱️ Constante de temps τ = RC</div>
+        <div class="formula-box phys"><span class="formula-label">Constante de temps</span><div class="formula-content">$\tau = RC \quad (\text{s, si } R\text{ en }\Omega\text{ et }C\text{ en F})$</div></div>
+        <div class="cours-text"><p>τ représente le temps caractéristique du circuit. Plus τ est grand, plus la charge/décharge est lente.</p></div>
+        <table class="data-table">
+          <tr><th>Instant</th><th>Charge : u<sub>C</sub></th><th>Décharge : u<sub>C</sub></th></tr>
+          <tr><td>t = 0</td><td>0</td><td>E</td></tr>
+          <tr><td>t = τ</td><td>0,63 E</td><td>0,37 E</td></tr>
+          <tr><td>t = 2τ</td><td>0,86 E</td><td>0,14 E</td></tr>
+          <tr><td>t = 5τ</td><td>≈ E (99%)</td><td>≈ 0 (1%)</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📈 Solutions complètes</div>
+        <div class="formula-box phys"><span class="formula-label">CHARGE (condensateur initialement vide)</span><div class="formula-content">$u_C(t) = E\!\left(1 - e^{-t/\tau}\right)$</div></div>
+        <div class="formula-box phys"><span class="formula-label">DÉCHARGE (condensateur initialement chargé à E)</span><div class="formula-content">$u_C(t) = E\,e^{-t/\tau}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Intensité pendant la charge</span><div class="formula-content">$i(t) = \dfrac{E}{R}e^{-t/\tau}$</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Tangente à l'origine :</strong> La tangente à la courbe en t = 0 coupe l'asymptote en t = τ. C'est la méthode graphique pour déterminer τ expérimentalement.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⚡ Énergie stockée</div>
+        <div class="formula-box phys"><span class="formula-label">Énergie dans le condensateur</span><div class="formula-content">$E_c = \tfrac{1}{2}Cu_C^2$</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Le condensateur = une éponge électrique :</strong> Il se remplit (charge) puis se vide (décharge). Plus R est grand, plus ça prend du temps. τ = RC = le temps pour remplir 63% de l'éponge.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Constante de temps</span>
+          <div class="formula-content">$\tau = RC \quad (\text{secondes})$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Tension charge (condensateur vide → E)</span>
+          <div class="formula-content">$u_C(t) = E\!\left(1 - e^{-t/\tau}\right)$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Tension décharge (condensateur plein → 0)</span>
+          <div class="formula-content">$u_C(t) = E\,e^{-t/\tau}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Équation différentielle (charge)</span>
+          <div class="formula-content">$\dfrac{du_C}{dt} + \dfrac{u_C}{RC} = \dfrac{E}{RC}$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>À t = τ :</strong> charge → u<sub>C</sub> = 0,63E | décharge → u<sub>C</sub> = 0,37E. <strong>À t = 5τ :</strong> condensateur considéré plein ou vide (≈ 99%).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Graphes charge / décharge</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 460 200" width="100%" style="max-width:460px">
+            <!-- Charge curve -->
+            <text x="100" y="18" fill="#4f8ef7" font-size="12" font-weight="bold" font-family="Space Grotesk">CHARGE</text>
+            <line x1="30" y1="170" x2="210" y2="170" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="30" y1="170" x2="30" y2="20" stroke="#2a3350" stroke-width="1.5"/>
+            <!-- E level -->
+            <line x1="30" y1="30" x2="210" y2="30" stroke="#2a3350" stroke-width="1" stroke-dasharray="4"/>
+            <text x="212" y="34" fill="#8892b0" font-size="10">E</text>
+            <!-- 0.63E level -->
+            <line x1="30" y1="80" x2="210" y2="80" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="212" y="84" fill="#f7c948" font-size="9">0.63E</text>
+            <!-- charge curve approx -->
+            <path d="M30,170 C80,170 90,40 210,33" stroke="#4f8ef7" stroke-width="2.5" fill="none"/>
+            <!-- tau mark -->
+            <line x1="75" y1="80" x2="75" y2="170" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="68" y="185" fill="#f7c948" font-size="9">τ</text>
+
+            <!-- Discharge curve -->
+            <text x="330" y="18" fill="#f76f6f" font-size="12" font-weight="bold" font-family="Space Grotesk">DÉCHARGE</text>
+            <line x1="250" y1="170" x2="430" y2="170" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="250" y1="170" x2="250" y2="20" stroke="#2a3350" stroke-width="1.5"/>
+            <line x1="250" y1="30" x2="430" y2="30" stroke="#2a3350" stroke-width="1" stroke-dasharray="4"/>
+            <text x="432" y="34" fill="#8892b0" font-size="10">E</text>
+            <!-- 0.37E level -->
+            <line x1="250" y1="125" x2="430" y2="125" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="432" y="129" fill="#f7c948" font-size="9">0.37E</text>
+            <!-- discharge curve -->
+            <path d="M250,30 C280,30 310,160 430,168" stroke="#f76f6f" stroke-width="2.5" fill="none"/>
+            <!-- tau mark -->
+            <line x1="295" y1="125" x2="295" y2="170" stroke="#f7c948" stroke-width="1" stroke-dasharray="3"/>
+            <text x="288" y="185" fill="#f7c948" font-size="9">τ</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Charge d'un condensateur</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un circuit RC avec R = 10 kΩ, C = 100 μF, E = 12 V. Le condensateur est initialement déchargé.<br/>
+              1. Calculer τ.<br/>
+              2. Donner l'expression de u<sub>C</sub>(t).<br/>
+              3. Quelle est la tension à t = τ ?<br/>
+              4. À partir de quand le condensateur est-il "chargé" ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              R = 10 kΩ = 10⁴ Ω · C = 100 μF = 10⁻⁴ F · E = 12 V · u<sub>C</sub>(0) = 0</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① τ = RC</strong><br/>
+              τ = 10⁴ × 10⁻⁴ = <strong>1 s</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Expression u<sub>C</sub>(t)</strong><br/>
+              u<sub>C</sub>(t) = E(1 − e<sup>−t/τ</sup>) = <strong>12(1 − e<sup>−t</sup>)</strong> V</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ À t = τ = 1 s</strong><br/>
+              u<sub>C</sub>(1) = 12(1 − e⁻¹) = 12 × 0,632 = <strong>7,6 V = 63% de E</strong><br/>
+              <em style="color:var(--text3)">💡 À t = τ : toujours 63% de E, quelle que soit la valeur de E !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">④ Chargé à t = 5τ = 5 s</strong><br/>
+              u<sub>C</sub>(5) = 12(1 − e⁻⁵) ≈ 12 × 0,993 ≈ <strong>11,9 V ≈ 99% de E</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

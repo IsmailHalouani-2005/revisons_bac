@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-photon" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>💡 Lumière & Effet Photoélectrique</h1>
+    <p>Le photon, E = hν, éjection d'électrons, diagrammes d'énergie.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="photon" onclick="toggleComplete(this,'photon')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('photon','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('photon','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-photon">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">💡 Le photon — dualité onde-corpuscule</div>
+        <div class="cours-text">
+          <p>La lumière a une <strong>double nature</strong> : elle se comporte comme une onde (diffraction, interférences) ET comme un flux de particules appelées <strong>photons</strong>.</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Énergie d'un photon</span><div class="formula-content">$E = h\nu = \dfrac{hc}{\lambda} \qquad h = 6{,}626\times10^{-34}\,\text{J·s}$</div></div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>ν</strong> (nu) = fréquence (Hz)</li>
+            <li><strong>λ</strong> = longueur d'onde (m)</li>
+            <li><strong>c</strong> = vitesse de la lumière = 3×10⁸ m/s</li>
+            <li>Relation : c = λ·ν</li>
+          </ul>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Plus λ est petite (UV, rayons X), plus l'énergie du photon est grande. C'est pourquoi les UV brûlent la peau et les rayons X traversent les tissus.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⚡ Effet photoélectrique</div>
+        <div class="cours-text">
+          <p>Quand un photon frappe un métal, il peut éjecter un électron si son énergie est suffisante pour vaincre le <strong>travail d'extraction W</strong> (énergie de liaison de l'électron au métal).</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Bilan énergétique</span><div class="formula-content">$E_{\text{photon}} = W + E_{c,\text{max}} \;\Rightarrow\; h\nu = W + \tfrac{1}{2}mv^2_{\text{max}}$</div></div>
+        <div class="definition-box">
+          <div class="def-title">Fréquence seuil ν_s</div>
+          Fréquence minimale pour éjecter un électron : hν_s = W → ν_s = W/h. Si ν < ν_s → pas d'effet photoélectrique, quelle que soit l'intensité lumineuse !
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Conversion eV ↔ J :</strong> 1 eV = 1,6×10⁻¹⁹ J. Si W = 4,5 eV → W = 4,5 × 1,6×10⁻¹⁹ = 7,2×10⁻¹⁹ J.</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Énergie d'un photon</span>
+          <div class="formula-content">$E = h\nu = \dfrac{hc}{\lambda} \qquad h = 6{,}63\times10^{-34}\,\text{J·s}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Effet photoélectrique</span>
+          <div class="formula-content">$E_{\text{photon}} = W + E_c \qquad E_c = \tfrac{1}{2}mv^2$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Rendement cellule photovoltaïque</span>
+          <div class="formula-content">$\eta = \dfrac{E_{\text{élec}}}{E_{\text{lum}}} = \dfrac{P_{\text{élec}}}{P_{\text{lum}}}$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Conversion eV :</strong> 1 eV = 1,6×10⁻¹⁹ J. Si W = 3,14 eV → W = 3,14 × 1,6×10⁻¹⁹ = 5,02×10⁻¹⁹ J.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Spectre EM</th><th>Longueur d'onde</th></tr>
+          <tr><td>UV</td><td>100–400 nm</td></tr>
+          <tr><td>Visible (violet→rouge)</td><td>400–800 nm</td></tr>
+          <tr><td>IR</td><td>&gt; 800 nm</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Éjection d'un électron</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un métal a un travail d'extraction W = 3,0 eV. On l'éclaire avec λ = 250 nm. h = 6,63×10⁻³⁴ J·s, c = 3×10⁸ m/s.<br/>
+              1. Calculer l'énergie du photon en J.<br/>
+              2. L'électron est-il éjecté ? Si oui, calculer son énergie cinétique.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  W = 3,0 eV · λ = 250 nm = 250×10⁻⁹ m · h = 6,63×10⁻³⁴ J·s · c = 3×10⁸ m·s⁻¹<br/>
+  <em style="color:var(--text3)" >⚠️ Conversion : 1 eV = 1,6×10⁻¹⁹ J → W = 3,0 × 1,6×10⁻¹⁹ = 4,8×10⁻¹⁹ J</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Énergie du photon E = hc/λ</strong><br/>
+  E = (6,63×10⁻³⁴ × 3×10⁸) / (250×10⁻⁹)<br/>
+  E = 1,989×10⁻²⁵ / 2,5×10⁻⁷ = 7,96×10⁻¹⁹ J<br/>
+  En eV : E = 7,96×10⁻¹⁹ / 1,6×10⁻¹⁹ = <strong>4,98 eV</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Condition d'éjection : E<sub>photon</sub> ≥ W</strong><br/>
+  4,98 eV &gt; 3,0 eV → <strong>Oui, l'électron est éjecté</strong><br/>
+  <em style="color:var(--text3)" >💡 Si E &lt; W → aucun électron éjecté, quelle que soit l'intensité lumineuse !</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >③ Énergie cinétique E<sub>c</sub> = E − W</strong><br/>
+  E<sub>c</sub> = 4,98 − 3,0 = <strong>1,98 eV = 3,17×10⁻¹⁹ J</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ L'électron reçoit 4,98 eV, en donne 3,0 eV pour s'arracher → part avec 1,98 eV d'énergie cinétique.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

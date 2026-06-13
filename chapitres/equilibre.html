@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-equilibre" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>⚖️ Constante d'Équilibre</h1>
+    <p>K, Qr, sens d'évolution, taux d'avancement τ. Réaction totale ou équilibrée ?</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="equilibre" onclick="toggleComplete(this,'equilibre')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('equilibre','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('equilibre','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-equilibre">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚖️ Quotient de réaction Q<sub>r</sub></div>
+        <div class="cours-text"><p>Pour la réaction aA + bB ⇌ cC + dD :</p></div>
+        <div class="formula-box chem"><span class="formula-label">Quotient de réaction</span><div class="formula-content">$Q_r = \dfrac{([\text{C}]/C°)^c\,([\text{D}]/C°)^d}{([\text{A}]/C°)^a\,([\text{B}]/C°)^b}$</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>C° = 1 mol·L⁻¹ (concentration standard). En pratique on écrit souvent Q<sub>r</sub> = [C]^c[D]^d / ([A]^a[B]^b) avec les concentrations en mol/L directement. Les solvants (eau) et solides purs n'apparaissent PAS.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Constante d'équilibre K</div>
+        <div class="definition-box">
+          <div class="def-title">État d'équilibre</div>
+          À l'équilibre, Q<sub>r</sub> = K (constante d'équilibre). K ne dépend que de la température, pas des concentrations initiales.
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Sens d'évolution spontané</span><div class="formula-content">$Q_r < K$ → sens direct &nbsp;|&nbsp; $Q_r > K$ → sens indirect &nbsp;|&nbsp; $Q_r = K$ → équilibre</div></div>
+        <div class="formula-box chem"><span class="formula-label">Taux d'avancement</span><div class="formula-content">$\tau = \dfrac{x_{\text{éq}}}{x_{\max}}$</div></div>
+        <div class="cours-text">
+          <ul>
+            <li>τ ≈ 1 → réaction quasi-totale (K >> 1)</li>
+            <li>τ ≈ 0 → réaction quasi-inexistante (K << 1)</li>
+            <li>0 < τ < 1 → équilibre (K ≈ 1 à qq ordres de grandeur)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📋 Tableau d'avancement</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire l'équation équilibrée avec les coefficients stœchiométriques.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Ligne "état initial" : quantités n₀ des espèces.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Ligne "état à x" : n₀ ± coeff·x pour chaque espèce.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">x<sub>max</sub> = min(n₀/coeff) pour les réactifs.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text">Trouver x<sub>éq</sub> (via K ou données) → τ = x<sub>éq</sub>/x<sub>max</sub>.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Quotient de réaction (aA + bB ⇌ cC + dD)</span>
+          <div class="formula-content">$Q_r = \dfrac{([C]/C°)^c([D]/C°)^d}{([A]/C°)^a([B]/C°)^b} \qquad C° = 1\,\text{mol·L}^{-1}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">À l'équilibre</span>
+          <div class="formula-content">$Q_{r,\text{éq}} = K$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Sens d'évolution</span>
+          <div class="formula-content">$Q_r < K$ → sens direct &nbsp;|&nbsp; $Q_r > K$ → sens indirect</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Taux d'avancement</span>
+          <div class="formula-content">$\tau = \dfrac{x_f}{x_{\max}} \qquad \tau=1 \Rightarrow \text{totale}$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>L'eau et les solides n'apparaissent PAS dans Q<sub>r</sub> !</strong> (activité = 1)</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Tableau d'avancement + taux τ</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              CH₃COOH + H₂O ⇌ CH₃COO⁻ + H₃O⁺<br/>
+              n₀(CH₃COOH) = 0,10 mol, n₀(H₂O) = solvant.<br/>
+              À l'équilibre, x<sub>f</sub> = 1,3×10⁻³ mol.<br/>
+              1. Calculer x<sub>max</sub>.<br/>
+              2. Calculer τ et conclure.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  n₀(CH₃COOH) = 0,10 mol · n₀(H₂O) = solvant (excès) · x<sub>f</sub> = 1,3×10⁻³ mol</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Tableau d'avancement</strong><br/>
+  <table style="font-size:.85rem;border-collapse:collapse;width:100%">
+    <tr style="background:var(--bg3)"><td style="padding:.3rem .5rem">État</td><td style="padding:.3rem .5rem">CH₃COOH</td><td style="padding:.3rem .5rem">H₂O</td><td style="padding:.3rem .5rem">CH₃COO⁻</td><td style="padding:.3rem .5rem">H₃O⁺</td></tr>
+    <tr><td style="padding:.3rem .5rem">Initial</td><td style="padding:.3rem .5rem">0,10</td><td style="padding:.3rem .5rem">excès</td><td style="padding:.3rem .5rem">0</td><td style="padding:.3rem .5rem">0</td></tr>
+    <tr><td style="padding:.3rem .5rem">Équilibre</td><td style="padding:.3rem .5rem">0,10 − x</td><td style="padding:.3rem .5rem">excès</td><td style="padding:.3rem .5rem">x</td><td style="padding:.3rem .5rem">x</td></tr>
+  </table></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② x<sub>max</sub> = min(n₀/coeff)</strong><br/>
+  Réactif limitant = CH₃COOH (l'eau est en excès)<br/>
+  x<sub>max</sub> = 0,10/1 = <strong>0,10 mol</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Taux d'avancement τ = x<sub>f</sub>/x<sub>max</sub></strong><br/>
+  τ = 1,3×10⁻³ / 0,10 = <strong>0,013 = 1,3%</strong><br/>
+  <em style="color:var(--text3)" >💡 τ &lt;&lt; 1 → réaction très peu avancée → acide faible (très peu dissocié). Cohérent avec pKa = 4,8 !</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Seulement 1,3% des molécules d'acide acétique se dissocient dans l'eau.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

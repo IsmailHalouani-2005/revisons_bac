@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-thermodynamique" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🌡️ 1er Principe de la Thermodynamique</h1>
+    <p>Le bilan d'énergie d'un système. Comprendre W, Q et ΔU en 10 minutes.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;flex-wrap:wrap;">
+      <button class="check-btn" data-chapter="thermodynamique" onclick="toggleComplete(this,'thermodynamique')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('thermodynamique','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('thermodynamique','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-thermodynamique">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔬 Définitions fondamentales</div>
+        <div class="definition-box">
+          <div class="def-title">Système thermodynamique</div>
+          Portion de l'univers qu'on décide d'étudier. Tout ce qui est autour = <strong>milieu extérieur</strong>.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Énergie interne U</div>
+          Somme de toutes les énergies microscopiques du système (agitation thermique, liaisons chimiques...). On ne peut pas la mesurer directement, seulement sa <strong>variation ΔU</strong>.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Travail W</div>
+          Échange d'énergie entre le système et l'extérieur via des <strong>forces mécaniques</strong> (piston, moteur...). W > 0 = le système <em>reçoit</em> du travail.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Chaleur Q</div>
+          Échange d'énergie entre le système et l'extérieur via un <strong>gradient de température</strong>. Q > 0 = le système <em>reçoit</em> de la chaleur.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Le 1er principe — Bilan d'énergie</div>
+        <div class="cours-text">
+          <p>Le 1er principe de la thermodynamique est un <strong>bilan énergétique</strong> : l'énergie ne se crée ni ne se détruit, elle se transforme.</p>
+          <p>Pour un système quelconque :</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Forme générale</span><div class="formula-content">$\Delta E = \Delta E_c + \Delta E_p + \Delta U = W + Q$</div></div>
+        <div class="cours-text">
+          <p>Dans la plupart des cas au BAC, le système est <strong>au repos</strong> (ΔEc = 0) et à <strong>altitude constante</strong> (ΔEp = 0), donc :</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Cas BAC le plus fréquent</span><div class="formula-content">$\Delta U = W + Q$</div></div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Convention de signe OBLIGATOIRE :</strong> W et Q sont comptés <em>algébriquement du point de vue du système</em>. Le système reçoit → positif. Le système cède → négatif. Toujours se demander "qui donne à qui ?"</div>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌡️ Capacité thermique & Chaleur sensible</div>
+        <div class="cours-text"><p>Pour un solide ou liquide <strong>incompressible</strong> sans travail mécanique (W = 0) :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Chaleur sensible</span><div class="formula-content">$Q = mc\Delta T \quad (\text{J})$</div></div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>m</strong> : masse en kg</li>
+            <li><strong>c</strong> : capacité thermique massique en J·kg⁻¹·K⁻¹ (eau : 4180, acier : 460, aluminium : 900)</li>
+            <li><strong>ΔT = T<sub>f</sub> − T<sub>i</sub></strong> en Kelvin ou °C (la différence est identique)</li>
+          </ul>
+          <p>La <strong>capacité thermique</strong> du système entier : C = m·c (en J·K⁻¹)</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">💨 Gaz parfait</div>
+        <div class="formula-box phys"><span class="formula-label">Loi des gaz parfaits</span><div class="formula-content">$pV = nRT \qquad R = 8{,}314\,\text{J·mol}^{-1}\text{·K}^{-1}$</div></div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>T en KELVIN obligatoire !</strong> T(K) = θ(°C) + 273,15. Ne jamais mettre des Celsius dans pV = nRT.</div>
+        </div>
+        <div class="cours-text">
+          <p>Pour un gaz parfait, l'énergie interne <strong>ne dépend que de T</strong>. Si T est constante → ΔU = 0 → W = −Q.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔄 Cas particuliers importants</div>
+        <table class="data-table">
+          <tr><th>Transformation</th><th>Condition</th><th>Conséquence</th></tr>
+          <tr><td>Isotherme (gaz parf.)</td><td>T = cst → ΔU = 0</td><td>W = −Q</td></tr>
+          <tr><td>Isochore</td><td>V = cst → W = 0</td><td>ΔU = Q</td></tr>
+          <tr><td>Adiabatique</td><td>Q = 0</td><td>ΔU = W</td></tr>
+          <tr><td>Cycle complet</td><td>Retour état initial → ΔU = 0</td><td>W + Q = 0</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode de résolution BAC</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Identifier le système</strong> et ce qui est W vs Q dans l'énoncé.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Appliquer ΔU = W + Q</strong> en respectant les signes (reçu = +, cédé = −).</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Si solide/liquide sans travail : <strong>ΔU = Q = mcΔT</strong>. Convertir si besoin.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Si gaz : vérifier si on peut utiliser <strong>pV = nRT</strong> pour trouver une inconnue.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text"><strong>Vérifier les unités et le signe</strong> du résultat (cohérent avec la physique ?).</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+
+    <!-- ANALOGIE -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'analogie pour tout comprendre</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Imagine un frigo :</strong> L'énergie interne U c'est le "stock d'énergie" du système. W c'est le travail (le moteur du frigo travaille). Q c'est la chaleur échangée (le frigo refroidit à l'intérieur = perd de la chaleur).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULES CLÉS -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Les formules à retenir ABSOLUMENT</div>
+      <div class="info-card-body">
+
+        <div class="formula-box phys">
+          <span class="formula-label">1er principe général</span>
+          <div class="formula-content">$\Delta E = \Delta E_c + \Delta E_p + \Delta U = W + Q$</div>
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Système au repos (BAC +++)</span>
+          <div class="formula-content">$\Delta U = W + Q$</div>
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Système incompressible sans travail</span>
+          <div class="formula-content">$\Delta U = Q = mc\Delta T$</div>
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Gaz parfait</span>
+          <div class="formula-content">$pV = nRT$</div>
+        </div>
+
+        <div class="formula-box phys">
+          <span class="formula-label">Capacité thermique</span>
+          <div class="formula-content">$C = mc \quad (\text{en J·K}^{-1})$</div>
+        </div>
+
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Pièges BAC :</strong> W > 0 si le milieu extérieur donne du travail au système. Q > 0 si le système reçoit de l'énergie. T en KELVIN pour les gaz (T = θ°C + 273,15)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHÉMA -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Schéma bilan énergétique</div>
+      <div class="info-card-body">
+        <div class="schema-box">
+          <svg viewBox="0 0 500 200" width="100%" style="max-width:500px">
+            <defs>
+              <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#4f8ef7"/>
+              </marker>
+              <marker id="arr-red" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#f76f6f"/>
+              </marker>
+              <marker id="arr-green" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L8,3 z" fill="#3ecf8e"/>
+              </marker>
+            </defs>
+            <!-- System box -->
+            <rect x="175" y="60" width="150" height="80" rx="12" fill="#1e2535" stroke="#4f8ef7" stroke-width="2"/>
+            <text x="250" y="96" text-anchor="middle" fill="#e8eaf6" font-size="13" font-weight="bold" font-family="Space Grotesk">Système</text>
+            <text x="250" y="114" text-anchor="middle" fill="#8892b0" font-size="11">Énergie interne U</text>
+            <!-- W arrow in -->
+            <line x1="60" y1="100" x2="170" y2="100" stroke="#4f8ef7" stroke-width="2.5" marker-end="url(#arr)"/>
+            <text x="105" y="88" text-anchor="middle" fill="#4f8ef7" font-size="13" font-weight="bold" font-family="Space Grotesk">W &gt; 0</text>
+            <text x="105" y="120" text-anchor="middle" fill="#8892b0" font-size="10">travail reçu</text>
+            <!-- Q arrow in -->
+            <line x1="335" y1="100" x2="440" y2="100" stroke="#f76f6f" stroke-width="2.5" marker-end="url(#arr-red)"/>
+            <text x="388" y="88" text-anchor="middle" fill="#f76f6f" font-size="13" font-weight="bold" font-family="Space Grotesk">Q &gt; 0</text>
+            <text x="388" y="120" text-anchor="middle" fill="#8892b0" font-size="10">chaleur reçue</text>
+            <!-- Delta U -->
+            <text x="250" y="170" text-anchor="middle" fill="#3ecf8e" font-size="14" font-weight="bold" font-family="Space Grotesk">ΔU = W + Q</text>
+          </svg>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">➡️</span>
+          <div class="key-text">W et Q <strong>positifs → le système REÇOIT</strong> de l'énergie → U augmente</div>
+        </div>
+        <div class="key-point">
+          <span class="key-icon">⬅️</span>
+          <div class="key-text">W et Q <strong>négatifs → le système CÈDE</strong> de l'énergie → U diminue</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE RÉSUMÉ -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📋 Tableau récapitulatif</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Situation</th><th>Formule</th><th>Condition</th></tr>
+          <tr><td>Cas général</td><td>ΔE = W + Q</td><td>Toujours valable</td></tr>
+          <tr><td>Au repos (BAC)</td><td>ΔU = W + Q</td><td>ΔEc = ΔEp = 0</td></tr>
+          <tr><td>Sans travail</td><td>ΔU = Q = mcΔT</td><td>W = 0 J</td></tr>
+          <tr><td>Gaz parfait</td><td>pV = nRT</td><td>R = 8,314 J·mol⁻¹·K⁻¹</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- EXERCICES -->
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Chauffage d'un café</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              On chauffe 200 g de café (eau, c = 4180 J·kg⁻¹·K⁻¹) de 20°C à 80°C dans un four à micro-ondes (W = 0 J).<br/>
+              1. Calculer ΔT en Kelvin.<br/>
+              2. Calculer la variation d'énergie interne ΔU.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données identifiées</strong><br/>
+              m = 200 g = <strong>0,200 kg</strong> · c = 4180 J·kg⁻¹·K⁻¹ · T<sub>i</sub> = 20°C · T<sub>f</sub> = 80°C · W = 0 J</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① ΔT</strong><br/>
+              ΔT = T<sub>f</sub> − T<sub>i</sub> = 80 − 20 = <strong>60 K</strong> (identique en °C et K)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② 1er principe : W = 0 → ΔU = Q = m·c·ΔT</strong><br/>
+              ΔU = 0,200 × 4180 × 60 = <strong>50 160 J ≈ 50,2 kJ</strong></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ ΔU > 0 → énergie reçue → température augmente ✓</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Gaz parfait dans un piston</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un gaz parfait occupe un volume V = 2,0 L à T = 300 K et p = 1,0×10⁵ Pa.<br/>
+              1. Calculer la quantité de matière n. (R = 8,314 J·mol⁻¹·K⁻¹)<br/>
+              2. Le gaz reçoit W = −500 J et Q = +800 J. Calculer ΔU.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              V = 2,0×10⁻³ m³ · T = 300 K · p = 1,0×10⁵ Pa · R = 8,314 J·mol⁻¹·K⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① n = pV/(RT)</strong><br/>
+              n = (1,0×10⁵ × 2,0×10⁻³) / (8,314 × 300) = 200 / 2494 = <strong>0,080 mol</strong><br/>
+              <em style="color:var(--text3)">⚠️ V en m³ (÷1000) et T en K obligatoires !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② ΔU = W + Q</strong><br/>
+              ΔU = (−500) + (+800) = <strong>+300 J</strong><br/>
+              <em style="color:var(--text3)">W < 0 = le gaz travaille sur l'extérieur. Q > 0 = le gaz reçoit de la chaleur.</em></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ ΔU > 0 malgré W < 0 car Q > |W|.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">3</div>
+            <div class="exercise-title">Sujet BAC type — Bilan frigo</div>
+            <span class="exercise-diff diff-hard">Difficile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un réfrigérateur maintient ses aliments à T₁ = 5°C. Il échange avec l'extérieur à T₂ = 25°C. Son moteur fournit W = −120 J par cycle. Le frigo cède Q₂ = +200 J à la pièce.<br/>
+              1. Quel est le signe de Q₁ (chaleur échangée avec les aliments) ?<br/>
+              2. Calculer Q₁ (1er principe, ΔU = 0 sur un cycle complet).<br/>
+              3. Interpréter le résultat.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Convention de signe</strong><br/>
+              W = −120 J → le moteur cède 120 J au frigo (W<sub>reçu</sub> = +120 J pour le frigo)<br/>
+              Le frigo cède 200 J à la pièce → Q₂ = −200 J pour le frigo</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Signe de Q₁</strong><br/>
+              Le frigo prélève de la chaleur aux aliments → <strong>Q₁ > 0</strong> (reçoit)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Cycle complet → ΔU = 0</strong><br/>
+              W + Q₁ + Q₂ = 0<br/>
+              120 + Q₁ + (−200) = 0<br/>
+              Q₁ = 200 − 120 = <strong>+80 J</strong></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ Bilan énergie : 80 J (aliments) + 120 J (moteur) = 200 J rejetés dans la pièce ✓</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

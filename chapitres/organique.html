@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-organique" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🌿 Structure des Molécules Organiques</h1>
+    <p>Groupes fonctionnels, nomenclature, isomérie. Identifier et nommer les familles.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="organique" onclick="toggleComplete(this,'organique')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('organique','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('organique','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-organique">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🌿 Nomenclature IUPAC</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Identifier la chaîne principale</strong> : la plus longue chaîne carbonée contenant le groupe fonctionnel principal.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Numéroter</strong> la chaîne pour donner le numéro le plus petit au groupe fonctionnel.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Nommer</strong> : préfixe (substituants) + racine (nb carbones) + suffixe (fonction).</div></div>
+        </div>
+        <table class="data-table">
+          <tr><th>Carbones</th><th>Racine</th><th>Alcane</th></tr>
+          <tr><td>1</td><td>méth-</td><td>méthane</td></tr>
+          <tr><td>2</td><td>éth-</td><td>éthane</td></tr>
+          <tr><td>3</td><td>prop-</td><td>propane</td></tr>
+          <tr><td>4</td><td>but-</td><td>butane</td></tr>
+          <tr><td>5</td><td>pent-</td><td>pentane</td></tr>
+          <tr><td>6</td><td>hex-</td><td>hexane</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔗 Isomérie</div>
+        <div class="definition-box">
+          <div class="def-title">Isomères de constitution</div>
+          Même formule brute, squelette carboné différent ou position du groupe fonctionnel différente. Ex: propan-1-ol et propan-2-ol (C₃H₈O).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Stéréoisomères (Z/E)</div>
+          Même formule développée, mais orientation spatiale différente autour d'une double liaison C=C. Z (zusammen = ensemble) : groupes prioritaires du même côté. E (entgegen = opposé) : côtés opposés.
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Tableau des groupes fonctionnels (à mémoriser)</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Famille</th><th>Groupe caractéristique</th><th>Suffixe</th><th>Exemple</th></tr>
+          <tr><td>Alcool</td><td>-OH</td><td>-ol</td><td>éthanol</td></tr>
+          <tr><td>Aldéhyde</td><td>-CHO</td><td>-al</td><td>méthanal</td></tr>
+          <tr><td>Cétone</td><td>-C(=O)-</td><td>-one</td><td>propan-2-one</td></tr>
+          <tr><td>Acide carboxylique</td><td>-COOH</td><td>-oïque</td><td>acide éthanoïque</td></tr>
+          <tr><td>Ester</td><td>-COO-</td><td>-oate de -yle</td><td>éthanoate de méthyle</td></tr>
+          <tr><td>Amine</td><td>-NH₂</td><td>-amine</td><td>éthanamine</td></tr>
+          <tr><td>Amide</td><td>-CONH₂</td><td>-amide</td><td>éthanamide</td></tr>
+        </table>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Nomenclature :</strong> Préfixe (groupes alkyles) + Racine (nb de C dans chaîne principale : méth-1, éth-2, prop-3, but-4, pent-5, hex-6) + Suffixe (famille fonctionnelle)</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Identifier et nommer</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Donner la famille fonctionnelle et le nom de : CH₃-CH₂-CH₂-OH
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Méthode de nomenclature IUPAC</strong><br/>
+  1) Identifier le groupe fonctionnel<br/>
+  2) Trouver la chaîne principale la plus longue<br/>
+  3) Numéroter pour donner le plus petit indice au groupe fonctionnel</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Identifier le groupe fonctionnel</strong><br/>
+  Présence de −OH → <strong>Alcool</strong> (suffixe : −ol)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Compter les carbones de la chaîne principale</strong><br/>
+  CH₃−CH₂−CH₂−OH → <strong>3 carbones</strong> → racine : <strong>prop−</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Numéroter</strong><br/>
+  OH sur C1 (en partant du côté OH pour le plus petit indice)<br/>
+  → propan-<strong>1</strong>-ol</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Nom : <strong>propan-1-ol</strong>. Formule semi-développée : CH₃CH₂CH₂OH.</div>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Isomérie</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              CH₃COOCH₃ et CH₃CH₂COOH ont la même formule brute C₃H₆O₂. Sont-ils isomères ? Identifier leurs familles.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Définition isomères de constitution</strong><br/>
+  Même formule brute + squelette ou position du groupe fonctionnel différents.</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Vérifier la formule brute</strong><br/>
+  CH₃COOCH₃ : 3C + 6H + 2O ✓<br/>
+  CH₃CH₂COOH : 3C + 6H + 2O ✓<br/>
+  → Même formule brute C₃H₆O₂ → <strong>Oui, ce sont des isomères de constitution</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Identifier les familles</strong><br/>
+  CH₃COOCH₃ : groupe −COO− (lien O entre deux groupes carbones) → <strong>Ester</strong><br/>
+  Nom : éthanoate de méthyle (acide éthanoïque + méthanol)<br/>
+  CH₃CH₂COOH : groupe −COOH en bout de chaîne → <strong>Acide carboxylique</strong><br/>
+  Nom : acide propanoïque</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Même formule brute, groupes fonctionnels différents → isomères de fonction.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

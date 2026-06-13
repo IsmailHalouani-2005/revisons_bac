@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-son" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🔊 Intensité Sonore</h1>
+    <p>Décibels, niveau d'intensité sonore, atténuation. La physique du son.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="son" onclick="toggleComplete(this,'son')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('son','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('son','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-son">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔊 Qu'est-ce que le son ?</div>
+        <div class="cours-text">
+          <p>Le son est une <strong>onde mécanique longitudinale</strong> : les molécules d'air vibrent dans la même direction que la propagation. Il faut un milieu matériel pour se propager (pas de son dans le vide).</p>
+          <p>Vitesse du son : c ≈ 340 m/s dans l'air à 20°C. Plus rapide dans les liquides (~1500 m/s) et solides.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Intensité sonore I</div>
+          Puissance acoustique reçue par unité de surface. Unité : W·m⁻². I₀ = 10⁻¹² W·m⁻² = seuil d'audibilité (le plus faible son audible).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📊 Niveau d'intensité sonore L (décibels)</div>
+        <div class="cours-text"><p>L'oreille humaine perçoit les sons de façon <strong>logarithmique</strong> (pas linéaire). D'où l'échelle en décibels :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Niveau sonore</span><div class="formula-content">$L = 10\log\!\left(\dfrac{I}{I_0}\right)\ \text{(dB)} \qquad I_0 = 10^{-12}\ \text{W·m}^{-2}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Retrouver I</span><div class="formula-content">$I = I_0 ·10^{L/10}$</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Les niveaux sonores NE s'additionnent PAS !</strong> Pour 2 sources identiques à L dB : L<sub>total</sub> = L + 10·log(2) = L + 3 dB. Il faut toujours repasser par les intensités (I<sub>total</sub> = ΣI), puis recalculer L.</div></div>
+        <table class="data-table">
+          <tr><th>Source</th><th>L (dB)</th><th>I (W/m²)</th></tr>
+          <tr><td>Seuil d'audibilité</td><td>0</td><td>10⁻¹²</td></tr>
+          <tr><td>Chuchotement</td><td>20</td><td>10⁻¹⁰</td></tr>
+          <tr><td>Conversation normale</td><td>60–70</td><td>10⁻⁶–10⁻⁵</td></tr>
+          <tr><td>Circulation intense</td><td>80</td><td>10⁻⁴</td></tr>
+          <tr><td>Seuil de risque (8h)</td><td>85</td><td>3×10⁻⁴</td></tr>
+          <tr><td>Concert rock</td><td>110</td><td>10⁻¹</td></tr>
+          <tr><td>Seuil de douleur</td><td>120</td><td>1</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Atténuation avec la distance</div>
+        <div class="formula-box phys"><span class="formula-label">Source ponctuelle (onde sphérique)</span><div class="formula-content">$I = \dfrac{P}{4\pi r^2} \quad \Rightarrow\quad I \propto \dfrac{1}{r^2}$</div></div>
+        <div class="cours-text"><p>Si la distance double (r → 2r) : I est divisée par 4 → L diminue de 10·log(4) ≈ 6 dB.</p></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Intensité sonore (W/m²)</span>
+          <div class="formula-content">$I = \dfrac{P}{S}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Niveau d'intensité sonore (dB)</span>
+          <div class="formula-content">$L = 10\log\!\left(\dfrac{I}{I_0}\right) \quad I_0 = 10^{-12}\,\text{W·m}^{-2}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Si I est doublée : L augmente de +3 dB</span>
+          <div class="formula-content">$L' = L + 3\,\text{dB} \quad (\text{car } 10\log 2 \approx 3)$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>PIÈGE BAC :</strong> Les niveaux sonores NE s'additionnent PAS. Deux sources à 60 dB = 63 dB (pas 120 dB). Les INTENSITÉS s'additionnent : I<sub>tot</sub> = ΣI.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Situation</th><th>Niveau (dB)</th></tr>
+          <tr><td>Seuil d'audibilité</td><td>0 dB</td></tr>
+          <tr><td>Conversation</td><td>60–70 dB</td></tr>
+          <tr><td>Seuil de risque</td><td>85 dB</td></tr>
+          <tr><td>Seuil de douleur</td><td>120 dB</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Addition de sources sonores</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Deux haut-parleurs identiques émettent chacun un niveau L = 70 dB. I₀ = 10⁻¹² W·m⁻².<br/>
+              1. Retrouver l'intensité I d'un haut-parleur.<br/>
+              2. Calculer le niveau total L<sub>tot</sub> quand les deux sont allumés.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  L = 70 dB par haut-parleur · I₀ = 10⁻¹² W·m⁻²<br/>
+  <em style="color:var(--text3)" >⚠️ Règle fondamentale : les niveaux en dB NE s'additionnent pas ! Il faut passer par les intensités.</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Retrouver I d'un haut-parleur</strong><br/>
+  L = 10·log(I/I₀) → I = I₀ × 10^(L/10)<br/>
+  I = 10⁻¹² × 10^(70/10) = 10⁻¹² × 10⁷ = <strong>10⁻⁵ W·m⁻²</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Additionner les intensités</strong><br/>
+  I<sub>tot</sub> = I₁ + I₂ = 10⁻⁵ + 10⁻⁵ = <strong>2×10⁻⁵ W·m⁻²</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >③ Calculer L<sub>tot</sub></strong><br/>
+  L<sub>tot</sub> = 10·log(2×10⁻⁵ / 10⁻¹²) = 10·log(2×10⁷)<br/>
+  = 10·(log 2 + log 10⁷) = 10·(0,301 + 7) = <strong>73 dB</strong><br/>
+  <em style="color:var(--text3)" >💡 Doubler les sources ajoute toujours +3 dB (car 10·log 2 ≈ 3).</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ 70 + 70 ≠ 140 dB ! Deux sources identiques → L + 3 dB = 73 dB.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

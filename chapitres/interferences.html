@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-interferences" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🌈 Interférences</h1>
+    <p>Fentes de Young, interfrange, franges brillantes et sombres.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="interferences" onclick="toggleComplete(this,'interferences')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('interferences','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('interferences','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-interferences">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌈 Principe des interférences</div>
+        <div class="cours-text">
+          <p>Les interférences se produisent quand <strong>deux ondes cohérentes</strong> (même fréquence, déphasage constant) se superposent. Elles se renforcent ou s'annulent selon leur déphasage relatif.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Interférences constructives (frange brillante)</div>
+          Les deux ondes arrivent <strong>en phase</strong> : les crêtes coïncident. La différence de marche δ est un multiple entier de λ : δ = kλ (k = 0, ±1, ±2...).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Interférences destructives (frange sombre)</div>
+          Les deux ondes arrivent en <strong>opposition de phase</strong> : crête + creux = annulation. Différence de marche : δ = (k + ½)λ.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Fentes de Young — Formules</div>
+        <div class="cours-text"><p>Deux fentes S₁ et S₂ séparées d'une distance <em>a</em>, écran à distance <em>D</em>.</p></div>
+        <div class="formula-box phys"><span class="formula-label">Différence de marche au point M (abscisse x)</span><div class="formula-content">$\delta = S_2M - S_1M = \dfrac{ax}{D}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Interfrange (distance entre 2 franges brillantes)</span><div class="formula-content">$i = \dfrac{\lambda D}{a}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Position de la k-ième frange brillante</span><div class="formula-content">$x_k = ki = \dfrac{k\lambda D}{a}$</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>a = distance entre les deux fentes (petite, mm). D = distance fentes-écran (grande, m). i = interfrange (ce qu'on mesure sur l'écran, mm). Ne pas confondre a et i !</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Mesure de i en pratique :</strong> On mesure la distance entre N+1 franges = N·i. Donc i = (distance totale) / N.</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Deux cailloux dans l'eau :</strong> les cercles se croisent. Là où les crêtes se rencontrent = interférence constructive (frange brillante). Là où crête + creux = interférence destructive (frange sombre).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Interfrange (distance entre 2 franges brillantes)</span>
+          <div class="formula-content">$i = \dfrac{\lambda D}{a}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Différence de marche</span>
+          <div class="formula-content">$\delta = S_2M - S_1M = \dfrac{ax}{D}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Frange brillante (constructive)</span>
+          <div class="formula-content">$\delta = k\lambda \quad (k \in \mathbb{Z})$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Frange sombre (destructive)</span>
+          <div class="formula-content">$\delta = \left(k+\tfrac{1}{2}\right)\lambda$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>i vs a :</strong> i = interfrange (ce qu'on mesure sur l'écran), a = distance entre les 2 fentes (petite), D = distance fentes-écran (grande). λ en mètres !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Fentes de Young classique</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Deux fentes séparées de a = 0,4 mm sont éclairées par λ = 589 nm. L'écran est à D = 1,2 m.<br/>
+              1. Calculer l'interfrange i.<br/>
+              2. On mesure 11 franges sur 4,3 cm. Vérifier i.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  a = 0,4 mm = 4×10⁻⁴ m · λ = 589 nm = 589×10⁻⁹ m · D = 1,2 m</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Interfrange i = λD/a</strong><br/>
+  i = (589×10⁻⁹ × 1,2) / (4×10⁻⁴)<br/>
+  i = 7,07×10⁻⁷ / 4×10⁻⁴ = <strong>1,77×10⁻³ m ≈ 1,77 mm</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Mesure expérimentale : 11 franges = 10 interfranges</strong><br/>
+  <em style="color:var(--text3)" >💡 Entre N+1 franges il y a N interfranges. Ne pas confondre !</em><br/>
+  i<sub>exp</sub> = distance totale / 10<br/>
+  Si on mesure 4,3 cm pour 10 interfranges : i = 43/10 = 4,3 mm<br/>
+  → Comparer avec la valeur théorique pour vérifier la cohérence.</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ En cas d'écart, l'erreur vient soit de la mesure de a (très petite), soit de D.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

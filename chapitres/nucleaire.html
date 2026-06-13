@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-nucleaire" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>☢️ Transformations Nucléaires</h1>
+    <p>Radioactivité α β γ, loi de désintégration, demi-vie t₁/₂. Loi de Soddy.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="nucleaire" onclick="toggleComplete(this,'nucleaire')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('nucleaire','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('nucleaire','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-nucleaire">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">☢️ Structure du noyau atomique</div>
+        <div class="definition-box">
+          <div class="def-title">Notation du noyau</div>
+          ᴬ_Z X où A = nombre de masse (protons + neutrons) et Z = numéro atomique (protons). Le nombre de neutrons N = A − Z.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Isotopes</div>
+          Noyaux d'un même élément (même Z) mais avec un nombre de neutrons différent. Exemple : ¹²C, ¹³C, ¹⁴C sont tous des isotopes du carbone.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Les 4 types de désintégration</div>
+        <div class="definition-box">
+          <div class="def-title">Désintégration α</div>
+          Émission d'un noyau d'hélium ⁴₂He. Le noyau perd 4 nucléons (A−4) et 2 protons (Z−2). Pouvoir pénétrant faible (stoppé par une feuille de papier).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Désintégration β⁻</div>
+          Émission d'un électron ⁰₋₁e (et un antineutrino). Un neutron se transforme en proton : Z+1, A inchangé. Pouvoir pénétrant moyen.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Désintégration β⁺</div>
+          Émission d'un positron ⁰₊₁e (et un neutrino). Un proton se transforme en neutron : Z−1, A inchangé.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Émission γ</div>
+          Émission d'un photon γ très énergétique. Ni A ni Z ne changent. Accompagne souvent α ou β. Pouvoir pénétrant très élevé (nécessite du plomb pour s'en protéger).
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Loi de conservation de Soddy :</strong> La somme des A est conservée ET la somme des Z est conservée des deux côtés de l'équation. C'est la méthode pour trouver le noyau fils.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📉 Loi de désintégration radioactive</div>
+        <div class="cours-text"><p>La désintégration est un phénomène <strong>aléatoire et statistique</strong>. La loi est une décroissance exponentielle :</p></div>
+        <div class="formula-box chem"><span class="formula-label">Nombre de noyaux restants</span><div class="formula-content">$N(t) = N_0\,e^{-\lambda t}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Activité (désintégrations/seconde)</span><div class="formula-content">$A(t) = \lambda N(t) = A_0\,e^{-\lambda t} \quad (\text{Bq})$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Constante radioactive λ</span><div class="formula-content">$\lambda = \dfrac{\ln 2}{t_{1/2}} \quad (\text{s}^{-1})$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Demi-vie t₁/₂</span><div class="formula-content">$t_{1/2} = \dfrac{\ln 2}{\lambda} \approx \dfrac{0{,}693}{\lambda}$</div></div>
+        <table class="data-table">
+          <tr><th>Isotope</th><th>t₁/₂</th><th>Application</th></tr>
+          <tr><td>Carbone-14</td><td>5 730 ans</td><td>Datation archéologique</td></tr>
+          <tr><td>Uranium-238</td><td>4,5 milliards d'ans</td><td>Datation géologique</td></tr>
+          <tr><td>Iode-131</td><td>8 jours</td><td>Médecine nucléaire</td></tr>
+          <tr><td>Technétium-99m</td><td>6 heures</td><td>Imagerie médicale</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Énergie nucléaire</div>
+        <div class="formula-box chem"><span class="formula-label">Défaut de masse</span><div class="formula-content">$\Delta m = Zm_p + Nm_n - m_{\text{noyau}}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Énergie de liaison (Einstein)</span><div class="formula-content">$E_{\text{liais}} = \Delta m·c^2 \qquad c = 3\times10^8\,\text{m/s}$</div></div>
+        <div class="cours-text"><p>La fission (uranium → fragments) et la fusion (deutérium + tritium → hélium) libèrent de l'énergie car les produits ont une masse totale plus faible que les réactifs.</p></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Les 4 types de désintégration</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Type</th><th>Particule émise</th><th>Variation A</th><th>Variation Z</th></tr>
+          <tr><td>Émission α</td><td>⁴₂He</td><td>−4</td><td>−2</td></tr>
+          <tr><td>Émission β⁻</td><td>⁰₋₁e (électron)</td><td>0</td><td>+1</td></tr>
+          <tr><td>Émission β⁺</td><td>⁰₊₁e (positron)</td><td>0</td><td>−1</td></tr>
+          <tr><td>Émission γ</td><td>photon γ</td><td>0</td><td>0</td></tr>
+        </table>
+        <div class="formula-box chem">
+          <span class="formula-label">Loi de désintégration</span>
+          <div class="formula-content">$N(t) = N_0\,e^{-\lambda t} \qquad A(t) = A_0\,e^{-\lambda t}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Demi-vie</span>
+          <div class="formula-content">$t_{1/2} = \dfrac{\ln 2}{\lambda} \approx \dfrac{0{,}693}{\lambda}$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Loi de Soddy :</strong> Conservation de A (nombre de masse) et Z (numéro atomique) dans chaque désintégration. Écrire l'équation avec ΣA et ΣZ conservés des deux côtés !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Équation de désintégration α</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Le Radium 226 (²²⁶₈₈Ra) émet une particule α. Écrire l'équation de désintégration et identifier le noyau fils.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Loi de Soddy</strong><br/>
+              ΣA = conservé · ΣZ = conservé · Particule α = ⁴₂He</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Conservation de A</strong><br/>
+              A<sub>Ra</sub> = A<sub>fils</sub> + A<sub>α</sub> → 226 = A<sub>fils</sub> + 4 → <strong>A<sub>fils</sub> = 222</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Conservation de Z</strong><br/>
+              Z<sub>Ra</sub> = Z<sub>fils</sub> + Z<sub>α</sub> → 88 = Z<sub>fils</sub> + 2 → <strong>Z<sub>fils</sub> = 86 = Radon (Rn)</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Équation</strong><br/>
+              ²²⁶₈₈Ra → <strong>²²²₈₆Rn</strong> + ⁴₂He</div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ A : 226 = 222 + 4 ✓ · Z : 88 = 86 + 2 ✓</div>
+            </div>
+          </div>
+        </div>
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Calcul avec la demi-vie</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un isotope a t₁/₂ = 5730 ans (carbone 14). N₀ = 1,0×10¹² noyaux. Calculer N après 11 460 ans.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              t<sub>1/2</sub> = 5730 ans · N₀ = 1,0×10¹² noyaux · t = 11 460 ans</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Reconnaître le multiple</strong><br/>
+              11 460 / 5730 = <strong>2</strong> → exactement 2 demi-vies<br/>
+              <em style="color:var(--text3)">💡 Toujours vérifier en premier si t est un multiple de t<sub>1/2</sub> !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Méthode rapide</strong><br/>
+              Après 1 t<sub>1/2</sub> : N = N₀/2 = 5,0×10¹¹<br/>
+              Après 2 t<sub>1/2</sub> : N = N₀/4 = <strong>2,5×10¹¹ noyaux</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Vérification avec la formule</strong><br/>
+              λ = ln2/t<sub>1/2</sub> → N = 10¹² × e<sup>−(ln2/5730)×11460</sup> = 10¹² × e<sup>−ln4</sup> = 10¹²/4 = 2,5×10¹¹ ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

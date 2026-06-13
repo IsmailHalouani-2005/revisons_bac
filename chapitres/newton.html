@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-newton" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>⚙️ 2ème Loi de Newton & Mouvement</h1>
+    <p>Comprendre et appliquer ΣF = ma dans tous les types de mouvement.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="newton" onclick="toggleComplete(this,'newton')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('newton','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('newton','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-newton">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⚙️ Les 3 lois de Newton</div>
+        <div class="definition-box">
+          <div class="def-title">1ère loi — Principe d'inertie</div>
+          Dans un référentiel galiléen, si ΣF = 0, alors le corps reste en <strong>mouvement rectiligne uniforme</strong> (ou au repos). Le mouvement ne nécessite pas de force : c'est le <em>changement</em> de mouvement qui en nécessite.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">2ème loi — Principe fondamental de la dynamique</div>
+          La résultante des forces extérieures est égale à <strong>m·a</strong>. C'est le cœur du chapitre.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">2ème loi de Newton (vectorielle)</span><div class="formula-content">$\sum \vec{F}_{\text{ext}} = m\,\vec{a}$</div></div>
+        <div class="definition-box">
+          <div class="def-title">3ème loi — Actions réciproques</div>
+          Si A exerce une force sur B, alors B exerce sur A une force <strong>égale, opposée, sur la même droite d'action</strong>. F<sub>A</sub>→B = −F<sub>B</sub>→A.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📊 Passage de a(t) à v(t) à x(t)</div>
+        <div class="cours-text"><p>On intègre successivement. La constante d'intégration = <strong>condition initiale</strong>.</p></div>
+        <div class="formula-box phys"><span class="formula-label">Intégration successive</span><div class="formula-content">$a(t) \xrightarrow{\int} v(t) = \int a\,dt + v_0 \xrightarrow{\int} x(t) = \int v\,dt + x_0$</div></div>
+        <table class="data-table">
+          <tr><th>Type de mouvement</th><th>Condition</th><th>v(t)</th><th>x(t)</th></tr>
+          <tr><td>Rectiligne uniforme (MRU)</td><td>a = 0</td><td>v₀ = cst</td><td>v₀t + x₀</td></tr>
+          <tr><td>Rectiligne uniformément varié (MRUV)</td><td>a = cst</td><td>at + v₀</td><td>½at² + v₀t + x₀</td></tr>
+          <tr><td>Circulaire uniforme (MCU)</td><td>|v| = cst</td><td>tangentielle nulle</td><td>arc s = Rθ</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🎯 Repère de Frenet (MCU)</div>
+        <div class="cours-text"><p>Pour un mouvement circulaire, on utilise 2 axes :</p></div>
+        <div class="definition-box">
+          <div class="def-title">Vecteur tangentiel T⃗</div>
+          Dans le sens du mouvement. Accélération tangentielle $a_T = dv/dt$. Si MCU : $a_T = 0$.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Vecteur normal N⃗ (centripète)</div>
+          Vers le centre de la trajectoire. Accélération centripète $a_N = v^2/R$. Toujours présente si le mouvement est courbe.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Force centripète</span><div class="formula-content">$F_{\text{centripète}} = m\,\dfrac{v^2}{R}$ (vers le centre)</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode BAC — Appliquer Newton</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Choisir le système</strong> (l'objet qu'on étudie) et le <strong>référentiel</strong> (terrestre = galiléen pour le BAC).</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Faire le bilan des forces</strong> : poids P = mg↓, réaction normale N, frottement f, tension T... Tout ce qui s'applique au système.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Projeter sur les axes</strong> : écrire ΣFx = max et ΣFy = may séparément.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text"><strong>Résoudre</strong> les équations pour trouver a, v ou x selon ce qu'on cherche.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text"><strong>Intégrer</strong> si besoin (a → v → x) en utilisant les conditions initiales.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'analogie simple</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>C'est simple :</strong> Plus tu pousses fort (F grande) et plus l'objet est léger (m petite), plus ça accélère vite. F = ma, c'est tout.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">2ème loi de Newton</span>
+          <div class="formula-content">$\sum \vec{F}_{ext} = m\vec{a}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Mouvement rectiligne uniforme (a = 0)</span>
+          <div class="formula-content">$v(t) = v_0 \quad|\quad x(t) = v_0 t + x_0$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Mouvement uniformément accéléré</span>
+          <div class="formula-content">$a = \text{cst} \;|\; v(t) = at + v_0 \;|\; x(t) = \tfrac{1}{2}at^2 + v_0 t + x_0$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Mouvement circulaire uniforme</span>
+          <div class="formula-content">$a = \dfrac{v^2}{R}$ (centripète, vers le centre)</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Règle d'or BAC :</strong> Pour passer de l'accélération a(t) à la vitesse v(t), on <strong>intègre</strong> (primitive). Pour passer de v(t) à x(t), on intègre encore. La constante d'intégration = condition initiale (v₀ ou x₀).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🖼️ Les types de mouvement en un coup d'œil</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Type</th><th>a(t)</th><th>v(t)</th><th>x(t)</th></tr>
+          <tr><td>Rectiligne uniforme</td><td>0</td><td>v₀</td><td>v₀·t + x₀</td></tr>
+          <tr><td>Rectiligne accéléré</td><td>a₀ = cst</td><td>a₀·t + v₀</td><td>½a₀t² + v₀t + x₀</td></tr>
+          <tr><td>Circulaire uniforme</td><td>v²/R (centripète)</td><td>v₀ (cst)</td><td>arc</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Voiture freinant</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Une voiture de masse m = 1200 kg roule à v₀ = 20 m/s. Elle freine avec une force F = −6000 N.<br/>
+              1. Calculer l'accélération a.<br/>
+              2. Donner l'équation de v(t).<br/>
+              3. Quand s'arrête-t-elle ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              m = 1200 kg · v₀ = 20 m·s⁻¹ · F = −6000 N (opposée au mouvement)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Accélération : ΣF = ma</strong><br/>
+              a = F/m = −6000/1200 = <strong>−5 m·s⁻²</strong> (décélération)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Équation de vitesse (intégrer a)</strong><br/>
+              v(t) = at + v₀ = <strong>−5t + 20</strong> m·s⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ Arrêt : v(t) = 0</strong><br/>
+              −5t + 20 = 0 → t = 20/5 = <strong>4 s</strong><br/>
+              <em style="color:var(--text3)">Bonus : distance = ½ × v₀ × t = ½ × 20 × 4 = 40 m</em></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Satellite en orbite circulaire</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un satellite de masse m = 500 kg orbite à R = 7000 km du centre de la Terre. g = 8,2 m·s⁻².<br/>
+              1. Identifier la seule force appliquée.<br/>
+              2. Appliquer Newton pour trouver v (vitesse orbitale).
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              m = 500 kg · R = 7000 km = <strong>7,0×10⁶ m</strong> · g(R) = 8,2 m·s⁻²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Bilan des forces</strong><br/>
+              Seule force : Poids P = mg vers le centre → c'est la force centripète<br/>
+              <em style="color:var(--text3)">💡 En orbite : pas de "force centrifuge" — la pesanteur EST la force centripète</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Newton : mg = mv²/R → g = v²/R</strong><br/>
+              v² = gR = 8,2 × 7,0×10⁶ = 5,74×10⁷ m²·s⁻²<br/>
+              v = <strong>7577 m·s⁻¹ ≈ 7,6 km·s⁻¹</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-acidebase" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🍋 Transformation Acide-Base</h1>
+    <p>pH, couples acide/base, transfert de proton H⁺. Le chapitre fondamental de chimie.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="acidebase" onclick="toggleComplete(this,'acidebase')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('acidebase','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('acidebase','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-acidebase">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🍋 Définitions — Modèle de Brønsted</div>
+        <div class="definition-box">
+          <div class="def-title">Acide de Brønsted</div>
+          Espèce chimique capable de <strong>céder un proton H⁺</strong> à une autre espèce. Exemple : CH₃COOH → CH₃COO⁻ + H⁺.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Base de Brønsted</div>
+          Espèce chimique capable de <strong>capter un proton H⁺</strong>. Exemple : NH₃ + H⁺ → NH₄⁺.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Couple acide/base conjugués</div>
+          Acide HA et sa base conjuguée A⁻ liés par : HA ⇌ A⁻ + H⁺. Exemples : CH₃COOH/CH₃COO⁻, NH₄⁺/NH₃, H₂O/HO⁻, H₃O⁺/H₂O.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 pH et concentration</div>
+        <div class="formula-box chem"><span class="formula-label">Définition du pH</span><div class="formula-content">$\text{pH} = -\log[\text{H}_3\text{O}^+] \qquad (C° = 1\ \text{mol·L}^{-1})$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Retrouver [H₃O⁺]</span><div class="formula-content">$[\text{H}_3\text{O}^+] = 10^{-\text{pH}}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Produit ionique de l'eau (25°C)</span><div class="formula-content">$K_e = [\text{H}_3\text{O}^+][\text{HO}^-] = 10^{-14} \qquad pK_e = 14$</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>Le pKe dépend de la température ! À 25°C → pKe = 14. À 37°C (corps humain) → pKe ≈ 13,6. Utiliser la valeur donnée dans l'énoncé.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚗️ Réaction acide-base</div>
+        <div class="cours-text"><p>Une réaction acide-base est un <strong>transfert de proton H⁺</strong> de l'acide vers la base. On combine 2 couples :</p></div>
+        <div class="formula-box chem"><span class="formula-label">Méthode des couples</span><div class="formula-content">$\text{HA}_1 + \text{A}_2^- \rightleftharpoons \text{A}_1^- + \text{HA}_2$</div></div>
+        <div class="cours-text">
+          <p><strong>Sens de la réaction :</strong> L'acide le plus fort réagit avec la base la plus forte. L'acide de pKa le plus faible est le plus fort.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🧮 Calcul de pH selon le type d'acide</div>
+        <table class="data-table">
+          <tr><th>Type</th><th>Formule pH</th><th>Condition</th></tr>
+          <tr><td>Acide fort (HCl, HNO₃...)</td><td>pH = −log C</td><td>Dissociation totale</td></tr>
+          <tr><td>Base forte (NaOH...)</td><td>pH = 14 + log C</td><td>Dissociation totale</td></tr>
+          <tr><td>Acide faible</td><td>pH = ½(pKa − log C)</td><td>Dissociation partielle</td></tr>
+          <tr><td>Base faible</td><td>pH = 14 − ½(pKe − pKa − log C)</td><td>Dissociation partielle</td></tr>
+        </table>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 L'essentiel en 3 phrases</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div>
+            <strong>Acide = donneur de H⁺</strong> (perd un proton). <strong>Base = receveur de H⁺</strong> (capte un proton).<br/>
+            Exemple : HCl (acide) donne H⁺ à l'eau. CH₃COO⁻ (base) capte H⁺ de l'eau.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">pH d'une solution</span>
+          <div class="formula-content">$\text{pH} = -\log[\text{H}_3\text{O}^+] \qquad [\text{H}_3\text{O}^+] = 10^{-\text{pH}}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Produit ionique de l'eau (25°C)</span>
+          <div class="formula-content">$K_e = [\text{H}_3\text{O}^+][\text{HO}^-] = 10^{-14} \qquad pK_e = 14$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Réaction acide-base générale</span>
+          <div class="formula-content">$\text{HA}_1 + \text{A}_2^- \rightleftharpoons \text{A}_1^- + \text{HA}_2$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>
+            <strong>pH 7 = neutre ([H₃O⁺] = [HO⁻])</strong><br/>
+            pH &lt; 7 → acide ([H₃O⁺] &gt; [HO⁻])<br/>
+            pH &gt; 7 → basique ([H₃O⁺] &lt; [HO⁻])
+          </div>
+        </div>
+        <table class="data-table">
+          <tr><th>Solution</th><th>pH</th><th>[H₃O⁺]</th></tr>
+          <tr><td>Acide fort (HCl, 0,1 mol/L)</td><td>1</td><td>0,1 mol/L</td></tr>
+          <tr><td>Eau pure (25°C)</td><td>7</td><td>10⁻⁷ mol/L</td></tr>
+          <tr><td>Base forte (NaOH, 0,1 mol/L)</td><td>13</td><td>10⁻¹³ mol/L</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercices type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Calcul de pH et concentration</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              1. Une solution a pH = 3,5. Calculer [H₃O⁺].<br/>
+              2. Une solution d'acide fort HCl a C = 2×10⁻³ mol/L (totalement dissocié). Calculer son pH.<br/>
+              3. Pour la solution de la question 2, calculer [HO⁻].
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Rappels</strong><br/>
+              [H₃O⁺] = 10<sup>−pH</sup> &nbsp;|&nbsp; K<sub>e</sub> = [H₃O⁺]·[HO⁻] = 10<sup>−14</sup></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① pH = 3,5 → [H₃O⁺]</strong><br/>
+              [H₃O⁺] = 10<sup>−3,5</sup> = 10<sup>0,5</sup> × 10<sup>−4</sup> = √10 × 10⁻⁴ = <strong>3,16×10⁻⁴ mol·L⁻¹</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② HCl fort → dissociation totale → [H₃O⁺] = C</strong><br/>
+              pH = −log(2×10⁻³) = −(log 2 + log 10⁻³) = −(0,301 − 3) = <strong>2,7</strong><br/>
+              <em style="color:var(--text3)">💡 log 2 ≈ 0,301 — valeur à connaître par cœur !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ [HO⁻] = K<sub>e</sub>/[H₃O⁺]</strong><br/>
+              [HO⁻] = 10⁻¹⁴ / 2×10⁻³ = <strong>5×10⁻¹² mol·L⁻¹</strong><br/>
+              pH = 2,7 &lt; 7 → solution acide ✓</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Écrire la réaction acide-base</div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Écrire la réaction entre l'acide éthanoïque CH₃COOH et l'ammoniaque NH₃.<br/>
+              Couples : CH₃COOH/CH₃COO⁻ et NH₄⁺/NH₃
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Méthode des demi-équations</strong><br/>
+              Couples : CH₃COOH/CH₃COO⁻ (pKa = 4,8) et NH₄⁺/NH₃ (pKa = 9,2)<br/>
+              pKa₁ &lt; pKa₂ → réaction dans le sens direct ✓</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Demi-équation acide (couple 1)</strong><br/>
+              CH₃COOH → CH₃COO⁻ + H⁺</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Demi-équation base (couple 2)</strong><br/>
+              NH₃ + H⁺ → NH₄⁺</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Addition (H⁺ se simplifie)</strong><br/>
+              <strong>CH₃COOH + NH₃ ⇌ CH₃COO⁻ + NH₄⁺</strong><br/>
+              <em style="color:var(--text3)">⚠️ Double flèche ⇌ = équilibre</em></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ Vérif charges : 0 + 0 = −1 + 1 = 0 ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

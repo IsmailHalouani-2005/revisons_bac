@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-doppler" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🚑 Effet Doppler</h1>
+    <p>Décalage de fréquence quand émetteur et récepteur se déplacent l'un vers l'autre.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="doppler" onclick="toggleComplete(this,'doppler')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('doppler','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('doppler','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-doppler">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🚑 Principe de l'effet Doppler</div>
+        <div class="cours-text">
+          <p>L'effet Doppler est la modification de la fréquence perçue d'une onde quand la source et l'observateur sont <strong>en mouvement relatif</strong> l'un par rapport à l'autre.</p>
+          <ul>
+            <li><strong>Rapprochement :</strong> l'observateur reçoit les fronts d'onde plus rapprochés → fréquence <em>plus élevée</em> (son plus aigu, lumière vers le bleu)</li>
+            <li><strong>Éloignement :</strong> fronts d'onde plus espacés → fréquence <em>plus basse</em> (son plus grave, lumière vers le rouge)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Formules</div>
+        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source se rapproche)</span><div class="formula-content">$f_R = f_S ·\dfrac{c}{c - v_S} \quad (f_R > f_S)$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source s'éloigne)</span><div class="formula-content">$f_R = f_S ·\dfrac{c}{c + v_S} \quad (f_R < f_S)$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Décalage Doppler (approximation v << c)</span><div class="formula-content">$\dfrac{\Delta f}{f_S} \approx \dfrac{v}{c} \qquad \dfrac{\Delta\lambda}{\lambda_S} \approx \dfrac{v}{c}$</div></div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>c</strong> = vitesse de l'onde dans le milieu (340 m/s pour le son, 3×10⁸ m/s pour la lumière)</li>
+            <li><strong>v<sub>S</sub></strong> = vitesse de la source</li>
+            <li><strong>f<sub>S</sub></strong> = fréquence émise par la source</li>
+          </ul>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Applications réelles :</strong> Radar de vitesse (police), échographie Doppler (médecine), mesure de vitesse des étoiles (redshift astronomique), prévisions météo (radar Doppler).</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">🧠 L'image mentale</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>L'ambulance :</strong> Quand elle s'approche → son plus aigu (f plus grande). Quand elle s'éloigne → son plus grave (f plus petite). Pour la lumière : s'approche = blueshift (décalage vers le bleu), s'éloigne = redshift (décalage vers le rouge).</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box phys">
+          <span class="formula-label">Rappel : vitesse d'onde</span>
+          <div class="formula-content">$v = \lambda f$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Émetteur se rapproche (f reçue > f émise)</span>
+          <div class="formula-content">$f_R = f_S ·\dfrac{c}{c - v_S}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Émetteur s'éloigne (f reçue < f émise)</span>
+          <div class="formula-content">$f_R = f_S ·\dfrac{c}{c + v_S}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Décalage Doppler</span>
+          <div class="formula-content">$\Delta f = f_R - f_S$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>c = vitesse du son (340 m/s dans l'air) ou vitesse de la lumière (3×10⁸ m/s) selon le contexte.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Radar de vitesse (Doppler)</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un radar émet une onde à f₀ = 24 GHz (c = 3×10⁸ m/s). Une voiture s'approche à 50 m/s. Calculer la fréquence reçue par le radar.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  f₀ = 24 GHz = 24×10⁹ Hz · c = 3×10⁸ m·s⁻¹ · v = 50 m·s⁻¹ (voiture s'approche)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Formule Doppler (source s'approche)</strong><br/>
+  f<sub>R</sub> = f₀ × c/(c − v)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Calcul</strong><br/>
+  f<sub>R</sub> = 24×10⁹ × (3×10⁸)/(3×10⁸ − 50)<br/>
+  = 24×10⁹ × 3×10⁸/2,9999995×10⁸<br/>
+  = 24×10⁹ × 1,0000000167<br/>
+  f<sub>R</sub> ≈ <strong>24 000 000 004 Hz</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >③ Décalage Doppler Δf</strong><br/>
+  Δf = f<sub>R</sub> − f₀ ≈ 4 Hz<br/>
+  <em style="color:var(--text3)" >💡 Le décalage est minuscule car v = 50 m·s⁻¹ &lt;&lt; c = 3×10⁸ m·s⁻¹. Formule approchée : Δf/f₀ ≈ v/c = 50/3×10⁸ ≈ 1,7×10⁻⁷</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Un radar mesure ce minuscule décalage pour calculer la vitesse. En pratique on utilise Δf = 2×f₀×v/c (aller-retour).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

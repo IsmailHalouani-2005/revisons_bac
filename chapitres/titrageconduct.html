@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-titrageconduct" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>📊 Titrage Conductimétrique</h1>
+    <p>L'équivalence est repérée par un changement de pente sur la courbe de conductivité.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="titrageconduct" onclick="toggleComplete(this,'titrageconduct')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('titrageconduct','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('titrageconduct','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-titrageconduct">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Principe du titrage conductimétrique</div>
+        <div class="cours-text">
+          <p>On mesure la <strong>conductivité σ</strong> de la solution au fur et à mesure qu'on ajoute le titrant. La conductivité dépend de la <strong>nature et concentration des ions</strong> présents.</p>
+          <p>La courbe σ = f(V<sub>titrant</sub>) est formée de <strong>deux droites qui se croisent</strong> à l'équivalence. On trouve V<sub>E</sub> en traçant les deux droites et en trouvant leur intersection.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pourquoi la pente change ?</strong> Les ions échangés avant et après l'équivalence n'ont pas la même conductivité molaire. H₃O⁺ (très conducteur) remplacé par Na⁺ (peu conducteur) → σ baisse. Après V<sub>E</sub>, on ajoute Na⁺ + HO⁻ → σ remonte.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔢 Conductivité molaire ionique λ</div>
+        <div class="formula-box chem"><span class="formula-label">Loi de Kohlrausch</span><div class="formula-content">$\sigma = \sum_i \lambda_i\,[\text{ion}_i]$</div></div>
+        <table class="data-table">
+          <tr><th>Ion</th><th>λ (mS·m²·mol⁻¹)</th></tr>
+          <tr><td>H₃O⁺</td><td>35,0 (très élevée !)</td></tr>
+          <tr><td>HO⁻</td><td>19,9</td></tr>
+          <tr><td>Na⁺</td><td>5,01</td></tr>
+          <tr><td>K⁺</td><td>7,35</td></tr>
+          <tr><td>Cl⁻</td><td>7,63</td></tr>
+        </table>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>H₃O⁺ est 7× plus conducteur que Na⁺. C'est pourquoi remplacer H₃O⁺ par Na⁺ fait <em>baisser</em> la conductivité (avant V<sub>E</sub> dans le titrage HCl/NaOH).</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Le principe</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>On mesure la conductivité σ de la solution</strong> au fur et à mesure qu'on ajoute le titrant. Avant l'équivalence et après, les ions présents changent → la conductivité varie différemment → rupture de pente = équivalence !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">À l'équivalence (même formule)</span>
+          <div class="formula-content">$C_A = \dfrac{a·C_B·V_E}{b·V_A}$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Comment trouver V<sub>E</sub> sur la courbe ?</strong> Tracer les 2 droites (avant et après rupture). L'intersection = V<sub>E</sub>.</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Ion</th><th>λ (mS·m²·mol⁻¹)</th></tr>
+          <tr><td>H₃O⁺</td><td>35,01 (très conducteur)</td></tr>
+          <tr><td>HO⁻</td><td>19,9</td></tr>
+          <tr><td>Na⁺</td><td>5,01</td></tr>
+          <tr><td>Cl⁻</td><td>7,63</td></tr>
+        </table>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Explication de la rupture :</strong> Titrage HCl par NaOH. Avant V<sub>E</sub> : on enlève H₃O⁺ (très conducteur) et on ajoute Na⁺ (peu conducteur) → σ baisse. Après V<sub>E</sub> : on ajoute Na⁺ + HO⁻ → σ monte.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Lecture graphique V<sub>E</sub></div>
+            <span class="exercise-diff diff-easy">Facile</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Sur une courbe conductimétrique, les deux droites se croisent à V<sub>E</sub> = 11 mL. C<sub>B</sub>(NaOH) = 0,050 mol/L, V<sub>A</sub> = 20 mL.<br/>
+              Calculer C<sub>A</sub>(HCl). (a = b = 1)
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+  V<sub>E</sub> = 11 mL (intersection des 2 droites sur la courbe) · C<sub>B</sub> = 0,050 mol·L⁻¹ · V<sub>A</sub> = 20 mL</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Même formule : C<sub>A</sub> = C<sub>B</sub>·V<sub>E</sub>/V<sub>A</sub></strong><br/>
+  C<sub>A</sub> = (0,050 × 11) / 20 = 0,55 / 20 = <strong>0,0275 mol·L⁻¹</strong></div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Pourquoi la conductivité change de pente ?</strong><br/>
+  Avant V<sub>E</sub> : H₃O⁺ (λ = 35,0, très conducteur) est neutralisé par Na⁺ (λ = 5,0) → σ baisse.<br/>
+  Après V<sub>E</sub> : excès NaOH → ajout de Na⁺ + HO⁻ (λ = 19,9) → σ remonte.</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ La méthode conductimétrique marche même si la solution est incolore (contrairement au titrage colorimétrique).</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

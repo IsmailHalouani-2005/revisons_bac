@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-electrolyse" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>⚡ Électrolyse</h1>
+    <p>Transformation forcée d'énergie électrique en chimique. Calcul de masse déposée.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="electrolyse" onclick="toggleComplete(this,'electrolyse')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('electrolyse','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('electrolyse','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-electrolyse">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Principe de l'électrolyse</div>
+        <div class="cours-text">
+          <p>L'électrolyse est une transformation <strong>forcée non spontanée</strong> : on impose un courant électrique pour faire se produire une réaction chimique qui n'aurait pas lieu spontanément.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Mnémotechnique OA CA</div>
+          <strong>O</strong>xydation à l'<strong>A</strong>node — <strong>R</strong>éduction à la <strong>C</strong>athode (pour l'électrolyse ET les piles)
+        </div>
+        <table class="data-table">
+          <tr><th></th><th>ANODE</th><th>CATHODE</th></tr>
+          <tr><td>Réaction</td><td>Oxydation (perd e⁻)</td><td>Réduction (gagne e⁻)</td></tr>
+          <tr><td>Signe (électrolyse)</td><td>Pôle + (relié au +)</td><td>Pôle − (relié au −)</td></tr>
+          <tr><td>Ions attirés</td><td>Anions (−)</td><td>Cations (+)</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Calculs quantitatifs</div>
+        <div class="formula-box chem"><span class="formula-label">Charge électrique totale</span><div class="formula-content">$Q = I\Delta t \quad (\text{C} = \text{A·s})$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Lien charge – moles d'électrons</span><div class="formula-content">$Q = n(e^-)F \qquad F = 96\,485\,\text{C·mol}^{-1}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Masse déposée (cathode)</span><div class="formula-content">$m = nM = \dfrac{I\Delta t·M}{zF}$</div></div>
+        <div class="cours-text"><p>z = nombre d'électrons échangés par ion dans la demi-équation. Ex : Cu²⁺ + 2e⁻ → Cu : z = 2.</p></div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire les demi-équations à l'anode (oxydation) et cathode (réduction).</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Calculer Q = I·Δt puis n(e⁻) = Q/F.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Déduire n(métal) = n(e⁻)/z puis m = n·M.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Anode vs Cathode — le moyen mnémotechnique</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>OA CA = "Oh! A Ca !"</strong> → Oxydation à l'Anode, Réduction à la Cathode. Pareil pour les piles !</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">📐 Formules clés</div>
+      <div class="info-card-body">
+        <div class="formula-box chem">
+          <span class="formula-label">Charge électrique totale</span>
+          <div class="formula-content">$Q = I\Delta t \qquad Q = n(e^-)F$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Nombre de moles d'électrons</span>
+          <div class="formula-content">$n(e^-) = \dfrac{I\Delta t}{F} \qquad F = 96\,500\,\text{C·mol}^{-1}$</div>
+        </div>
+        <div class="formula-box chem">
+          <span class="formula-label">Masse déposée (électrodépôt)</span>
+          <div class="formula-content">$m = nM = \dfrac{I\Delta t·M}{zF} \qquad (z = \text{nb e}^- \text{échangés})$</div>
+        </div>
+        <div class="alert-box alert-warn">
+          <span class="alert-icon">⚠️</span>
+          <div>z = nombre d'électrons échangés dans la demi-équation. Ex: Cu²⁺ + 2e⁻ → Cu : z = 2. Ag⁺ + e⁻ → Ag : z = 1.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Électrodépôt de cuivre</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Électrolyse d'une solution de CuSO₄. I = 2,0 A, Δt = 30 min. M(Cu) = 63,5 g/mol, F = 96 500 C/mol.<br/>
+              Demi-équation cathode : Cu²⁺ + 2e⁻ → Cu (z = 2)<br/>
+              Calculer la masse de cuivre déposée.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              I = 2,0 A · Δt = 30 min = <strong>1800 s</strong> · M(Cu) = 63,5 g·mol⁻¹ · F = 96 500 C·mol⁻¹<br/>
+              Demi-équation : Cu²⁺ + 2e⁻ → Cu → <strong>z = 2</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Q = I × Δt</strong><br/>
+              Q = 2,0 × 1800 = <strong>3600 C</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② n(e⁻) = Q/F</strong><br/>
+              n(e⁻) = 3600 / 96 500 = <strong>3,73×10⁻² mol</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Stœchiométrie : 1 mol Cu ← 2 mol e⁻</strong><br/>
+              n(Cu) = n(e⁻)/z = 3,73×10⁻²/2 = 1,87×10⁻² mol</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">④ m(Cu) = n × M</strong><br/>
+              m = 1,87×10⁻² × 63,5 = <strong>1,19 g</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

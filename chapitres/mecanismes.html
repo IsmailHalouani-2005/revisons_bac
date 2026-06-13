@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-mecanismes" class="chapter-page chem-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🔧 Mécanismes Réactionnels</h1>
+    <p>Sites donneurs/accepteurs d'électrons, flèches courbes. La chimie au niveau microscopique.</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="mecanismes" onclick="toggleComplete(this,'mecanismes')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('mecanismes','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('mecanismes','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-mecanismes">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔧 Les flèches courbes</div>
+        <div class="cours-text">
+          <p>Une flèche courbe représente le <strong>déplacement d'un doublet d'électrons</strong>. Elle part toujours de là où sont les électrons (doublet, liaison) vers là où ils vont.</p>
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>La flèche ne représente PAS le mouvement d'un atome. Elle représente le mouvement de 2 électrons. Elle va TOUJOURS du riche en électrons vers le pauvre.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Sites donneurs et accepteurs</div>
+        <table class="data-table">
+          <tr><th>Sites DONNEURS (nucléophiles)</th><th>Sites ACCEPTEURS (électrophiles)</th></tr>
+          <tr><td>Doublet non liant (N:, O:, halogens)</td><td>Lacune électronique (H⁺, carbocation)</td></tr>
+          <tr><td>Liaison C=C (électrons π)</td><td>Atome δ⁺ dans liaison polarisée</td></tr>
+          <tr><td>Liaison C=O (paire libre sur O)</td><td>Atome chargé positivement</td></tr>
+          <tr><td>Carbanion R⁻</td><td>Liaison polarisée vers l'atome électronégatif</td></tr>
+        </table>
+        <div class="definition-box">
+          <div class="def-title">Polarisation d'une liaison</div>
+          Dans R−X (X électronégatif comme Cl, O, N) : X attire les électrons → C^(δ+)−X^(δ−). Le carbone est δ+ donc électrophile (accepteur). X est δ− donc nucléophile (donneur).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔄 Mécanisme de substitution nucléophile (S<sub>N</sub>)</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Identifier le <strong>nucléophile</strong> (donneur, ex: HO⁻, NH₃) et l'<strong>électrophile</strong> (accepteur, ex: C−Cl).</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Flèche du doublet du nucléophile vers le C^δ+.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Flèche de la liaison C−X vers X (qui part avec les 2 électrons comme X⁻).</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Écrire le produit formé et vérifier les charges.</div></div>
+        </div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--chem)">🧠 Les règles d'or</div>
+      <div class="info-card-body">
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>Flèche courbe = déplacement de doublet d'électrons :</strong> La flèche va du doublet (donneur) vers l'atome qui l'accepte. Jamais l'inverse !</div>
+        </div>
+        <table class="data-table">
+          <tr><th>Sites DONNEURS (nucléophiles)</th><th>Sites ACCEPTEURS (électrophiles)</th></tr>
+          <tr><td>Doublet non liant (N, O, ...)</td><td>Lacune électronique (H⁺, Li⁺, ...)</td></tr>
+          <tr><td>Liaison multiple C=C, C=O</td><td>Liaison polarisée C^δ⁺-Cl^δ⁻ (côté δ⁺)</td></tr>
+          <tr><td>Liaison polarisée côté δ⁻</td><td>Atome chargé positivement</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Identifier les sites</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Dans la réaction : HO⁻ + CH₃-Cl → CH₃-OH + Cl⁻<br/>
+              1. Identifier HO⁻ : site donneur ou accepteur ?<br/>
+              2. Identifier le carbone dans CH₃-Cl : donneur ou accepteur ?<br/>
+              3. Dessiner la flèche courbe de l'attaque.
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Rappel</strong><br/>
+  Site donneur (nucléophile) = riche en électrons (doublets, liaisons π)<br/>
+  Site accepteur (électrophile) = pauvre en électrons (charge +, δ+)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① HO⁻ : donneur ou accepteur ?</strong><br/>
+  HO⁻ porte des doublets non liants sur O → <strong>donneur (nucléophile)</strong><br/>
+  <em style="color:var(--text3)" >Les ions chargés négativement sont généralement nucléophiles.</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② C dans CH₃−Cl : donneur ou accepteur ?</strong><br/>
+  Cl est très électronégatif → attire les e⁻ → C est appauvri → C<sup>δ+</sup><br/>
+  → <strong>accepteur (électrophile)</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Flèches courbes du mécanisme S<sub>N</sub>2</strong><br/>
+  Flèche 1 : du doublet de HO⁻ (sur O) → vers C<sup>δ+</sup> de CH₃Cl<br/>
+  Flèche 2 : de la liaison C−Cl → vers Cl (qui part avec les 2 électrons en Cl⁻)</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ C'est une substitution nucléophile (S<sub>N</sub>2) : HO⁻ attaque, Cl⁻ part simultanément.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>

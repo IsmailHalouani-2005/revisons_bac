@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BAC Phys-Chimie</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+</head>
+<body>
+<style>
+  .chapter-page { display: block !important; }
+  .back-btn { display: inline-flex; }
+</style>
+<div id="ch-transferts" class="chapter-page phys-hero">
+  <div class="chapter-hero">
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
+    <h1>🌡 Transferts Thermiques</h1>
+    <p>Modes de transfert, loi de Newton, équation différentielle T(t).</p>
+    <div style="display:flex;gap:.75rem;margin-top:.5rem;">
+      <button class="check-btn" data-chapter="transferts" onclick="toggleComplete(this,'transferts')">☐ Marquer comme appris</button>
+    </div>
+  </div>
+  <!-- TABS -->
+  <div class="chapter-tabs">
+    <button class="tab-btn active" data-tab="cours" onclick="switchTab('transferts','cours')">📖 Cours complet</button>
+    <button class="tab-btn" data-tab="exercices" onclick="switchTab('transferts','exercices')">✏️ Exercices BAC</button>
+  </div>
+  <!-- COURS PANEL -->
+  <div class="tab-panel active" data-panel="cours">
+    <div class="cours-layout" id="cours-transferts">
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌡️ Les 3 modes de transfert thermique</div>
+        <div class="definition-box">
+          <div class="def-title">Conduction</div>
+          Transfert d'énergie de proche en proche dans un solide (ou fluide au repos), sans déplacement de matière. Régi par la loi de Fourier : le flux est proportionnel au gradient de température.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Convection</div>
+          Transfert par déplacement de matière (fluide en mouvement). La convection naturelle est due aux différences de densité (air chaud monte). La convection forcée utilise une pompe ou ventilateur.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Rayonnement</div>
+          Tout corps émet des ondes électromagnétiques proportionnellement à T⁴. C'est le seul mode qui fonctionne dans le vide (soleil → terre).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Loi de Newton (refroidissement/convection)</div>
+        <div class="formula-box phys"><span class="formula-label">Flux thermique reçu par le système</span><div class="formula-content">$\varphi = hS\,(T_{\text{ext}} - T) \quad (\text{W})$</div></div>
+        <div class="cours-text"><ul><li><strong>h</strong> : coefficient de convection (W·m⁻²·K⁻¹)</li><li><strong>S</strong> : surface d'échange (m²)</li><li><strong>T<sub>ext</sub> − T</strong> : écart de température</li></ul></div>
+        <div class="formula-box phys"><span class="formula-label">Équation différentielle (1er principe + loi Newton)</span><div class="formula-content">$mc\,\dfrac{dT}{dt} = hS(T_{\text{ext}} - T)$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Solution</span><div class="formula-content">$T(t) = T_{\text{ext}} + (T_0 - T_{\text{ext}})e^{-t/\tau} \qquad \tau = \dfrac{mc}{hS}$</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Même forme que le circuit RC ! τ = constante de temps thermique. À t = τ, l'écart de température a diminué de 63%.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⭐ Stefan-Boltzmann (rayonnement)</div>
+        <div class="formula-box phys"><span class="formula-label">Puissance rayonnée par un corps noir</span><div class="formula-content">$P = \sigma S T^4 \qquad \sigma = 5{,}67\times10^{-8}\,\text{W·m}^{-2}\text{·K}^{-4}$</div></div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>T en Kelvin obligatoire ! La dépendance en T⁴ signifie que doubler T multiplie P par 16.</div></div>
+      </div>
+    </div><!-- end cours-layout -->
+  </div><!-- end cours panel -->
+  <!-- EXERCICES PANEL -->
+  <div class="tab-panel" data-panel="exercices">
+  <div class="content-layout">
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--phys)">📐 Les 3 modes + formules</div>
+      <div class="info-card-body">
+        <table class="data-table">
+          <tr><th>Mode</th><th>Mécanisme</th><th>Exemple</th></tr>
+          <tr><td>Conduction</td><td>Choc de proche en proche</td><td>Métal chauffé</td></tr>
+          <tr><td>Convection</td><td>Déplacement de matière</td><td>Eau qui bout</td></tr>
+          <tr><td>Rayonnement</td><td>Ondes EM</td><td>Soleil → Terre</td></tr>
+        </table>
+        <div class="formula-box phys">
+          <span class="formula-label">Loi de Newton (convection)</span>
+          <div class="formula-content">$\varphi = hS(T_{\text{ext}} - T) \qquad Q = \varphi\,\Delta t$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Solution de l'équation diff.</span>
+          <div class="formula-content">$T(t) = T_{\text{ext}} + (T_0 - T_{\text{ext}})\,e^{-t/\tau} \qquad \tau = \dfrac{mc}{hS}$</div>
+        </div>
+        <div class="formula-box phys">
+          <span class="formula-label">Stefan-Boltzmann (rayonnement)</span>
+          <div class="formula-content">$P = \sigma T^4 \qquad \sigma = 5{,}67\times10^{-8}\,\text{W·m}^{-2}\text{·K}^{-4}$</div>
+        </div>
+        <div class="alert-box alert-tip">
+          <span class="alert-icon">💡</span>
+          <div><strong>La courbe T(t) :</strong> T part de T<sub>initiale</sub> et converge exponentiellement vers T<sub>ext</sub>. À t = τ, T a parcouru 63% de la différence de température.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-header" style="color:var(--accent)">✏️ Exercice type BAC</div>
+      <div class="info-card-body">
+        <div class="exercise">
+          <div class="exercise-header">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Refroidissement d'un café</div>
+            <span class="exercise-diff diff-medium">Moyen</span>
+          </div>
+          <div class="exercise-body">
+            <div class="exercise-question">
+              Un café à T₀ = 80°C refroidit dans une pièce à T<sub>ext</sub> = 20°C. τ = 10 min.<br/>
+              1. Donner T(t).<br/>
+              2. Quelle est la température à t = 10 min ?<br/>
+              3. Quelle est la température à t = 30 min ?
+            </div>
+            <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
+            <div class="solution-box">
+
+  <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+  T₀ = 80°C · T<sub>ext</sub> = 20°C · τ = 10 min</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① T(t) = T<sub>ext</sub> + (T₀ − T<sub>ext</sub>)·e<sup>−t/τ</sup></strong><br/>
+  T(t) = 20 + (80 − 20)·e<sup>−t/10</sup> = <strong>20 + 60·e<sup>−t/10</sup></strong> (t en min)</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② À t = τ = 10 min</strong><br/>
+  T = 20 + 60·e<sup>−1</sup> = 20 + 60×0,368 = <strong>42,1°C</strong><br/>
+  <em style="color:var(--text3)">À t = τ : l'écart de T a diminué de 63% de sa valeur initiale.</em></div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ À t = 3τ = 30 min</strong><br/>
+  T = 20 + 60·e<sup>−3</sup> = 20 + 60×0,050 = <strong>23°C</strong><br/>
+  <em style="color:var(--text3)">Après 3τ, seulement 5% de l'écart initial reste → quasi à l'équilibre thermique.</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ T décroît exponentiellement de 80°C vers 20°C. Même forme que la décharge RC !</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === "undefined") return;
+  var hiddenPanels = document.querySelectorAll(".tab-panel:not(.active)");
+  hiddenPanels.forEach(function(p){ p.style.visibility="hidden"; p.style.display="block"; });
+  renderMathInElement(document.body, {
+    delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
+    ignoredTags:["script","noscript","style","textarea","pre","code"],
+    throwOnError:false, strict:false
+  });
+  hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+</body></html>
