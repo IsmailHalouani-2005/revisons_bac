@@ -581,12 +581,14 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1. ΔT :</strong><br/>
-              ΔT = T<sub>finale</sub> − T<sub>initiale</sub> = (80+273) − (20+273) = 353 − 293 = <strong>60 K</strong><br/><br/>
-              <strong>2. ΔU :</strong><br/>
-              W = 0 donc ΔU = Q = m·c·ΔT<br/>
-              ΔU = 0,200 × 4180 × 60 = <strong>50 160 J ≈ 50,2 kJ</strong><br/><br/>
-              ✅ ΔU > 0 : le café reçoit de l'énergie, sa température augmente. Logique !
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données identifiées</strong><br/>
+              m = 200 g = <strong>0,200 kg</strong> · c = 4180 J·kg⁻¹·K⁻¹ · T<sub>i</sub> = 20°C · T<sub>f</sub> = 80°C · W = 0 J</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① ΔT</strong><br/>
+              ΔT = T<sub>f</sub> − T<sub>i</sub> = 80 − 20 = <strong>60 K</strong> (identique en °C et K)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② 1er principe : W = 0 → ΔU = Q = m·c·ΔT</strong><br/>
+              ΔU = 0,200 × 4180 × 60 = <strong>50 160 J ≈ 50,2 kJ</strong></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ ΔU > 0 → énergie reçue → température augmente ✓</div>
             </div>
           </div>
         </div>
@@ -605,12 +607,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1. n = pV/RT</strong><br/>
-              n = (1,0×10⁵ × 2,0×10⁻³) / (8,314 × 300)<br/>
-              n = 200 / 2494 = <strong>0,080 mol</strong><br/><br/>
-              <strong>2. ΔU = W + Q</strong><br/>
-              ΔU = −500 + 800 = <strong>+300 J</strong><br/><br/>
-              ✅ Le système gagne 300 J d'énergie interne malgré le travail fourni par le gaz (W négatif), car la chaleur reçue est plus grande.
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              V = 2,0×10⁻³ m³ · T = 300 K · p = 1,0×10⁵ Pa · R = 8,314 J·mol⁻¹·K⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① n = pV/(RT)</strong><br/>
+              n = (1,0×10⁵ × 2,0×10⁻³) / (8,314 × 300) = 200 / 2494 = <strong>0,080 mol</strong><br/>
+              <em style="color:var(--text3)">⚠️ V en m³ (÷1000) et T en K obligatoires !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② ΔU = W + Q</strong><br/>
+              ΔU = (−500) + (+800) = <strong>+300 J</strong><br/>
+              <em style="color:var(--text3)">W < 0 = le gaz travaille sur l'extérieur. Q > 0 = le gaz reçoit de la chaleur.</em></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ ΔU > 0 malgré W < 0 car Q > |W|.</div>
             </div>
           </div>
         </div>
@@ -630,12 +636,17 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1. Signe de Q₁ :</strong> Le frigo prélève de la chaleur aux aliments → les aliments cèdent de la chaleur au frigo → <strong>Q₁ > 0 pour le frigo</strong> (il reçoit).<br/><br/>
-              <strong>2. Sur un cycle ΔU = 0 :</strong><br/>
-              ΔU = W + Q₁ + Q₂ = 0<br/>
-              0 = −120 + Q₁ + (−200) &nbsp; [le frigo cède 200 J à la pièce donc Q₂ = −200 J pour le frigo]<br/>
-              Q₁ = 120 + 200 = <strong>+80 J</strong><br/><br/>
-              <strong>3. Interprétation :</strong> Le frigo prélève 80 J aux aliments, le moteur fournit 120 J de travail, et la somme (200 J) est rejetée dans la pièce. C'est le principe du cycle frigorifique ! ✅
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Convention de signe</strong><br/>
+              W = −120 J → le moteur cède 120 J au frigo (W<sub>reçu</sub> = +120 J pour le frigo)<br/>
+              Le frigo cède 200 J à la pièce → Q₂ = −200 J pour le frigo</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Signe de Q₁</strong><br/>
+              Le frigo prélève de la chaleur aux aliments → <strong>Q₁ > 0</strong> (reçoit)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Cycle complet → ΔU = 0</strong><br/>
+              W + Q₁ + Q₂ = 0<br/>
+              120 + Q₁ + (−200) = 0<br/>
+              Q₁ = 200 − 120 = <strong>+80 J</strong></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ Bilan énergie : 80 J (aliments) + 120 J (moteur) = 200 J rejetés dans la pièce ✓</div>
             </div>
           </div>
         </div>
@@ -787,9 +798,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> ΣF = ma → a = F/m = −6000/1200 = <strong>−5 m·s⁻²</strong><br/><br/>
-              <strong>2.</strong> v(t) = a·t + v₀ = <strong>−5t + 20</strong><br/><br/>
-              <strong>3.</strong> v(t) = 0 → −5t + 20 = 0 → t = 20/5 = <strong>4 s</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              m = 1200 kg · v₀ = 20 m·s⁻¹ · F = −6000 N (opposée au mouvement)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Accélération : ΣF = ma</strong><br/>
+              a = F/m = −6000/1200 = <strong>−5 m·s⁻²</strong> (décélération)</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Équation de vitesse (intégrer a)</strong><br/>
+              v(t) = at + v₀ = <strong>−5t + 20</strong> m·s⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ Arrêt : v(t) = 0</strong><br/>
+              −5t + 20 = 0 → t = 20/5 = <strong>4 s</strong><br/>
+              <em style="color:var(--text3)">Bonus : distance = ½ × v₀ × t = ½ × 20 × 4 = 40 m</em></div>
             </div>
           </div>
         </div>
@@ -808,11 +826,15 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> Seule force : poids P = mg (attraction gravitationnelle vers la Terre).<br/><br/>
-              <strong>2.</strong> Newton : P = m·a<sub>centripète</sub><br/>
-              mg = m·v²/R<br/>
-              v² = g·R = 8,2 × 7×10⁶ = 5,74×10⁷<br/>
-              v = √(5,74×10⁷) ≈ <strong>7 577 m·s⁻¹ ≈ 7,6 km/s</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              m = 500 kg · R = 7000 km = <strong>7,0×10⁶ m</strong> · g(R) = 8,2 m·s⁻²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Bilan des forces</strong><br/>
+              Seule force : Poids P = mg vers le centre → c'est la force centripète<br/>
+              <em style="color:var(--text3)">💡 En orbite : pas de "force centrifuge" — la pesanteur EST la force centripète</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Newton : mg = mv²/R → g = v²/R</strong><br/>
+              v² = gR = 8,2 × 7,0×10⁶ = 5,74×10⁷ m²·s⁻²<br/>
+              v = <strong>7577 m·s⁻¹ ≈ 7,6 km·s⁻¹</strong></div>
             </div>
           </div>
         </div>
@@ -855,7 +877,7 @@
         <div class="formula-box phys"><span class="formula-label">Décomposition de v₀</span><div class="formula-content">$v_{0x} = v_0\cos\alpha \qquad v_{0y} = v_0\sin\alpha$</div></div>
         <div class="formula-box phys"><span class="formula-label">Accélérations</span><div class="formula-content">$a_x = 0 \qquad a_y = -g = -9{,}81\,\text{m·s}^{-2}$</div></div>
         <div class="formula-box phys"><span class="formula-label">Vitesses</span><div class="formula-content">$v_x(t) = v_0\cos\alpha \qquad v_y(t) = v_0\sin\alpha - gt$</div></div>
-        <div class="formula-box phys"><span class="formula-label">Positions</span><div class="formula-content">$x(t) = v_0\cos\alpha\cdot t \qquad y(t) = -\tfrac{1}{2}gt^2 + v_0\sin\alpha\cdot t$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Positions</span><div class="formula-content">$x(t) = v_0\cos\alpha·t \qquad y(t) = -\tfrac{1}{2}gt^2 + v_0\sin\alpha·t$</div></div>
         <div class="formula-box phys"><span class="formula-label">Équation de la trajectoire (éliminer t)</span><div class="formula-content">$y = x\tan\alpha - \dfrac{gx^2}{2v_0^2\cos^2\alpha}$</div></div>
       </div>
       <div class="cours-section">
@@ -913,7 +935,7 @@
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Position (primitive de v)</span>
-          <div class="formula-content">$x(t) = v_0\cos\alpha\cdot t \qquad y(t) = -\tfrac{1}{2}gt^2 + v_0\sin\alpha\cdot t$</div>
+          <div class="formula-content">$x(t) = v_0\cos\alpha·t \qquad y(t) = -\tfrac{1}{2}gt^2 + v_0\sin\alpha·t$</div>
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Équation de la trajectoire (y en fonction de x)</span>
@@ -985,10 +1007,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> α = 0 → x(t) = 3t &nbsp;|&nbsp; y(t) = −½×10×t² + 0 = −5t²<br/>
-              (y₀ = 0 car on prend le bord de la table comme origine, le sol est à y = −1,25 m)<br/><br/>
-              <strong>2.</strong> y(t) = −1,25 m → −5t² = −1,25 → t² = 0,25 → <strong>t = 0,5 s</strong><br/><br/>
-              <strong>3.</strong> x = 3 × 0,5 = <strong>1,5 m</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              h = 1,25 m · v₀ = 3 m·s⁻¹ · α = 0° · g = 10 m·s⁻²<br/>
+              Origine : bord de la table → sol à y = −1,25 m</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Équations du mouvement (α = 0 : sin = 0, cos = 1)</strong><br/>
+              x(t) = v₀t = 3t &nbsp;|&nbsp; y(t) = −½gt² = −5t²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Temps de chute : y(t) = −1,25</strong><br/>
+              −5t² = −1,25 → t² = 0,25 → <strong>t = 0,5 s</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ Portée</strong><br/>
+              x = 3 × 0,5 = <strong>1,5 m</strong></div>
             </div>
           </div>
         </div>
@@ -1008,11 +1036,20 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> x(t) = 15×0,866×t = 13t &nbsp;|&nbsp; y(t) = −5t² + 15×0,5×t = −5t² + 7,5t<br/><br/>
-              <strong>2. Hauteur max :</strong> vᵧ = 0 → −10t + 7,5 = 0 → t = 0,75 s<br/>
-              y<sub>max</sub> = −5×(0,75)² + 7,5×0,75 = −2,81 + 5,63 = <strong>2,81 m</strong><br/><br/>
-              <strong>3. Portée :</strong> y = 0 → t(−5t + 7,5) = 0 → t = 1,5 s<br/>
-              x = 13 × 1,5 = <strong>19,5 m</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              v₀ = 15 m·s⁻¹ · α = 30° · cos 30° = 0,866 · sin 30° = 0,5 · g = 10 m·s⁻²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Décomposer v₀</strong><br/>
+              v<sub>0x</sub> = 15×0,866 = 13 m·s⁻¹ &nbsp;|&nbsp; v<sub>0y</sub> = 15×0,5 = 7,5 m·s⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Équations du mouvement</strong><br/>
+              x(t) = 13t &nbsp;|&nbsp; y(t) = −5t² + 7,5t</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ Hauteur max : v<sub>y</sub>(t) = 0</strong><br/>
+              −10t + 7,5 = 0 → t<sub>flèche</sub> = 0,75 s<br/>
+              y<sub>max</sub> = −5×(0,75)² + 7,5×0,75 = −2,81 + 5,625 = <strong>2,81 m</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">④ Portée : y(t) = 0</strong><br/>
+              t(−5t + 7,5) = 0 → t = 1,5 s (t = 0 = départ)<br/>
+              x = 13 × 1,5 = <strong>19,5 m</strong><br/>
+              <em style="color:var(--text3)">💡 t<sub>vol</sub> = 2 × t<sub>flèche</sub> = 1,5 s ✓ (toujours vrai pour lancer depuis le sol)</em></div>
             </div>
           </div>
         </div>
@@ -1127,10 +1164,21 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> E = U/d = 200 / 0,04 = <strong>5000 V·m⁻¹</strong><br/><br/>
-              <strong>2.</strong> a = |q|E/m = (1,6×10⁻¹⁹ × 5000) / (9,1×10⁻³¹) = 8×10⁻¹⁶ / 9,1×10⁻³¹ ≈ <strong>8,8×10¹⁴ m·s⁻²</strong><br/><br/>
-              <strong>3.</strong> Temps dans le condo : t = L/v₀ = 0,05 / (5×10⁷) = 10⁻⁹ s<br/>
-              y = ½at² = ½ × 8,8×10¹⁴ × (10⁻⁹)² = <strong>4,4×10⁻⁴ m = 0,44 mm</strong>
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  q = −1,6×10⁻¹⁹ C · m = 9,1×10⁻³¹ kg · v₀ = 5×10⁷ m·s⁻¹ · U<sub>AB</sub> = 200 V · d = 4 cm = 0,04 m · L = 5 cm = 0,05 m</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Champ électrique E = U<sub>AB</sub>/d</strong><br/>
+  E = 200 / 0,04 = <strong>5000 V·m⁻¹</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Accélération |a| = |q|E/m</strong><br/>
+  |a| = (1,6×10⁻¹⁹ × 5000) / (9,1×10⁻³¹)<br/>
+  |a| = 8,0×10⁻¹⁶ / 9,1×10⁻³¹ = <strong>8,8×10¹⁴ m·s⁻²</strong><br/>
+  <em style="color:var(--text3)" >⚠️ q est négatif → la force est opposée à E → l'électron va vers la plaque +</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >③ Temps de traversée t = L/v₀</strong><br/>
+  t = 0,05 / (5×10⁷) = <strong>1,0×10⁻⁹ s</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >④ Déviation y = ½|a|t²</strong><br/>
+  y = ½ × 8,8×10¹⁴ × (10⁻⁹)² = ½ × 8,8×10¹⁴ × 10⁻¹⁸<br/>
+  y = <strong>4,4×10⁻⁴ m = 0,44 mm</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ La déviation est faible (0,44 mm) car le condensateur est court. Plus L est grand, plus la déviation est grande (y ∝ L²).</div>
             </div>
           </div>
         </div>
@@ -1240,11 +1288,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> T = 24×3600 = <strong>86 400 s</strong><br/><br/>
-              <strong>2.</strong> T²/R³ = 4π²/(G·M<sub>T</sub>)<br/>
-              R³ = G·M<sub>T</sub>·T²/(4π²) = 4×10¹⁴ × (86400)² / (4π²)<br/>
-              R³ = 4×10¹⁴ × 7,46×10⁹ / 39,5 = 7,55×10²²<br/>
-              R = (7,55×10²²)^(1/3) ≈ <strong>4,22×10⁷ m = 42 200 km</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              T = 24 h = <strong>86 400 s</strong> · G·M<sub>T</sub> = 4,0×10¹⁴ m³·s⁻²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Isoler R³ dans la 3ème loi de Kepler</strong><br/>
+              T²/R³ = 4π²/(G·M<sub>T</sub>) → R³ = G·M<sub>T</sub>·T²/(4π²)<br/>
+              R³ = 4,0×10¹⁴ × (86400)² / (4π²)<br/>
+              R³ = 4,0×10¹⁴ × 7,46×10⁹ / 39,5 = 7,55×10²²</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② R = (R³)^(1/3)</strong><br/>
+              R = <strong>4,22×10⁷ m = 42 200 km</strong><br/>
+              <em style="color:var(--text3)">Altitude = 42 200 − 6 370 (R<sub>Terre</sub>) = 35 830 km</em></div>
             </div>
           </div>
         </div>
@@ -1261,10 +1314,15 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              T²/a³ = cst (même astre attracteur = Soleil)<br/>
-              T<sub>M</sub>²/a<sub>M</sub>³ = T<sub>T</sub>²/a<sub>T</sub>³<br/>
-              T<sub>M²</sub> = T<sub>T²</sub> × (a<sub>M</sub>/a<sub>T</sub>)³ = 1² × (1,52)³ = 3,51<br/>
-              T<sub>M</sub> = √3,51 ≈ <strong>1,87 ans</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Principe</strong><br/>
+              Même Soleil → T²/a³ = cte → T<sub>M</sub>²/a<sub>M</sub>³ = T<sub>T</sub>²/a<sub>T</sub>³</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① Isoler T<sub>M</sub>²</strong><br/>
+              T<sub>M</sub>² = T<sub>T</sub>² × (a<sub>M</sub>/a<sub>T</sub>)³ = 1² × (1,52)³</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Calculer (1,52)³</strong><br/>
+              1,52² = 2,3104 · 2,3104 × 1,52 = 3,512<br/>
+              T<sub>M</sub> = √3,512 = <strong>1,87 ans ≈ 687 jours</strong></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ Valeur réelle de Mars : 687 jours ✓</div>
             </div>
           </div>
         </div>
@@ -1307,7 +1365,7 @@
         <div class="cours-section-title" style="color:var(--phys)">📊 Niveau d'intensité sonore L (décibels)</div>
         <div class="cours-text"><p>L'oreille humaine perçoit les sons de façon <strong>logarithmique</strong> (pas linéaire). D'où l'échelle en décibels :</p></div>
         <div class="formula-box phys"><span class="formula-label">Niveau sonore</span><div class="formula-content">$L = 10\log\!\left(\dfrac{I}{I_0}\right)\ \text{(dB)} \qquad I_0 = 10^{-12}\ \text{W·m}^{-2}$</div></div>
-        <div class="formula-box phys"><span class="formula-label">Retrouver I</span><div class="formula-content">$I = I_0 \cdot 10^{L/10}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Retrouver I</span><div class="formula-content">$I = I_0 ·10^{L/10}$</div></div>
         <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Les niveaux sonores NE s'additionnent PAS !</strong> Pour 2 sources identiques à L dB : L<sub>total</sub> = L + 10·log(2) = L + 3 dB. Il faut toujours repasser par les intensités (I<sub>total</sub> = ΣI), puis recalculer L.</div></div>
         <table class="data-table">
           <tr><th>Source</th><th>L (dB)</th><th>I (W/m²)</th></tr>
@@ -1375,9 +1433,20 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> L = 10·log(I/I₀) → I = I₀ × 10^(L/10) = 10⁻¹² × 10^7 = <strong>10⁻⁵ W·m⁻²</strong><br/><br/>
-              <strong>2.</strong> I<sub>tot</sub> = 2I = 2×10⁻⁵ W·m⁻²<br/>
-              L<sub>tot</sub> = 10·log(2×10⁻⁵ / 10⁻¹²) = 10·log(2×10⁷) = 10·(log 2 + 7) = 10·(0,301+7) = <strong>73 dB</strong>
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  L = 70 dB par haut-parleur · I₀ = 10⁻¹² W·m⁻²<br/>
+  <em style="color:var(--text3)" >⚠️ Règle fondamentale : les niveaux en dB NE s'additionnent pas ! Il faut passer par les intensités.</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Retrouver I d'un haut-parleur</strong><br/>
+  L = 10·log(I/I₀) → I = I₀ × 10^(L/10)<br/>
+  I = 10⁻¹² × 10^(70/10) = 10⁻¹² × 10⁷ = <strong>10⁻⁵ W·m⁻²</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Additionner les intensités</strong><br/>
+  I<sub>tot</sub> = I₁ + I₂ = 10⁻⁵ + 10⁻⁵ = <strong>2×10⁻⁵ W·m⁻²</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >③ Calculer L<sub>tot</sub></strong><br/>
+  L<sub>tot</sub> = 10·log(2×10⁻⁵ / 10⁻¹²) = 10·log(2×10⁷)<br/>
+  = 10·(log 2 + log 10⁷) = 10·(0,301 + 7) = <strong>73 dB</strong><br/>
+  <em style="color:var(--text3)" >💡 Doubler les sources ajoute toujours +3 dB (car 10·log 2 ≈ 3).</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ 70 + 70 ≠ 140 dB ! Deux sources identiques → L + 3 dB = 73 dB.</div>
             </div>
           </div>
         </div>
@@ -1411,7 +1480,7 @@
           <div class="def-title">Poussée d'Archimède</div>
           Tout corps immergé dans un fluide subit une poussée verticale ascendante égale au poids du fluide déplacé.
         </div>
-        <div class="formula-box phys"><span class="formula-label">Poussée d'Archimède</span><div class="formula-content">$\Pi = \rho_{\text{fluide}}\cdot V_{\text{immergé}}\cdot g$ &nbsp;&nbsp; (N, vers le haut)</div></div>
+        <div class="formula-box phys"><span class="formula-label">Poussée d'Archimède</span><div class="formula-content">$\Pi = \rho_{\text{fluide}}·V_{\text{immergé}}·g$ &nbsp;&nbsp; (N, vers le haut)</div></div>
         <div class="cours-text">
           <p><strong>Flotte si</strong> Π ≥ P, c'est-à-dire ρ_objet ≤ ρ_fluide.</p>
           <p><strong>Coule si</strong> ρ_objet > ρ_fluide.</p>
@@ -1454,7 +1523,7 @@
       <div class="info-card-body">
         <div class="formula-box phys">
           <span class="formula-label">Poussée d'Archimède</span>
-          <div class="formula-content">$\Pi = \rho_{\text{fluide}}\cdot V_{\text{immergé}}\cdot g$</div>
+          <div class="formula-content">$\Pi = \rho_{\text{fluide}}·V_{\text{immergé}}·g$</div>
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Débit volumique (conservation)</span>
@@ -1487,11 +1556,19 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> S<sub>A</sub>·v<sub>A</sub> = S<sub>B</sub>·v<sub>B</sub> → v<sub>B</sub> = (S<sub>A</sub>/S<sub>B</sub>)·v<sub>A</sub> = (4/1)×2 = <strong>8 m·s⁻¹</strong><br/><br/>
-              <strong>2.</strong> p<sub>A</sub> + ½ρv<sub>A</sub>² = p<sub>B</sub> + ½ρv<sub>B</sub>² (h cst)<br/>
-              p<sub>B</sub> = p<sub>A</sub> + ½ρ(v<sub>A²</sub> − v<sub>B²</sub>) = 1,5×10⁵ + ½×1000×(4−64)<br/>
-              p<sub>B</sub> = 1,5×10⁵ − 30 000 = <strong>1,2×10⁵ Pa</strong><br/>
-              ✅ p diminue quand v augmente (effet Venturi).
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  ρ = 1000 kg·m⁻³ · S<sub>A</sub> = 4 cm² · v<sub>A</sub> = 2 m·s⁻¹ · p<sub>A</sub> = 1,5×10⁵ Pa · S<sub>B</sub> = 1 cm²<br/>
+  Tuyau horizontal → h<sub>A</sub> = h<sub>B</sub> → le terme ρgh se simplifie dans Bernoulli.</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Conservation du débit : S<sub>A</sub>v<sub>A</sub> = S<sub>B</sub>v<sub>B</sub></strong><br/>
+  v<sub>B</sub> = (S<sub>A</sub>/S<sub>B</sub>) × v<sub>A</sub> = (4/1) × 2 = <strong>8 m·s⁻¹</strong><br/>
+  <em style="color:var(--text3)" >💡 La section est 4× plus petite → la vitesse est 4× plus grande (conservation du débit).</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Bernoulli : p<sub>A</sub> + ½ρv<sub>A</sub>² = p<sub>B</sub> + ½ρv<sub>B</sub>²</strong><br/>
+  p<sub>B</sub> = p<sub>A</sub> + ½ρ(v<sub>A</sub>² − v<sub>B</sub>²)<br/>
+  p<sub>B</sub> = 1,5×10⁵ + ½ × 1000 × (2² − 8²)<br/>
+  p<sub>B</sub> = 1,5×10⁵ + 500 × (4 − 64)<br/>
+  p<sub>B</sub> = 1,5×10⁵ − 30 000 = <strong>1,2×10⁵ Pa</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Effet Venturi : vitesse augmente → pression diminue. p<sub>B</sub> &lt; p<sub>A</sub> ✓</div>
             </div>
           </div>
         </div>
@@ -1602,8 +1679,17 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              a = 2·λ·D / L = (2 × 633×10⁻⁹ × 1,5) / (3,8×10⁻²)<br/>
-              a = 1,9×10⁻⁶ / 3,8×10⁻² = <strong>5,0×10⁻⁵ m = 50 μm</strong>
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  λ = 633 nm = 633×10⁻⁹ m · D = 1,5 m · L = 3,8 cm = 3,8×10⁻² m</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Relation tache centrale</strong><br/>
+  L = 2λD/a → isoler a :<br/>
+  a = 2λD/L</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Calcul numérique</strong><br/>
+  a = (2 × 633×10⁻⁹ × 1,5) / (3,8×10⁻²)<br/>
+  a = (1,899×10⁻⁶) / (3,8×10⁻²)<br/>
+  a = <strong>5,0×10⁻⁵ m = 50 μm</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ La fente fait 50 μm. Vérif : L = 2×633×10⁻⁹×1,5/5×10⁻⁵ = 3,8×10⁻² m ✓</div>
             </div>
           </div>
         </div>
@@ -1710,10 +1796,18 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> i = λD/a = (589×10⁻⁹ × 1,2) / (0,4×10⁻³) = 7,07×10⁻⁷ / 4×10⁻⁴ = <strong>1,77×10⁻³ m ≈ 1,8 mm</strong><br/><br/>
-              <strong>2.</strong> Pour 11 franges, on a 10 interfranges :<br/>
-              i = 4,3 cm / 10 = <strong>4,3 mm</strong>... <br/>
-              Recalcul : i = 43 mm / 10 = 4,3 mm → cohérent si D = 3 m (vérifier l'énoncé). La méthode est : i = mesure totale / nombre d'espaces.
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  a = 0,4 mm = 4×10⁻⁴ m · λ = 589 nm = 589×10⁻⁹ m · D = 1,2 m</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Interfrange i = λD/a</strong><br/>
+  i = (589×10⁻⁹ × 1,2) / (4×10⁻⁴)<br/>
+  i = 7,07×10⁻⁷ / 4×10⁻⁴ = <strong>1,77×10⁻³ m ≈ 1,77 mm</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Mesure expérimentale : 11 franges = 10 interfranges</strong><br/>
+  <em style="color:var(--text3)" >💡 Entre N+1 franges il y a N interfranges. Ne pas confondre !</em><br/>
+  i<sub>exp</sub> = distance totale / 10<br/>
+  Si on mesure 4,3 cm pour 10 interfranges : i = 43/10 = 4,3 mm<br/>
+  → Comparer avec la valeur théorique pour vérifier la cohérence.</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ En cas d'écart, l'erreur vient soit de la mesure de a (très petite), soit de D.</div>
             </div>
           </div>
         </div>
@@ -1753,8 +1847,8 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">📐 Formules</div>
-        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source se rapproche)</span><div class="formula-content">$f_R = f_S \cdot \dfrac{c}{c - v_S} \quad (f_R > f_S)$</div></div>
-        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source s'éloigne)</span><div class="formula-content">$f_R = f_S \cdot \dfrac{c}{c + v_S} \quad (f_R < f_S)$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source se rapproche)</span><div class="formula-content">$f_R = f_S ·\dfrac{c}{c - v_S} \quad (f_R > f_S)$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source s'éloigne)</span><div class="formula-content">$f_R = f_S ·\dfrac{c}{c + v_S} \quad (f_R < f_S)$</div></div>
         <div class="formula-box phys"><span class="formula-label">Décalage Doppler (approximation v << c)</span><div class="formula-content">$\dfrac{\Delta f}{f_S} \approx \dfrac{v}{c} \qquad \dfrac{\Delta\lambda}{\lambda_S} \approx \dfrac{v}{c}$</div></div>
         <div class="cours-text">
           <ul>
@@ -1788,11 +1882,11 @@
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Émetteur se rapproche (f reçue > f émise)</span>
-          <div class="formula-content">$f_R = f_S \cdot \dfrac{c}{c - v_S}$</div>
+          <div class="formula-content">$f_R = f_S ·\dfrac{c}{c - v_S}$</div>
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Émetteur s'éloigne (f reçue < f émise)</span>
-          <div class="formula-content">$f_R = f_S \cdot \dfrac{c}{c + v_S}$</div>
+          <div class="formula-content">$f_R = f_S ·\dfrac{c}{c + v_S}$</div>
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Décalage Doppler</span>
@@ -1819,10 +1913,20 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              f<sub>A</sub> = f₀ × c/(c − v) = 24×10⁹ × 3×10⁸/(3×10⁸ − 50)<br/>
-              f<sub>A</sub> = 24×10⁹ × 3×10⁸/2,9999995×10⁸<br/>
-              f<sub>A</sub> ≈ 24×10⁹ × 1,0000000167 ≈ <strong>24 000 000 004 Hz</strong><br/>
-              Δf = 4 Hz (décalage très faible car v << c, c'est normal pour la lumière/radio)
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  f₀ = 24 GHz = 24×10⁹ Hz · c = 3×10⁸ m·s⁻¹ · v = 50 m·s⁻¹ (voiture s'approche)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Formule Doppler (source s'approche)</strong><br/>
+  f<sub>R</sub> = f₀ × c/(c − v)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Calcul</strong><br/>
+  f<sub>R</sub> = 24×10⁹ × (3×10⁸)/(3×10⁸ − 50)<br/>
+  = 24×10⁹ × 3×10⁸/2,9999995×10⁸<br/>
+  = 24×10⁹ × 1,0000000167<br/>
+  f<sub>R</sub> ≈ <strong>24 000 000 004 Hz</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >③ Décalage Doppler Δf</strong><br/>
+  Δf = f<sub>R</sub> − f₀ ≈ 4 Hz<br/>
+  <em style="color:var(--text3)" >💡 Le décalage est minuscule car v = 50 m·s⁻¹ &lt;&lt; c = 3×10⁸ m·s⁻¹. Formule approchée : Δf/f₀ ≈ v/c = 50/3×10⁸ ≈ 1,7×10⁻⁷</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Un radar mesure ce minuscule décalage pour calculer la vitesse. En pratique on utilise Δf = 2×f₀×v/c (aller-retour).</div>
             </div>
           </div>
         </div>
@@ -1927,10 +2031,20 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> E = hc/λ = (6,63×10⁻³⁴ × 3×10⁸) / (250×10⁻⁹) = 7,96×10⁻¹⁹ J<br/>
-              En eV : E = 7,96×10⁻¹⁹ / 1,6×10⁻¹⁹ ≈ <strong>4,98 eV</strong><br/><br/>
-              <strong>2.</strong> E<sub>photon</sub> = 4,98 eV > W = 3,0 eV → <strong>Oui, l'électron est éjecté</strong><br/>
-              Ec = E − W = 4,98 − 3,0 = <strong>1,98 eV = 3,17×10⁻¹⁹ J</strong>
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  W = 3,0 eV · λ = 250 nm = 250×10⁻⁹ m · h = 6,63×10⁻³⁴ J·s · c = 3×10⁸ m·s⁻¹<br/>
+  <em style="color:var(--text3)" >⚠️ Conversion : 1 eV = 1,6×10⁻¹⁹ J → W = 3,0 × 1,6×10⁻¹⁹ = 4,8×10⁻¹⁹ J</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >① Énergie du photon E = hc/λ</strong><br/>
+  E = (6,63×10⁻³⁴ × 3×10⁸) / (250×10⁻⁹)<br/>
+  E = 1,989×10⁻²⁵ / 2,5×10⁻⁷ = 7,96×10⁻¹⁹ J<br/>
+  En eV : E = 7,96×10⁻¹⁹ / 1,6×10⁻¹⁹ = <strong>4,98 eV</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >② Condition d'éjection : E<sub>photon</sub> ≥ W</strong><br/>
+  4,98 eV &gt; 3,0 eV → <strong>Oui, l'électron est éjecté</strong><br/>
+  <em style="color:var(--text3)" >💡 Si E &lt; W → aucun électron éjecté, quelle que soit l'intensité lumineuse !</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--phys)" >③ Énergie cinétique E<sub>c</sub> = E − W</strong><br/>
+  E<sub>c</sub> = 4,98 − 3,0 = <strong>1,98 eV = 3,17×10⁻¹⁹ J</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ L'électron reçoit 4,98 eV, en donne 3,0 eV pour s'arracher → part avec 1,98 eV d'énergie cinétique.</div>
             </div>
           </div>
         </div>
@@ -2094,10 +2208,18 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> τ = RC = 10×10³ × 100×10⁻⁶ = <strong>1 s</strong><br/><br/>
-              <strong>2.</strong> u<sub>C</sub>(t) = E(1 − e^(−t/τ)) = <strong>12(1 − e^(−t))</strong><br/><br/>
-              <strong>3.</strong> à t = τ = 1s : u<sub>C</sub> = 12(1 − e⁻¹) = 12×0,63 = <strong>7,6 V ≈ 0,63E</strong><br/><br/>
-              <strong>4.</strong> "Chargé" à t = 5τ = <strong>5 s</strong> (u<sub>C</sub> ≈ 99% de E)
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              R = 10 kΩ = 10⁴ Ω · C = 100 μF = 10⁻⁴ F · E = 12 V · u<sub>C</sub>(0) = 0</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① τ = RC</strong><br/>
+              τ = 10⁴ × 10⁻⁴ = <strong>1 s</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② Expression u<sub>C</sub>(t)</strong><br/>
+              u<sub>C</sub>(t) = E(1 − e<sup>−t/τ</sup>) = <strong>12(1 − e<sup>−t</sup>)</strong> V</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ À t = τ = 1 s</strong><br/>
+              u<sub>C</sub>(1) = 12(1 − e⁻¹) = 12 × 0,632 = <strong>7,6 V = 63% de E</strong><br/>
+              <em style="color:var(--text3)">💡 À t = τ : toujours 63% de E, quelle que soit la valeur de E !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">④ Chargé à t = 5τ = 5 s</strong><br/>
+              u<sub>C</sub>(5) = 12(1 − e⁻⁵) ≈ 12 × 0,993 ≈ <strong>11,9 V ≈ 99% de E</strong></div>
             </div>
           </div>
         </div>
@@ -2203,9 +2325,18 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> T(t) = (80−20)·e^(−t/10) + 20 = <strong>60·e^(−t/10) + 20</strong> (t en min)<br/><br/>
-              <strong>2.</strong> t = τ = 10 min : T = 60·e⁻¹ + 20 = 60×0,37 + 20 = 22,2 + 20 = <strong>42,2°C</strong><br/><br/>
-              <strong>3.</strong> t = 3τ = 30 min : T = 60·e⁻³ + 20 = 60×0,05 + 20 = 3 + 20 = <strong>23°C</strong> (presque à T<sub>ext</sub>)
+
+  <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+  T₀ = 80°C · T<sub>ext</sub> = 20°C · τ = 10 min</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">① T(t) = T<sub>ext</sub> + (T₀ − T<sub>ext</sub>)·e<sup>−t/τ</sup></strong><br/>
+  T(t) = 20 + (80 − 20)·e<sup>−t/10</sup> = <strong>20 + 60·e<sup>−t/10</sup></strong> (t en min)</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">② À t = τ = 10 min</strong><br/>
+  T = 20 + 60·e<sup>−1</sup> = 20 + 60×0,368 = <strong>42,1°C</strong><br/>
+  <em style="color:var(--text3)">À t = τ : l'écart de T a diminué de 63% de sa valeur initiale.</em></div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--phys)">③ À t = 3τ = 30 min</strong><br/>
+  T = 20 + 60·e<sup>−3</sup> = 20 + 60×0,050 = <strong>23°C</strong><br/>
+  <em style="color:var(--text3)">Après 3τ, seulement 5% de l'écart initial reste → quasi à l'équilibre thermique.</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ T décroît exponentiellement de 80°C vers 20°C. Même forme que la décharge RC !</div>
             </div>
           </div>
         </div>
@@ -2340,10 +2471,17 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> [H₃O⁺] = 10^(−3,5) = <strong>3,16×10⁻⁴ mol·L⁻¹</strong><br/><br/>
-              <strong>2.</strong> HCl fort → [H₃O⁺] = C = 2×10⁻³ mol/L<br/>
-              pH = −log(2×10⁻³) = −(log2 + log10⁻³) = −(0,3 − 3) = <strong>2,7</strong><br/><br/>
-              <strong>3.</strong> Ke = [H₃O⁺][HO⁻] → [HO⁻] = 10⁻¹⁴ / 2×10⁻³ = <strong>5×10⁻¹² mol·L⁻¹</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Rappels</strong><br/>
+              [H₃O⁺] = 10<sup>−pH</sup> &nbsp;|&nbsp; K<sub>e</sub> = [H₃O⁺]·[HO⁻] = 10<sup>−14</sup></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① pH = 3,5 → [H₃O⁺]</strong><br/>
+              [H₃O⁺] = 10<sup>−3,5</sup> = 10<sup>0,5</sup> × 10<sup>−4</sup> = √10 × 10⁻⁴ = <strong>3,16×10⁻⁴ mol·L⁻¹</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② HCl fort → dissociation totale → [H₃O⁺] = C</strong><br/>
+              pH = −log(2×10⁻³) = −(log 2 + log 10⁻³) = −(0,301 − 3) = <strong>2,7</strong><br/>
+              <em style="color:var(--text3)">💡 log 2 ≈ 0,301 — valeur à connaître par cœur !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ [HO⁻] = K<sub>e</sub>/[H₃O⁺]</strong><br/>
+              [HO⁻] = 10⁻¹⁴ / 2×10⁻³ = <strong>5×10⁻¹² mol·L⁻¹</strong><br/>
+              pH = 2,7 &lt; 7 → solution acide ✓</div>
             </div>
           </div>
         </div>
@@ -2361,10 +2499,18 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>Méthode :</strong> l'acide du couple 1 réagit avec la base du couple 2.<br/>
-              Acide 1 : CH₃COOH → CH₃COO⁻ + H⁺<br/>
-              Base 2 : NH₃ + H⁺ → NH₄⁺<br/><br/>
-              <strong>Bilan :</strong> CH₃COOH + NH₃ ⇌ CH₃COO⁻ + NH₄⁺ ✅
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Méthode des demi-équations</strong><br/>
+              Couples : CH₃COOH/CH₃COO⁻ (pKa = 4,8) et NH₄⁺/NH₃ (pKa = 9,2)<br/>
+              pKa₁ &lt; pKa₂ → réaction dans le sens direct ✓</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Demi-équation acide (couple 1)</strong><br/>
+              CH₃COOH → CH₃COO⁻ + H⁺</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Demi-équation base (couple 2)</strong><br/>
+              NH₃ + H⁺ → NH₄⁺</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Addition (H⁺ se simplifie)</strong><br/>
+              <strong>CH₃COOH + NH₃ ⇌ CH₃COO⁻ + NH₄⁺</strong><br/>
+              <em style="color:var(--text3)">⚠️ Double flèche ⇌ = équilibre</em></div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ Vérif charges : 0 + 0 = −1 + 1 = 0 ✓</div>
             </div>
           </div>
         </div>
@@ -2482,12 +2628,20 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> pH = 6 &gt; pKa = 4,8 → la <strong>base CH₃COO⁻ prédomine</strong>.<br/><br/>
-              <strong>2.</strong> pH = pKa + log([A⁻]/[HA])<br/>
-              6 = 4,8 + log([A⁻]/[HA])<br/>
-              log([A⁻]/[HA]) = 1,2<br/>
-              [CH₃COO⁻]/[CH₃COOH] = 10^1,2 ≈ <strong>15,8</strong><br/>
-              ✅ Il y a environ 16× plus de base que d'acide.
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Rappel diagramme de prédominance</strong><br/>
+  pH &lt; pKa → forme acide HA prédomine<br/>
+  pH &gt; pKa → forme basique A⁻ prédomine<br/>
+  pH = pKa → [HA] = [A⁻]</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Espèce prédominante</strong><br/>
+  pH = 6 &gt; pKa = 4,8 → <strong>la base CH₃COO⁻ prédomine</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Rapport [A⁻]/[HA] via Henderson-Hasselbalch</strong><br/>
+  pH = pKa + log([A⁻]/[HA])<br/>
+  6 = 4,8 + log([A⁻]/[HA])<br/>
+  log([A⁻]/[HA]) = 6 − 4,8 = 1,2<br/>
+  [A⁻]/[HA] = 10<sup>1,2</sup> = <strong>15,8</strong><br/>
+  <em style="color:var(--text3)" >💡 Il y a ~16 fois plus de CH₃COO⁻ que de CH₃COOH dans cette solution.</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Vérif : si pH − pKa = 1,2 → ratio = 10^1,2 ≈ 16 → base très majoritaire ✓</div>
             </div>
           </div>
         </div>
@@ -2530,7 +2684,7 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📐 Formule de l'équivalence</div>
         <div class="formula-box chem"><span class="formula-label">À l'équivalence (stœchiométrie)</span><div class="formula-content">$\dfrac{n_A}{a} = \dfrac{n_B}{b} \;\Rightarrow\; \dfrac{C_A V_A}{a} = \dfrac{C_B V_E}{b}$</div></div>
-        <div class="formula-box chem"><span class="formula-label">Concentration inconnue C<sub>A</sub></span><div class="formula-content">$C_A = \dfrac{a\cdot C_B\cdot V_E}{b\cdot V_A}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Concentration inconnue C<sub>A</sub></span><div class="formula-content">$C_A = \dfrac{a·C_B·V_E}{b·V_A}$</div></div>
         <div class="step-list">
           <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire l'équation de la réaction de titrage et relever a et b.</div></div>
           <div class="step-item"><div class="step-num">2</div><div class="step-text">Repérer V<sub>E</sub> (volume équivalent) au changement de couleur.</div></div>
@@ -2584,7 +2738,7 @@
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Concentration de la solution titrée</span>
-          <div class="formula-content">$C_A = \dfrac{a\cdot C_B\cdot V_E}{b\cdot V_A}$</div>
+          <div class="formula-content">$C_A = \dfrac{a·C_B·V_E}{b·V_A}$</div>
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
@@ -2615,9 +2769,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              C<sub>A</sub> = (a × C<sub>B</sub> × V<sub>E</sub>) / (b × V<sub>A</sub>)<br/>
-              C<sub>A</sub> = (1 × 0,050 × 12,5) / (1 × 20,0)<br/>
-              C<sub>A</sub> = 0,625 / 20,0 = <strong>0,031 mol·L⁻¹</strong>
+
+  <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+  V<sub>A</sub> = 20,0 mL (HCl inconnu) · C<sub>B</sub> = 0,050 mol·L⁻¹ (NaOH) · V<sub>E</sub> = 12,5 mL<br/>
+  Équation : HCl + NaOH → NaCl + H₂O → coefficients a = b = 1</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① À l'équivalence : n(HCl) = n(NaOH versé)</strong><br/>
+  C<sub>A</sub>·V<sub>A</sub> = C<sub>B</sub>·V<sub>E</sub></div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Isoler C<sub>A</sub></strong><br/>
+  C<sub>A</sub> = (C<sub>B</sub> × V<sub>E</sub>) / V<sub>A</sub><br/>
+  C<sub>A</sub> = (0,050 × 12,5) / 20,0 = 0,625 / 20,0 = <strong>0,031 mol·L⁻¹</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ V en mL → ratio → résultat correct. pH à l'équivalence HCl/NaOH = 7 (sel neutre NaCl).</div>
             </div>
           </div>
         </div>
@@ -2685,7 +2846,7 @@
       <div class="info-card-body">
         <div class="formula-box chem">
           <span class="formula-label">À l'équivalence (même formule)</span>
-          <div class="formula-content">$C_A = \dfrac{a\cdot C_B\cdot V_E}{b\cdot V_A}$</div>
+          <div class="formula-content">$C_A = \dfrac{a·C_B·V_E}{b·V_A}$</div>
         </div>
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
@@ -2720,7 +2881,15 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              C<sub>A</sub> = C<sub>B</sub> × V<sub>E</sub> / V<sub>A</sub> = 0,050 × 11 / 20 = <strong>0,0275 mol·L⁻¹</strong>
+
+  <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+  V<sub>E</sub> = 11 mL (intersection des 2 droites sur la courbe) · C<sub>B</sub> = 0,050 mol·L⁻¹ · V<sub>A</sub> = 20 mL</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Même formule : C<sub>A</sub> = C<sub>B</sub>·V<sub>E</sub>/V<sub>A</sub></strong><br/>
+  C<sub>A</sub> = (0,050 × 11) / 20 = 0,55 / 20 = <strong>0,0275 mol·L⁻¹</strong></div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Pourquoi la conductivité change de pente ?</strong><br/>
+  Avant V<sub>E</sub> : H₃O⁺ (λ = 35,0, très conducteur) est neutralisé par Na⁺ (λ = 5,0) → σ baisse.<br/>
+  Après V<sub>E</sub> : excès NaOH → ajout de Na⁺ + HO⁻ (λ = 19,9) → σ remonte.</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ La méthode conductimétrique marche même si la solution est incolore (contrairement au titrage colorimétrique).</div>
             </div>
           </div>
         </div>
@@ -2783,7 +2952,7 @@
       <div class="info-card-body">
         <div class="formula-box chem">
           <span class="formula-label">À l'équivalence (toujours)</span>
-          <div class="formula-content">$C_A = \dfrac{a\cdot C_B\cdot V_E}{b\cdot V_A}$</div>
+          <div class="formula-content">$C_A = \dfrac{a·C_B·V_E}{b·V_A}$</div>
         </div>
         <div class="key-point">
           <span class="key-icon">📏</span>
@@ -2816,8 +2985,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> C<sub>A</sub> = C<sub>B</sub> × V<sub>E</sub> / V<sub>A</sub> = 0,10 × 9,3 / 20 = <strong>0,0465 mol·L⁻¹</strong><br/><br/>
-              <strong>2.</strong> À la demi-équivalence, pH = pKa → <strong>pKa = 4,8</strong>
+
+  <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+  V<sub>A</sub> = 20 mL · C<sub>B</sub> = 0,10 mol·L⁻¹ · V<sub>E</sub> = 9,3 mL · pH à V = V<sub>E</sub>/2 → pH = 4,8</div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Calcul de C<sub>A</sub></strong><br/>
+  C<sub>A</sub> = C<sub>B</sub>·V<sub>E</sub>/V<sub>A</sub> = (0,10 × 9,3) / 20 = <strong>0,0465 mol·L⁻¹</strong></div>
+  <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② pKa à la demi-équivalence</strong><br/>
+  À V = V<sub>E</sub>/2 : [HA] = [A⁻] → Henderson-Hasselbalch → pH = pKa + log(1) = pKa<br/>
+  → <strong>pKa = 4,8</strong><br/>
+  <em style="color:var(--text3)">💡 Méthode expérimentale directe pour mesurer le pKa d'un acide inconnu !</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ pKa = 4,8 correspond à l'acide acétique (CH₃COOH). On peut identifier l'acide grâce au pKa !</div>
             </div>
           </div>
         </div>
@@ -2968,10 +3145,19 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              • Bande 2500-3300 cm⁻¹ large → O-H d'acide carboxylique<br/>
-              • Bande à 1720 cm⁻¹ → C=O présent<br/>
-              • O-H + C=O ensemble = <strong>groupe carboxyle -COOH</strong><br/>
-              ✅ C'est un <strong>acide carboxylique</strong>.
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Bandes observées</strong><br/>
+  • Bande large et forte entre 2500 et 3300 cm⁻¹<br/>
+  • Bande très forte à 1720 cm⁻¹<br/>
+  • Bandes C−H entre 2800 et 3000 cm⁻¹</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Identifier chaque bande</strong><br/>
+  2500–3300 cm⁻¹ (large) → <strong>O−H d'acide carboxylique</strong> (liaison H qui élargit la bande)<br/>
+  1720 cm⁻¹ (très forte) → <strong>C=O</strong> (carbonyle)<br/>
+  2800–3000 cm⁻¹ → <strong>C−H</strong> (présent dans presque toutes les molécules organiques)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Conclusion</strong><br/>
+  O−H (2500–3300) + C=O (1720) = groupe <strong>−COOH</strong><br/>
+  → La molécule est un <strong>acide carboxylique</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Méthode : d'abord chercher C=O (1700–1750), puis regarder si O−H est présent → si oui : acide carboxylique ; si non : cétone ou aldéhyde.</div>
             </div>
           </div>
         </div>
@@ -3075,8 +3261,15 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> k = ΔA/ΔC = (1,4 − 0) / (3,5×10⁻³ − 0) = 1,4 / 3,5×10⁻³ = <strong>400 L·mol⁻¹</strong><br/><br/>
-              <strong>2.</strong> C = A/k = 0,60 / 400 = <strong>1,5×10⁻³ mol·L⁻¹</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              Points de la droite : (0 ; 0) et (3,5×10⁻³ mol·L⁻¹ ; 1,4) · A<sub>inconnue</sub> = 0,60</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Pente k = ΔA/ΔC</strong><br/>
+              k = (1,4 − 0) / (3,5×10⁻³ − 0) = 1,4 / 3,5×10⁻³ = <strong>400 L·mol⁻¹</strong><br/>
+              <em style="color:var(--text3)">💡 Droite passant par l'origine → Beer-Lambert vérifié A = kC</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② C = A/k</strong><br/>
+              C = 0,60 / 400 = <strong>1,5×10⁻³ mol·L⁻¹</strong><br/>
+              <em style="color:var(--text3)">Vérif : C &lt; 3,5×10⁻³ mol·L⁻¹ → zone linéaire → mesure valide ✓</em></div>
             </div>
           </div>
         </div>
@@ -3165,7 +3358,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              σ = k·C → C = σ/k = 0,022 / 8,5 = <strong>2,6×10⁻³ mol·L⁻¹</strong>
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  k = 8,5 mS·cm⁻¹ par 10⁻³ mol·L⁻¹ · σ<sub>inconnue</sub> = 0,022 mS·cm⁻¹</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Loi de Kohlrausch σ = k·C → isoler C</strong><br/>
+  C = σ/k</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Attention aux unités !</strong><br/>
+  k = 8,5 mS·cm⁻¹ / (10⁻³ mol·L⁻¹) = 8500 mS·cm⁻¹ / (mol·L⁻¹)<br/>
+  <em style="color:var(--text3)" >💡 Convertir k en unités cohérentes avec σ avant de diviser !</em><br/>
+  C = 0,022 / 8,5 = <strong>2,6×10⁻³ mol·L⁻¹</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Même principe que Beer-Lambert mais pour la conductivité. Les deux méthodes donnent C directement depuis une courbe d'étalonnage.</div>
             </div>
           </div>
         </div>
@@ -3276,8 +3478,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> t₁/₂ = ln2/k = 0,693 / 2,3×10⁻² = <strong>30 s</strong><br/><br/>
-              <strong>2.</strong> [A] = [A]₀·e^(−kt) = 0,10 × e^(−2,3×10⁻² × 60) = 0,10 × e^(−1,38) = 0,10 × 0,25 = <strong>0,025 mol·L⁻¹</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              Ordre 1 · k = 2,3×10⁻² s⁻¹ · [A]₀ = 0,10 mol·L⁻¹</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① t<sub>1/2</sub> = ln 2 / k</strong><br/>
+              t<sub>1/2</sub> = 0,693 / 2,3×10⁻² = <strong>30 s</strong><br/>
+              <em style="color:var(--text3)">💡 Indépendant de [A]₀ — propriété clé de l'ordre 1 !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② [A] à t = 60 s</strong><br/>
+              t = 60 s = 2 × t<sub>1/2</sub> → 2 demi-vies → [A] = [A]₀/4<br/>
+              [A] = 0,10/4 = <strong>0,025 mol·L⁻¹</strong><br/>
+              <em style="color:var(--text3)">Vérif : [A]₀·e<sup>−kt</sup> = 0,10 × e<sup>−1,38</sup> = 0,10 × 0,251 = 0,025 ✓</em></div>
             </div>
           </div>
         </div>
@@ -3386,10 +3596,22 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> x<sub>max</sub> = min(n₀/coeff) = min(0,10/1) = <strong>0,10 mol</strong><br/>
-              (L'eau est en solvant = excès, donc le réactif limitant est CH₃COOH)<br/><br/>
-              <strong>2.</strong> τ = x<sub>f</sub>/x<sub>max</sub> = 1,3×10⁻³ / 0,10 = <strong>0,013 = 1,3%</strong><br/>
-              τ << 1 → la réaction est très <strong>peu avancée</strong> → acide faible (peu dissocié). ✅
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  n₀(CH₃COOH) = 0,10 mol · n₀(H₂O) = solvant (excès) · x<sub>f</sub> = 1,3×10⁻³ mol</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Tableau d'avancement</strong><br/>
+  <table style="font-size:.85rem;border-collapse:collapse;width:100%">
+    <tr style="background:var(--bg3)"><td style="padding:.3rem .5rem">État</td><td style="padding:.3rem .5rem">CH₃COOH</td><td style="padding:.3rem .5rem">H₂O</td><td style="padding:.3rem .5rem">CH₃COO⁻</td><td style="padding:.3rem .5rem">H₃O⁺</td></tr>
+    <tr><td style="padding:.3rem .5rem">Initial</td><td style="padding:.3rem .5rem">0,10</td><td style="padding:.3rem .5rem">excès</td><td style="padding:.3rem .5rem">0</td><td style="padding:.3rem .5rem">0</td></tr>
+    <tr><td style="padding:.3rem .5rem">Équilibre</td><td style="padding:.3rem .5rem">0,10 − x</td><td style="padding:.3rem .5rem">excès</td><td style="padding:.3rem .5rem">x</td><td style="padding:.3rem .5rem">x</td></tr>
+  </table></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② x<sub>max</sub> = min(n₀/coeff)</strong><br/>
+  Réactif limitant = CH₃COOH (l'eau est en excès)<br/>
+  x<sub>max</sub> = 0,10/1 = <strong>0,10 mol</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Taux d'avancement τ = x<sub>f</sub>/x<sub>max</sub></strong><br/>
+  τ = 1,3×10⁻³ / 0,10 = <strong>0,013 = 1,3%</strong><br/>
+  <em style="color:var(--text3)" >💡 τ &lt;&lt; 1 → réaction très peu avancée → acide faible (très peu dissocié). Cohérent avec pKa = 4,8 !</em></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Seulement 1,3% des molécules d'acide acétique se dissocient dans l'eau.</div>
             </div>
           </div>
         </div>
@@ -3484,10 +3706,19 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              Groupe -OH → <strong>Alcool</strong><br/>
-              Chaîne principale : 3 carbones → prop-<br/>
-              OH sur C1 → propan-1-ol<br/>
-              Nom : <strong>propan-1-ol</strong> ✅
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Méthode de nomenclature IUPAC</strong><br/>
+  1) Identifier le groupe fonctionnel<br/>
+  2) Trouver la chaîne principale la plus longue<br/>
+  3) Numéroter pour donner le plus petit indice au groupe fonctionnel</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Identifier le groupe fonctionnel</strong><br/>
+  Présence de −OH → <strong>Alcool</strong> (suffixe : −ol)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Compter les carbones de la chaîne principale</strong><br/>
+  CH₃−CH₂−CH₂−OH → <strong>3 carbones</strong> → racine : <strong>prop−</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Numéroter</strong><br/>
+  OH sur C1 (en partant du côté OH pour le plus petit indice)<br/>
+  → propan-<strong>1</strong>-ol</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Nom : <strong>propan-1-ol</strong>. Formule semi-développée : CH₃CH₂CH₂OH.</div>
             </div>
           </div>
         </div>
@@ -3503,9 +3734,19 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              Oui, même formule brute → <strong>isomères de constitution</strong>.<br/>
-              CH₃COOCH₃ : groupe -COO- → <strong>Ester</strong> (éthanoate de méthyle)<br/>
-              CH₃CH₂COOH : groupe -COOH → <strong>Acide carboxylique</strong> (acide propanoïque) ✅
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Définition isomères de constitution</strong><br/>
+  Même formule brute + squelette ou position du groupe fonctionnel différents.</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Vérifier la formule brute</strong><br/>
+  CH₃COOCH₃ : 3C + 6H + 2O ✓<br/>
+  CH₃CH₂COOH : 3C + 6H + 2O ✓<br/>
+  → Même formule brute C₃H₆O₂ → <strong>Oui, ce sont des isomères de constitution</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Identifier les familles</strong><br/>
+  CH₃COOCH₃ : groupe −COO− (lien O entre deux groupes carbones) → <strong>Ester</strong><br/>
+  Nom : éthanoate de méthyle (acide éthanoïque + méthanol)<br/>
+  CH₃CH₂COOH : groupe −COOH en bout de chaîne → <strong>Acide carboxylique</strong><br/>
+  Nom : acide propanoïque</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Même formule brute, groupes fonctionnels différents → isomères de fonction.</div>
             </div>
           </div>
         </div>
@@ -3602,9 +3843,18 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> n<sub>théorique</sub> = n<sub>alcool</sub> = 0,10 mol (coefficient = 1)<br/>
-              m<sub>théorique</sub> = n × M = 0,10 × 102 = <strong>10,2 g</strong><br/><br/>
-              <strong>2.</strong> r = m<sub>exp</sub>/m<sub>théo</sub> × 100 = 8,2/10,2 × 100 = <strong>80,4%</strong>
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  M<sub>ester</sub> = 102 g·mol⁻¹ · n<sub>alcool</sub> = 0,10 mol (réactif limitant) · m<sub>exp</sub> = 8,2 g<br/>
+  Équation : alcool + acide → ester + eau (coefficients 1:1)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① Masse théorique (rendement = 100%)</strong><br/>
+  n<sub>théorique</sub> = n<sub>alcool</sub> = 0,10 mol (coeff. stœchio = 1)<br/>
+  m<sub>théorique</sub> = n × M = 0,10 × 102 = <strong>10,2 g</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Rendement r</strong><br/>
+  r = m<sub>exp</sub>/m<sub>théo</sub> × 100 = 8,2/10,2 × 100 = <strong>80,4%</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Pourquoi r &lt; 100% ?</strong><br/>
+  L'estérification est une réaction <em>équilibrée</em> (⇌) → jamais totale. De plus, il y a des pertes lors de la purification (lavages, distillation).</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ Un rendement de 80% est très bon pour une estérification directe. On peut l'améliorer en éliminant l'eau formée.</div>
             </div>
           </div>
         </div>
@@ -3700,9 +3950,20 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              <strong>1.</strong> HO⁻ a des doublets non liants → <strong>donneur (nucléophile)</strong><br/><br/>
-              <strong>2.</strong> C-Cl est polarisée (Cl est très électronégatif) → C est δ⁺ → <strong>accepteur (électrophile)</strong><br/><br/>
-              <strong>3.</strong> La flèche va de HO⁻ (doublet O) vers le C^δ⁺ de CH₃Cl. Une 2ème flèche part de la liaison C-Cl vers Cl (Cl repart avec les 2 électrons). ✅
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Rappel</strong><br/>
+  Site donneur (nucléophile) = riche en électrons (doublets, liaisons π)<br/>
+  Site accepteur (électrophile) = pauvre en électrons (charge +, δ+)</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① HO⁻ : donneur ou accepteur ?</strong><br/>
+  HO⁻ porte des doublets non liants sur O → <strong>donneur (nucléophile)</strong><br/>
+  <em style="color:var(--text3)" >Les ions chargés négativement sont généralement nucléophiles.</em></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② C dans CH₃−Cl : donneur ou accepteur ?</strong><br/>
+  Cl est très électronégatif → attire les e⁻ → C est appauvri → C<sup>δ+</sup><br/>
+  → <strong>accepteur (électrophile)</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Flèches courbes du mécanisme S<sub>N</sub>2</strong><br/>
+  Flèche 1 : du doublet de HO⁻ (sur O) → vers C<sup>δ+</sup> de CH₃Cl<br/>
+  Flèche 2 : de la liaison C−Cl → vers Cl (qui part avec les 2 électrons en Cl⁻)</div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ C'est une substitution nucléophile (S<sub>N</sub>2) : HO⁻ attaque, Cl⁻ part simultanément.</div>
             </div>
           </div>
         </div>
@@ -3750,7 +4011,7 @@
         <div class="cours-section-title" style="color:var(--chem)">📐 Calculs quantitatifs</div>
         <div class="formula-box chem"><span class="formula-label">Charge électrique totale</span><div class="formula-content">$Q = I\Delta t \quad (\text{C} = \text{A·s})$</div></div>
         <div class="formula-box chem"><span class="formula-label">Lien charge – moles d'électrons</span><div class="formula-content">$Q = n(e^-)F \qquad F = 96\,485\,\text{C·mol}^{-1}$</div></div>
-        <div class="formula-box chem"><span class="formula-label">Masse déposée (cathode)</span><div class="formula-content">$m = nM = \dfrac{I\Delta t\cdot M}{zF}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Masse déposée (cathode)</span><div class="formula-content">$m = nM = \dfrac{I\Delta t·M}{zF}$</div></div>
         <div class="cours-text"><p>z = nombre d'électrons échangés par ion dans la demi-équation. Ex : Cu²⁺ + 2e⁻ → Cu : z = 2.</p></div>
         <div class="step-list">
           <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire les demi-équations à l'anode (oxydation) et cathode (réduction).</div></div>
@@ -3785,7 +4046,7 @@
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Masse déposée (électrodépôt)</span>
-          <div class="formula-content">$m = nM = \dfrac{I\Delta t\cdot M}{zF} \qquad (z = \text{nb e}^- \text{échangés})$</div>
+          <div class="formula-content">$m = nM = \dfrac{I\Delta t·M}{zF} \qquad (z = \text{nb e}^- \text{échangés})$</div>
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
@@ -3810,10 +4071,18 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              Q = I·Δt = 2,0 × (30×60) = 2,0 × 1800 = 3600 C<br/>
-              n(e⁻) = Q/F = 3600/96500 = 0,0373 mol<br/>
-              n(Cu) = n(e⁻)/z = 0,0373/2 = 0,0187 mol<br/>
-              m(Cu) = n × M = 0,0187 × 63,5 = <strong>1,19 g</strong>
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              I = 2,0 A · Δt = 30 min = <strong>1800 s</strong> · M(Cu) = 63,5 g·mol⁻¹ · F = 96 500 C·mol⁻¹<br/>
+              Demi-équation : Cu²⁺ + 2e⁻ → Cu → <strong>z = 2</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Q = I × Δt</strong><br/>
+              Q = 2,0 × 1800 = <strong>3600 C</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② n(e⁻) = Q/F</strong><br/>
+              n(e⁻) = 3600 / 96 500 = <strong>3,73×10⁻² mol</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Stœchiométrie : 1 mol Cu ← 2 mol e⁻</strong><br/>
+              n(Cu) = n(e⁻)/z = 3,73×10⁻²/2 = 1,87×10⁻² mol</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">④ m(Cu) = n × M</strong><br/>
+              m = 1,87×10⁻² × 63,5 = <strong>1,19 g</strong></div>
             </div>
           </div>
         </div>
@@ -3859,8 +4128,8 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">⏱️ Durée de fonctionnement et capacité</div>
-        <div class="formula-box chem"><span class="formula-label">Capacité totale de la pile</span><div class="formula-content">$Q_{\max} = n(e^-)_{\max}\cdot F$</div></div>
-        <div class="formula-box chem"><span class="formula-label">Durée de fonctionnement</span><div class="formula-content">$\Delta t = \dfrac{Q_{\max}}{I} = \dfrac{n(e^-)_{\max}\cdot F}{I}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Capacité totale de la pile</span><div class="formula-content">$Q_{\max} = n(e^-)_{\max}·F$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Durée de fonctionnement</span><div class="formula-content">$\Delta t = \dfrac{Q_{\max}}{I} = \dfrac{n(e^-)_{\max}·F}{I}$</div></div>
         <div class="step-list">
           <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire les demi-équations. Identifier le <strong>réactif limitant</strong>.</div></div>
           <div class="step-item"><div class="step-num">2</div><div class="step-text">Calculer n(réactif limitant) depuis sa masse ou concentration.</div></div>
@@ -3890,11 +4159,11 @@
       <div class="info-card-body">
         <div class="formula-box chem">
           <span class="formula-label">Capacité maximale</span>
-          <div class="formula-content">$Q_{\max} = n(e^-)\cdot F$</div>
+          <div class="formula-content">$Q_{\max} = n(e^-)·F$</div>
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Durée de fonctionnement</span>
-          <div class="formula-content">$\Delta t = \dfrac{Q_{\max}}{I} = \dfrac{n(e^-)\cdot F}{I}$</div>
+          <div class="formula-content">$\Delta t = \dfrac{Q_{\max}}{I} = \dfrac{n(e^-)·F}{I}$</div>
         </div>
         <div class="alert-box alert-tip">
           <span class="alert-icon">💡</span>
@@ -3919,9 +4188,19 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              n(e⁻) = 2 × n(Zn) = 2 × 0,050 = 0,10 mol<br/>
-              Q = n(e⁻)·F = 0,10 × 96500 = 9650 C<br/>
-              Δt = Q/I = 9650/0,50 = <strong>19 300 s ≈ 5,4 h</strong>
+
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--accent)" >📋 Données</strong><br/>
+  n(Zn) = 0,050 mol (réactif limitant) · I = 0,50 A · F = 96 500 C·mol⁻¹<br/>
+  Anode : Zn → Zn²⁺ + 2e⁻ → <strong>z = 2</strong> électrons par atome de Zn</div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >① n(e⁻) transférés</strong><br/>
+  D'après la demi-équation : 1 mol Zn → 2 mol e⁻<br/>
+  n(e⁻) = 2 × n(Zn) = 2 × 0,050 = <strong>0,10 mol</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >② Charge maximale Q = n(e⁻)·F</strong><br/>
+  Q = 0,10 × 96 500 = <strong>9 650 C</strong></div>
+  <div style="margin-bottom:.75rem" ><strong style="color:var(--chem)" >③ Durée Δt = Q/I</strong><br/>
+  Δt = 9650 / 0,50 = 19 300 s<br/>
+  Δt = 19 300 / 3600 = <strong>5,36 h ≈ 5,4 h</strong></div>
+  <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem" >✅ La pile s'arrête quand tout le Zn est consommé. Plus I est grand, plus la pile se décharge vite (Δt ∝ 1/I).</div>
             </div>
           </div>
         </div>
@@ -3998,7 +4277,7 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">⚡ Énergie nucléaire</div>
         <div class="formula-box chem"><span class="formula-label">Défaut de masse</span><div class="formula-content">$\Delta m = Zm_p + Nm_n - m_{\text{noyau}}$</div></div>
-        <div class="formula-box chem"><span class="formula-label">Énergie de liaison (Einstein)</span><div class="formula-content">$E_{\text{liais}} = \Delta m\cdot c^2 \qquad c = 3\times10^8\,\text{m/s}$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Énergie de liaison (Einstein)</span><div class="formula-content">$E_{\text{liais}} = \Delta m·c^2 \qquad c = 3\times10^8\,\text{m/s}$</div></div>
         <div class="cours-text"><p>La fission (uranium → fragments) et la fusion (deutérium + tritium → hélium) libèrent de l'énergie car les produits ont une masse totale plus faible que les réactifs.</p></div>
       </div>
     </div><!-- end cours-layout -->
@@ -4045,11 +4324,16 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              ²²⁶₈₈Ra → ᴬ_Z X + ⁴₂He<br/>
-              Conservation A : 226 = A + 4 → A = <strong>222</strong><br/>
-              Conservation Z : 88 = Z + 2 → Z = <strong>86</strong><br/>
-              Z = 86 = Radon (Rn)<br/>
-              ✅ ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Loi de Soddy</strong><br/>
+              ΣA = conservé · ΣZ = conservé · Particule α = ⁴₂He</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Conservation de A</strong><br/>
+              A<sub>Ra</sub> = A<sub>fils</sub> + A<sub>α</sub> → 226 = A<sub>fils</sub> + 4 → <strong>A<sub>fils</sub> = 222</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Conservation de Z</strong><br/>
+              Z<sub>Ra</sub> = Z<sub>fils</sub> + Z<sub>α</sub> → 88 = Z<sub>fils</sub> + 2 → <strong>Z<sub>fils</sub> = 86 = Radon (Rn)</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Équation</strong><br/>
+              ²²⁶₈₈Ra → <strong>²²²₈₆Rn</strong> + ⁴₂He</div>
+              <div style="background:var(--bg2);border-left:3px solid var(--green);border-radius:6px;padding:.6rem">✅ A : 226 = 222 + 4 ✓ · Z : 88 = 86 + 2 ✓</div>
             </div>
           </div>
         </div>
@@ -4065,11 +4349,17 @@
             </div>
             <button class="solution-toggle" onclick="toggleSolution(this)">💡 Voir la correction</button>
             <div class="solution-box">
-              11 460 = 2 × 5730 = 2 × t₁/₂ → 2 demi-vies écoulées<br/>
-              Après 1 demi-vie : N = N₀/2 = 5,0×10¹¹<br/>
-              Après 2 demi-vies : N = N₀/4 = <strong>2,5×10¹¹ noyaux</strong><br/><br/>
-              Vérification : N = N₀·e^(−λt) avec λ = ln2/5730<br/>
-              N = 10¹² × e^(−ln2 × 2) = 10¹² × (1/4) = 2,5×10¹¹ ✅
+
+              <div style="margin-bottom:.75rem"><strong style="color:var(--accent)">📋 Données</strong><br/>
+              t<sub>1/2</sub> = 5730 ans · N₀ = 1,0×10¹² noyaux · t = 11 460 ans</div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">① Reconnaître le multiple</strong><br/>
+              11 460 / 5730 = <strong>2</strong> → exactement 2 demi-vies<br/>
+              <em style="color:var(--text3)">💡 Toujours vérifier en premier si t est un multiple de t<sub>1/2</sub> !</em></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">② Méthode rapide</strong><br/>
+              Après 1 t<sub>1/2</sub> : N = N₀/2 = 5,0×10¹¹<br/>
+              Après 2 t<sub>1/2</sub> : N = N₀/4 = <strong>2,5×10¹¹ noyaux</strong></div>
+              <div style="margin-bottom:.75rem"><strong style="color:var(--chem)">③ Vérification avec la formule</strong><br/>
+              λ = ln2/t<sub>1/2</sub> → N = 10¹² × e<sup>−(ln2/5730)×11460</sup> = 10¹² × e<sup>−ln4</sup> = 10¹²/4 = 2,5×10¹¹ ✓</div>
             </div>
           </div>
         </div>
