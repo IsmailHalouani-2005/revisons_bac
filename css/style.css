@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Fonts loaded via <link> in HTML for better performance */
 
 /* ===== DARK THEME (défaut) ===== */
 :root {
@@ -74,9 +74,9 @@
 }
 
 /* Transition douce lors du changement de thème */
-body, .navbar, .chapter-card, .info-card, .exercise, .formula-box, .alert-box {
-  transition: background .25s, border-color .25s, color .25s;
-}
+/* Theme transition - only on key elements */
+body { transition: background .2s; }
+.chapter-card, .info-card { transition: background .2s, border-color .2s; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -777,4 +777,43 @@ sub {
 .formula-box sub {
   font-size: .68em;
   bottom: -.3em;
+}
+
+/* ===== NO UNDERLINE ON LINKS ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* Nav pills as links */
+a.nav-pill {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Chapter cards — remove any underline */
+.chapter-card {
+  text-decoration: none;
+}
+
+/* Active pill — stronger highlight when on that chapter */
+.nav-pill.active-phys {
+  background: var(--phys-glow);
+  color: var(--phys);
+  box-shadow: 0 0 0 1px var(--phys);
+  font-weight: 800;
+}
+.nav-pill.active-chem {
+  background: var(--chem-glow);
+  color: var(--chem);
+  box-shadow: 0 0 0 1px var(--chem);
+  font-weight: 800;
+}
+
+/* Nav logo link */
+.nav-logo {
+  text-decoration: none;
 }

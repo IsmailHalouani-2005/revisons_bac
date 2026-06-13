@@ -4,6 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BAC Phys-Chimie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"/>
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
@@ -12,12 +15,51 @@
 <body>
 <style>
   .chapter-page { display: block !important; }
-  .back-btn { display: inline-flex; }
+  .progress-bar-wrap { display: block !important; }
 </style>
+<nav class="navbar">
+  <a class="nav-logo" href="../index.html">
+    <span>⚗️</span> BAC Phys-Chimie
+  </a>
+  <div class="nav-links">
+    <!-- PHYSIQUE -->
+    <a class="nav-pill" data-id="thermodynamique" href="thermodynamique.html">🌡️ Thermo</a>
+    <a class="nav-pill" data-id="newton" href="newton.html">⚙️ Newton</a>
+    <a class="nav-pill" data-id="pesanteur" href="pesanteur.html">🪂 Pesanteur</a>
+    <a class="nav-pill" data-id="electrique" href="electrique.html">⚡ Champ élec.</a>
+    <a class="nav-pill" data-id="kepler" href="kepler.html">🪐 Kepler</a>
+    <a class="nav-pill" data-id="son" href="son.html">🔊 Son</a>
+    <a class="nav-pill" data-id="fluides" href="fluides.html">💧 Fluides</a>
+    <a class="nav-pill" data-id="diffraction" href="diffraction.html">🔦 Diffraction</a>
+    <a class="nav-pill" data-id="interferences" href="../chapitres/interferences.html">🌈 Interfér.</a>
+    <a class="nav-pill" data-id="doppler" href="doppler.html">🚑 Doppler</a>
+    <a class="nav-pill" data-id="photon" href="photon.html">💡 Photon</a>
+    <a class="nav-pill" data-id="rc" href="rc.html">🔋 Circuit RC</a>
+    <a class="nav-pill" data-id="transferts" href="transferts.html">🌡 Transferts</a>
+    <!-- CHIMIE -->
+    <a class="nav-pill" data-id="acidebase" href="acidebase.html">🍋 Acide-Base</a>
+    <a class="nav-pill" data-id="forceacide" href="forceacide.html">⚖️ Force acides</a>
+    <a class="nav-pill" data-id="titragecolor" href="titragecolor.html">🎨 Titrage color.</a>
+    <a class="nav-pill" data-id="titrageconduct" href="titrageconduct.html">📊 Titrage conduct.</a>
+    <a class="nav-pill" data-id="titragepm" href="titragepm.html">📈 Titrage pH</a>
+    <a class="nav-pill" data-id="spectro" href="spectro.html">🔬 Spectro</a>
+    <a class="nav-pill" data-id="beerlam" href="beerlam.html">📉 Beer-Lambert</a>
+    <a class="nav-pill" data-id="conduct" href="conduct.html">⚡ Conductimétrie</a>
+    <a class="nav-pill" data-id="cinetique" href="cinetique.html">⏱️ Cinétique</a>
+    <a class="nav-pill" data-id="equilibre" href="equilibre.html">⚖️ Équilibre</a>
+    <a class="nav-pill" data-id="organique" href="organique.html">🌿 Molécules org.</a>
+    <a class="nav-pill" data-id="synthese" href="synthese.html">🧪 Synthèse org.</a>
+    <a class="nav-pill" data-id="mecanismes" href="mecanismes.html">🔧 Mécanismes</a>
+    <a class="nav-pill" data-id="electrolyse" href="electrolyse.html">⚡ Électrolyse</a>
+    <a class="nav-pill" data-id="piles" href="piles.html">🔋 Piles</a>
+    <a class="nav-pill" data-id="nucleaire" href="nucleaire.html">☢️ Nucléaire</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Changer le thème">🌙</button>
+</nav>
+<div class="progress-bar-wrap" id="readProgress"><div class="progress-bar-fill"></div></div>
+
 <div id="ch-interferences" class="chapter-page phys-hero">
-  <div class="chapter-hero">
-    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
-    <h1>🌈 Interférences</h1>
+  <div class="chapter-hero">    <h1>🌈 Interférences</h1>
     <p>Fentes de Young, interfrange, franges brillantes et sombres.</p>
     <div style="display:flex;gap:.75rem;margin-top:.5rem;">
       <button class="check-btn" data-chapter="interferences" onclick="toggleComplete(this,'interferences')">☐ Marquer comme appris</button>
@@ -48,9 +90,9 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">📐 Fentes de Young — Formules</div>
         <div class="cours-text"><p>Deux fentes S₁ et S₂ séparées d'une distance <em>a</em>, écran à distance <em>D</em>.</p></div>
-        <div class="formula-box phys"><span class="formula-label">Différence de marche au point M (abscisse x)</span><div class="formula-content">$\delta = S_2M - S_1M = \dfrac{ax}{D}$</div></div>
-        <div class="formula-box phys"><span class="formula-label">Interfrange (distance entre 2 franges brillantes)</span><div class="formula-content">$i = \dfrac{\lambda D}{a}$</div></div>
-        <div class="formula-box phys"><span class="formula-label">Position de la k-ième frange brillante</span><div class="formula-content">$x_k = ki = \dfrac{k\lambda D}{a}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Différence de marche au point M (abscisse x)</span><div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0379em;">δ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></div>
+        <div class="formula-box phys"><span class="formula-label">Interfrange (distance entre 2 franges brillantes)</span><div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></div>
+        <div class="formula-box phys"><span class="formula-label">Position de la k-ième frange brillante</span><div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></div>
         <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>a = distance entre les deux fentes (petite, mm). D = distance fentes-écran (grande, m). i = interfrange (ce qu'on mesure sur l'écran, mm). Ne pas confondre a et i !</div></div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Mesure de i en pratique :</strong> On mesure la distance entre N+1 franges = N·i. Donc i = (distance totale) / N.</div></div>
       </div>
@@ -73,19 +115,19 @@
       <div class="info-card-body">
         <div class="formula-box phys">
           <span class="formula-label">Interfrange (distance entre 2 franges brillantes)</span>
-          <div class="formula-content">$i = \dfrac{\lambda D}{a}$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0574em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">λ</span><span class="mord mathnormal" style="margin-right:0.0278em;">D</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div>
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Différence de marche</span>
-          <div class="formula-content">$\delta = S_2M - S_1M = \dfrac{ax}{D}$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0379em;">δ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.7936em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1076em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">D</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div>
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Frange brillante (constructive)</span>
-          <div class="formula-content">$\delta = k\lambda \quad (k \in \mathbb{Z})$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0379em;">δ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mord mathnormal">λ</span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbb">Z</span><span class="mclose">)</span></span></span></span></span></div>
         </div>
         <div class="formula-box phys">
           <span class="formula-label">Frange sombre (destructive)</span>
-          <div class="formula-content">$\delta = \left(k+\tfrac{1}{2}\right)\lambda$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.0379em;">δ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">λ</span></span></span></span></span></div>
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
@@ -132,6 +174,7 @@
 </div>
 
 <script src="../js/app.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   if (typeof renderMathInElement === "undefined") return;
@@ -143,6 +186,26 @@ document.addEventListener("DOMContentLoaded", function() {
     throwOnError:false, strict:false
   });
   hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+<script>
+(function(){
+  var path = window.location.pathname;
+  var id = path.split('/').pop().replace('.html','');
+  var pill = document.querySelector('.nav-pill[data-id="'+id+'"]');
+  if(pill){
+    var isPhys = document.querySelector('.phys-hero') !== null;
+    pill.classList.add(isPhys ? 'active-phys' : 'active-chem');
+    pill.scrollIntoView({inline:'center', behavior:'instant'});
+  }
+})();
+</script>
+<script>
+window.addEventListener('scroll', function(){
+  var bar = document.getElementById('readProgress');
+  if(!bar) return;
+  var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  bar.querySelector('.progress-bar-fill').style.width = pct + '%';
 });
 </script>
 </body></html>

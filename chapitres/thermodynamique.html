@@ -4,6 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BAC Phys-Chimie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"/>
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
@@ -12,12 +15,51 @@
 <body>
 <style>
   .chapter-page { display: block !important; }
-  .back-btn { display: inline-flex; }
+  .progress-bar-wrap { display: block !important; }
 </style>
+<nav class="navbar">
+  <a class="nav-logo" href="../index.html">
+    <span>⚗️</span> BAC Phys-Chimie
+  </a>
+  <div class="nav-links">
+    <!-- PHYSIQUE -->
+    <a class="nav-pill" data-id="thermodynamique" href="../chapitres/thermodynamique.html">🌡️ Thermo</a>
+    <a class="nav-pill" data-id="newton" href="newton.html">⚙️ Newton</a>
+    <a class="nav-pill" data-id="pesanteur" href="pesanteur.html">🪂 Pesanteur</a>
+    <a class="nav-pill" data-id="electrique" href="electrique.html">⚡ Champ élec.</a>
+    <a class="nav-pill" data-id="kepler" href="kepler.html">🪐 Kepler</a>
+    <a class="nav-pill" data-id="son" href="son.html">🔊 Son</a>
+    <a class="nav-pill" data-id="fluides" href="fluides.html">💧 Fluides</a>
+    <a class="nav-pill" data-id="diffraction" href="diffraction.html">🔦 Diffraction</a>
+    <a class="nav-pill" data-id="interferences" href="interferences.html">🌈 Interfér.</a>
+    <a class="nav-pill" data-id="doppler" href="doppler.html">🚑 Doppler</a>
+    <a class="nav-pill" data-id="photon" href="photon.html">💡 Photon</a>
+    <a class="nav-pill" data-id="rc" href="rc.html">🔋 Circuit RC</a>
+    <a class="nav-pill" data-id="transferts" href="transferts.html">🌡 Transferts</a>
+    <!-- CHIMIE -->
+    <a class="nav-pill" data-id="acidebase" href="acidebase.html">🍋 Acide-Base</a>
+    <a class="nav-pill" data-id="forceacide" href="forceacide.html">⚖️ Force acides</a>
+    <a class="nav-pill" data-id="titragecolor" href="titragecolor.html">🎨 Titrage color.</a>
+    <a class="nav-pill" data-id="titrageconduct" href="titrageconduct.html">📊 Titrage conduct.</a>
+    <a class="nav-pill" data-id="titragepm" href="titragepm.html">📈 Titrage pH</a>
+    <a class="nav-pill" data-id="spectro" href="spectro.html">🔬 Spectro</a>
+    <a class="nav-pill" data-id="beerlam" href="beerlam.html">📉 Beer-Lambert</a>
+    <a class="nav-pill" data-id="conduct" href="conduct.html">⚡ Conductimétrie</a>
+    <a class="nav-pill" data-id="cinetique" href="cinetique.html">⏱️ Cinétique</a>
+    <a class="nav-pill" data-id="equilibre" href="equilibre.html">⚖️ Équilibre</a>
+    <a class="nav-pill" data-id="organique" href="organique.html">🌿 Molécules org.</a>
+    <a class="nav-pill" data-id="synthese" href="synthese.html">🧪 Synthèse org.</a>
+    <a class="nav-pill" data-id="mecanismes" href="mecanismes.html">🔧 Mécanismes</a>
+    <a class="nav-pill" data-id="electrolyse" href="electrolyse.html">⚡ Électrolyse</a>
+    <a class="nav-pill" data-id="piles" href="piles.html">🔋 Piles</a>
+    <a class="nav-pill" data-id="nucleaire" href="nucleaire.html">☢️ Nucléaire</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" title="Changer le thème">🌙</button>
+</nav>
+<div class="progress-bar-wrap" id="readProgress"><div class="progress-bar-fill"></div></div>
+
 <div id="ch-thermodynamique" class="chapter-page phys-hero">
-  <div class="chapter-hero">
-    <button class="back-btn" onclick="window.location.href='../index.html'">← Retour à l'accueil</button>
-    <h1>🌡️ 1er Principe de la Thermodynamique</h1>
+  <div class="chapter-hero">    <h1>🌡️ 1er Principe de la Thermodynamique</h1>
     <p>Le bilan d'énergie d'un système. Comprendre W, Q et ΔU en 10 minutes.</p>
     <div style="display:flex;gap:.75rem;margin-top:.5rem;flex-wrap:wrap;">
       <button class="check-btn" data-chapter="thermodynamique" onclick="toggleComplete(this,'thermodynamique')">☐ Marquer comme appris</button>
@@ -56,11 +98,11 @@
           <p>Le 1er principe de la thermodynamique est un <strong>bilan énergétique</strong> : l'énergie ne se crée ni ne se détruit, elle se transforme.</p>
           <p>Pour un système quelconque :</p>
         </div>
-        <div class="formula-box phys"><span class="formula-label">Forme générale</span><div class="formula-content">$\Delta E = \Delta E_c + \Delta E_p + \Delta U = W + Q$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Forme générale</span><div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span></span></div></div>
         <div class="cours-text">
           <p>Dans la plupart des cas au BAC, le système est <strong>au repos</strong> (ΔEc = 0) et à <strong>altitude constante</strong> (ΔEp = 0), donc :</p>
         </div>
-        <div class="formula-box phys"><span class="formula-label">Cas BAC le plus fréquent</span><div class="formula-content">$\Delta U = W + Q$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Cas BAC le plus fréquent</span><div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span></span></div></div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
           <div><strong>Convention de signe OBLIGATOIRE :</strong> W et Q sont comptés <em>algébriquement du point de vue du système</em>. Le système reçoit → positif. Le système cède → négatif. Toujours se demander "qui donne à qui ?"</div>
@@ -69,7 +111,7 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🌡️ Capacité thermique & Chaleur sensible</div>
         <div class="cours-text"><p>Pour un solide ou liquide <strong>incompressible</strong> sans travail mécanique (W = 0) :</p></div>
-        <div class="formula-box phys"><span class="formula-label">Chaleur sensible</span><div class="formula-content">$Q = mc\Delta T \quad (\text{J})$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Chaleur sensible</span><div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal">c</span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord">J</span></span><span class="mclose">)</span></span></span></span></span></div></div>
         <div class="cours-text">
           <ul>
             <li><strong>m</strong> : masse en kg</li>
@@ -81,7 +123,7 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">💨 Gaz parfait</div>
-        <div class="formula-box phys"><span class="formula-label">Loi des gaz parfaits</span><div class="formula-content">$pV = nRT \qquad R = 8{,}314\,\text{J·mol}^{-1}\text{·K}^{-1}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Loi des gaz parfaits</span><div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="mspace" style="margin-right:2em;"></span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0929em;vertical-align:-0.1944em;"></span><span class="mord">8</span><span class="mord"><span class="mpunct">,</span></span><span class="mord">314</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord text"><span class="mord">J⋅mol</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8984em;"><span style="top:-3.1473em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord text"><span class="mord">⋅K</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span></span></div></div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
           <div><strong>T en KELVIN obligatoire !</strong> T(K) = θ(°C) + 273,15. Ne jamais mettre des Celsius dans pV = nRT.</div>
@@ -134,27 +176,27 @@
 
         <div class="formula-box phys">
           <span class="formula-label">1er principe général</span>
-          <div class="formula-content">$\Delta E = \Delta E_c + \Delta E_p + \Delta U = W + Q$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span></span></div>
         </div>
 
         <div class="formula-box phys">
           <span class="formula-label">Système au repos (BAC +++)</span>
-          <div class="formula-content">$\Delta U = W + Q$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">W</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span></span></span></span></span></div>
         </div>
 
         <div class="formula-box phys">
           <span class="formula-label">Système incompressible sans travail</span>
-          <div class="formula-content">$\Delta U = Q = mc\Delta T$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.109em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal">c</span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span></span></div>
         </div>
 
         <div class="formula-box phys">
           <span class="formula-label">Gaz parfait</span>
-          <div class="formula-content">$pV = nRT$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.0077em;">R</span><span class="mord mathnormal" style="margin-right:0.1389em;">T</span></span></span></span></span></div>
         </div>
 
         <div class="formula-box phys">
           <span class="formula-label">Capacité thermique</span>
-          <div class="formula-content">$C = mc \quad (\text{en J·K}^{-1})$</div>
+          <div class="formula-content"><span class="katex-prerendered"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1373em;vertical-align:-0.25em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:1em;"></span><span class="mopen">(</span><span class="mord"><span class="mord text"><span class="mord">en J⋅K</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></div>
         </div>
 
         <div class="alert-box alert-warn">
@@ -319,6 +361,7 @@
 </div>
 
 <script src="../js/app.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   if (typeof renderMathInElement === "undefined") return;
@@ -330,6 +373,26 @@ document.addEventListener("DOMContentLoaded", function() {
     throwOnError:false, strict:false
   });
   hiddenPanels.forEach(function(p){ p.style.visibility=""; p.style.display=""; });
+});
+</script>
+<script>
+(function(){
+  var path = window.location.pathname;
+  var id = path.split('/').pop().replace('.html','');
+  var pill = document.querySelector('.nav-pill[data-id="'+id+'"]');
+  if(pill){
+    var isPhys = document.querySelector('.phys-hero') !== null;
+    pill.classList.add(isPhys ? 'active-phys' : 'active-chem');
+    pill.scrollIntoView({inline:'center', behavior:'instant'});
+  }
+})();
+</script>
+<script>
+window.addEventListener('scroll', function(){
+  var bar = document.getElementById('readProgress');
+  if(!bar) return;
+  var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  bar.querySelector('.progress-bar-fill').style.width = pct + '%';
 });
 </script>
 </body></html>
