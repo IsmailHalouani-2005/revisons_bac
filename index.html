@@ -396,7 +396,7 @@
           <p>Le 1er principe de la thermodynamique est un <strong>bilan énergétique</strong> : l'énergie ne se crée ni ne se détruit, elle se transforme.</p>
           <p>Pour un système quelconque :</p>
         </div>
-        <div class="formula-box phys"><span class="formula-label">Forme générale</span><div class="formula-content">ΔE<sub>totale</sub> = ΔE<sub>c</sub> + ΔE<sub>p</sub> + $\Delta U = W + Q$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Forme générale</span><div class="formula-content">$\Delta E = \Delta E_c + \Delta E_p + \Delta U = W + Q$</div></div>
         <div class="cours-text">
           <p>Dans la plupart des cas au BAC, le système est <strong>au repos</strong> (ΔEc = 0) et à <strong>altitude constante</strong> (ΔEp = 0), donc :</p>
         </div>
@@ -409,7 +409,7 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🌡️ Capacité thermique & Chaleur sensible</div>
         <div class="cours-text"><p>Pour un solide ou liquide <strong>incompressible</strong> sans travail mécanique (W = 0) :</p></div>
-        <div class="formula-box phys"><span class="formula-label">Chaleur sensible</span><div class="formula-content">Q = m · c · ΔT &nbsp;&nbsp; (J)</div></div>
+        <div class="formula-box phys"><span class="formula-label">Chaleur sensible</span><div class="formula-content">$Q = mc\Delta T \quad (\text{J})$</div></div>
         <div class="cours-text">
           <ul>
             <li><strong>m</strong> : masse en kg</li>
@@ -421,7 +421,7 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">💨 Gaz parfait</div>
-        <div class="formula-box phys"><span class="formula-label">Loi des gaz parfaits</span><div class="formula-content">$pV = nRT$ &nbsp;&nbsp; R = 8,314 J·mol⁻¹·K⁻¹</div></div>
+        <div class="formula-box phys"><span class="formula-label">Loi des gaz parfaits</span><div class="formula-content">$pV = nRT \qquad R = 8{,}314\,\text{J·mol}^{-1}\text{·K}^{-1}$</div></div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
           <div><strong>T en KELVIN obligatoire !</strong> T(K) = θ(°C) + 273,15. Ne jamais mettre des Celsius dans pV = nRT.</div>
@@ -852,16 +852,16 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">📐 Équations complètes du tir parabolique</div>
         <div class="cours-text"><p>Lancer depuis l'origine (x₀=0, y₀=0) avec vitesse initiale v₀ à l'angle α :</p></div>
-        <div class="formula-box phys"><span class="formula-label">Décomposition de v₀</span><div class="formula-content">v₀x = v₀·cos α &nbsp;&nbsp;&nbsp; v₀y = v₀·sin α</div></div>
-        <div class="formula-box phys"><span class="formula-label">Accélérations</span><div class="formula-content">ax = 0 &nbsp;&nbsp;&nbsp; ay = −g = −9,81 m·s⁻²</div></div>
-        <div class="formula-box phys"><span class="formula-label">Vitesses</span><div class="formula-content">vx(t) = v₀·cos α &nbsp;&nbsp;&nbsp; vy(t) = v₀·sin α − g·t</div></div>
-        <div class="formula-box phys"><span class="formula-label">Positions</span><div class="formula-content">x(t) = v₀·cos α · t &nbsp;&nbsp;&nbsp; y(t) = −½g·t² + v₀·sin α · t</div></div>
-        <div class="formula-box phys"><span class="formula-label">Équation de la trajectoire (éliminer t)</span><div class="formula-content">y = x·tan α − g·x² / (2v₀²cos²α)</div></div>
+        <div class="formula-box phys"><span class="formula-label">Décomposition de v₀</span><div class="formula-content">$v_{0x} = v_0\cos\alpha \qquad v_{0y} = v_0\sin\alpha$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Accélérations</span><div class="formula-content">$a_x = 0 \qquad a_y = -g = -9{,}81\,\text{m·s}^{-2}$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Vitesses</span><div class="formula-content">$v_x(t) = v_0\cos\alpha \qquad v_y(t) = v_0\sin\alpha - gt$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Positions</span><div class="formula-content">$x(t) = v_0\cos\alpha\cdot t \qquad y(t) = -\tfrac{1}{2}gt^2 + v_0\sin\alpha\cdot t$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Équation de la trajectoire (éliminer t)</span><div class="formula-content">$y = x\tan\alpha - \dfrac{gx^2}{2v_0^2\cos^2\alpha}$</div></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🎯 Cas particulier : lancer horizontal (α = 0)</div>
         <div class="cours-text"><p>Si on lance <strong>horizontalement</strong> depuis une hauteur h (sin 0=0, cos 0=1) :</p></div>
-        <div class="formula-box phys"><span class="formula-label">Cas α = 0</span><div class="formula-content">x(t) = v₀·t &nbsp;&nbsp;&nbsp; y(t) = −½g·t² + h</div></div>
+        <div class="formula-box phys"><span class="formula-label">Cas α = 0</span><div class="formula-content">$x(t) = v_0 t \qquad y(t) = -\tfrac{1}{2}gt^2 + h$</div></div>
         <div class="cours-text"><p>Pour trouver quand l'objet touche le sol : y(t) = 0 → t = √(2h/g). Puis portée = x(t).</p></div>
       </div>
       <div class="cours-section">
@@ -1053,7 +1053,7 @@
         <div class="cours-section-title" style="color:var(--phys)">🚀 Mouvement d'une particule chargée</div>
         <div class="cours-text"><p>Une particule de charge q et masse m soumise au champ E subit une force F = qE. C'est <strong>exactement analogue à la pesanteur</strong> (remplacer g par qE/m).</p></div>
         <div class="formula-box phys"><span class="formula-label">Accélération de la particule</span><div class="formula-content">$a = \dfrac{qE}{m} = \dfrac{qU_{AB}}{md}$</div></div>
-        <div class="formula-box phys"><span class="formula-label">Équations du mouvement (entrée horizontale)</span><div class="formula-content">x(t) = v₀·t &nbsp;&nbsp;&nbsp; y(t) = ½·(qE/m)·t²</div></div>
+        <div class="formula-box phys"><span class="formula-label">Équations du mouvement (entrée horizontale)</span><div class="formula-content">$x(t) = v_0 t \qquad y(t) = \tfrac{1}{2}\dfrac{qE}{m}t^2$</div></div>
         <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pour un électron :</strong> q = −e = −1,6×10⁻¹⁹ C. La force est dans le sens <em>opposé</em> au champ E (l'électron va vers la plaque +).</div></div>
       </div>
       <div class="cours-section">
@@ -1172,14 +1172,14 @@
           <div class="def-title">3ème loi — Loi des périodes (BAC +++)</div>
           Pour toutes les planètes du même système, le rapport T²/a³ est une <strong>constante</strong> qui ne dépend que de l'astre attracteur.
         </div>
-        <div class="formula-box phys"><span class="formula-label">3ème loi de Kepler</span><div class="formula-content">T² / a³ = 4π² / (G·M) = constante</div></div>
+        <div class="formula-box phys"><span class="formula-label">3ème loi de Kepler</span><div class="formula-content">$\dfrac{T^2}{a^3} = \dfrac{4\pi^2}{GM} = \text{cst}$</div></div>
         <div class="cours-text"><p>G = 6,674×10⁻¹¹ N·m²·kg⁻² (constante gravitationnelle). M = masse de l'astre attracteur.</p></div>
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">🛸 Satellite en orbite circulaire</div>
         <div class="cours-text"><p>Pour une orbite <strong>circulaire</strong> de rayon R, on applique Newton : la gravitation fournit l'accélération centripète.</p></div>
         <div class="formula-box phys"><span class="formula-label">Équilibre gravitationnel / centripète</span><div class="formula-content">$\dfrac{GMm}{R^2} = \dfrac{mv^2}{R} \;\Rightarrow\; v = \sqrt{\dfrac{GM}{R}}$</div></div>
-        <div class="formula-box phys"><span class="formula-label">Période (v = 2πR/T)</span><div class="formula-content">T = 2πR / v = 2π√(R³/GM)</div></div>
+        <div class="formula-box phys"><span class="formula-label">Période (v = 2πR/T)</span><div class="formula-content">$T = \dfrac{2\pi R}{v} = 2\pi\sqrt{\dfrac{R^3}{GM}}$</div></div>
         <table class="data-table">
           <tr><th>Grandeur</th><th>Formule</th></tr>
           <tr><td>Vitesse orbitale</td><td>v = √(GM/R)</td></tr>
@@ -1529,8 +1529,8 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">📐 Formules et tache centrale</div>
-        <div class="formula-box phys"><span class="formula-label">Demi-angle de diffraction</span><div class="formula-content">sin θ ≈ θ ≈ λ / a &nbsp;&nbsp; (rad, si θ petit)</div></div>
-        <div class="formula-box phys"><span class="formula-label">Largeur de la tache centrale</span><div class="formula-content">L = 2 · λ · D / a &nbsp;&nbsp; (m)</div></div>
+        <div class="formula-box phys"><span class="formula-label">Demi-angle de diffraction</span><div class="formula-content">$\sin\theta \approx \theta \approx \dfrac{\lambda}{a} \quad (\text{rad})$</div></div>
+        <div class="formula-box phys"><span class="formula-label">Largeur de la tache centrale</span><div class="formula-content">$L = \dfrac{2\lambda D}{a} \quad (\text{m})$</div></div>
         <div class="cours-text">
           <ul>
             <li><strong>λ</strong> : longueur d'onde (m)</li>
@@ -1855,7 +1855,7 @@
         <div class="cours-text">
           <p>La lumière a une <strong>double nature</strong> : elle se comporte comme une onde (diffraction, interférences) ET comme un flux de particules appelées <strong>photons</strong>.</p>
         </div>
-        <div class="formula-box phys"><span class="formula-label">Énergie d'un photon</span><div class="formula-content">E = h·ν = h·c/λ &nbsp;&nbsp; h = 6,626×10⁻³⁴ J·s (constante de Planck)</div></div>
+        <div class="formula-box phys"><span class="formula-label">Énergie d'un photon</span><div class="formula-content">$E = h\nu = \dfrac{hc}{\lambda} \qquad h = 6{,}626\times10^{-34}\,\text{J·s}$</div></div>
         <div class="cours-text">
           <ul>
             <li><strong>ν</strong> (nu) = fréquence (Hz)</li>
@@ -1976,7 +1976,7 @@
       </div>
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--phys)">⏱️ Constante de temps τ = RC</div>
-        <div class="formula-box phys"><span class="formula-label">Constante de temps</span><div class="formula-content">τ = R · C &nbsp;&nbsp; (en secondes si R en Ω et C en F)</div></div>
+        <div class="formula-box phys"><span class="formula-label">Constante de temps</span><div class="formula-content">$\tau = RC \quad (\text{s, si } R\text{ en }\Omega\text{ et }C\text{ en F})$</div></div>
         <div class="cours-text"><p>τ représente le temps caractéristique du circuit. Plus τ est grand, plus la charge/décharge est lente.</p></div>
         <table class="data-table">
           <tr><th>Instant</th><th>Charge : u<sub>C</sub></th><th>Décharge : u<sub>C</sub></th></tr>
@@ -2260,7 +2260,7 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">⚗️ Réaction acide-base</div>
         <div class="cours-text"><p>Une réaction acide-base est un <strong>transfert de proton H⁺</strong> de l'acide vers la base. On combine 2 couples :</p></div>
-        <div class="formula-box chem"><span class="formula-label">Méthode des couples</span><div class="formula-content">Couple 1 : HA₁ / A₁⁻ &nbsp;&nbsp; Couple 2 : HA₂ / A₂⁻<br/>Réaction : $\text{HA}_1 + \text{A}_2^- \rightleftharpoons \text{A}_1^- + \text{HA}_2$</div></div>
+        <div class="formula-box chem"><span class="formula-label">Méthode des couples</span><div class="formula-content">$\text{HA}_1 + \text{A}_2^- \rightleftharpoons \text{A}_1^- + \text{HA}_2$</div></div>
         <div class="cours-text">
           <p><strong>Sens de la réaction :</strong> L'acide le plus fort réagit avec la base la plus forte. L'acide de pKa le plus faible est le plus fort.</p>
         </div>
@@ -3317,7 +3317,7 @@
           <div class="def-title">État d'équilibre</div>
           À l'équilibre, Q<sub>r</sub> = K (constante d'équilibre). K ne dépend que de la température, pas des concentrations initiales.
         </div>
-        <div class="formula-box chem"><span class="formula-label">Sens d'évolution spontané</span><div class="formula-content">$Q_r < K$ → sens direct &nbsp;|&nbsp; $Q_r > K$ → sens indirect &nbsp;|&nbsp; $Q_r = K$ → équilibre → équilibre</div></div>
+        <div class="formula-box chem"><span class="formula-label">Sens d'évolution spontané</span><div class="formula-content">$Q_r < K$ → sens direct &nbsp;|&nbsp; $Q_r > K$ → sens indirect &nbsp;|&nbsp; $Q_r = K$ → équilibre</div></div>
         <div class="formula-box chem"><span class="formula-label">Taux d'avancement</span><div class="formula-content">$\tau = \dfrac{x_{\text{éq}}}{x_{\max}}$</div></div>
         <div class="cours-text">
           <ul>
@@ -3983,7 +3983,7 @@
       <div class="cours-section">
         <div class="cours-section-title" style="color:var(--chem)">📉 Loi de désintégration radioactive</div>
         <div class="cours-text"><p>La désintégration est un phénomène <strong>aléatoire et statistique</strong>. La loi est une décroissance exponentielle :</p></div>
-        <div class="formula-box chem"><span class="formula-label">Nombre de noyaux restants</span><div class="formula-content">N(t) = N₀ · e^(−λ·t)</div></div>
+        <div class="formula-box chem"><span class="formula-label">Nombre de noyaux restants</span><div class="formula-content">$N(t) = N_0\,e^{-\lambda t}$</div></div>
         <div class="formula-box chem"><span class="formula-label">Activité (désintégrations/seconde)</span><div class="formula-content">$A(t) = \lambda N(t) = A_0\,e^{-\lambda t} \quad (\text{Bq})$</div></div>
         <div class="formula-box chem"><span class="formula-label">Constante radioactive λ</span><div class="formula-content">$\lambda = \dfrac{\ln 2}{t_{1/2}} \quad (\text{s}^{-1})$</div></div>
         <div class="formula-box chem"><span class="formula-label">Demi-vie t₁/₂</span><div class="formula-content">$t_{1/2} = \dfrac{\ln 2}{\lambda} \approx \dfrac{0{,}693}{\lambda}$</div></div>
@@ -4022,7 +4022,7 @@
         </div>
         <div class="formula-box chem">
           <span class="formula-label">Demi-vie</span>
-          <div class="formula-content">t₁/₂ = ln2 / λ ≈ 0,693 / λ</div>
+          <div class="formula-content">$t_{1/2} = \dfrac{\ln 2}{\lambda} \approx \dfrac{0{,}693}{\lambda}$</div>
         </div>
         <div class="alert-box alert-warn">
           <span class="alert-icon">⚠️</span>
@@ -4088,7 +4088,7 @@
       renderMathInElement(document.body, {
         delimiters: [
           {left: "$$", right: "$$", display: true},
-          {left: "\\(", right: "\\)", display: false},
+          {left: "\(", right: "\)", display: false},
           {left: "$", right: "$", display: false}
         ],
         ignoredTags: ["script","noscript","style","textarea","pre","code"],
