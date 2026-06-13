@@ -644,6 +644,7 @@
     </div>
 
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: NEWTON =================== -->
@@ -817,6 +818,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -1017,6 +1019,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: CHAMP ELECTRIQUE =================== -->
@@ -1038,9 +1041,33 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-electrique">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">⚡ Le condensateur plan</div>
+        <div class="definition-box">
+          <div class="def-title">Champ électrique uniforme</div>
+          Entre les deux armatures d'un condensateur plan, le champ électrique E est <strong>uniforme</strong> (même valeur partout), perpendiculaire aux armatures, orienté de la plaque + vers la plaque −.
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Champ électrique dans le condensateur</span>E = U_AB / d &nbsp;&nbsp; (V·m⁻¹, d = distance entre armatures)</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>U_AB = V_A − V_B. Si A est la plaque + et B la plaque −, alors U_AB > 0 et E est bien orienté de A vers B.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🚀 Mouvement d'une particule chargée</div>
+        <div class="cours-text"><p>Une particule de charge q et masse m soumise au champ E subit une force F = qE. C'est <strong>exactement analogue à la pesanteur</strong> (remplacer g par qE/m).</p></div>
+        <div class="formula-box phys"><span class="formula-label">Accélération de la particule</span>a = qE/m = qU_AB/(md) &nbsp;&nbsp; (dirigée selon E si q > 0)</div>
+        <div class="formula-box phys"><span class="formula-label">Équations du mouvement (entrée horizontale)</span>x(t) = v₀·t &nbsp;&nbsp;&nbsp; y(t) = ½·(qE/m)·t²</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pour un électron :</strong> q = −e = −1,6×10⁻¹⁹ C. La force est dans le sens <em>opposé</em> au champ E (l'électron va vers la plaque +).</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⚡ Accélération par une tension (canon à électrons)</div>
+        <div class="cours-text"><p>Un électron accéléré par une tension U_acc gagne de l'énergie cinétique. Par conservation de l'énergie :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Vitesse après accélération</span>½mv² = |q|·U_acc &nbsp;→&nbsp; v = √(2|q|U_acc/m)</div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🧮 Méthode BAC</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Calculer <strong>E = U/d</strong>, puis <strong>a = |q|E/m</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Écrire <strong>x(t) = v₀t</strong> et <strong>y(t) = ½at²</strong> (entrée horizontale).</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Trouver le temps de passage t = L/v₀ (L = longueur du condensateur).</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Calculer la <strong>déviation y</strong> à la sortie.</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -1109,6 +1136,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -1243,6 +1271,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: SON =================== -->
@@ -1264,10 +1293,37 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-son">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">🔊 Qu'est-ce que le son ?</div>
+        <div class="cours-text">
+          <p>Le son est une <strong>onde mécanique longitudinale</strong> : les molécules d'air vibrent dans la même direction que la propagation. Il faut un milieu matériel pour se propager (pas de son dans le vide).</p>
+          <p>Vitesse du son : c ≈ 340 m/s dans l'air à 20°C. Plus rapide dans les liquides (~1500 m/s) et solides.</p>
         </div>
+        <div class="definition-box">
+          <div class="def-title">Intensité sonore I</div>
+          Puissance acoustique reçue par unité de surface. Unité : W·m⁻². I₀ = 10⁻¹² W·m⁻² = seuil d'audibilité (le plus faible son audible).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📊 Niveau d'intensité sonore L (décibels)</div>
+        <div class="cours-text"><p>L'oreille humaine perçoit les sons de façon <strong>logarithmique</strong> (pas linéaire). D'où l'échelle en décibels :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Niveau sonore</span>L = 10 · log(I / I₀) &nbsp;&nbsp; (dB) &nbsp;&nbsp; I₀ = 10⁻¹² W·m⁻²</div>
+        <div class="formula-box phys"><span class="formula-label">Retrouver I</span>I = I₀ · 10^(L/10)</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Les niveaux sonores NE s'additionnent PAS !</strong> Pour 2 sources identiques à L dB : L_total = L + 10·log(2) = L + 3 dB. Il faut toujours repasser par les intensités (I_total = ΣI), puis recalculer L.</div></div>
+        <table class="data-table">
+          <tr><th>Source</th><th>L (dB)</th><th>I (W/m²)</th></tr>
+          <tr><td>Seuil d'audibilité</td><td>0</td><td>10⁻¹²</td></tr>
+          <tr><td>Chuchotement</td><td>20</td><td>10⁻¹⁰</td></tr>
+          <tr><td>Conversation normale</td><td>60–70</td><td>10⁻⁶–10⁻⁵</td></tr>
+          <tr><td>Circulation intense</td><td>80</td><td>10⁻⁴</td></tr>
+          <tr><td>Seuil de risque (8h)</td><td>85</td><td>3×10⁻⁴</td></tr>
+          <tr><td>Concert rock</td><td>110</td><td>10⁻¹</td></tr>
+          <tr><td>Seuil de douleur</td><td>120</td><td>1</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Atténuation avec la distance</div>
+        <div class="formula-box phys"><span class="formula-label">Source ponctuelle (onde sphérique)</span>I = P / (4πr²) &nbsp;&nbsp; donc I ∝ 1/r²</div>
+        <div class="cours-text"><p>Si la distance double (r → 2r) : I est divisée par 4 → L diminue de 10·log(4) ≈ 6 dB.</p></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -1328,6 +1384,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: FLUIDES =================== -->
@@ -1349,10 +1406,43 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-fluides">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">💧 Statique des fluides</div>
+        <div class="definition-box">
+          <div class="def-title">Poussée d'Archimède</div>
+          Tout corps immergé dans un fluide subit une poussée verticale ascendante égale au poids du fluide déplacé.
         </div>
+        <div class="formula-box phys"><span class="formula-label">Poussée d'Archimède</span>Π = ρ_fluide · V_immergé · g &nbsp;&nbsp; (N, vers le haut)</div>
+        <div class="cours-text">
+          <p><strong>Flotte si</strong> Π ≥ P, c'est-à-dire ρ_objet ≤ ρ_fluide.</p>
+          <p><strong>Coule si</strong> ρ_objet > ρ_fluide.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🌊 Dynamique des fluides — hypothèses</div>
+        <div class="cours-text">
+          <p>On suppose un fluide <strong>incompressible</strong> (ρ = cst), en <strong>écoulement laminaire</strong> (pas de turbulences) et <strong>sans viscosité</strong>.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Débit volumique D_V</div>
+          Volume de fluide qui traverse une section S par unité de temps. Se conserve le long d'un tube de courant (équation de continuité).
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Conservation du débit</span>D_V = S · v = constante &nbsp;→&nbsp; S₁·v₁ = S₂·v₂</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Tuyau qui se rétrécit → section S diminue → vitesse v augmente. C'est intuitif : l'eau sort plus vite d'un tuyau fin.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">🔢 Théorème de Bernoulli</div>
+        <div class="cours-text"><p>Conservation de l'énergie pour un fluide parfait en écoulement permanent :</p></div>
+        <div class="formula-box phys"><span class="formula-label">Bernoulli (le long d'une ligne de courant)</span>p + ½ρv² + ρgh = constante</div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>p</strong> : pression (Pa)</li>
+            <li><strong>½ρv²</strong> : pression dynamique (liée à la vitesse)</li>
+            <li><strong>ρgh</strong> : pression hydrostatique (liée à la hauteur)</li>
+          </ul>
+          <p>Entre deux points A et B d'une même ligne de courant :</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Bernoulli entre A et B</span>p_A + ½ρv_A² + ρgh_A = p_B + ½ρv_B² + ρgh_B</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Effet Venturi :</strong> v augmente → ½ρv² augmente → p diminue (si même hauteur). C'est le principe de l'atomiseur, du carburateur, de l'aile d'avion.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -1408,6 +1498,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: DIFFRACTION =================== -->
@@ -1429,10 +1520,32 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-diffraction">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">🌊 Qu'est-ce que la diffraction ?</div>
+        <div class="cours-text">
+          <p>La diffraction est le phénomène par lequel une onde <strong>contourne un obstacle ou s'étale après une ouverture</strong>. Elle est importante quand la taille de l'ouverture <em>a</em> est du même ordre de grandeur que la longueur d'onde <em>λ</em>.</p>
+          <p>Règle : si a >> λ → pas de diffraction visible. Si a ≈ λ → diffraction importante.</p>
         </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Le son se diffracte facilement (λ ≈ cm à m) → on entend derrière un mur. La lumière visible (λ ≈ 400–800 nm) se diffracte peu en conditions normales car les ouvertures sont grandes.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Formules et tache centrale</div>
+        <div class="formula-box phys"><span class="formula-label">Demi-angle de diffraction</span>sin θ ≈ θ ≈ λ / a &nbsp;&nbsp; (rad, si θ petit)</div>
+        <div class="formula-box phys"><span class="formula-label">Largeur de la tache centrale</span>L = 2 · λ · D / a &nbsp;&nbsp; (m)</div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>λ</strong> : longueur d'onde (m)</li>
+            <li><strong>a</strong> : largeur de la fente (m)</li>
+            <li><strong>D</strong> : distance fente–écran (m)</li>
+            <li><strong>L</strong> : largeur de la tache centrale (m)</li>
+          </ul>
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Tache centrale = 2× les taches secondaires.</strong> La tache centrale est plus large et plus brillante que les autres. Elle contient la majeure partie de l'énergie lumineuse.</div></div>
+        <table class="data-table">
+          <tr><th>Si...</th><th>Alors...</th></tr>
+          <tr><td>a diminue</td><td>L augmente (tache plus large)</td></tr>
+          <tr><td>λ augmente (rouge vs violet)</td><td>L augmente</td></tr>
+          <tr><td>D augmente</td><td>L augmente</td></tr>
+        </table>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -1497,6 +1610,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: INTERFÉRENCES =================== -->
@@ -1518,10 +1632,27 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-interferences">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">🌈 Principe des interférences</div>
+        <div class="cours-text">
+          <p>Les interférences se produisent quand <strong>deux ondes cohérentes</strong> (même fréquence, déphasage constant) se superposent. Elles se renforcent ou s'annulent selon leur déphasage relatif.</p>
         </div>
+        <div class="definition-box">
+          <div class="def-title">Interférences constructives (frange brillante)</div>
+          Les deux ondes arrivent <strong>en phase</strong> : les crêtes coïncident. La différence de marche δ est un multiple entier de λ : δ = kλ (k = 0, ±1, ±2...).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Interférences destructives (frange sombre)</div>
+          Les deux ondes arrivent en <strong>opposition de phase</strong> : crête + creux = annulation. Différence de marche : δ = (k + ½)λ.
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Fentes de Young — Formules</div>
+        <div class="cours-text"><p>Deux fentes S₁ et S₂ séparées d'une distance <em>a</em>, écran à distance <em>D</em>.</p></div>
+        <div class="formula-box phys"><span class="formula-label">Différence de marche au point M (abscisse x)</span>δ = S₂M − S₁M = a·x / D</div>
+        <div class="formula-box phys"><span class="formula-label">Interfrange (distance entre 2 franges brillantes)</span>i = λ·D / a</div>
+        <div class="formula-box phys"><span class="formula-label">Position de la k-ième frange brillante</span>x_k = k · i = k · λD/a</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>a = distance entre les deux fentes (petite, mm). D = distance fentes-écran (grande, m). i = interfrange (ce qu'on mesure sur l'écran, mm). Ne pas confondre a et i !</div></div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Mesure de i en pratique :</strong> On mesure la distance entre N+1 franges = N·i. Donc i = (distance totale) / N.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -1589,6 +1720,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: DOPPLER =================== -->
@@ -1610,10 +1742,28 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-doppler">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">🚑 Principe de l'effet Doppler</div>
+        <div class="cours-text">
+          <p>L'effet Doppler est la modification de la fréquence perçue d'une onde quand la source et l'observateur sont <strong>en mouvement relatif</strong> l'un par rapport à l'autre.</p>
+          <ul>
+            <li><strong>Rapprochement :</strong> l'observateur reçoit les fronts d'onde plus rapprochés → fréquence <em>plus élevée</em> (son plus aigu, lumière vers le bleu)</li>
+            <li><strong>Éloignement :</strong> fronts d'onde plus espacés → fréquence <em>plus basse</em> (son plus grave, lumière vers le rouge)</li>
+          </ul>
         </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Formules</div>
+        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source se rapproche)</span>f_R = f_S · c / (c − v_S) &nbsp;&nbsp; f_R > f_S</div>
+        <div class="formula-box phys"><span class="formula-label">Fréquence reçue (source s'éloigne)</span>f_R = f_S · c / (c + v_S) &nbsp;&nbsp; f_R < f_S</div>
+        <div class="formula-box phys"><span class="formula-label">Décalage Doppler (approximation v << c)</span>Δf/f_S ≈ v/c &nbsp;&nbsp; ou &nbsp;&nbsp; Δλ/λ_S ≈ v/c</div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>c</strong> = vitesse de l'onde dans le milieu (340 m/s pour le son, 3×10⁸ m/s pour la lumière)</li>
+            <li><strong>v_S</strong> = vitesse de la source</li>
+            <li><strong>f_S</strong> = fréquence émise par la source</li>
+          </ul>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Applications réelles :</strong> Radar de vitesse (police), échographie Doppler (médecine), mesure de vitesse des étoiles (redshift astronomique), prévisions météo (radar Doppler).</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -1679,6 +1829,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: PHOTON =================== -->
@@ -1700,10 +1851,32 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-photon">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">💡 Le photon — dualité onde-corpuscule</div>
+        <div class="cours-text">
+          <p>La lumière a une <strong>double nature</strong> : elle se comporte comme une onde (diffraction, interférences) ET comme un flux de particules appelées <strong>photons</strong>.</p>
         </div>
+        <div class="formula-box phys"><span class="formula-label">Énergie d'un photon</span>E = h·ν = h·c/λ &nbsp;&nbsp; h = 6,626×10⁻³⁴ J·s (constante de Planck)</div>
+        <div class="cours-text">
+          <ul>
+            <li><strong>ν</strong> (nu) = fréquence (Hz)</li>
+            <li><strong>λ</strong> = longueur d'onde (m)</li>
+            <li><strong>c</strong> = vitesse de la lumière = 3×10⁸ m/s</li>
+            <li>Relation : c = λ·ν</li>
+          </ul>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Plus λ est petite (UV, rayons X), plus l'énergie du photon est grande. C'est pourquoi les UV brûlent la peau et les rayons X traversent les tissus.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⚡ Effet photoélectrique</div>
+        <div class="cours-text">
+          <p>Quand un photon frappe un métal, il peut éjecter un électron si son énergie est suffisante pour vaincre le <strong>travail d'extraction W</strong> (énergie de liaison de l'électron au métal).</p>
+        </div>
+        <div class="formula-box phys"><span class="formula-label">Bilan énergétique</span>E_photon = W_extraction + E_c_max &nbsp;→&nbsp; hν = W + ½mv²_max</div>
+        <div class="definition-box">
+          <div class="def-title">Fréquence seuil ν_s</div>
+          Fréquence minimale pour éjecter un électron : hν_s = W → ν_s = W/h. Si ν < ν_s → pas d'effet photoélectrique, quelle que soit l'intensité lumineuse !
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Conversion eV ↔ J :</strong> 1 eV = 1,6×10⁻¹⁹ J. Si W = 4,5 eV → W = 4,5 × 1,6×10⁻¹⁹ = 7,2×10⁻¹⁹ J.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -1763,6 +1936,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -1930,6 +2104,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CHAPITRE: TRANSFERTS THERMIQUES =================== -->
@@ -1951,10 +2126,32 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-transferts">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--phys)">🌡️ Les 3 modes de transfert thermique</div>
+        <div class="definition-box">
+          <div class="def-title">Conduction</div>
+          Transfert d'énergie de proche en proche dans un solide (ou fluide au repos), sans déplacement de matière. Régi par la loi de Fourier : le flux est proportionnel au gradient de température.
         </div>
+        <div class="definition-box">
+          <div class="def-title">Convection</div>
+          Transfert par déplacement de matière (fluide en mouvement). La convection naturelle est due aux différences de densité (air chaud monte). La convection forcée utilise une pompe ou ventilateur.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Rayonnement</div>
+          Tout corps émet des ondes électromagnétiques proportionnellement à T⁴. C'est le seul mode qui fonctionne dans le vide (soleil → terre).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">📐 Loi de Newton (refroidissement/convection)</div>
+        <div class="formula-box phys"><span class="formula-label">Flux thermique reçu par le système</span>φ = h · S · (T_ext − T) &nbsp;&nbsp; (W)</div>
+        <div class="cours-text"><ul><li><strong>h</strong> : coefficient de convection (W·m⁻²·K⁻¹)</li><li><strong>S</strong> : surface d'échange (m²)</li><li><strong>T_ext − T</strong> : écart de température</li></ul></div>
+        <div class="formula-box phys"><span class="formula-label">Équation différentielle (1er principe + loi Newton)</span>m·c · dT/dt = h·S·(T_ext − T)</div>
+        <div class="formula-box phys"><span class="formula-label">Solution</span>T(t) = T_ext + (T₀ − T_ext)·e^(−t/τ) &nbsp;&nbsp; τ = mc/(hS)</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Même forme que le circuit RC ! τ = constante de temps thermique. À t = τ, l'écart de température a diminué de 63%.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--phys)">⭐ Stefan-Boltzmann (rayonnement)</div>
+        <div class="formula-box phys"><span class="formula-label">Puissance rayonnée par un corps noir</span>P = σ · S · T⁴ &nbsp;&nbsp; σ = 5,67×10⁻⁸ W·m⁻²·K⁻⁴</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>T en Kelvin obligatoire ! La dépendance en T⁴ signifie que doubler T multiplie P par 16.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -2014,6 +2211,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -2173,6 +2371,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== FORCE ACIDES =================== -->
@@ -2194,10 +2393,35 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-forceacide">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">⚖️ Constante d'acidité Ka</div>
+        <div class="cours-text"><p>Pour un acide faible HA en solution aqueuse : HA + H₂O ⇌ A⁻ + H₃O⁺</p></div>
+        <div class="formula-box chem"><span class="formula-label">Constante d'acidité</span>Ka = [A⁻]·[H₃O⁺] / [HA] &nbsp;&nbsp; pKa = −log Ka</div>
+        <div class="cours-text">
+          <p><strong>Plus Ka est grand (pKa petit)</strong> → l'équilibre est déplacé vers la droite → l'acide se dissocie beaucoup → <strong>acide fort</strong>.</p>
+          <p><strong>Plus Ka est petit (pKa grand)</strong> → peu dissocié → <strong>acide faible</strong>.</p>
         </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Acide fort = pKa < 0 (dissociation totale). Acide faible = pKa entre 0 et 14.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Relation pH–pKa (Henderson-Hasselbalch)</div>
+        <div class="formula-box chem"><span class="formula-label">Henderson-Hasselbalch</span>pH = pKa + log([A⁻] / [HA])</div>
+        <div class="cours-text">
+          <p>Cas particuliers importants :</p>
+          <ul>
+            <li>Si pH = pKa → log(1) = 0 → <strong>[HA] = [A⁻]</strong> (moitié dissocié)</li>
+            <li>Si pH < pKa → [HA] > [A⁻] → <strong>la forme acide prédomine</strong></li>
+            <li>Si pH > pKa → [A⁻] > [HA] → <strong>la forme basique prédomine</strong></li>
+          </ul>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Solution tampon</div>
+          Mélange de HA et A⁻ en proportions voisines (pH ≈ pKa). Résiste aux variations de pH lors d'ajout d'acide ou de base. Ex: sang (pH ≈ 7,4, tampon bicarbonate).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Calcul de pH d'un acide faible</div>
+        <div class="formula-box chem"><span class="formula-label">pH acide faible (approximation valable si Ka << C)</span>pH ≈ ½(pKa − log C)</div>
+        <div class="cours-text"><p>Taux d'avancement : τ = [A⁻]/C₀. Pour un acide faible τ << 1 (peu dissocié).</p></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -2270,6 +2494,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== TITRAGE COLORIMETRIQUE =================== -->
@@ -2291,9 +2516,25 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-titragecolor">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">🎨 Principe du titrage coloriмétrique</div>
+        <div class="cours-text">
+          <p>Le titrage est une méthode pour <strong>déterminer la concentration inconnue</strong> d'une solution (solution titrée) en la faisant réagir avec une solution de concentration connue (solution titrante).</p>
+          <p>On ajoute la solution titrante <strong>goutte à goutte</strong> depuis une burette. À l'<strong>équivalence</strong>, les réactifs ont été introduits en proportions stœchiométriques exactes.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Indicateur coloré</div>
+          Acide faible dont la forme acide et la forme basique ont des couleurs différentes. Il change de couleur quand pH atteint sa zone de virage, ce qui permet de repérer l'équivalence visuellement.
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Choix de l'indicateur :</strong> Sa zone de virage doit englober le pH à l'équivalence. Pour HCl/NaOH, l'équivalence est à pH = 7 → phénolphtaléine (8–9,6) ou bleu de bromothymol (6–7,6) conviennent.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Formule de l'équivalence</div>
+        <div class="formula-box chem"><span class="formula-label">À l'équivalence (stœchiométrie)</span>n_A / a = n_B / b &nbsp;→&nbsp; C_A · V_A / a = C_B · V_E / b</div>
+        <div class="formula-box chem"><span class="formula-label">Concentration inconnue C_A</span>C_A = (a · C_B · V_E) / (b · V_A)</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire l'équation de la réaction de titrage et relever a et b.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Repérer V_E (volume équivalent) au changement de couleur.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Appliquer C_A = a·C_B·V_E / (b·V_A).</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -2383,6 +2624,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== TITRAGE CONDUCTIMETRIQUE =================== -->
@@ -2404,10 +2646,25 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-titrageconduct">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">📊 Principe du titrage conductimétrique</div>
+        <div class="cours-text">
+          <p>On mesure la <strong>conductivité σ</strong> de la solution au fur et à mesure qu'on ajoute le titrant. La conductivité dépend de la <strong>nature et concentration des ions</strong> présents.</p>
+          <p>La courbe σ = f(V_titrant) est formée de <strong>deux droites qui se croisent</strong> à l'équivalence. On trouve V_E en traçant les deux droites et en trouvant leur intersection.</p>
         </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pourquoi la pente change ?</strong> Les ions échangés avant et après l'équivalence n'ont pas la même conductivité molaire. H₃O⁺ (très conducteur) remplacé par Na⁺ (peu conducteur) → σ baisse. Après V_E, on ajoute Na⁺ + HO⁻ → σ remonte.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔢 Conductivité molaire ionique λ</div>
+        <div class="formula-box chem"><span class="formula-label">Loi de Kohlrausch</span>σ = Σ λ_i · [ion_i]</div>
+        <table class="data-table">
+          <tr><th>Ion</th><th>λ (mS·m²·mol⁻¹)</th></tr>
+          <tr><td>H₃O⁺</td><td>35,0 (très élevée !)</td></tr>
+          <tr><td>HO⁻</td><td>19,9</td></tr>
+          <tr><td>Na⁺</td><td>5,01</td></tr>
+          <tr><td>K⁺</td><td>7,35</td></tr>
+          <tr><td>Cl⁻</td><td>7,63</td></tr>
+        </table>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>H₃O⁺ est 7× plus conducteur que Na⁺. C'est pourquoi remplacer H₃O⁺ par Na⁺ fait <em>baisser</em> la conductivité (avant V_E dans le titrage HCl/NaOH).</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -2470,6 +2727,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== TITRAGE pH-METRIQUE =================== -->
@@ -2491,10 +2749,29 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-titragepm">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">📈 Courbe pH = f(V)</div>
+        <div class="cours-text">
+          <p>On trace la courbe pH en fonction du volume V de titrant ajouté. Elle présente un <strong>saut de pH brutal</strong> autour du point d'équivalence.</p>
+          <p>L'allure de la courbe dépend du type d'acide/base titré :</p>
+          <ul>
+            <li>Acide fort + base forte → saut centré sur pH = 7</li>
+            <li>Acide faible + base forte → saut centré sur pH > 7</li>
+            <li>Acide fort + base faible → saut centré sur pH < 7</li>
+          </ul>
         </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Méthodes pour trouver V_E</div>
+        <div class="definition-box">
+          <div class="def-title">Méthode des tangentes parallèles</div>
+          Tracer deux tangentes parallèles à la courbe, de part et d'autre du saut de pH. Tracer une droite parallèle à mi-chemin entre elles. Son intersection avec la courbe = V_E.
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Méthode de la dérivée (dpH/dV)</div>
+          La dérivée dpH/dV présente un <strong>maximum</strong> au point d'équivalence. Tracer dpH/dV = f(V) et repérer le pic.
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Demi-équivalence → pKa</span>À V = V_E/2 : pH = pKa &nbsp;&nbsp; (car [HA] = [A⁻])</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>La demi-équivalence est un point clé : pH = pKa y est exact. C'est la méthode expérimentale pour déterminer le pKa d'un acide faible.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -2547,6 +2824,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== SPECTROSCOPIE =================== -->
@@ -2568,9 +2846,37 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-spectro">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">🔬 Spectroscopie UV-Visible</div>
+        <div class="cours-text">
+          <p>Un spectrophotomètre mesure l'<strong>absorbance A</strong> d'une solution en fonction de la longueur d'onde λ. Les molécules colorées absorbent certaines longueurs d'onde du visible.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Absorbance A</div>
+          A = log(I₀/I) où I₀ = intensité incidente, I = intensité transmise. A est sans unité.
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Règle du cercle chromatique :</strong> Une solution absorbe à λ_max → elle apparaît de la couleur <em>complémentaire</em>. Bleu absorbé → solution jaune/orange. Rouge absorbé → solution verte/bleue.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🌡️ Spectroscopie Infrarouge (IR)</div>
+        <div class="cours-text">
+          <p>Le spectre IR mesure la <strong>transmittance T(%)</strong> en fonction du nombre d'onde σ (cm⁻¹). Les liaisons chimiques absorbent à des nombres d'onde caractéristiques → on identifie les groupes fonctionnels.</p>
+        </div>
+        <table class="data-table">
+          <tr><th>Liaison</th><th>σ (cm⁻¹)</th><th>Forme</th></tr>
+          <tr><td>O−H alcool libre</td><td>3580–3650</td><td>Fine et intense</td></tr>
+          <tr><td>O−H alcool lié (liaison H)</td><td>3200–3400</td><td>Large et intense</td></tr>
+          <tr><td>O−H acide carboxylique</td><td>2500–3300</td><td>Très large</td></tr>
+          <tr><td>N−H amine</td><td>3100–3500</td><td>Moyenne</td></tr>
+          <tr><td>C−H</td><td>2850–3000</td><td>Forte</td></tr>
+          <tr><td>C=O cétone/aldéhyde</td><td>1700–1730</td><td>Très intense</td></tr>
+          <tr><td>C=O ester</td><td>1730–1750</td><td>Très intense</td></tr>
+          <tr><td>C−O alcool/ester</td><td>1050–1300</td><td>Forte</td></tr>
+        </table>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Chercher une bande large vers 2500–3300 cm⁻¹ → acide carboxylique (−COOH)</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Chercher une bande fine vers 1700–1750 cm⁻¹ → C=O présent (cétone, acide, ester)</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Chercher O−H large 3200–3400 cm⁻¹ → alcool ou acide</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Absence de O−H + présence C=O → aldéhyde ou cétone</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -2672,6 +2978,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== BEER LAMBERT =================== -->
@@ -2693,10 +3000,24 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-beerlam">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">📉 Loi de Beer-Lambert</div>
+        <div class="definition-box">
+          <div class="def-title">Énoncé de la loi</div>
+          Pour une solution colorée diluée, l'absorbance A est <strong>proportionnelle</strong> à la concentration C de l'espèce absorbante et à l'épaisseur l traversée.
         </div>
+        <div class="formula-box chem"><span class="formula-label">Loi de Beer-Lambert</span>A = ε · l · C &nbsp;&nbsp; (ε = coefficient d'extinction molaire, L·mol⁻¹·cm⁻¹)</div>
+        <div class="formula-box chem"><span class="formula-label">Forme simplifiée (BAC)</span>A = k · C &nbsp;&nbsp; (k = ε·l = constante pour λ et l fixés)</div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div><strong>Conditions de validité :</strong> Solution diluée (C ≤ 5×10⁻³ mol/L environ), longueur d'onde fixée à λ_max (absorbance maximale), solution homogène.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Méthode de la courbe d'étalonnage</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Préparer des solutions étalons de <strong>concentrations connues</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Mesurer l'absorbance A de chaque étalon au <strong>spectrophotomètre à λ_max</strong>.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Tracer A = f(C) → droite passant par l'origine si Beer-Lambert vérifié. La <strong>pente = k</strong>.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Mesurer A de la solution inconnue → lire C sur la courbe ou calculer C = A/k.</div></div>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>Si la courbe n'est plus linéaire pour les fortes concentrations → Beer-Lambert n'est plus valable → il faut diluer la solution inconnue avant de mesurer.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -2762,6 +3083,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CONDUCTIMETRIE =================== -->
@@ -2783,10 +3105,23 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-conduct">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Conductivité d'une solution ionique</div>
+        <div class="definition-box">
+          <div class="def-title">Conductance G et conductivité σ</div>
+          G = σ · S/l (S = section, l = longueur, en siemens S). σ mesure la capacité d'une solution à conduire le courant électrique (S·m⁻¹).
         </div>
+        <div class="formula-box chem"><span class="formula-label">Loi de Kohlrausch (solutions diluées)</span>σ = Σᵢ λᵢ · [Xᵢ]</div>
+        <div class="cours-text">
+          <p>λᵢ = conductivité molaire ionique de l'ion i (caractéristique de chaque ion, trouvée en table).</p>
+          <p>Pour un électrolyte fort AxBy → [A^n+] = x·C et [B^m-] = y·C.</p>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Courbe d'étalonnage conductimétrique</div>
+        <div class="cours-text">
+          <p>Comme Beer-Lambert mais avec la conductivité : σ = k·C (linéaire pour solutions diluées). On trace σ = f(C) avec des étalons, puis on lit C_inconnue à partir de σ_mesurée.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>La conductimétrie est utile pour les solutions <strong>incolores</strong> (où Beer-Lambert ne s'applique pas). Par exemple: NaCl, HCl dilué, eaux minérales.</div></div>
       </div>
     </div><!-- end cours-layout -->
   </div><!-- end cours panel -->
@@ -2836,6 +3171,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -2948,6 +3284,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== CONSTANTE D'ÉQUILIBRE =================== -->
@@ -2969,9 +3306,35 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-equilibre">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">⚖️ Quotient de réaction Q_r</div>
+        <div class="cours-text"><p>Pour la réaction aA + bB ⇌ cC + dD :</p></div>
+        <div class="formula-box chem"><span class="formula-label">Quotient de réaction</span>Q_r = ([C]/C°)^c · ([D]/C°)^d / (([A]/C°)^a · ([B]/C°)^b)</div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div>C° = 1 mol·L⁻¹ (concentration standard). En pratique on écrit souvent Q_r = [C]^c[D]^d / ([A]^a[B]^b) avec les concentrations en mol/L directement. Les solvants (eau) et solides purs n'apparaissent PAS.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📊 Constante d'équilibre K</div>
+        <div class="definition-box">
+          <div class="def-title">État d'équilibre</div>
+          À l'équilibre, Q_r = K (constante d'équilibre). K ne dépend que de la température, pas des concentrations initiales.
+        </div>
+        <div class="formula-box chem"><span class="formula-label">Sens d'évolution spontané</span>Q_r &lt; K → sens direct (→) &nbsp;|&nbsp; Q_r &gt; K → sens indirect (←) &nbsp;|&nbsp; Q_r = K → équilibre</div>
+        <div class="formula-box chem"><span class="formula-label">Taux d'avancement</span>τ = x_éq / x_max</div>
+        <div class="cours-text">
+          <ul>
+            <li>τ ≈ 1 → réaction quasi-totale (K >> 1)</li>
+            <li>τ ≈ 0 → réaction quasi-inexistante (K << 1)</li>
+            <li>0 < τ < 1 → équilibre (K ≈ 1 à qq ordres de grandeur)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📋 Tableau d'avancement</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire l'équation équilibrée avec les coefficients stœchiométriques.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Ligne "état initial" : quantités n₀ des espèces.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Ligne "état à x" : n₀ ± coeff·x pour chaque espèce.</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">x_max = min(n₀/coeff) pour les réactifs.</div></div>
+          <div class="step-item"><div class="step-num">5</div><div class="step-text">Trouver x_éq (via K ou données) → τ = x_éq/x_max.</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -3033,6 +3396,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== MOLÉCULES ORGANIQUES =================== -->
@@ -3054,9 +3418,31 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-organique">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">🌿 Nomenclature IUPAC</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><strong>Identifier la chaîne principale</strong> : la plus longue chaîne carbonée contenant le groupe fonctionnel principal.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><strong>Numéroter</strong> la chaîne pour donner le numéro le plus petit au groupe fonctionnel.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text"><strong>Nommer</strong> : préfixe (substituants) + racine (nb carbones) + suffixe (fonction).</div></div>
+        </div>
+        <table class="data-table">
+          <tr><th>Carbones</th><th>Racine</th><th>Alcane</th></tr>
+          <tr><td>1</td><td>méth-</td><td>méthane</td></tr>
+          <tr><td>2</td><td>éth-</td><td>éthane</td></tr>
+          <tr><td>3</td><td>prop-</td><td>propane</td></tr>
+          <tr><td>4</td><td>but-</td><td>butane</td></tr>
+          <tr><td>5</td><td>pent-</td><td>pentane</td></tr>
+          <tr><td>6</td><td>hex-</td><td>hexane</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔗 Isomérie</div>
+        <div class="definition-box">
+          <div class="def-title">Isomères de constitution</div>
+          Même formule brute, squelette carboné différent ou position du groupe fonctionnel différente. Ex: propan-1-ol et propan-2-ol (C₃H₈O).
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Stéréoisomères (Z/E)</div>
+          Même formule développée, mais orientation spatiale différente autour d'une double liaison C=C. Z (zusammen = ensemble) : groupes prioritaires du même côté. E (entgegen = opposé) : côtés opposés.
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -3126,6 +3512,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== SYNTHÈSE ORGANIQUE =================== -->
@@ -3147,9 +3534,26 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-synthese">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">🧪 Types de réactions organiques</div>
+        <table class="data-table">
+          <tr><th>Type</th><th>Définition</th><th>Exemple</th></tr>
+          <tr><td>Addition</td><td>Ajout sur une liaison multiple C=C → liaison simple</td><td>Alcène + HBr → haloalcane</td></tr>
+          <tr><td>Élimination</td><td>Perte d'atomes → formation d'une liaison multiple</td><td>Alcool → alcène + H₂O (déshydratation)</td></tr>
+          <tr><td>Substitution</td><td>Un atome/groupe remplace un autre</td><td>R−Cl + HO⁻ → R−OH + Cl⁻</td></tr>
+          <tr><td>Oxydation</td><td>Perte d'hydrogène ou gain d'oxygène</td><td>Alcool primaire → aldéhyde → acide</td></tr>
+          <tr><td>Estérification</td><td>Acide + alcool → ester + eau</td><td>CH₃COOH + C₂H₅OH → ester</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Calcul du rendement</div>
+        <div class="formula-box chem"><span class="formula-label">Rendement</span>r = (n_expérimental / n_théorique) × 100 = (m_exp / m_théo) × 100 &nbsp;&nbsp; (%)</div>
+        <div class="cours-text">
+          <p>n_théorique = quantité de produit obtenu si la réaction était totale et sans perte, calculée à partir du réactif limitant.</p>
+        </div>
+        <div class="alert-box alert-tip"><span class="alert-icon">💡</span><div><strong>Pourquoi r < 100% ?</strong> Réaction équilibrée (pas totale), pertes lors de la purification (filtration, distillation), réactions parasites.</div></div>
+        <div class="definition-box">
+          <div class="def-title">Chimie verte — 12 principes (à connaître pour le BAC)</div>
+          Prévenir les déchets, utiliser des catalyseurs, des solvants écologiques, économiser l'énergie (T ambiante si possible), utiliser des matières premières renouvelables, éviter les dérivés auxiliaires inutiles.
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -3207,6 +3611,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== MÉCANISMES =================== -->
@@ -3228,9 +3633,33 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-mecanismes">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">🔧 Les flèches courbes</div>
+        <div class="cours-text">
+          <p>Une flèche courbe représente le <strong>déplacement d'un doublet d'électrons</strong>. Elle part toujours de là où sont les électrons (doublet, liaison) vers là où ils vont.</p>
+        </div>
+        <div class="alert-box alert-warn"><span class="alert-icon">⚠️</span><div>La flèche ne représente PAS le mouvement d'un atome. Elle représente le mouvement de 2 électrons. Elle va TOUJOURS du riche en électrons vers le pauvre.</div></div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Sites donneurs et accepteurs</div>
+        <table class="data-table">
+          <tr><th>Sites DONNEURS (nucléophiles)</th><th>Sites ACCEPTEURS (électrophiles)</th></tr>
+          <tr><td>Doublet non liant (N:, O:, halogens)</td><td>Lacune électronique (H⁺, carbocation)</td></tr>
+          <tr><td>Liaison C=C (électrons π)</td><td>Atome δ⁺ dans liaison polarisée</td></tr>
+          <tr><td>Liaison C=O (paire libre sur O)</td><td>Atome chargé positivement</td></tr>
+          <tr><td>Carbanion R⁻</td><td>Liaison polarisée vers l'atome électronégatif</td></tr>
+        </table>
+        <div class="definition-box">
+          <div class="def-title">Polarisation d'une liaison</div>
+          Dans R−X (X électronégatif comme Cl, O, N) : X attire les électrons → C^(δ+)−X^(δ−). Le carbone est δ+ donc électrophile (accepteur). X est δ− donc nucléophile (donneur).
+        </div>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">🔄 Mécanisme de substitution nucléophile (S_N)</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Identifier le <strong>nucléophile</strong> (donneur, ex: HO⁻, NH₃) et l'<strong>électrophile</strong> (accepteur, ex: C−Cl).</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Flèche du doublet du nucléophile vers le C^δ+.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Flèche de la liaison C−X vers X (qui part avec les 2 électrons comme X⁻).</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Écrire le produit formé et vérifier les charges.</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -3280,6 +3709,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== ÉLECTROLYSE =================== -->
@@ -3301,9 +3731,31 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-electrolyse">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">⚡ Principe de l'électrolyse</div>
+        <div class="cours-text">
+          <p>L'électrolyse est une transformation <strong>forcée non spontanée</strong> : on impose un courant électrique pour faire se produire une réaction chimique qui n'aurait pas lieu spontanément.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Mnémotechnique OA CA</div>
+          <strong>O</strong>xydation à l'<strong>A</strong>node — <strong>R</strong>éduction à la <strong>C</strong>athode (pour l'électrolyse ET les piles)
+        </div>
+        <table class="data-table">
+          <tr><th></th><th>ANODE</th><th>CATHODE</th></tr>
+          <tr><td>Réaction</td><td>Oxydation (perd e⁻)</td><td>Réduction (gagne e⁻)</td></tr>
+          <tr><td>Signe (électrolyse)</td><td>Pôle + (relié au +)</td><td>Pôle − (relié au −)</td></tr>
+          <tr><td>Ions attirés</td><td>Anions (−)</td><td>Cations (+)</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">📐 Calculs quantitatifs</div>
+        <div class="formula-box chem"><span class="formula-label">Charge électrique totale</span>Q = I · Δt &nbsp;&nbsp; (Coulombs = A·s)</div>
+        <div class="formula-box chem"><span class="formula-label">Lien charge – moles d'électrons</span>Q = n(e⁻) · F &nbsp;&nbsp; F = 96 485 C·mol⁻¹ ≈ 96 500 C·mol⁻¹</div>
+        <div class="formula-box chem"><span class="formula-label">Masse déposée (cathode)</span>m = n · M = (I · Δt · M) / (z · F)</div>
+        <div class="cours-text"><p>z = nombre d'électrons échangés par ion dans la demi-équation. Ex : Cu²⁺ + 2e⁻ → Cu : z = 2.</p></div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire les demi-équations à l'anode (oxydation) et cathode (réduction).</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Calculer Q = I·Δt puis n(e⁻) = Q/F.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Déduire n(métal) = n(e⁻)/z puis m = n·M.</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -3368,6 +3820,7 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- =================== PILES =================== -->
@@ -3389,9 +3842,30 @@
   <div class="tab-panel active" data-panel="cours">
     <div class="cours-layout" id="cours-piles">
       <div class="cours-section">
-        <div class="alert-box alert-tip">
-          <span class="alert-icon">📖</span>
-          <div>Le cours détaillé de ce chapitre reprend toutes les définitions, formules et méthodes vues dans les fiches ci-dessus. Utilise l'onglet <strong>Exercices</strong> pour t'entraîner, et reviens à cette section pour consolider les notions.</div>
+        <div class="cours-section-title" style="color:var(--chem)">🔋 Principe d'une pile</div>
+        <div class="cours-text">
+          <p>Une pile convertit de l'énergie chimique en énergie électrique via une réaction <strong>spontanée</strong> d'oxydoréduction. Les deux demi-réactions ont lieu dans des compartiments séparés (demi-piles), reliés par un pont salin.</p>
+        </div>
+        <div class="definition-box">
+          <div class="def-title">Pont salin</div>
+          Tube rempli d'électrolyte (KCl, KNO₃...) permettant le passage des ions pour assurer la neutralité électrique des deux compartiments, sans que les solutions se mélangent.
+        </div>
+        <table class="data-table">
+          <tr><th></th><th>ANODE (−)</th><th>CATHODE (+)</th></tr>
+          <tr><td>Réaction</td><td>Oxydation</td><td>Réduction</td></tr>
+          <tr><td>Électrode</td><td>Se dissout (ex: Zn → Zn²⁺)</td><td>Se dépose (ex: Cu²⁺ → Cu)</td></tr>
+          <tr><td>Électrons</td><td>Libérés → circuit ext.</td><td>Reçus du circuit ext.</td></tr>
+        </table>
+      </div>
+      <div class="cours-section">
+        <div class="cours-section-title" style="color:var(--chem)">⏱️ Durée de fonctionnement et capacité</div>
+        <div class="formula-box chem"><span class="formula-label">Capacité totale de la pile</span>Q_max = n(e⁻)_max · F</div>
+        <div class="formula-box chem"><span class="formula-label">Durée de fonctionnement</span>Δt = Q_max / I = n(e⁻)_max · F / I</div>
+        <div class="step-list">
+          <div class="step-item"><div class="step-num">1</div><div class="step-text">Écrire les demi-équations. Identifier le <strong>réactif limitant</strong>.</div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text">Calculer n(réactif limitant) depuis sa masse ou concentration.</div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text">Déduire n(e⁻) = coeff · n(réactif limitant).</div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text">Q = n(e⁻)·F puis Δt = Q/I.</div></div>
         </div>
       </div>
     </div><!-- end cours-layout -->
@@ -3453,6 +3927,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
@@ -3600,6 +4075,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
