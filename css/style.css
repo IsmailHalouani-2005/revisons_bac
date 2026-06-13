@@ -732,3 +732,33 @@ footer {
   .tab-btn { padding: .7rem .9rem; font-size: .82rem; }
   .cours-layout { padding: 1rem; }
 }
+
+/* ===== KATEX INTEGRATION ===== */
+.formula-box .katex-display {
+  margin: 0;
+  overflow-x: auto;
+}
+.formula-box .katex {
+  font-size: 1.15em;
+}
+.formula-box.phys .katex { color: var(--phys); }
+.formula-box.chem .katex { color: var(--chem); }
+.formula-box .katex { color: var(--accent); }
+
+/* KaTeX dans le texte courant */
+.cours-text .katex,
+.key-text .katex,
+.exercise-question .katex,
+.solution-box .katex,
+.alert-box .katex,
+.step-text .katex {
+  font-size: 1.05em;
+}
+
+/* Scroll horizontal pour formules larges sur mobile */
+.formula-box {
+  overflow-x: auto;
+}
+.katex-display > .katex {
+  white-space: normal;
+}
