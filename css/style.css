@@ -346,36 +346,34 @@ h1,h2,h3,h4 { font-family: var(--font-head); line-height: 1.2; }
   background: var(--bg3);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: .5rem 1.4rem 1rem;
-  margin: 1.2rem 0;
-  font-family: 'Courier New', monospace;
-  font-size: 1.1rem;
-  text-align: center;
-  color: var(--accent);
-  font-weight: 700;
-  position: relative;
-  overflow: visible;
+  padding: .6rem 1.4rem .9rem;
+  margin: 1rem 0;
+  overflow-x: auto;
 }
 .formula-label {
-  display: inline-block;
-  margin-bottom: .4rem;
-  margin-top: .3rem;
-  background: transparent;
-  padding: 0;
-  font-size: .7rem; font-weight: 700;
-  color: var(--text3);
-  font-family: var(--font-body);
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 0;
-  position: static;
-  text-align: left;
   display: block;
+  font-size: .68rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  color: var(--text3);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+  text-align: left;
 }
-.formula-box.phys { border-color: rgba(79,142,247,0.4); color: var(--phys); }
-.formula-box.chem { border-color: rgba(162,89,247,0.4); color: var(--chem); }
-.formula-box.green { border-color: rgba(62,207,142,0.4); color: var(--green); }
+.formula-content {
+  font-family: 'Courier New', monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--accent);
+}
+.formula-box.phys { border-color: rgba(79,142,247,0.4); }
+.formula-box.phys .formula-content { color: var(--phys); }
+.formula-box.chem { border-color: rgba(162,89,247,0.4); }
+.formula-box.chem .formula-content { color: var(--chem); }
+.formula-box.green { border-color: rgba(62,207,142,0.4); }
+.formula-box.green .formula-content { color: var(--green); }
 
 /* ===== KEY POINTS ===== */
 .key-point {
@@ -749,9 +747,9 @@ footer {
 .formula-box .katex {
   font-size: 1.15em;
 }
-.formula-box.phys .katex { color: var(--phys); }
-.formula-box.chem .katex { color: var(--chem); }
-.formula-box .katex { color: var(--accent); }
+.formula-box.phys .formula-content .katex { color: var(--phys); }
+.formula-box.chem .formula-content .katex { color: var(--chem); }
+.formula-box .formula-content .katex { color: var(--accent); }
 
 /* KaTeX dans le texte courant */
 .cours-text .katex,
@@ -763,10 +761,7 @@ footer {
   font-size: 1.05em;
 }
 
-/* Scroll horizontal pour formules larges sur mobile */
-.formula-box {
-  overflow-x: auto;
-}
+/* (overflow-x already set above) */
 .katex-display > .katex {
   white-space: normal;
 }
